@@ -1,0 +1,87 @@
+﻿<sdk:ChildWindow xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:gui="clr-namespace:Earthwatchers.UI.GUI.Controls"
+        xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+        xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ext="clr-namespace:Earthwatchers.UI.Extensions"
+        mc:Ignorable="d"
+        x:Class="Earthwatchers.UI.GUI.Controls.DemandWindow" 
+        Width="510" Height="350" 
+        Padding="0"
+        HasCloseButton="False" 
+        Style="{StaticResource GPChildWindow}">
+    <Grid x:Name="MainGrid">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Color="White" Offset="0.9"></GradientStop>
+                <GradientStop Color="#FFe0e0e0" Offset="1"></GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Height="70" VerticalAlignment="Top" CornerRadius="8,8,0,0" BorderThickness="1" BorderBrush="#FF95a92c">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="0.8">
+                    <GradientStop Color="#FF849b0c" Offset="0" />
+                    <GradientStop Color="#FF9fba0e" Offset="0.5" />
+                    <GradientStop Color="#FF849b0c" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="28" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="18" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="Title" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="18"
+                        Foreground="White" FontFamily="Arial" FontWeight="Bold" Margin="5" />
+
+                <Button x:Name="CloseButton" Click="BtnCloseClick" Grid.Column="3" HorizontalAlignment="Center"
+                        IsTabStop="False" Style="{StaticResource OpacityButton}" Width="24" Margin="5,7,0,0"
+                        VerticalAlignment="Top">
+                    <Path Data="M0,0 L1,1 M0,1 L1,0" Stretch="Fill" Stroke="#404040" StrokeThickness="2" Width="10"
+                            Height="10" Effect="{StaticResource ControlTextEffect}" />
+                </Button>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" x:Name="DemandGrid" VerticalAlignment="Top">
+            <Grid HorizontalAlignment="Center" Width="460">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Vertical" Margin="0,10,0,0" Grid.Row="0">
+                    <TextBlock x:Name="DemandText"  TextWrapping="Wrap"
+                            TextAlignment="Center" FontSize="15" Margin="0,10" Foreground="Black" FontFamily="Arial"
+                            HorizontalAlignment="Center" />
+                    <TextBlock x:Name="DemandText2" 
+                            TextWrapping="Wrap" TextAlignment="Center" FontSize="15" Margin="0,10" Foreground="Black"
+                            FontFamily="Arial" HorizontalAlignment="Center" />
+                </StackPanel>
+
+                <HyperlinkButton x:Name="DemandButton" Margin="0,15,0,0" Grid.Row="1" Width="85" Height="120" IsTabStop="False" Click="DemandButton_Click" TargetName="_blank">
+                    <HyperlinkButton.Content>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <Image x:Name="DemandIcon" Source="/Resources/Images/demandar.png" Margin="0,10,0,0"
+                                Stretch="None" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="DemandTitleText" TextWrapping="Wrap" TextAlignment="Center" FontSize="13" Margin="0,10,0,0" Foreground="Black" FontFamily="Arial"
+                                HorizontalAlignment="Center" />
+                    </StackPanel>
+                    </HyperlinkButton.Content>
+                </HyperlinkButton>
+            </Grid>
+        </Border>
+    </Grid>
+</sdk:ChildWindow>

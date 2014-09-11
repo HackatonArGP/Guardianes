@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="59e4bdf1-1d9b-4386-a862-595219637e30" ChangeDateTime="05/22/2014 12:16:35">
+    <Property Name="ElementName" Value="[dbo].[SignedRequests].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SignedRequests]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EarthwatcherId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="aa9b27a9-886d-4b2d-a668-9eca115512c2" ChangeDateTime="05/26/2014 12:30:55">
+    <Property Name="ElementName" Value="[dbo].[PetitionSigned].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PetitionSigned]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EarthwatcherId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="eeb69468-3869-43f9-9b39-35aa21192948" ChangeDateTime="05/26/2014 13:56:29">
+    <Property Name="ElementName" Value="[dbo].[PetitionSigned].[EarthwatcherId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PetitionSigned]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Earthwatcher" />
+  </Operation>
+</Operations>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>La Luz del Chaco.kml</name>
+	<Style id="inline1">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline4">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline01">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline4</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>Establecimiento Ganadero La Luz del Chaco</name>
+		<open>1</open>
+		<description>Establecimiento Ganadero La Luz del Chaco (Fernando Omar Muzi, Agustín Eduardo Vidizzoni y Agro-Noa S.R.L.)</description>
+		<Placemark>
+			<name>La Luz del Chaco</name>
+			<styleUrl>#inline01</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-63.18375586327361,-23.43948616696999,0 -63.13910392111337,-23.46151964307184,0 -63.13339222127269,-23.46460521333123,0 -63.14240409245549,-23.33646080372387,0 -63.16911150221274,-23.31678522578521,0 -63.18375586327361,-23.43948616696999,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

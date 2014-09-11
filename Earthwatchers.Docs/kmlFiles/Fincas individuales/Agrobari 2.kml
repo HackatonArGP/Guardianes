@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Agrobari 2.kml</name>
+	<Style id="inline84">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline112">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline122</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline84</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline122">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>Agrobari S.A.</name>
+		<open>1</open>
+		<description>Agrobari S.A. (João Pereira Coutinho)</description>
+		<Placemark>
+			<name>Agrobari 2</name>
+			<LookAt>
+				<longitude>-63.51239994648132</longitude>
+				<latitude>-24.39560800978815</latitude>
+				<altitude>0</altitude>
+				<heading>-0.3276878464375798</heading>
+				<tilt>0</tilt>
+				<range>16409.30052624369</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#inline112</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-63.36188739302236,-24.35523059557304,0 -63.35615722194626,-24.30675418381842,0 -63.4797878841242,-24.34913204741413,0 -63.49067830978554,-24.41244737030236,0 -63.36188739302236,-24.35523059557304,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

@@ -1,0 +1,75 @@
+﻿<sdk:ChildWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:gui="clr-namespace:Earthwatchers.UI.GUI.Controls"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    xmlns:loaders="clr-namespace:Earthwatchers.UI.GUI.Loaders"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Earthwatchers.UI.GUI.Controls.NotificationsWindow" 
+    Width="480"  
+    Padding="0"
+    HasCloseButton="False"
+    Style="{StaticResource GPChildWindow}"
+    Title="{Binding Path=Notifications1, Source={StaticResource Labels}}">
+    <sdk:ChildWindow.Resources>
+
+    </sdk:ChildWindow.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="88"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border x:Name="Chrome" CornerRadius="8,8,0,0" BorderThickness="1" BorderBrush="#FF95a92c">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="0.8">
+                    <GradientStop Color="#FF849b0c" Offset="0" />
+                    <GradientStop Color="#FF9fba0e" Offset="0.5" />
+                    <GradientStop Color="#FF849b0c" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid Height="Auto" Width="Auto">
+                <Image x:Name="logo" Grid.Row="0" Margin="0,10,0,0" Stretch="None" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Grid>
+        </Border>
+        <Border Grid.Row="1">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="White" Offset="0.9"></GradientStop>
+                    <GradientStop Color="#FFe0e0e0" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Border.Background>
+            
+            <Grid x:Name="LayoutRoot" HorizontalAlignment="Center" Width="440">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="Title" FontSize="17" FontWeight="Bold" FontFamily="Arial" Foreground="#FF333333" Margin="0,10" />
+                <TextBlock x:Name="Body" Visibility="Visible" Opacity="1" Grid.Row="1" FontSize="13" FontFamily="Arial" Foreground="#FF333333" TextWrapping="Wrap" Margin="0,10">
+                
+                </TextBlock>
+                <Grid Grid.Row="2" x:Name="ReassignButtons" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="ButtonYes" Style="{StaticResource GreenButton}" Grid.Column="0"  Width="80" Cursor="Hand" Height="35" Foreground="White" FontSize="15" FontWeight="Bold" Content="{Binding Path=Notifications4, Source={StaticResource Labels}}" Margin="0,10" Click="ReassignLandClick" />
+                    
+                    <Button x:Name="ButtonNo" Style="{StaticResource RedButton}" Grid.Column="2"  Width="80" Cursor="Hand" Height="35" Foreground="White" FontSize="15" FontWeight="Bold" Content="NO" Margin="0,10" Click="BtnCloseClick" />
+                </Grid>
+                <loaders:_3D x:Name="loadinAnim" Grid.Column="1" Grid.Row="2" Height="22" Visibility="Collapsed" />
+
+                <Button x:Name="ButtonClose" Style="{StaticResource GreenButton}" Grid.Row="3" Width="180" Cursor="Hand" Height="35" Foreground="White" FontSize="15" FontWeight="Bold" Content="{Binding Path=Notifications2, Source={StaticResource Labels}}" Margin="0,10" Click="BtnCloseClick" />
+
+                <Button x:Name="ButtonContinue" Style="{StaticResource GreenButton}" Visibility="Collapsed" Grid.Row="3" Width="180" Cursor="Hand" Height="35" Foreground="White" FontSize="15" FontWeight="Bold" Content="{Binding Path=TutorialGame1, Source={StaticResource Labels}}" Margin="0,10" Click="ButtonContinue_Click" />
+            </Grid>
+        </Border>
+
+    </Grid>
+
+
+</sdk:ChildWindow>

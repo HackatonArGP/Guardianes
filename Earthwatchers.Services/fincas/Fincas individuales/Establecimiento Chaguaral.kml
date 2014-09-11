@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Establecimiento Chaguaral.kml</name>
+	<Style id="inline204">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline313">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline204</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline450110</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline450110">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>Establecimiento Chaguaral</name>
+		<open>1</open>
+		<description>Establecimiento Chaguaral (Santiago Luis Sánchez Elia, Clarsan Sociedad Anónima Comercial Inmobiliaria Financiera Agropecuaria y Bepesa Sociedad Anónima).
+ASIGNAR DENTRO DE ESTE POLÍGONO LAS ZONAS QUE NO ESTAN DESMONTADAS.</description>
+		<Placemark>
+			<name>Establecimiento Chaguaral</name>
+			<styleUrl>#inline313</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-64.15480427966436,-23.99064703237321,0 -64.14733299929819,-23.94670904823888,0 -64.01069801653949,-23.96936770560378,0 -63.99814865662928,-24.00410512168358,0 -63.99719470847407,-24.01678686917919,0 -64.0722961176219,-24.00564016200677,0 -64.08794156173255,-24.07856548493021,0 -64.10848291281771,-24.07577425487489,0 -64.09339611265992,-24.0009378047367,0 -64.15480427966436,-23.99064703237321,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

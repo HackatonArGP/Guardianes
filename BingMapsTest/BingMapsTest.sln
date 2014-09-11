@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingMapsTest", "BingMapsTest\BingMapsTest.csproj", "{5DF13195-8FBD-4D98-B6CB-5107DC67E666}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingMapsTest.Web", "BingMapsTest.Web\BingMapsTest.Web.csproj", "{131799A5-2FEB-4F69-972A-D2CEB44874EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DF13195-8FBD-4D98-B6CB-5107DC67E666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF13195-8FBD-4D98-B6CB-5107DC67E666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DF13195-8FBD-4D98-B6CB-5107DC67E666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DF13195-8FBD-4D98-B6CB-5107DC67E666}.Release|Any CPU.Build.0 = Release|Any CPU
+		{131799A5-2FEB-4F69-972A-D2CEB44874EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{131799A5-2FEB-4F69-972A-D2CEB44874EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{131799A5-2FEB-4F69-972A-D2CEB44874EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{131799A5-2FEB-4F69-972A-D2CEB44874EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

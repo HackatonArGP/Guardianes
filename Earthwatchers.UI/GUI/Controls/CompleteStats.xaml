@@ -1,0 +1,55 @@
+﻿<controls:ChildWindow xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                      xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" 
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      mc:Ignorable="d" 
+                      x:Class="Earthwatchers.UI.GUI.Controls.CompleteStats" 
+                      xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+                      xmlns:ext="clr-namespace:Earthwatchers.UI.Extensions" 
+                      Width="350" Height="200" Style="{StaticResource GPDefaultChildWindow}" 
+                      Title="{Binding Path=Stats, Source={StaticResource Labels}}"
+                      xmlns:loaders="clr-namespace:Earthwatchers.UI.GUI.Loaders">
+    <controls:ChildWindow.Resources>
+        <ext:CommentDeleteVisibilityConverter x:Key="currentRankingVisibilityConverter" />
+    </controls:ChildWindow.Resources>
+    <Grid>
+        <Grid x:Name="MainGrid" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <!--<TextBlock x:Name="stats1" Grid.Column="1" Grid.Row="0" Foreground="#FF414141" Text="{Binding Path=StatsActivePlayers, Source={StaticResource Labels}}" Grid.ColumnSpan="2" />-->
+            <TextBlock x:Name="stats2" Grid.Column="1" Grid.Row="0" Foreground="#FF414141" Text="{Binding Path=StatsTotalPlayers, Source={StaticResource Labels}}" Grid.ColumnSpan="2" />
+            <TextBlock x:Name="stats6" Grid.Column="1" Grid.Row="1" Foreground="#FF414141" Text="{Binding Path=StatsVerifiedPlots, Source={StaticResource Labels}}" Grid.ColumnSpan="2" />
+            <TextBlock x:Name="stats9" Grid.Column="1" Grid.Row="2" Foreground="#FF414141" Text="{Binding Path=StatsAlertedAreaConfirmed, Source={StaticResource Labels}}" Grid.ColumnSpan="2" />
+            <TextBlock x:Name="stats7" Grid.Column="1" Grid.Row="3" Foreground="#FF414141" Text="{Binding Path=StatsDenouncesCreated, Source={StaticResource Labels}}" Grid.ColumnSpan="2" />
+            <!--<TextBlock x:Name="stats3" Grid.Column="1" Grid.Row="2" Foreground="#FF414141" Text="{Binding Path=StatsUsersOnline, Source={StaticResource Labels}}" Grid.ColumnSpan="2" />-->
+            <!--<TextBlock x:Name="stats4" Grid.Column="1" Grid.Row="3" Foreground="#FF414141" Text="{Binding Path=StatsGreenPlots, Source={StaticResource Labels}}" Grid.ColumnSpan="2" />-->
+            <!--<TextBlock x:Name="stats5" Grid.Column="1" Grid.Row="4" Foreground="#FF414141" Text="{Binding Path=StatsRedPlots, Source={StaticResource Labels}}" Grid.ColumnSpan="2" />-->
+            <!--<TextBlock x:Name="stats8" Grid.Column="1" Grid.Row="7" Foreground="#FF414141" Text="{Binding Path=StatsAlertedArea, Source={StaticResource Labels}}" Grid.ColumnSpan="2" />-->
+            <TextBlock Grid.Column="2" Grid.Row="0" Foreground="#FF414141" x:Name="StatsTotalPlayers" />
+            <TextBlock Grid.Column="2" Grid.Row="1" Foreground="#FF414141" x:Name="StatsVerifiedPlots" />
+            <TextBlock Grid.Column="2" Grid.Row="2" Foreground="#FF414141" x:Name="StatsAlertedAreaConfirmed" />
+            <TextBlock Grid.Column="2" Grid.Row="3" Foreground="#FF414141" x:Name="StatsDenouncesCreated" />
+            <!--<TextBlock Grid.Column="2" Grid.Row="4" Foreground="#FF414141" x:Name="StatsRedPlots" />
+            <TextBlock Grid.Column="2" Grid.Row="5" Foreground="#FF414141" x:Name="StatsVerifiedPlots" />
+            <TextBlock Grid.Column="2" Grid.Row="6" Foreground="#FF414141" x:Name="StatsDenouncesCreated" />
+            <TextBlock Grid.Column="2" Grid.Row="7" Foreground="#FF414141" x:Name="StatsAlertedArea" />
+            <TextBlock Grid.Column="2" Grid.Row="8" Foreground="#FF414141" x:Name="StatsAlertedAreaConfirmed" />-->
+        </Grid>
+        <Grid x:Name="loadinAnim" Visibility="Visible">
+            <loaders:_3D Margin="0,30,0,0" />
+            <TextBlock Text="{Binding Path=Cargando, Source={StaticResource Labels}}" Margin="0,-30,0,0" FontFamily="Arial" FontSize="13" Foreground="#FF333333" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        </Grid>
+    </Grid>
+
+
+</controls:ChildWindow>

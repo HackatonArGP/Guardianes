@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Guardianes Admin - Earthwatcher</title>
+    <script src="jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script src="jquery.base64.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        function getAuthString() {
+            return "Basic " + $.base64Encode(document.getElementById("tbUsername").value + ":" + document.getElementById("tbPassword").value);
+        }
+
+        $(function () {
+            $(".addEarthwatcher").click(function () {
+
+                var isValid = true;
+                var passwordRegex = /^.*(?=.{6,})(?=.*[a-zA-Z])(?=.*\d).*$/;
+                var emailRegex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                var username = $("#rUsername").val();
+                $("#rError2").html('');
+
+                if (username == undefined || username.length < 4 || !emailRegex.test(username)) {
+                    $("<span></span>").html('Tenés que escribir una dirección de mail válida').appendTo("#rError2");
+                }
+
+                if ($("#rPassword").val().length < 5) {
+                    $("<span></span>").html("La contraseña debe tener al menos 5 caracteres.").appendTo("#rError2");
+                    isValid = false;
+                }
+
+                if ($("#rPassword").val() != $("#repPassword").val()) {
+                    $("<span></span>").html("La segunda contraseña no coincide con la primera.").appendTo("#rError2");
+                    isValid = false;
+                }
+
+                if ($("#country").val().length < 2) {
+                    $("<span></span>").html("El país es incorrecto").appendTo("#rError2");
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    $.ajax({
+                        url: "/api/earthwatchers",
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("Authorization", getAuthString());
+                        },
+                        type: "POST",
+                        data: "{\"Name\":\"" + username +
+                            "\",\"Role\":\"" + 0 +
+                            "\",\"Password\":\"" + $("#rPassword").val() +
+                            "\",\"Country\":\"" + $("#country").val() +
+                            "\",\"Language\":\"" + "Spanish" +
+                            "\", \"Basecamp\":\"" + "Argentina" + "\" }",
+                        contentType: "application/json ; charset=utf-8",
+                        dataType: "json",
+                        success: function (result) {
+                            alert("Felicitaciones, has agregado un nuevo Guardián.");
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert("error, puede que el usuario ya exista " + name);
+                        }
+                    });
+                }
+
+                return false;
+            });
+        });
+
+        $(function () {
+            $(".deleteEarthwatcher").click(function () {
+                var id = $("input#earthwatcherid").val();
+                if (id == "") {
+                    alert("error: give earthwatcherid");
+                    return false;
+                }
+                $.ajax({
+                    type: "DELETE",
+                    url: "/api/earthwatchers/" + id,
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", getAuthString());
+                    },
+                    success: function () {
+                        alert("Congratulations, earthwatcher is deleted.");
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("error, earthwatcher does not exist? " + id);
+                    }
+                });
+                return false;
+            });
+        });
+
+        $(function () {
+            $(".reassignEarthwatcher").click(function () {
+                var id = $("input#idReassign").val();
+                if (id == "") {
+                    alert("error: give earthwatcherid");
+                    return false;
+                }
+                $.ajax({
+                    type: "POST",
+                    url: "/api/earthwatchers/reassignland=" + id,
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", getAuthString());
+                    },
+                    success: function () {
+                        alert("Congratulations, earthwatcher is reassigned.");
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("error, earthwatcher does not exist? " + id);
+                    }
+                });
+                return false;
+            });
+        });
+
+        $(function () {
+            $(".updateRoleEarthwatcher").click(function () {
+                var name = $("#updateEarthwatcherName").val();
+                if (name == "") {
+                    alert("error: Necesita informar el mail del Guardian");
+                    return false;
+                }
+                $.ajax({
+                    type: "POST",
+                    data: "{\"Name\":\"" + name + "\",{\"Role\":\"" + $("#updateEarthwatcherRole").val() + "\" }",
+                    contentType: "application/json ; charset=utf-8",
+                    url: "/api/earthwatchers/updateearthwatcherrole",
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", getAuthString());
+                    },
+                    success: function () {
+                        alert("Congratulations, earthwatcher is updated.");
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("error actualizando el rol del Guardian " + name);
+                    }
+                });
+                return false;
+            });
+        });
+
+        $(function () {
+            $(".setEarthwatcherAsPowerUser").click(function () {
+                var email = $("#powerUserEmail").val();
+                if (email == "") {
+                    alert("Tiene que indicar una dirección de mail del Guardian");
+                    return false;
+                }
+                $.ajax({
+                    type: "POST",
+                    data: "{\"Name\":\"" + email + "\" }",
+                    contentType: "application/json ; charset=utf-8",
+                    url: "/api/earthwatchers/setaspower",
+                    dataType: "json",
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", getAuthString());
+                    },
+                    success: function () {
+                        alert("Congratulations, earthwatcher is updated.");
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert(errorThrown);
+                    }
+                });
+                return false;
+            });
+        });
+
+        $(function () {
+            $(".changePassword").click(function () {
+                var newPassword = $("#newpassword").val();
+                var name = $("#newpasswordMail").val();
+                if (newPassword == "" || name == "") {
+                    alert("Debe indicar el nuevo password y el mail del usuario");
+                    return false;
+                }
+                $.ajax({
+                    type: "POST",
+                    data: "{\"Name\":\"" + name + "\",\"Password\":\"" + newPassword + "\" }",
+                    contentType: "application/json ; charset=utf-8",
+                    url: "/api/password/admin",
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", getAuthString());
+                    },
+                    success: function () {
+                        alert("Congratulations, password is changed.");
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("error cambiando el password");
+                    }
+                });
+                return false;
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <h3>Guardianes</h3>
+
+    <br>
+    username:
+    <input type="text" id="tbUsername" /><br />
+    password:
+    <input type="password" id="tbPassword" />
+
+
+    <h4>Agregar Guardian</h4>
+    <form name="addEarthwatcher">
+        <label for="rUsername">Email / Username: </label>
+        <input type="text" name="rUsername" id="rUsername" /><br />
+        <label for="rPassword">password: </label>
+        <input type="password" name="rPassword" id="rPassword" /><br />
+        <label for="repPassword">repetir password: </label>
+        <input type="password" name="repPassword" id="repPassword" /><br />
+        <label for="country">Pais: </label>
+        <input type="text" name="country" id="country" value="Argentina" /><br />
+        <div id="rError2" class="error"></div>
+
+        <input type="submit" value="Crear" class="addEarthwatcher" />
+    </form>
+    <br />
+
+    <!--
+        <h4>Delete Earthwatcher (authenticated)</h4>
+        <form name="deleteEarthwatcher">
+          <label for="ID">Earthwatcher ID: </label>
+          <input type="text" name="earthwatcherid" id="earthwatcherid"/>
+           <input type="submit" value="vuur!" class="deleteEarthwatcher"/>
+        </form>
+        <br/>
+        <h4>Reassign Earthwatcher (authenticated)</h4>
+        warning 1: the old land will get the status 'unwatched' and will not be used anymore<br />
+        warning 2: reassign only works in borneo area<br />
+        <form name="reassignEarthwatcher">
+          <label for="ID">Earthwatcher ID: </label>
+            <input type="text" name="earthwatcherid" id="idReassign"/>
+
+            Basecamp: <select id="Select1" disabled>
+                      <option value="borneo" selected>Borneo</option>
+                      <option value="argentina">Argentina</option>
+                  </select>
+           <input type="submit" value="vuur!" class="reassignEarthwatcher"/>
+        </form>
+        <br/>
+            -->
+    <h4>Identificar al Guardián como Power User</h4>
+    <form name="setEarthwatcherAsPowerUser">
+        <label for="ID">Earthwatcher Email: </label>
+        <input type="text" name="powerUserEmail" id="powerUserEmail" />
+        <br />
+        <input type="submit" value="Guardar" class="setEarthwatcherAsPowerUser" />
+    </form>
+    <br />
+    <br />
+
+    <h4>Actualizar Rol del Guardián</h4>
+    <form name="updateRoleEarthwatcher">
+        <label for="ID">Mail del Guardian: </label>
+        <input type="text" name="earthwatcherid" id="updateEarthwatcherName" />
+        <br />
+        Rol:
+        <select id="updateEarthwatcherRole">
+            <option value="0" selected>Earthwatcher</option>
+            <option value="1">Moderator</option>
+            <option value="2">Admin</option>
+        </select><br />
+        <input type="submit" value="Guardar" class="updateRoleEarthwatcher" />
+    </form>
+    <br />
+    <br />
+    <h4>Change password earthwatcher</h4>
+    <form name="changePassword">
+        <label for="newpasswordMail">Mail del Guardián: </label>
+        <input type="text" id="newpasswordMail" />
+        <br />
+        <label for="ID">New password: </label>
+        <input type="password" name="newpassword" id="newpassword" />
+        <br />
+
+        <input type="submit" value="Cambiar" class="changePassword" />
+    </form>
+    <br />
+    <a href="index.html">back</a>
+</body>
+</html>

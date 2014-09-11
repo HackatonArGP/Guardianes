@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Earthwatchers.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{64705c78-7e23-4c05-bc38-ccbb21fe88fc}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Earthwatchers.Database</RootNamespace>
+    <AssemblyName>Earthwatchers.Database</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Zones.sql" />
+    <Build Include="dbo\Tables\Contest.sql" />
+    <Build Include="dbo\Tables\Flags.sql" />
+    <Build Include="dbo\Tables\Locations.sql" />
+    <Build Include="dbo\Tables\PopupMessages.sql" />
+    <Build Include="dbo\Tables\Collections.sql" />
+    <Build Include="dbo\Tables\Comments.sql" />
+    <Build Include="dbo\Tables\CollectionItems.sql" />
+    <Build Include="dbo\Tables\Basecamp.sql" />
+    <Build Include="dbo\Tables\EarthwatcherCollections.sql" />
+    <Build Include="dbo\Tables\ThreatLevel.sql" />
+    <Build Include="dbo\Tables\Settings.sql" />
+    <Build Include="dbo\Tables\Polygons.sql" />
+    <Build Include="dbo\Tables\scores.sql" />
+    <Build Include="dbo\Tables\SatelliteImage.sql" />
+    <Build Include="dbo\Tables\JaguarPositions.sql" />
+    <Build Include="dbo\Tables\News.sql" />
+    <Build Include="dbo\Tables\LandStats.sql" />
+    <Build Include="dbo\Tables\BasecampLandDistance.sql" />
+    <Build Include="dbo\Tables\Land.sql" />
+    <Build Include="dbo\Tables\BasecampDetails.sql" />
+    <Build Include="dbo\Tables\EarthwatcherLands.sql" />
+    <Build Include="dbo\Tables\PollResults.sql" />
+    <Build Include="dbo\Tables\Verifications.sql" />
+    <Build Include="dbo\Tables\Earthwatcher.sql" />
+    <Build Include="dbo\Tables\Layers.sql" />
+    <Build Include="dbo\Tables\TempLands.sql" />
+    <Build Include="dbo\Stored Procedures\Contest_GetAllContests.sql" />
+    <Build Include="dbo\Stored Procedures\Contest_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\PopUpMessage_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\PopUpMessage_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\PopUpMessage_GetAllMessages.sql" />
+    <Build Include="dbo\Stored Procedures\Contest_GetWinner.sql" />
+    <Build Include="dbo\Stored Procedures\Contest_UpdateWinner.sql" />
+    <Build Include="dbo\Stored Procedures\Basecamp_Edit.sql" />
+    <Build Include="dbo\Stored Procedures\Basecamp_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\Lands_Stats.sql" />
+    <Build Include="dbo\Stored Procedures\Update_LandThreat.sql" />
+    <Build Include="dbo\Stored Procedures\Lands_Stats_Update.sql" />
+    <Build Include="dbo\Stored Procedures\%40GetSatelliteImagesInExtent.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateLandThreat.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateDistanceLand.sql" />
+    <Build Include="dbo\Stored Procedures\ReCalculate_LandDistanceFromBasecamps.sql" />
+    <Build Include="dbo\Stored Procedures\BackupDb.sql" />
+    <Build Include="dbo\Stored Procedures\Comments_PostComment.sql" />
+    <Build Include="dbo\Stored Procedures\Comments_GetCommentsByUserId.sql" />
+    <Build Include="dbo\Stored Procedures\Comments_GetCommentsByLand.sql" />
+    <Build Include="dbo\Stored Procedures\Comments_DeleteComment.sql" />
+    <Build Include="dbo\Stored Procedures\Basecamp_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Basecamp_GetByBasecamp.sql" />
+    <Build Include="dbo\Stored Procedures\Basecamp_GetBaseCamps.sql" />
+    <Build Include="dbo\Stored Procedures\Basecamp_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Basecamp_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\Jaguar_Update.sql" />
+    <Build Include="dbo\Stored Procedures\Jaguar_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Jaguar_GetPos.sql" />
+    <Build Include="dbo\Stored Procedures\Jaguar_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Jaguar_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\Flag_PostFlag.sql" />
+    <Build Include="dbo\Stored Procedures\Flag_GetFlags.sql" />
+    <Build Include="dbo\Stored Procedures\Flag_DeleteFlag.sql" />
+    <Build Include="dbo\Stored Procedures\Score_UpdateScore.sql" />
+    <Build Include="dbo\Stored Procedures\Score_PostScore.sql" />
+    <Build Include="dbo\Stored Procedures\Score_GetScoresByUserId.sql" />
+    <Build Include="dbo\Stored Procedures\Score_GetLeaderBoard.sql" />
+    <Build Include="dbo\Stored Procedures\Lands_Reassign.sql" />
+    <Build Include="dbo\Stored Procedures\Score_AddLoginScore.sql" />
+    <Build Include="dbo\Stored Procedures\SatelliteImage_Intersects.sql" />
+    <Build Include="dbo\Stored Procedures\SatelliteImage_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\SatelliteImage_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\SatelliteImage_Get.sql" />
+    <Build Include="dbo\Stored Procedures\SatelliteImage_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\Layer_SaveLayer.sql" />
+    <Build Include="dbo\Stored Procedures\Land_VerificationScoring_2.sql" />
+    <Build Include="dbo\Stored Procedures\Land_VerificationScoring.sql" />
+    <Build Include="dbo\Stored Procedures\Land_UpdateLandStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Land_GetVerifiedLandsGeoHexCodes_3.sql" />
+    <Build Include="dbo\Stored Procedures\Land_GetVerifiedLandsGeoHexCodes_2.sql" />
+    <Build Include="dbo\Stored Procedures\Land_GetVerifiedLandsGeoHexCodes_1.sql" />
+    <Build Include="dbo\Stored Procedures\Land_GetLastUsersWithActivityScore.sql" />
+    <Build Include="dbo\Stored Procedures\Land_GetLandsToConfirm.sql" />
+    <Build Include="dbo\Stored Procedures\Land_GetAllLands.sql" />
+    <Build Include="dbo\Stored Procedures\Land_ResetLands.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_GetEarthwatcherByName.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_GetEarthwatcherByGuid.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_GetEarthwatcher.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_GetAllEarthwatchers.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_EarthwatcherExists.sql" />
+    <Build Include="dbo\Stored Procedures\Land_AddVerification.sql" />
+    <Build Include="dbo\Stored Procedures\Land_AddPoll.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_UpdatePassword.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_UpdateEarthwatcher.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_SetEarthwatcherAsPowerUser.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_CreateEarthwatcher.sql" />
+    <Build Include="dbo\Stored Procedures\News_PostNews.sql" />
+    <Build Include="dbo\Stored Procedures\News_GetNews.sql" />
+    <Build Include="dbo\Stored Procedures\News_DeleteNews.sql" />
+    <Build Include="dbo\Stored Procedures\Lands_Create.sql" />
+    <Build Include="dbo\Stored Procedures\Layer_GetLayerByName.sql" />
+    <Build Include="dbo\Stored Procedures\Lands_UpdateDemand.sql" />
+    <Build Include="dbo\Stored Procedures\Layer_GetLayer.sql" />
+    <Build Include="dbo\Stored Procedures\Land_VerificationScoring_3.sql" />
+    <Build Include="dbo\Stored Procedures\Layer_SaveZone.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_DeleteEarthwatcher.sql" />
+    <Build Include="dbo\Stored Procedures\Land_ReassignLand.sql" />
+    <Build Include="dbo\Stored Procedures\Land_MassiveReassign_sql.sql" />
+    <Build Include="dbo\Stored Procedures\Land_AssignLandToEarthwatcher.sql" />
+    <Build Include="dbo\Stored Procedures\Land_GetLandsCSV.sql" />
+    <Build Include="dbo\Stored Procedures\Land_UnassignLand.sql" />
+    <Build Include="dbo\Stored Procedures\Layer_GetZones.sql" />
+    <Build Include="dbo\Stored Procedures\Collections_GetTotalItems.sql" />
+    <Build Include="dbo\Stored Procedures\Collections_GetNewCollectionItem.sql" />
+    <Build Include="dbo\Stored Procedures\Lands_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Collections_GetCollectionItemsByEarthwatcher.sql" />
+    <Build Include="dbo\Stored Procedures\Layer_GetPolygons.sql" />
+    <Build Include="dbo\Stored Procedures\Layer_SavePolygon.sql" />
+    <Build Include="dbo\Stored Procedures\Layer_SaveLocation.sql" />
+    <Build Include="dbo\Stored Procedures\Layer_GetLocations.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_GetFreeLand.sql" />
+    <Build Include="dbo\Stored Procedures\Contest_Delete.sql" />
+    <Build Include="dbo\User Defined Types\LandsType.sql" />
+    <Build Include="dbo\User Defined Types\ReassignType.sql" />
+    <Build Include="dbo\Stored Procedures\ReCalculate_LandDistanceFromBasecampId.sql" />
+    <Build Include="dbo\Stored Procedures\Lands_ForceLandsReset.sql" />
+    <Build Include="dbo\User Defined Types\LandsCreateType.sql" />
+    <Build Include="dbo\Stored Procedures\Update_LandBasecamp.sql" />
+    <Build Include="dbo\Stored Procedures\Zone_Delete.sql" />
+    <Build Include="dbo\Tables\PetitionSigned.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_SavePetition.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_HasSigned.sql" />
+    <Build Include="dbo\Stored Procedures\Land_ReassignLandByEarthwatcherId.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_GetFreeLandByEarthwatcherId.sql" />
+    <Build Include="dbo\Stored Procedures\StatisticQuery_UnicLogin.sql" />
+    <Build Include="dbo\Tables\ApiEwLogin.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_LinkApiAndEarthwatcher.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_GetApiEw.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_CreateApiEwLogin.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_UpdateAccessToken.sql" />
+    <Build Include="dbo\Stored Procedures\Earthwatcher_GetApiEwById.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Earthwatchers.Database.refactorlog" />
+  </ItemGroup>
+</Project>

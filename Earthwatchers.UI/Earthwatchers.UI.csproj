@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{090678FC-58DF-4363-8E8C-6622023281BC}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Earthwatchers.UI</RootNamespace>
+    <AssemblyName>Earthwatchers.UI</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+      en-US;es-AR
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Earthwatchers.UI.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Earthwatchers.UI.App</SilverlightAppEntry>
+    <TestPageFileName>Earthwatchers.UITestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BruTile">
+      <HintPath>Libs\BruTile.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools">
+      <HintPath>Libs\ImageTools.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools.IO.Gif">
+      <HintPath>Libs\ImageTools.IO.Gif.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools.IO.Jpeg">
+      <HintPath>Libs\ImageTools.IO.Jpeg.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client">
+      <HintPath>Libs\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>Libs\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>Libs\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Silverlight">
+      <HintPath>Libs\Microsoft.Threading.Tasks.Extensions.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp.Silverlight, Version=104.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RestSharp.104.1\lib\sl4\RestSharp.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime">
+      <HintPath>Libs\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>Libs\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core">
+      <HintPath>$(TargetFrameworkDirectory)System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Navigation, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ArcGISImageServiceSample.cs" />
+    <Compile Include="ArcGISImageService\ArcGISImageServiceInfo.cs" />
+    <Compile Include="ArcGISImageService\ArcGISImageServiceProvider.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Current.cs" />
+    <Compile Include="Extensions\Converters.cs" />
+    <Compile Include="Extensions\CustomEventArgs.cs" />
+    <Compile Include="Extensions\StyleExtensions.cs" />
+    <Compile Include="GUI\3D.xaml.cs">
+      <DependentUpon>3D.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\AlertedLandControl.xaml.cs">
+      <DependentUpon>AlertedLandControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\AlertedLandOverview.xaml.cs">
+      <DependentUpon>AlertedLandOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\BaseLayerControl.xaml.cs">
+      <DependentUpon>BaseLayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\Comments\CommentScreen.xaml.cs">
+      <DependentUpon>CommentScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\Collections.xaml.cs">
+      <DependentUpon>Collections.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\ArgentineLawLayerLegend.xaml.cs">
+      <DependentUpon>ArgentineLawLayerLegend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\CompleteStats.xaml.cs">
+      <DependentUpon>CompleteStats.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\ContestWinner.xaml.cs">
+      <DependentUpon>ContestWinner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\DemandWindow.xaml.cs">
+      <DependentUpon>DemandWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\ForestLawLegend.xaml.cs">
+      <DependentUpon>ForestLawLegend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\HexagonInfo.xaml.cs">
+      <DependentUpon>HexagonInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\Image2008Warning.xaml.cs">
+      <DependentUpon>Image2008Warning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\DailySummary.xaml.cs">
+      <DependentUpon>DailySummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\PopupMessage.xaml.cs">
+      <DependentUpon>PopupMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\TutorialMenuWin.xaml.cs">
+      <DependentUpon>TutorialMenuWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\FindTheJaguarCongrats.xaml.cs">
+      <DependentUpon>FindTheJaguarCongrats.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\FindTheJaguarFound.xaml.cs">
+      <DependentUpon>FindTheJaguarFound.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\FindTheJaguar.xaml.cs">
+      <DependentUpon>FindTheJaguar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\Stats.xaml.cs">
+      <DependentUpon>Stats.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\TutorialGame2Window.xaml.cs">
+      <DependentUpon>TutorialGame2Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\PollsWindow.xaml.cs">
+      <DependentUpon>PollsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\LandActivity.xaml.cs">
+      <DependentUpon>LandActivity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\TimeLineControl.xaml.cs">
+      <DependentUpon>TimeLineControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\LayerControlOnOff.xaml.cs">
+      <DependentUpon>LayerControlOnOff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\NotificationsWindow.xaml.cs">
+      <DependentUpon>NotificationsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\UserPanel.xaml.cs">
+      <DependentUpon>UserPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\WelcomeWindow.xaml.cs">
+      <DependentUpon>WelcomeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\DataPartners.xaml.cs">
+      <DependentUpon>DataPartners.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\EducationalLayerControl.xaml.cs">
+      <DependentUpon>EducationalLayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\Flag.xaml.cs">
+      <DependentUpon>Flag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\FlagInfoWindow.xaml.cs">
+      <DependentUpon>FlagInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\LatestAlertedAreas.xaml.cs">
+      <DependentUpon>LatestAlertedAreas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\LayerControl.xaml.cs">
+      <DependentUpon>LayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\NewsControl.xaml.cs">
+      <DependentUpon>NewsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\NewsOverview.xaml.cs">
+      <DependentUpon>NewsOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\PublishMap.xaml.cs">
+      <DependentUpon>PublishMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\Ranking.xaml.cs">
+      <DependentUpon>Ranking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\ReportWindow.xaml.cs">
+      <DependentUpon>ReportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\TiledBackground.cs" />
+    <Compile Include="GUI\Controls\TutorialGameWindow.xaml.cs">
+      <DependentUpon>TutorialGameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\TutorialMenuWindow.xaml.cs">
+      <DependentUpon>TutorialMenuWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\WarningScreen.xaml.cs">
+      <DependentUpon>WarningScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JsonSerializer.cs" />
+    <Compile Include="Layers\AlertedLandLayer.cs" />
+    <Compile Include="Layers\ArcGisTileSource.cs" />
+    <Compile Include="Layers\ArgentineLawLayer.cs" />
+    <Compile Include="Layers\BasecampLayer.cs" />
+    <Compile Include="Layers\BaseTileLayer.cs" />
+    <Compile Include="Layers\FincasNameLayer.cs" />
+    <Compile Include="Layers\HexagonLayer.cs" />
+    <Compile Include="Layers\JaguarLayer.cs" />
+    <Compile Include="Layers\TestLayer.cs" />
+    <Compile Include="Layers\LandDemandLayer.cs" />
+    <Compile Include="Layers\DfaTileSource.cs" />
+    <Compile Include="Layers\EducationalLayer.cs" />
+    <Compile Include="Layers\EsriWorldSchema.cs" />
+    <Compile Include="Layers\FlagLayer.cs" />
+    <Compile Include="Layers\LayerHelper.cs" />
+    <Compile Include="Layers\LayerInitialization.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MapHelper.cs" />
+    <Compile Include="PermalinkHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\AuthenticationRequest.cs" />
+    <Compile Include="Requests\CommentRequests.cs" />
+    <Compile Include="Requests\CollectionRequests.cs" />
+    <Compile Include="Requests\ContestRequests.cs" />
+    <Compile Include="Requests\PopupMessageRequests.cs" />
+    <Compile Include="Requests\EarthwatcherRequests.cs" />
+    <Compile Include="Requests\EarthwatchersRestClient.cs" />
+    <Compile Include="Requests\FlagRequests.cs" />
+    <Compile Include="Requests\ImageRequests.cs" />
+    <Compile Include="Requests\JaguarRequests.cs" />
+    <Compile Include="Requests\LandRequests.cs" />
+    <Compile Include="Requests\LayerRequests.cs" />
+    <Compile Include="Requests\NewsRequests.cs" />
+    <Compile Include="Requests\OpengeocoderRequests.cs" />
+    <Compile Include="Requests\RequestsHelper.cs" />
+    <Compile Include="Requests\ScoreRequests.cs" />
+    <Compile Include="Resources\Labels.Designer.cs">
+      <DependentUpon>Labels.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ResourceHelper.cs" />
+    <Compile Include="SignalRClient.cs" />
+    <Compile Include="Startup.xaml.cs">
+      <DependentUpon>Startup.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Assets\CoreStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\3D.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\AlertedLandControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\AlertedLandOverview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\BaseLayerControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\Comments\CommentScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\Collections.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\ArgentineLawLayerLegend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\CompleteStats.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\ContestWinner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\DemandWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\ForestLawLegend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\HexagonInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\Image2008Warning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\DailySummary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\PopupMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\TutorialMenuWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\FindTheJaguarCongrats.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\FindTheJaguarFound.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\FindTheJaguar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\Stats.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\TutorialGame2Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\PollsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\LandActivity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\TimeLineControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\LayerControlOnOff.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\NotificationsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\UserPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\WelcomeWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\DataPartners.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\EducationalLayerControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\Flag.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\FlagInfoWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\LatestAlertedAreas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\LayerControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\NewsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\NewsOverview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\PublishMap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\Ranking.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\ReportWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\TutorialGameWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\TutorialMenuWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\WarningScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Startup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <Resource Include="Resources\MyriadPro-Bold.otf" />
+    <Resource Include="Resources\MyriadPro-Regular.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Earthwatchers.MapControl\Earthwatchers.MapControl.csproj">
+      <Project>{a2f0ac1c-02eb-457e-a362-2b8df75f0795}</Project>
+      <Name>Earthwatchers.MapControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Earthwatchers.Models.Portable\Earthwatchers.Models.csproj">
+      <Project>{cdf3793e-d16b-4368-9b7b-dd61be2eea53}</Project>
+      <Name>Earthwatchers.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mapsui\Mapsui.Rendering.XamlRendering-SL\Mapsui.Rendering.XamlRendering-SL\Mapsui.Rendering.XamlRendering-SL.csproj">
+      <Project>{74a0bdf2-e6af-4bab-aa7e-73e68936f1f2}</Project>
+      <Name>Mapsui.Rendering.XamlRendering-SL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mapsui\Mapsui\Mapsui.csproj">
+      <Project>{d74c052a-c07e-4b37-a898-134218aca5c9}</Project>
+      <Name>Mapsui</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\02.mp3" />
+    <Resource Include="Resources\Images\add.png" />
+    <Resource Include="Resources\Images\aerial.png" />
+    <Resource Include="Resources\Images\backgroundshadow.png" />
+    <Resource Include="Resources\Images\backgroundtexture.png" />
+    <Resource Include="Resources\Images\badge.png" />
+    <Resource Include="Resources\Images\bing.png" />
+    <Resource Include="Resources\Images\bingHybrid.jpg" />
+    <Resource Include="Resources\Images\bingStreet.jpg" />
+    <Resource Include="Resources\Images\Bing_Logo.jpg" />
+    <Resource Include="Resources\Images\close.png" />
+    <Resource Include="Resources\Images\comments.png" />
+    <Resource Include="Resources\Images\confirm.png" />
+    <Resource Include="Resources\Images\deconfirm.png" />
+    <Resource Include="Resources\Images\delete.png" />
+    <Resource Include="Resources\Images\deletew.png" />
+    <Resource Include="Resources\Images\demandar2.png" />
+    <Resource Include="Resources\Images\down.png" />
+    <Resource Include="Resources\Images\esriLogo.png" />
+    <Resource Include="Resources\Images\facebook2.png" />
+    <Resource Include="Resources\Images\fb.png" />
+    <Resource Include="Resources\Images\flag_no_shadow.png" />
+    <Resource Include="Resources\Images\flag_out.png" />
+    <Resource Include="Resources\Images\flag_shadow.png" />
+    <Resource Include="Resources\Images\flag_shadow_red.png" />
+    <Resource Include="Resources\Images\forest_and_peat.png" />
+    <Resource Include="Resources\Images\fullscreen.png" />
+    <Resource Include="Resources\Images\geodan.png" />
+    <Resource Include="Resources\Images\geoeye.png" />
+    <Resource Include="Resources\Images\hexagonos_mini.png" />
+    <Resource Include="Resources\Images\hexagon_legend.png" />
+    <Resource Include="Resources\Images\intermap.png" />
+    <Resource Include="Resources\Images\juego1-1.png" />
+    <Resource Include="Resources\Images\juego1-2.png" />
+    <Resource Include="Resources\Images\juego2-1.png" />
+    <Resource Include="Resources\Images\juego2-2.png" />
+    <Resource Include="Resources\Images\juego3-1.png" />
+    <Resource Include="Resources\Images\juego3-2.png" />
+    <Resource Include="Resources\Images\layers.png" />
+    <Resource Include="Resources\Images\logogp.png" />
+    <Resource Include="Resources\Images\maps.png" />
+    <Resource Include="Resources\Images\marker.png" />
+    <Resource Include="Resources\Images\maxextend.png" />
+    <Resource Include="Resources\Images\ok.png" />
+    <Resource Include="Resources\Images\osm.png" />
+    <Resource Include="Resources\Images\palmrubber.png" />
+    <Resource Include="Resources\Images\pan_down.png" />
+    <Resource Include="Resources\Images\pan_left.png" />
+    <Resource Include="Resources\Images\pan_right.png" />
+    <Resource Include="Resources\Images\pan_up.png" />
+    <Resource Include="Resources\Images\parcelaalert.png" />
+    <Resource Include="Resources\Images\parcelaok.png" />
+    <Resource Include="Resources\Images\piln_logo_transparent_inverted.png" />
+    <Resource Include="Resources\Images\publishmap.png" />
+    <Resource Include="Resources\Images\questionmark.png" />
+    <Resource Include="Resources\Images\reportar.png" />
+    <Resource Include="Resources\Images\reshuffle.png" />
+    <Resource Include="Resources\Images\revisar.png" />
+    <Resource Include="Resources\Images\ruler.png" />
+    <Resource Include="Resources\Images\search.png" />
+    <Resource Include="Resources\Images\tree_off.png" />
+    <Resource Include="Resources\Images\tree_on.png" />
+    <Resource Include="Resources\Images\twitter.png" />
+    <Resource Include="Resources\Images\twitter2.png" />
+    <Resource Include="Resources\Images\up.png" />
+    <Resource Include="Resources\Images\user-active.png" />
+    <Resource Include="Resources\Images\user.png" />
+    <Resource Include="Resources\Images\warning.png" />
+    <Resource Include="Resources\Images\world_imagery.png" />
+    <Resource Include="Resources\Images\zoomin.png" />
+    <Resource Include="Resources\Images\zoomout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logogp_mini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\welcome1.jpg" />
+    <Resource Include="Resources\Images\welcome2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\parcelaokw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\welcomepopup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\w3_step1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\w3_step21.png" />
+    <Resource Include="Resources\Images\w3_step22.png" />
+    <Resource Include="Resources\Images\w3_step23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\w3_step41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\demandar_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Labels.en-US.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Labels.es-AR.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Labels.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Labels.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\badgej.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\demandaricon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\confirm_off.png" />
+    <Resource Include="Resources\Images\deconfirm_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logogp_eng.png" />
+    <Resource Include="Resources\Images\logogp_mini_eng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\completo_aerea.jpg" />
+    <Resource Include="Resources\Images\completo_satelital.jpg" />
+    <Resource Include="Resources\Images\desmonte_aerea.jpg" />
+    <Resource Include="Resources\Images\desmonte_satelital.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\edituser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\edituser2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Collections\10.png" />
+    <Resource Include="Resources\Images\Collections\11.png" />
+    <Resource Include="Resources\Images\Collections\12.png" />
+    <Resource Include="Resources\Images\Collections\13.png" />
+    <Resource Include="Resources\Images\Collections\14.png" />
+    <Resource Include="Resources\Images\Collections\15.png" />
+    <Resource Include="Resources\Images\Collections\16.png" />
+    <Resource Include="Resources\Images\Collections\17.png" />
+    <Resource Include="Resources\Images\Collections\18.png" />
+    <Resource Include="Resources\Images\Collections\19.png" />
+    <Resource Include="Resources\Images\Collections\2.png" />
+    <Resource Include="Resources\Images\Collections\20.png" />
+    <Resource Include="Resources\Images\Collections\21.png" />
+    <Resource Include="Resources\Images\Collections\22.png" />
+    <Resource Include="Resources\Images\Collections\23.png" />
+    <Resource Include="Resources\Images\Collections\24.png" />
+    <Resource Include="Resources\Images\Collections\25.png" />
+    <Resource Include="Resources\Images\Collections\3.png" />
+    <Resource Include="Resources\Images\Collections\4.png" />
+    <Resource Include="Resources\Images\Collections\5.png" />
+    <Resource Include="Resources\Images\Collections\6.png" />
+    <Resource Include="Resources\Images\Collections\7.png" />
+    <Resource Include="Resources\Images\Collections\8.png" />
+    <Resource Include="Resources\Images\Collections\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Collections\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tada.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\bonus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\stats.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\jaguar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\jaguar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\jaguarBorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\hexagono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\jaguar-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\binoculars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\jaguarbadge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\2013_right.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\2008_wrong3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\trophy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\trophy_gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\demandaricon_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libs\BruTile.dll" />
+    <Content Include="Libs\ImageTools.dll" />
+    <Content Include="Libs\ImageTools.IO.Gif.dll" />
+    <Content Include="Libs\ImageTools.IO.Jpeg.dll" />
+    <Content Include="Libs\Microsoft.AspNet.SignalR.Client.dll" />
+    <Content Include="Libs\Microsoft.Threading.Tasks.dll" />
+    <Content Include="Libs\Microsoft.Threading.Tasks.Extensions.dll" />
+    <Content Include="Libs\Microsoft.Threading.Tasks.Extensions.Silverlight.dll" />
+    <!--<Content Include="Libs\Newtonsoft.Json.dll" />-->
+    <Content Include="Libs\System.Runtime.dll" />
+    <Content Include="Libs\System.Threading.Tasks.dll" />
+    <Resource Include="Resources\Images\FincasName\60_1.png" />
+    <Resource Include="Resources\Images\FincasName\60_2.png" />
+    <Resource Include="Resources\Images\FincasName\61_1.png" />
+    <Resource Include="Resources\Images\FincasName\61_2.png" />
+    <Resource Include="Resources\Images\FincasName\62_1.png" />
+    <Resource Include="Resources\Images\FincasName\62_2.png" />
+    <Resource Include="Resources\Images\demandar.png" />
+    <Resource Include="Resources\Images\demandarShare.png" />
+    <Resource Include="Resources\Images\FincasName\59_1.png" />
+    <Resource Include="Resources\Images\FincasName\59_2.png" />
+    <Resource Include="Resources\Images\FincasName\46_1.png" />
+    <Resource Include="Resources\Images\FincasName\46_2.png" />
+    <Resource Include="Resources\Images\FincasName\47_1.png" />
+    <Resource Include="Resources\Images\FincasName\47_2.png" />
+    <Resource Include="Resources\Images\FincasName\48_1.png" />
+    <Resource Include="Resources\Images\FincasName\48_2.png" />
+    <Resource Include="Resources\Images\FincasName\49_1.png" />
+    <Resource Include="Resources\Images\FincasName\49_2.png" />
+    <Resource Include="Resources\Images\FincasName\50_1.png" />
+    <Resource Include="Resources\Images\FincasName\50_2.png" />
+    <Resource Include="Resources\Images\FincasName\51_1.png" />
+    <Resource Include="Resources\Images\FincasName\51_2.png" />
+    <Resource Include="Resources\Images\FincasName\52_1.png" />
+    <Resource Include="Resources\Images\FincasName\52_2.png" />
+    <Resource Include="Resources\Images\FincasName\53_1.png" />
+    <Resource Include="Resources\Images\FincasName\53_2.png" />
+    <Resource Include="Resources\Images\FincasName\54_1.png" />
+    <Resource Include="Resources\Images\FincasName\54_2.png" />
+    <Resource Include="Resources\Images\FincasName\55_1.png" />
+    <Resource Include="Resources\Images\FincasName\55_2.png" />
+    <Resource Include="Resources\Images\FincasName\56_1.png" />
+    <Resource Include="Resources\Images\FincasName\56_2.png" />
+    <Resource Include="Resources\Images\FincasName\57_1.png" />
+    <Resource Include="Resources\Images\FincasName\57_2.png" />
+    <Resource Include="Resources\Images\FincasName\58_1.png" />
+    <Resource Include="Resources\Images\FincasName\58_2.png" />
+    <Resource Include="Resources\Images\FincasName\42_1.png" />
+    <Resource Include="Resources\Images\FincasName\42_2.png" />
+    <Resource Include="Resources\Images\FincasName\37_1.png" />
+    <Resource Include="Resources\Images\FincasName\37_2.png" />
+    <Resource Include="Resources\Images\FincasName\41_1.png" />
+    <Resource Include="Resources\Images\FincasName\41_2.png" />
+    <Resource Include="Resources\Images\FincasName\43_1.png" />
+    <Resource Include="Resources\Images\FincasName\43_2.png" />
+    <Resource Include="Resources\Images\FincasName\44_1.png" />
+    <Resource Include="Resources\Images\FincasName\44_2.png" />
+    <Resource Include="Resources\Images\FincasName\45_1.png" />
+    <Resource Include="Resources\Images\FincasName\45_2.png" />
+    <Resource Include="Resources\Images\FincasName\36_2.png" />
+    <Resource Include="Resources\Images\FincasName\36_1.png" />
+    <Resource Include="Resources\Images\FincasName\40_1.png" />
+    <Resource Include="Resources\Images\FincasName\40_2.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+</Project>

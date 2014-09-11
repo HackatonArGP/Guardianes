@@ -1,0 +1,599 @@
+﻿<controls:ChildWindow xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+        x:Class="Earthwatchers.UI.GUI.Controls.UserPanel"
+        xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+        xmlns:ext="clr-namespace:Earthwatchers.UI.Extensions" xmlns:loaders="clr-namespace:Earthwatchers.UI.GUI.Loaders"
+        Width="600" Padding="0" Height="390" Style="{StaticResource GPChildWindow}" Title="GUARDIANES - USER PANEL">
+    <Grid x:Name="MainGrid">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Color="White" Offset="0.9"></GradientStop>
+                <GradientStop Color="#FFe0e0e0" Offset="1"></GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border Height="70" VerticalAlignment="Top" CornerRadius="8,8,0,0" BorderThickness="1" BorderBrush="#FF95a92c">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="0.8">
+                    <GradientStop Color="#FF849b0c" Offset="0" />
+                    <GradientStop Color="#FF9fba0e" Offset="0.5" />
+                    <GradientStop Color="#FF849b0c" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="28" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="0,5,0,0" VerticalAlignment="Center"
+                        Grid.ColumnSpan="2">
+                    <Image Source="../../Resources/Images/user.png" Margin="10,2,0,0" HorizontalAlignment="Left"
+                            Stretch="None" />
+                    <TextBlock x:Name="txtName" Text="{Binding FullName}" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" FontWeight="Bold" Margin="10,0,10,0" FontSize="11"
+                            LineHeight="12" LineStackingStrategy="BlockLineHeight" TextWrapping="Wrap"
+                            Foreground="White" />
+                    <Image Source="../../Resources/Images/badge.png" x:Name="badgeIcon" Margin="4,2,0,0" Stretch="None"
+                            VerticalAlignment="Center" />
+                    <Image Source="../../Resources/Images/jaguarbadge.png" x:Name="jaguarbadge" Margin="4,2,0,0"
+                            Stretch="None" VerticalAlignment="Center" Visibility="Collapsed" />
+                    <Image Source="../../Resources/Images/trophy.png" x:Name="ContestWinnerBadge" Visibility="Collapsed"
+                            Margin="4,2,0,0" Stretch="None" VerticalAlignment="Center"
+                            ToolTipService.ToolTip="Has ganado un concurso" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" Grid.Column="1"
+                        Margin="50,0,0,0">
+                    <TextBlock x:Name="Title" Text="{Binding Path=UserPanel1, Source={StaticResource Labels}}"
+                            VerticalAlignment="Center" FontSize="18" Foreground="#FF333333" FontFamily="Arial"
+                            FontWeight="Bold" Margin="0,5,0,0" />
+                    <Image Source="../../Resources/Images/edituser.png" Margin="8,2,0,0" Stretch="None"
+                            VerticalAlignment="Center" />
+                </StackPanel>
+
+                <Button x:Name="CloseButton" Click="BtnCloseClick" Grid.Column="2" HorizontalAlignment="Center"
+                        IsTabStop="False" Style="{StaticResource OpacityButton}" Width="24" Margin="5,7,0,0"
+                        VerticalAlignment="Top">
+                    <Path Data="M0,0 L1,1 M0,1 L1,0" Stretch="Fill" Stroke="#404040" StrokeThickness="2" Width="10"
+                            Height="10" Effect="{StaticResource ControlTextEffect}" />
+                </Button>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="#FF8b8b8b" BorderThickness="1" Background="#FFb6b6b6" Width="140"
+                    HorizontalAlignment="Left" CornerRadius="0,0,0,8">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Border BorderThickness="0,0,0,1" BorderBrush="#FF8b8b8b"
+                            MouseLeftButtonDown="Border_MouseLeftButtonDown" Cursor="Hand" Tag="ChangePassword">
+                        <TextBlock FontSize="13" Text="{Binding UserPanel2, Source={StaticResource Labels}}"
+                                TextWrapping="Wrap" FontWeight="Bold" Margin="15,10,31,10" />
+                    </Border>
+                    <Border Grid.Row="1" BorderThickness="0,0,0,1" BorderBrush="#FF8b8b8b"
+                            MouseLeftButtonDown="Border_MouseLeftButtonDown" Cursor="Hand" Tag="ChangeRegional">
+                        <TextBlock FontSize="13" Text="{Binding UserPanel3, Source={StaticResource Labels}}"
+                                TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Left" Margin="15,10,10,10" />
+                    </Border>
+                    <Border Grid.Row="2" BorderThickness="0,0,0,1" BorderBrush="#FF8b8b8b"
+                            MouseLeftButtonDown="Border_MouseLeftButtonDown" Cursor="Hand" Tag="Collections">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontSize="13" Text="{Binding UserPanel17, Source={StaticResource Labels}}"
+                                    TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Left"
+                                    Margin="15,10,10,10" />
+                            <Image Source="../../Resources/Images/Lock.png" x:Name="CollectionsLock"
+                                    Visibility="Visible" Margin="0,5,0,7" Width="12" />
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="3" BorderThickness="0,0,0,1" BorderBrush="#FF8b8b8b"
+                            MouseLeftButtonDown="Border_MouseLeftButtonDown" Cursor="Hand" Tag="Jaguar" Height="40"
+                            VerticalAlignment="Top">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontSize="13" Text="Jaguar" TextWrapping="Wrap" FontWeight="Bold"
+                                    HorizontalAlignment="Left" Margin="15,10,10,10" />
+                            <Image Source="../../Resources/Images/Lock.png" x:Name="JaguarLock" Visibility="Visible"
+                                    Margin="0,5,0,7" Width="12" />
+                        </StackPanel>
+                    </Border>
+
+                </Grid>
+            </Border>
+            <Path Data="M 0,0 10,10 0,20 Z" Width="10" Height="20" Stroke="#FF8b8b8b" Fill="#FFb6b6b6"
+                    StrokeThickness="0" Margin="138,0,0,0" VerticalAlignment="Top" Stretch="Uniform">
+                <Path.RenderTransform>
+                    <TranslateTransform x:Name="SelectedTabArrow" Y="245" />
+                </Path.RenderTransform>
+            </Path>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid x:Name="ChangePasswordGrid" Visibility="Visible" Margin="60,30,30,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock FontSize="13" Grid.ColumnSpan="2"
+                            Text="{Binding Path=UserPanel5, Source={StaticResource Labels}}" Foreground="#FF9db80e"
+                            TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Left" />
+                    <TextBlock Text="{Binding Path=UserPanel6, Source={StaticResource Labels}}" Grid.Row="1"
+                            Foreground="#FF333333" VerticalAlignment="Center" Margin="0,15,5,0" TextWrapping="Wrap"
+                            HorizontalAlignment="Right" LineHeight="14" LineStackingStrategy="BlockLineHeight" />
+                    <PasswordBox x:Name="CurrentPassword" Grid.Row="1" Grid.Column="1" MaxLength="20" FontSize="13"
+                            Margin="0,15,20,0" BorderBrush="#FFd2d2d2" BorderThickness="2" Foreground="#FF333333"
+                            VerticalAlignment="Center">
+                        <PasswordBox.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#FFe7e7e7" Offset="0" />
+                                <GradientStop Color="#FFFFFFFF" Offset="1" />
+                            </LinearGradientBrush>
+                        </PasswordBox.Background>
+                    </PasswordBox>
+                    <TextBlock Text="{Binding Path=UserPanel7, Source={StaticResource Labels}}" Grid.Row="2"
+                            Foreground="#FF333333" VerticalAlignment="Center" Margin="0,15,5,0" TextWrapping="Wrap"
+                            HorizontalAlignment="Right" LineHeight="14" LineStackingStrategy="BlockLineHeight" />
+
+                    <PasswordBox x:Name="NewPassword" Grid.Row="2" Grid.Column="1" MaxLength="20" FontSize="13"
+                            Margin="0,15,20,0" BorderBrush="#FFd2d2d2" BorderThickness="2" Foreground="#FF333333"
+                            VerticalAlignment="Center">
+                        <PasswordBox.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#FFe7e7e7" Offset="0" />
+                                <GradientStop Color="#FFFFFFFF" Offset="1" />
+                            </LinearGradientBrush>
+                        </PasswordBox.Background>
+                    </PasswordBox>
+
+                    <TextBlock Text="{Binding Path=UserPanel8, Source={StaticResource Labels}}" Grid.Row="3"
+                            Foreground="#FF333333" VerticalAlignment="Center" Margin="0,15,5,0" TextWrapping="Wrap"
+                            HorizontalAlignment="Right" LineHeight="14" LineStackingStrategy="BlockLineHeight" />
+                    <PasswordBox x:Name="NewPassword2" Grid.Row="3" Grid.Column="1" MaxLength="20" FontSize="13"
+                            Margin="0,15,20,0" BorderBrush="#FFd2d2d2" BorderThickness="2" Foreground="#FF333333"
+                            VerticalAlignment="Center">
+                        <PasswordBox.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#FFe7e7e7" Offset="0" />
+                                <GradientStop Color="#FFFFFFFF" Offset="1" />
+                            </LinearGradientBrush>
+                        </PasswordBox.Background>
+                    </PasswordBox>
+                </Grid>
+
+                <Grid x:Name="ChangeLanguageGrid" Visibility="Collapsed" Margin="60,30,30,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock FontSize="13" Grid.ColumnSpan="2"
+                            Text="{Binding Path=UserPanel4, Source={StaticResource Labels}}" Foreground="#FF9db80e"
+                            TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Left" />
+
+                    <TextBlock Text="{Binding Path=UserPanel16, Source={StaticResource Labels}}" Grid.Row="2"
+                            Foreground="#FF333333" VerticalAlignment="Center" Margin="0,15,5,0" TextWrapping="Wrap"
+                            HorizontalAlignment="Right" LineHeight="14" LineStackingStrategy="BlockLineHeight" />
+
+                    <TextBox x:Name="NickNameTextBox" Text="{Binding NickName, Mode=TwoWay}" MaxLength="20" Grid.Row="2"
+                            Grid.Column="1" FontSize="13" Margin="0,15,20,0" BorderBrush="#FFd2d2d2" BorderThickness="2"
+                            Foreground="#FF333333" VerticalAlignment="Center">
+                        <TextBox.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#FFe7e7e7" Offset="0" />
+                                <GradientStop Color="#FFFFFFFF" Offset="1" />
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+                    <!--PARA CAMBIAR EL MAIL-->
+                    <TextBlock Text="{Binding Path=UserPanel32, Source={StaticResource Labels}}" Grid.Row="1"
+                            Foreground="#FF333333" VerticalAlignment="Center" Margin="0,15,5,0" TextWrapping="Wrap"
+                            HorizontalAlignment="Right" LineHeight="14" LineStackingStrategy="BlockLineHeight" />
+
+                    <TextBox x:Name="MailTextBox" Text="{Binding Name, Mode=TwoWay}" MaxLength="40" Grid.Row="1"
+                            Grid.Column="1" FontSize="13" Margin="0,15,20,0" BorderBrush="#FFd2d2d2" BorderThickness="2"
+                            Foreground="#FF333333" VerticalAlignment="Center">
+                        <TextBox.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#FFe7e7e7" Offset="0" />
+                                <GradientStop Color="#FFFFFFFF" Offset="1" />
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <TextBlock Text="{Binding Path=UserPanel12, Source={StaticResource Labels}}" Grid.Row="3"
+                            Foreground="#FF333333" VerticalAlignment="Center" Margin="0,15,5,0" TextWrapping="Wrap"
+                            HorizontalAlignment="Right" LineHeight="14" LineStackingStrategy="BlockLineHeight" />
+                    <ComboBox x:Name="LanguagesCombo" Grid.Column="1" Grid.Row="3" Margin="0,15,20,0"
+                            DisplayMemberPath="LocalizedName" SelectedValuePath="Name"
+                            SelectedValue="{Binding Path=Language, Mode=TwoWay}" />
+                    <TextBlock Text="{Binding Path=UserPanel13, Source={StaticResource Labels}}" Grid.Row="4"
+                            Foreground="#FF333333" VerticalAlignment="Center" Margin="0,15,5,0" TextWrapping="Wrap"
+                            HorizontalAlignment="Right" LineHeight="14" LineStackingStrategy="BlockLineHeight" />
+                    <ComboBox Grid.Column="1" Grid.Row="4" Margin="0,15,20,0"
+                            SelectedValue="{Binding Path=Country, Mode=TwoWay}" SelectedValuePath="Content">
+                        <ComboBoxItem Content="Afganistán" />
+                        <ComboBoxItem Content="Albania" />
+                        <ComboBoxItem Content="Alemania" />
+                        <ComboBoxItem Content="Andorra" />
+                        <ComboBoxItem Content="Angola" />
+                        <ComboBoxItem Content="Anguilla" />
+                        <ComboBoxItem Content="Antártida" />
+                        <ComboBoxItem Content="Antigua y Barbuda" />
+                        <ComboBoxItem Content="Antillas Holandesas" />
+                        <ComboBoxItem Content="Arabia Saudí" />
+                        <ComboBoxItem Content="Argelia" />
+                        <ComboBoxItem Content="Argentina" />
+                        <ComboBoxItem Content="Armenia" />
+                        <ComboBoxItem Content="Aruba" />
+                        <ComboBoxItem Content="ARY Macedonia" />
+                        <ComboBoxItem Content="Australia" />
+                        <ComboBoxItem Content="Austria" />
+                        <ComboBoxItem Content="Azerbaiyán" />
+                        <ComboBoxItem Content="Bahamas" />
+                        <ComboBoxItem Content="Bahréin" />
+                        <ComboBoxItem Content="Bangladesh" />
+                        <ComboBoxItem Content="Barbados" />
+                        <ComboBoxItem Content="Bélgica" />
+                        <ComboBoxItem Content="Belice" />
+                        <ComboBoxItem Content="Benin" />
+                        <ComboBoxItem Content="Bermudas" />
+                        <ComboBoxItem Content="Bhután" />
+                        <ComboBoxItem Content="Bielorrusia" />
+                        <ComboBoxItem Content="Bolivia" />
+                        <ComboBoxItem Content="Bosnia y Herzegovina" />
+                        <ComboBoxItem Content="Botsuana" />
+                        <ComboBoxItem Content="Brasil" />
+                        <ComboBoxItem Content="Brunéi" />
+                        <ComboBoxItem Content="Bulgaria" />
+                        <ComboBoxItem Content="Burkina Faso" />
+                        <ComboBoxItem Content="Burundi" />
+                        <ComboBoxItem Content="Cabo Verde" />
+                        <ComboBoxItem Content="Camboya" />
+                        <ComboBoxItem Content="Camerún" />
+                        <ComboBoxItem Content="Canadá" />
+                        <ComboBoxItem Content="Chad" />
+                        <ComboBoxItem Content="Chile" />
+                        <ComboBoxItem Content="China" />
+                        <ComboBoxItem Content="Chipre" />
+                        <ComboBoxItem Content="Ciudad del Vaticano" />
+                        <ComboBoxItem Content="Colombia" />
+                        <ComboBoxItem Content="Comoras" />
+                        <ComboBoxItem Content="Congo" />
+                        <ComboBoxItem Content="Corea del Norte" />
+                        <ComboBoxItem Content="Corea del Sur" />
+                        <ComboBoxItem Content="Costa de Marfil" />
+                        <ComboBoxItem Content="Costa Rica" />
+                        <ComboBoxItem Content="Croacia" />
+                        <ComboBoxItem Content="Cuba" />
+                        <ComboBoxItem Content="Dinamarca" />
+                        <ComboBoxItem Content="Dominica" />
+                        <ComboBoxItem Content="Ecuador" />
+                        <ComboBoxItem Content="Egipto" />
+                        <ComboBoxItem Content="El Salvador" />
+                        <ComboBoxItem Content="Emiratos Árabes Unidos" />
+                        <ComboBoxItem Content="Eritrea" />
+                        <ComboBoxItem Content="Eslovaquia" />
+                        <ComboBoxItem Content="Eslovenia" />
+                        <ComboBoxItem Content="España" />
+                        <ComboBoxItem Content="Estados Unidos" />
+                        <ComboBoxItem Content="Estonia" />
+                        <ComboBoxItem Content="Etiopía" />
+                        <ComboBoxItem Content="Filipinas" />
+                        <ComboBoxItem Content="Finlandia" />
+                        <ComboBoxItem Content="Fiyi" />
+                        <ComboBoxItem Content="Francia" />
+                        <ComboBoxItem Content="Gabón" />
+                        <ComboBoxItem Content="Gambia" />
+                        <ComboBoxItem Content="Georgia" />
+                        <ComboBoxItem Content="Ghana" />
+                        <ComboBoxItem Content="Gibraltar" />
+                        <ComboBoxItem Content="Granada" />
+                        <ComboBoxItem Content="Grecia" />
+                        <ComboBoxItem Content="Groenlandia" />
+                        <ComboBoxItem Content="Guadalupe" />
+                        <ComboBoxItem Content="Guam" />
+                        <ComboBoxItem Content="Guatemala" />
+                        <ComboBoxItem Content="Guayana Francesa" />
+                        <ComboBoxItem Content="Guinea" />
+                        <ComboBoxItem Content="Guinea Ecuatorial" />
+                        <ComboBoxItem Content="Guinea-Bissau" />
+                        <ComboBoxItem Content="Guyana" />
+                        <ComboBoxItem Content="Haití" />
+                        <ComboBoxItem Content="Honduras" />
+                        <ComboBoxItem Content="Hong Kong" />
+                        <ComboBoxItem Content="Hungría" />
+                        <ComboBoxItem Content="India" />
+                        <ComboBoxItem Content="Indonesia" />
+                        <ComboBoxItem Content="Irán" />
+                        <ComboBoxItem Content="Iraq" />
+                        <ComboBoxItem Content="Irlanda" />
+                        <ComboBoxItem Content="Isla Bouvet" />
+                        <ComboBoxItem Content="Isla de Navidad" />
+                        <ComboBoxItem Content="Isla Norfolk" />
+                        <ComboBoxItem Content="Islandia" />
+                        <ComboBoxItem Content="Islas Caimán" />
+                        <ComboBoxItem Content="Islas Cocos" />
+                        <ComboBoxItem Content="Islas Cook" />
+                        <ComboBoxItem Content="Islas Feroe" />
+                        <ComboBoxItem Content="Islas Georgias del Sur y Sandwich del Sur" />
+                        <ComboBoxItem Content="Islas Gland" />
+                        <ComboBoxItem Content="Islas Heard y McDonald" />
+                        <ComboBoxItem Content="Islas Malvinas" />
+                        <ComboBoxItem Content="Islas Marianas del Norte" />
+                        <ComboBoxItem Content="Islas Marshall" />
+                        <ComboBoxItem Content="Islas Pitcairn" />
+                        <ComboBoxItem Content="Islas Salomón" />
+                        <ComboBoxItem Content="Islas Turcas y Caicos" />
+                        <ComboBoxItem Content="Islas ultramarinas de Estados Unidos" />
+                        <ComboBoxItem Content="Islas Vírgenes Británicas" />
+                        <ComboBoxItem Content="Islas Vírgenes de los Estados Unidos" />
+                        <ComboBoxItem Content="Israel" />
+                        <ComboBoxItem Content="Italia" />
+                        <ComboBoxItem Content="Jamaica" />
+                        <ComboBoxItem Content="Japón" />
+                        <ComboBoxItem Content="Jordania" />
+                        <ComboBoxItem Content="Kazajstán" />
+                        <ComboBoxItem Content="Kenia" />
+                        <ComboBoxItem Content="Kirguistán" />
+                        <ComboBoxItem Content="Kiribati" />
+                        <ComboBoxItem Content="Kuwait" />
+                        <ComboBoxItem Content="Laos" />
+                        <ComboBoxItem Content="Lesotho" />
+                        <ComboBoxItem Content="Letonia" />
+                        <ComboBoxItem Content="Líbano" />
+                        <ComboBoxItem Content="Liberia" />
+                        <ComboBoxItem Content="Libia" />
+                        <ComboBoxItem Content="Liechtenstein" />
+                        <ComboBoxItem Content="Lituania" />
+                        <ComboBoxItem Content="Luxemburgo" />
+                        <ComboBoxItem Content="Macao" />
+                        <ComboBoxItem Content="Madagascar" />
+                        <ComboBoxItem Content="Malasia" />
+                        <ComboBoxItem Content="Malawi" />
+                        <ComboBoxItem Content="Maldivas" />
+                        <ComboBoxItem Content="Malí" />
+                        <ComboBoxItem Content="Malta" />
+                        <ComboBoxItem Content="Marruecos" />
+                        <ComboBoxItem Content="Martinica" />
+                        <ComboBoxItem Content="Mauricio" />
+                        <ComboBoxItem Content="Mauritania" />
+                        <ComboBoxItem Content="Mayotte" />
+                        <ComboBoxItem Content="México" />
+                        <ComboBoxItem Content="Micronesia" />
+                        <ComboBoxItem Content="Moldavia" />
+                        <ComboBoxItem Content="Mónaco" />
+                        <ComboBoxItem Content="Mongolia" />
+                        <ComboBoxItem Content="Montserrat" />
+                        <ComboBoxItem Content="Mozambique" />
+                        <ComboBoxItem Content="Myanmar" />
+                        <ComboBoxItem Content="Namibia" />
+                        <ComboBoxItem Content="Nauru" />
+                        <ComboBoxItem Content="Nepal" />
+                        <ComboBoxItem Content="Nicaragua" />
+                        <ComboBoxItem Content="Níger" />
+                        <ComboBoxItem Content="Nigeria" />
+                        <ComboBoxItem Content="Niue" />
+                        <ComboBoxItem Content="Noruega" />
+                        <ComboBoxItem Content="Nueva Caledonia" />
+                        <ComboBoxItem Content="Nueva Zelanda" />
+                        <ComboBoxItem Content="Omán" />
+                        <ComboBoxItem Content="Países Bajos" />
+                        <ComboBoxItem Content="Pakistán" />
+                        <ComboBoxItem Content="Palau" />
+                        <ComboBoxItem Content="Palestina" />
+                        <ComboBoxItem Content="Panamá" />
+                        <ComboBoxItem Content="Papúa Nueva Guinea" />
+                        <ComboBoxItem Content="Paraguay" />
+                        <ComboBoxItem Content="Perú" />
+                        <ComboBoxItem Content="Polinesia Francesa" />
+                        <ComboBoxItem Content="Polonia" />
+                        <ComboBoxItem Content="Portugal" />
+                        <ComboBoxItem Content="Puerto Rico" />
+                        <ComboBoxItem Content="Qatar" />
+                        <ComboBoxItem Content="Reino Unido" />
+                        <ComboBoxItem Content="República Centroafricana" />
+                        <ComboBoxItem Content="República Checa" />
+                        <ComboBoxItem Content="República Democrática del Congo" />
+                        <ComboBoxItem Content="República Dominicana" />
+                        <ComboBoxItem Content="Reunión" />
+                        <ComboBoxItem Content="Ruanda" />
+                        <ComboBoxItem Content="Rumania" />
+                        <ComboBoxItem Content="Rusia" />
+                        <ComboBoxItem Content="Sahara Occidental" />
+                        <ComboBoxItem Content="Samoa" />
+                        <ComboBoxItem Content="Samoa Americana" />
+                        <ComboBoxItem Content="San Cristóbal y Nevis" />
+                        <ComboBoxItem Content="San Marino" />
+                        <ComboBoxItem Content="San Pedro y Miquelón" />
+                        <ComboBoxItem Content="San Vicente y las Granadinas" />
+                        <ComboBoxItem Content="Santa Helena" />
+                        <ComboBoxItem Content="Santa Lucía" />
+                        <ComboBoxItem Content="Santo Tomé y Príncipe" />
+                        <ComboBoxItem Content="Senegal" />
+                        <ComboBoxItem Content="Serbia y Montenegro" />
+                        <ComboBoxItem Content="Seychelles" />
+                        <ComboBoxItem Content="Sierra Leona" />
+                        <ComboBoxItem Content="Singapur" />
+                        <ComboBoxItem Content="Siria" />
+                        <ComboBoxItem Content="Somalia" />
+                        <ComboBoxItem Content="Sri Lanka" />
+                        <ComboBoxItem Content="Suazilandia" />
+                        <ComboBoxItem Content="Sudáfrica" />
+                        <ComboBoxItem Content="Sudán" />
+                        <ComboBoxItem Content="Suecia" />
+                        <ComboBoxItem Content="Suiza" />
+                        <ComboBoxItem Content="Surinam" />
+                        <ComboBoxItem Content="Svalbard y Jan Mayen" />
+                        <ComboBoxItem Content="Tailandia" />
+                        <ComboBoxItem Content="Taiwán" />
+                        <ComboBoxItem Content="Tanzania" />
+                        <ComboBoxItem Content="Tayikistán" />
+                        <ComboBoxItem Content="Territorio Británico del Océano Índico" />
+                        <ComboBoxItem Content="Territorios Australes Franceses" />
+                        <ComboBoxItem Content="Timor Oriental" />
+                        <ComboBoxItem Content="Togo" />
+                        <ComboBoxItem Content="Tokelau" />
+                        <ComboBoxItem Content="Tonga" />
+                        <ComboBoxItem Content="Trinidad y Tobago" />
+                        <ComboBoxItem Content="Túnez" />
+                        <ComboBoxItem Content="Turkmenistán" />
+                        <ComboBoxItem Content="Turquía" />
+                        <ComboBoxItem Content="Tuvalu" />
+                        <ComboBoxItem Content="Ucrania" />
+                        <ComboBoxItem Content="Uganda" />
+                        <ComboBoxItem Content="Uruguay" />
+                        <ComboBoxItem Content="Uzbekistán" />
+                        <ComboBoxItem Content="Vanuatu" />
+                        <ComboBoxItem Content="Venezuela" />
+                        <ComboBoxItem Content="Vietnam" />
+                        <ComboBoxItem Content="Wallis y Futuna" />
+                        <ComboBoxItem Content="Yemen" />
+                        <ComboBoxItem Content="Yibuti" />
+                        <ComboBoxItem Content="Zambia" />
+                        <ComboBoxItem Content="Zimbabue" />
+                    </ComboBox>
+
+                    <TextBlock Text="{Binding Path=UserPanel15, Source={StaticResource Labels}}" Grid.Column="0"
+                            Grid.Row="5" Grid.ColumnSpan="2" TextAlignment="Right" Foreground="#FF333333"
+                            VerticalAlignment="Center" Margin="0,13,45,2" TextWrapping="NoWrap"
+                            HorizontalAlignment="Right" LineHeight="14" LineStackingStrategy="BlockLineHeight"
+                            Width="301" />
+                    <CheckBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"
+                            IsChecked="{Binding NotifyMe, Mode=TwoWay}" Margin="196,11,0,2" />
+
+                    <!--
+                    <TextBlock Text="{Binding Path=UserPanel14, Source={StaticResource Labels}}" Grid.Row="3" Foreground="#FF333333" VerticalAlignment="Center" Margin="0,15,5,0" TextWrapping="Wrap" HorizontalAlignment="Right" LineHeight="14" LineStackingStrategy="BlockLineHeight" />
+
+                    <TextBox x:Name="Region" Text="{Binding Region, Mode=TwoWay}" Grid.Row="3" Grid.Column="1" MaxLength="50" FontSize="13" Margin="0,15,20,0" BorderBrush="#FFd2d2d2" BorderThickness="2" Foreground="#FF333333" VerticalAlignment="Center">
+                        <TextBox.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#FFe7e7e7" Offset="0" />
+                                <GradientStop Color="#FFFFFFFF" Offset="1" />
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+                    -->
+
+                </Grid>
+
+                <Grid x:Name="CollectionsGrid" Visibility="Collapsed" Margin="20,0,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="50" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="48" />
+                        <RowDefinition Height="48" />
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="48" />
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="48" />
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="48" />
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="48" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock FontSize="13" Grid.ColumnSpan="6" VerticalAlignment="Center"
+                            Text="{Binding Path=UserPanel18, Source={StaticResource Labels}}" Foreground="#FF9db80e"
+                            TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Left" />
+
+                    <StackPanel x:Name="loading" Grid.ColumnSpan="6" Grid.Row="5">
+                        <TextBlock Text="{Binding Path=Cargando, Source={StaticResource Labels}}" FontFamily="Arial"
+                                FontSize="13" Foreground="#FF333333" VerticalAlignment="Center"
+                                HorizontalAlignment="Center" />
+                        <loaders:_3D VerticalAlignment="Center" Margin="10" />
+                    </StackPanel>
+                </Grid>
+
+                <Grid x:Name="JaguarGrid" Visibility="Collapsed" Margin="60,30,30,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock FontSize="13" x:Name="JaguarTitle"
+                            Text="{Binding Path=UserPanel21, Source={StaticResource Labels}}" Foreground="#FF9db80e"
+                            TextWrapping="Wrap" FontWeight="Bold" HorizontalAlignment="Left" />
+                    <Grid x:Name="JaguarsImagesGrid" Grid.Row="1" Margin="0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                    </Grid>
+
+
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <loaders:_3D x:Name="loadinAnim" Visibility="Collapsed" />
+                    <Button x:Name="OkButton" HorizontalAlignment="Right" Style="{StaticResource GreenButton}"
+                            Grid.Column="1" Width="140" Height="35" Foreground="White" FontSize="15" FontWeight="Bold"
+                            Content="{Binding Path=UserPanel11, Source={StaticResource Labels}}" Margin="0,0,20,7"
+                            Click="OkButton_Click" />
+                    <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="60" Margin="20,10,0,0"
+                            TextWrapping="Wrap" Text="{Binding Path=TextBlock, Source={StaticResource Labels}}"
+                            VerticalAlignment="Top" Width="261" />
+                    <TextBlock x:Name="ErrorMessage" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="261"
+                            Margin="20,14,0,0" Foreground="Red" FontSize="9" TextWrapping="Wrap" />
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+
+</controls:ChildWindow>

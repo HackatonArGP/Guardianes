@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Agrobari 1.kml</name>
+	<StyleMap id="inline613">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline9300</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline512</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline512">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline9300">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>Agrobari S.A.</name>
+		<open>1</open>
+		<description>Agrobari S.A. (João Pereira Coutinho)</description>
+		<Placemark>
+			<name>Agrobari 1</name>
+			<styleUrl>#inline613</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-63.56891207263964,-24.44864206394983,0 -63.52842673492329,-24.43020111828776,0 -63.51910610469576,-24.36357849443319,0 -63.52969101989725,-24.3672302607914,0 -63.61670334877546,-24.41546199627493,0 -63.62140366594603,-24.4422519172531,0 -63.63028428652677,-24.49874076278232,0 -63.62684047035506,-24.49680141928553,0 -63.62420993851312,-24.48738163706271,0 -63.60037450207718,-24.47622403027692,0 -63.60088752486505,-24.48274083478268,0 -63.59109075488029,-24.47813213874229,0 -63.59213924737929,-24.4824783753502,0 -63.57280957822692,-24.47470897259152,0 -63.56891207263964,-24.44864206394983,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

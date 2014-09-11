@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Guardianes Admin</title>
+    <script src="jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script src="jquery.base64.js" type="text/javascript"></script>
+    <style>
+        body { font-family: Helvetica, Arial, "Lucida Grande", sans-serif; }
+        .tdnumber { text-align: right; }
+        .tdcheck { text-align: center; }
+        .reset { border: 2px solid red; background-color: #FF6C6C; }
+        .url { width: 300px; }
+        .filter { font-size: 0.8em; margin-bottom: 10px; }
+            .filter span { color: #AAA; }
+        .getMore { display: inline; }
+        #SaveButton2 { margin-left: 15px; margin-top: 10px; }
+    </style>
+
+
+</head>
+<body>
+    <h3>Administrator - Land</h3>
+    <br />
+    <br />
+    username:
+    <input type="text" id="tbUsername" value="" /><br />
+    password:
+    <input type="password" id="tbPassword" value="" />
+    <br />
+    <br />
+    <input id="LoadLandsButton" type="button" value="Cargar Parcelas a Verificar" />
+    <input id="GenerateImagesButton" type="button" value="Generar Imágenes" />
+    <input id="GenerateGameImagesButton" type="button" value="Generar Imágenes del Mini Game" />
+    <input id="SaveButton" class="SaveButton" type="button" value="Guardar" />
+    <input id="ResetButton" type="button" value="Resetear parcelas Verdes" />
+    <input id="MassiveReassign" disabled="disabled" type="button" value="Reshuffle de todas las parcelas" />
+    <br />
+    <br />
+    <div class="filter">
+        <span>Filtros: </span>
+        <label for="showVerifieds">Not Verified</label><input type="radio" name="showVerifieds" value="false" checked />
+        <label for="showVerifieds">Demand Ready</label><input type="radio" name="showVerifieds" value="true" />
+    </div>
+    <table border="1" cellpadding="6" cellspacing="0">
+        <thead>
+            <tr style="background-color: #cecece">
+                <td colspan="8"></td>
+                <td colspan="2">Polls Verificadores</td>
+                <td colspan="2">Polls</td>
+                <td colspan="2">Usuarios</td>
+                <td></td>
+            </tr>
+            <tr style="background-color: #cecece">
+                <td>Parcela</td>
+                <td>2008</td>
+                <td>Ahora</td>
+                <td style="background-color: #ccdf68">Es Verde?</td>
+                <td style="background-color: #f88888">Es Rojo?</td>
+                <td>Greenpeace</td>
+                <td title="Si se tilda esta opción, se reiniciará esta parcela. Dejandola lista para ser reasignada." style="text-decoration:underline">Resetear</td>
+                <td>Observaciones</td>
+                <td style="background-color: #ccdf68">Verdes</td>
+                <td style="background-color: #f88888">Rojos</td>
+                <td style="background-color: #ccdf68">Verdes</td>
+                <td style="background-color: #f88888">Rojos</td>
+                <td style="background-color: #ccdf68">Verdes</td>
+                <td style="background-color: #f88888">Rojos</td>
+                <td>Primer Owner</td>
+            </tr>
+        </thead>
+        <tbody id="landstable"></tbody>
+    </table>
+    <p class="getMore">
+        <a href="javascript:void(0)" onclick="getMoreLands()">Ver mas...</a>
+    </p>  <input id="SaveButton2" class="SaveButton" type="button" value="Guardar" />
+    <br />
+    <a href="index.html">back</a>
+
+    <script type="text/javascript">
+        var page = 1;
+        var showVerifieds = false;
+
+        function getMoreLands() {
+            page++;
+
+            $.ajax({
+                type: "GET",
+                data: "{\"Name\":\"" + document.getElementById("tbUsername").value + "\",\"Password\":\"" + document.getElementById("tbPassword").value + "\" }",
+                url: "../api/land/landstoconfirm/" + page + "/" + showVerifieds,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Authorization", getAuthString());
+                },
+                contentType: "application/json ; charset=utf-8",
+                cache: false,
+                dataType: "json",
+                success: function (result) {
+                    $(result).each(function () {
+                        
+                        var confirmed = '';
+                        var rejected = '';
+
+                        if (this.Confirmed == null) {
+                            confirmed = '<input class="confirmland" name="confirm' + ix + '" type="radio" />';
+                            rejected = '<input class="rejectland" name="confirm' + ix++ + '" type="radio" />';
+                        }
+                        else {
+                            if (this.LandStatus == 3) {
+                                confirmed = '<input type="radio" name="confirm' + ix + '" disabled="disabled" checked="checked" />';
+                                rejected = '<input type="radio" name="confirm' + ix++ + '" disabled="disabled" />';
+                            }
+                            else if (this.LandStatus == 4) {
+                                confirmed = '<input type="radio" name="confirm' + ix + '" disabled="disabled" />';
+                                rejected = '<input type="radio" name="confirm' + ix++ + '" disabled="disabled" checked="checked" />';
+                            }
+                        }
+
+                        var isConfirmed = $(this).attr('Confirmed');
+                        var html = '';
+                        html += '<td class="tdnumber"><a target="_blank" href="http://guardianes.greenpeace.org.ar/index.html?geohexcode=' + $(this).attr('GeohexKey') + '">' + $(this).attr('GeohexKey') + '</a><input class="geohexcode" type="hidden" value="' + $(this).attr('GeohexKey') + '" /></td>'
+                            + '<td><img src="http://guardianes.greenpeace.org.ar/SatelliteImages/demand/' + $(this).attr('GeohexKey') + '-a.jpg" /></td>'
+                            + '<td><img src="http://guardianes.greenpeace.org.ar/SatelliteImages/demand/' + $(this).attr('GeohexKey') + '-d.jpg" /></td>'
+                            + '<td class="tdcheck confirmcheck" style="background-color: #ccdf68">' + confirmed + '</td>'
+                            + '<td class="tdcheck rejectcheck" style="background-color: #f88888">' + rejected + '</td>'
+                            + '<td>' + (isConfirmed == null ? 'No Revisada' : isConfirmed == true ? 'Confirmada' : 'Rechazada') + '</td>'
+                            + '<td>'
+                                + (isConfirmed != null ? '<input class="resetcheck" type="checkbox" data-landid="' + this.Id + ' title="Si se tilda esta opción, se reiniciará esta parcela. Dejandola lista para ser reasignada." />' : '-')
+                            + '</td>'
+                            + '<td class="tdcheck"><input type="text" /><input class="landstatus" type="hidden" value="' + $(this).attr('LandStatus') + '" /></td>'
+                            + '<td class="tdnumber">' + $(this).attr('NegativesV') + '</td>'
+                            + '<td class="tdnumber">' + $(this).attr('PositivesV') + '</td>'
+                            + '<td class="tdnumber">' + $(this).attr('Negatives') + '</td>'
+                            + '<td class="tdnumber">' + $(this).attr('Positives') + '</td>'
+                            + '<td class="tdnumber">' + $(this).attr('OKs') + '</td>'
+                            + '<td class="tdnumber">' + $(this).attr('Suspicious') + '</td>'
+                            + '<td class="earthwatcherName">' + $(this).attr('LastUsersWithActivity') + '</td>';
+
+
+                        $('<tr></tr>').html(html).appendTo('#landstable');
+                    });
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+        }
+
+        function save() {
+            var changes = [];
+
+            $('#landstable tr').each(function (index, item) {
+
+                var confirmed = null;
+
+                $(item).children().find("input.confirmland:radio").each(function () {
+                    if ($(this).prop("checked")) {
+                        confirmed = true;
+                    }
+                });
+
+                $(item).children().find("input.rejectland:radio").each(function () {
+                    if ($(this).prop("checked")) {
+                        confirmed = false;
+                    }
+                });
+
+                var observations = null;
+                $(item).children().find("input:text").each(function () {
+                    observations = $(this).val();
+                });
+
+                var landstatus = null;
+                $(item).children().find("input.landstatus:hidden").each(function () {
+                    landstatus = $(this).val();
+                });
+
+                var geohexKey = null;
+                $(item).children().find("input.geohexcode:hidden").each(function () {
+                    geohexKey = $(this).val();
+                });
+
+                var resetcheck = $(item).find('input.resetcheck');
+                var reset = resetcheck != null ? resetcheck.is(':checked') : false;
+
+                var landId = $(item).attr('data-landid');
+
+                if (confirmed != null || reset == true) {
+
+                    if ((confirmed && landstatus == 3) || (!confirmed && landstatus == 4)) {
+                        confirmed = true;
+                    }
+                    else {
+                        confirmed = false;
+                    }
+
+                    changes.push({
+                        Id: landId,
+                        GeohexKey: geohexKey,
+                        Reset: reset,
+                        Confirmed: confirmed,
+                        LandStatus: landstatus,
+                        LastUsersWithActivity: observations,
+                        EarthwatcherName: $(item).find('td.earthwatcherName').html()
+                    });
+                }
+            });
+
+            if (changes.length > 0) {
+                $.ajax({
+                    type: 'POST',
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", getAuthString());
+                    },
+                    traditional: true,
+                    url: "../api/land/updatelandsdemand",
+                    data: JSON.stringify(changes),
+                    dataType: "json",
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (result) {
+                        alert('Cambios guardados ok');
+
+                        //clear verifieds
+                        $('#landstable tr td.confirmcheck input:checked').parents('tr').remove();
+                        $('#landstable tr td.rejectcheck input:checked').parents('tr').remove();
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert(errorThrown);
+                    }
+                });
+            }
+        }
+
+        function stringToBoolean(string) {
+            switch (string.toLowerCase()) {
+                case "true": case "yes": case "1": return true;
+                case "false": case "no": case "0": case null: return false;
+                default: return Boolean(string);
+            }
+        }
+
+        function getAuthString() {
+            return "Basic " + $.base64Encode(document.getElementById("tbUsername").value + ":" + document.getElementById("tbPassword").value);
+        }
+
+        $(document).ready(function () {
+
+            $("#GenerateImagesButton").click(function () {
+                if (confirm('Está seguro que desea continuar?')) {
+                    $.ajax({
+                        type: 'POST',
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("Authorization", getAuthString());
+                        },
+                        url: "../api/land/generateimages",
+                        dataType: "json",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (result) {
+                            alert('Operación Exitosa!');
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert(errorThrown);
+                        }
+                    });
+                }
+            });
+
+            $("#GenerateGameImagesButton").click(function () {
+                if (confirm('Está seguro que desea continuar?')) {
+                    $.ajax({
+                        type: 'POST',
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("Authorization", getAuthString());
+                        },
+                        url: "../api/land/generategameimages",
+                        dataType: "json",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (result) {
+                            alert('Operación Exitosa!');
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert(errorThrown);
+                        }
+                    });
+                }
+            });
+
+            $("#ResetButton").click(function () {
+                if (confirm('Está seguro que desea continuar?')) {
+                    $.ajax({
+                        type: 'POST',
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("Authorization", getAuthString());
+                        },
+                        url: "../api/land/resetlands",
+                        dataType: "json",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (result) {
+                            alert('Operación Exitosa!');
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert(errorThrown);
+                        }
+                    });
+                }
+            });
+
+            $("#MassiveReassign").click(function () {
+                if (confirm('Está seguro que desea continuar?')) {
+                    $.ajax({
+                        type: 'POST',
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("Authorization", getAuthString());
+                        },
+                        url: "../api/land/mar",
+                        dataType: "json",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (result) {
+                            alert('Operación Exitosa!');
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert(errorThrown);
+                        }
+                    });
+                }
+            });
+
+            $(".SaveButton").click(function () {
+                save();
+                getMoreLands();
+            });
+
+            $("#LoadLandsButton").click(function () {
+
+                $('#landstable').empty();
+                page = 1;
+
+                $.ajax({
+                    type: "GET",
+                    data: "{\"Name\":\"" + document.getElementById("tbUsername").value + "\",\"Password\":\"" + document.getElementById("tbPassword").value + "\" }",
+                    url: "../api/land/landstoconfirm/" + page + "/" + showVerifieds,
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", getAuthString());
+                    },
+                    contentType: "application/json ; charset=utf-8",
+                    cache: false,
+                    dataType: "json",
+                    success: function (result) {
+                        ix = 0;
+                        $(result).each(function () {
+
+                            var confirmed = '';
+                            var rejected = '';
+
+                            if (this.Confirmed == null) {
+                                confirmed = '<input class="confirmland" name="confirm' + ix + '" type="radio" />';
+                                rejected = '<input class="rejectland" name="confirm' + ix++ + '" type="radio" />';
+                            }
+                            else {
+                                if (this.LandStatus == 3) {
+                                    confirmed = '<input type="radio" name="confirm' + ix + '" disabled="disabled" checked="checked" />';
+                                    rejected = '<input type="radio" name="confirm' + ix++ + '" disabled="disabled" />';
+                                }
+                                else if (this.LandStatus == 4){
+                                    confirmed = '<input type="radio" name="confirm' + ix + '" disabled="disabled" />';
+                                    rejected = '<input type="radio" name="confirm' + ix++ + '" disabled="disabled" checked="checked" />';
+                                }
+                            }
+
+                            var isConfirmed = this.Confirmed;
+                            var html = '';
+                            html += '<td class="tdnumber"><a target="_blank" href="http://guardianes.greenpeace.org.ar/index.html?geohexcode=' + this.GeohexKey + '">' + this.GeohexKey + '</a><input class="geohexcode" type="hidden" value="' + this.GeohexKey + '" /></td>'
+                            + '<td><img src="http://guardianes.greenpeace.org.ar/SatelliteImages/demand/' + this.GeohexKey + '-a.jpg" /></td>'
+                            + '<td><img src="http://guardianes.greenpeace.org.ar/SatelliteImages/demand/' + this.GeohexKey + '-d.jpg" /></td>'
+                            + '<td class="tdcheck confirmcheck" style="background-color: #ccdf68">' + confirmed + '</td>'
+                            + '<td class="tdcheck rejectcheck" style="background-color: #f88888">' + rejected + '</td>'
+                            + '<td>' + (isConfirmed == null ? 'No Revisada' : isConfirmed == true ? 'Confirmada' : 'Rechazada') + '</td>'
+                            + '<td>'
+                                + (isConfirmed != null ? '<input class="resetcheck" data-landid="' + this.Id + '" type="checkbox" title="Si se tilda esta opción, se reiniciará esta parcela. Dejandola lista para ser reasignada." />' : '-')
+                            + '</td>'
+                            + '<td class="tdcheck"><input type="text" /><input class="landstatus" type="hidden" value="' + this.LandStatus + '" /></td>'
+                            + '<td class="tdnumber">' + this.NegativesV + '</td>'
+                            + '<td class="tdnumber">' + this.PositivesV + '</td>'
+                            + '<td class="tdnumber">' + this.Negatives + '</td>'
+                            + '<td class="tdnumber">' + this.Positives + '</td>'
+                            + '<td class="tdnumber">' + this.OKs + '</td>'
+                            + '<td class="tdnumber">' + this.Suspicious + '</td>'
+                            + '<td class="earthwatcherName">' + this.LastUsersWithActivity + '</td>';
+
+                            $('<tr data-landid="'+ this.Id +'"></tr>').html(html).appendTo('#landstable');
+                        });
+
+                        $('.resetcheck').change(function () {
+                            var tr = $(this).closest('tr');
+                            if ($(this).is(':checked'))
+                                tr.addClass('reset');
+                            else
+                                tr.removeClass('reset');
+                        });
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert(errorThrown);
+                    }
+                });
+            });
+
+            $(".filter input").click(function () {
+                showVerifieds = stringToBoolean($(".filter input:checked").val());
+            });
+        });
+    </script>
+</body>
+</html>

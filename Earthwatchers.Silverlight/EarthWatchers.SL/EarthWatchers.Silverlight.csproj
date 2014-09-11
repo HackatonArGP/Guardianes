@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B059605-EB85-4A2A-92A8-27D631490271}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EarthWatchers.SL</RootNamespace>
+    <AssemblyName>EarthWatchers.SL</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>EarthWatchersSL.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>EarthWatchers.SL.App</SilverlightAppEntry>
+    <TestPageFileName>EarthWatchers.SLTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>Bin\Debug\EarthWatchers.SL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>Bin\Release\EarthWatchers.SL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BruTile, Version=0.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Mapsui.0.1.5\lib\sl5\BruTile.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools">
+      <HintPath>..\..\packages\ImageTools\ImageTools.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools.IO.Gif">
+      <HintPath>..\..\packages\ImageTools\ImageTools.IO.Gif.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools.IO.Jpeg">
+      <HintPath>..\..\packages\ImageTools\ImageTools.IO.Jpeg.dll</HintPath>
+    </Reference>
+    <Reference Include="Mapsui, Version=0.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Mapsui.0.1.5\lib\sl5\Mapsui.dll</HintPath>
+    </Reference>
+    <Reference Include="Mapsui.Rendering.XamlRendering, Version=0.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Mapsui.0.1.5\lib\sl5\Mapsui.Rendering.XamlRendering.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.4.5.7\lib\sl4\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp.Silverlight, Version=102.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\RestSharp.102.7\lib\sl4\RestSharp.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ArcGISImageServiceSample.cs" />
+    <Compile Include="ArcGISImageService\ArcGISImageServiceInfo.cs" />
+    <Compile Include="ArcGISImageService\ArcGISImageServiceProvider.cs" />
+    <Compile Include="Extensions\Converters.cs" />
+    <Compile Include="Extensions\StyleExtensions.cs" />
+    <Compile Include="GUI\Controls\TutorialGameWindow.xaml.cs">
+      <DependentUpon>TutorialGameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\TutorialMenuWindow.xaml.cs">
+      <DependentUpon>TutorialMenuWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\Ranking.xaml.cs">
+      <DependentUpon>Ranking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\ReportWindow.xaml.cs">
+      <DependentUpon>ReportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\TutorialWindow.xaml.cs">
+      <DependentUpon>TutorialWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\DistanceCalculationControl.xaml.cs">
+      <DependentUpon>DistanceCalculationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\FlagInfoWindow.xaml.cs">
+      <DependentUpon>FlagInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\Comments\CommentScreen.xaml.cs">
+      <DependentUpon>CommentScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\AlertedLandOverview.xaml.cs">
+      <DependentUpon>AlertedLandOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\Flag.xaml.cs">
+      <DependentUpon>Flag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\PublishMap.xaml.cs">
+      <DependentUpon>PublishMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\DataPartners.xaml.cs">
+      <DependentUpon>DataPartners.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\EducationalLayerControl.xaml.cs">
+      <DependentUpon>EducationalLayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\AlertedLandControl.xaml.cs">
+      <DependentUpon>AlertedLandControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\LatestAlertedAreas.xaml.cs">
+      <DependentUpon>LatestAlertedAreas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\NewsControl.xaml.cs">
+      <DependentUpon>NewsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\NewsOverview.xaml.cs">
+      <DependentUpon>NewsOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\SatelliteLayerControl.xaml.cs">
+      <DependentUpon>SatelliteLayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\WarningScreen.xaml.cs">
+      <DependentUpon>WarningScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\TiledBackground.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Current.cs" />
+    <Compile Include="GUI\Controls\BaseLayerControl.xaml.cs">
+      <DependentUpon>BaseLayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\HelpWindow.xaml.cs">
+      <DependentUpon>HelpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\HexagonInfo.xaml.cs">
+      <DependentUpon>HexagonInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\LayerChooser.xaml.cs">
+      <DependentUpon>LayerChooser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\LayerControl.xaml.cs">
+      <DependentUpon>LayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controls\LayerList.xaml.cs">
+      <DependentUpon>LayerList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JsonSerializer.cs" />
+    <Compile Include="Layers\AlertedLandLayer.cs" />
+    <Compile Include="Layers\ArcGisTileSource.cs" />
+    <Compile Include="Layers\BaseTileLayer.cs" />
+    <Compile Include="Layers\EsriWorldSchema.cs" />
+    <Compile Include="Layers\FlagLayer.cs" />
+    <Compile Include="Layers\DfaTileSource.cs" />
+    <Compile Include="Layers\EducationalLayer.cs" />
+    <Compile Include="Layers\HexagonLayer.cs" />
+    <Compile Include="Layers\LayerHelper.cs" />
+    <Compile Include="Layers\LayerInitialization.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MapHelper.cs" />
+    <Compile Include="PermalinkHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\AuthenticationRequest.cs" />
+    <Compile Include="Requests\CommentRequests.cs" />
+    <Compile Include="Requests\ScoreRequests.cs" />
+    <Compile Include="Requests\EarthwatchersRestClient.cs" />
+    <Compile Include="Requests\FlagRequests.cs" />
+    <Compile Include="Requests\EarthwatcherRequests.cs" />
+    <Compile Include="Requests\ImageRequests.cs" />
+    <Compile Include="Requests\LandRequests.cs" />
+    <Compile Include="Requests\NewsRequests.cs" />
+    <Compile Include="Requests\OpengeocoderRequests.cs" />
+    <Compile Include="Resources\ResourceHelper.cs" />
+    <Compile Include="SilverlightControl1.xaml.cs">
+      <DependentUpon>SilverlightControl1.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Assets\CoreStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\BaseLayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\TutorialGameWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\TutorialMenuWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\Ranking.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\ReportWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\TutorialWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\DistanceCalculationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\FlagInfoWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\Comments\CommentScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\AlertedLandOverview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\Flag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\PublishMap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\DataPartners.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\EducationalLayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\AlertedLandControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\LatestAlertedAreas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\NewsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\NewsOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\SatelliteLayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\WarningScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\HelpWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\HexagonInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\LayerChooser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\Controls\LayerControl.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Controls\LayerList.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="SilverlightControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <Resource Include="Resources\MyriadPro-Bold.otf" />
+    <Resource Include="Resources\MyriadPro-Regular.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\maps.png" />
+    <Resource Include="Resources\Images\comments.png" />
+    <Resource Include="Resources\Images\forest_and_peat.png" />
+    <Resource Include="Resources\Images\geoeye.png" />
+    <Resource Include="Resources\Images\hexagon_legend.png" />
+    <Resource Include="Resources\Images\intermap.png" />
+    <Resource Include="Resources\Images\jaxa.png" />
+    <Resource Include="Resources\Images\nasa.png" />
+    <Resource Include="Resources\Images\palmrubber.png" />
+    <Resource Include="Resources\Images\warning.png" />
+    <Resource Include="Resources\Images\zoomin.png" />
+    <Resource Include="Resources\Images\zoomout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\aerial.png" />
+    <Resource Include="Resources\Images\bing.png" />
+    <Resource Include="Resources\Images\bingHybrid.jpg" />
+    <Resource Include="Resources\Images\bingStreet.jpg" />
+    <Resource Include="Resources\Images\delete.png" />
+    <Resource Include="Resources\Images\eduardo.jpg" />
+    <Resource Include="Resources\Images\fb.png" />
+    <Resource Include="Resources\Images\fullscreen.png" />
+    <Resource Include="Resources\Images\geodan.png" />
+    <Resource Include="Resources\Images\layers.png" />
+    <Resource Include="Resources\Images\logo.png" />
+    <Resource Include="Resources\Images\LOGO_BW.png" />
+    <Resource Include="Resources\Images\marker.png" />
+    <Resource Include="Resources\Images\maxextend.png" />
+    <Resource Include="Resources\Images\osm.png" />
+    <Resource Include="Resources\Images\pan_down.png" />
+    <Resource Include="Resources\Images\pan_left.png" />
+    <Resource Include="Resources\Images\pan_right.png" />
+    <Resource Include="Resources\Images\pan_up.png" />
+    <Resource Include="Resources\Images\piln_logo_transparent_inverted.png" />
+    <Resource Include="Resources\Images\questionmark.png" />
+    <Resource Include="Resources\Images\tree_texture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Earthwatchers.MapControl\Earthwatchers.MapControl.csproj">
+      <Project>{a2f0ac1c-02eb-457e-a362-2b8df75f0795}</Project>
+      <Name>Earthwatchers.MapControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Earthwatchers.Models.Portable\Earthwatchers.Models.csproj">
+      <Project>{CDF3793E-D16B-4368-9B7B-DD61BE2EEA53}</Project>
+      <Name>Earthwatchers.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\backgroundshadow.png" />
+    <Resource Include="Resources\Images\backgroundtexture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\publishmap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\flag_no_shadow.png" />
+    <Resource Include="Resources\Images\flag_out.png" />
+    <Resource Include="Resources\Images\flag_shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\flag_shadow_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ruler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\world_imagery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\esriLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logo_eGeos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logo_dmcii.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Bing_Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\e-Geos_logo_with_copyright_text.png" />
+    <Resource Include="Resources\Images\usgs-logo-color.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logogp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\down.png" />
+    <Resource Include="Resources\Images\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\deletew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\reportar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\parcelaok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\parcelaalert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\facebook2.png" />
+    <Resource Include="Resources\Images\twitter2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\user-active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\juego1-1.png" />
+    <Resource Include="Resources\Images\juego1-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\tree_off.png" />
+    <Resource Include="Resources\Images\tree_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\reshuffle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\confirm.png" />
+    <Resource Include="Resources\Images\deconfirm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\revisar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\juego2-1.png" />
+    <Resource Include="Resources\Images\juego2-2.png" />
+    <Resource Include="Resources\Images\juego3-1.png" />
+    <Resource Include="Resources\Images\juego3-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\demandar.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

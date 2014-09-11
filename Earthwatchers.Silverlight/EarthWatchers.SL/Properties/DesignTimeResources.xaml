@@ -1,0 +1,10 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="/EarthWatchers.SL;component/Assets/Styles.xaml"/>
+		<ResourceDictionary Source="/EarthWatchers.SL;component/Assets/SDKStyles.xaml"/>
+		<ResourceDictionary Source="/EarthWatchers.SL;component/Assets/ToolkitStyles.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+	<!-- Resource dictionary entries should be defined here. -->
+</ResourceDictionary>

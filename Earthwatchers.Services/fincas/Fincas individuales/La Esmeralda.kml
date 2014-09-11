@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>La Esmeralda.kml</name>
+	<Style id="inline28">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline46">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline28</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline106</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline106">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>La Esmeralda</name>
+		<open>1</open>
+		<description>La Esmeralda (Luis Pablo Ronconi y Pablo Ronconi)</description>
+		<Placemark>
+			<name>La Esmeralda</name>
+			<styleUrl>#inline46</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-63.74641073665108,-24.29416380934156,0 -63.73135837858618,-24.29225791979292,0 -63.73934616422657,-24.33631937733025,0 -63.75472862655897,-24.33536717762002,0 -63.74641073665108,-24.29416380934156,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

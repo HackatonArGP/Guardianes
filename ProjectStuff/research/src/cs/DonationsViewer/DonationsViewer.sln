@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonationsViewer", "DonationsViewer\DonationsViewer.csproj", "{5CF52C79-63ED-4D10-9A7D-1A8C2E92293A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonationsViewer.Web", "DonationsViewer.Web\DonationsViewer.Web.csproj", "{682324CB-394C-4148-9B70-1DF34A3463F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CF52C79-63ED-4D10-9A7D-1A8C2E92293A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CF52C79-63ED-4D10-9A7D-1A8C2E92293A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CF52C79-63ED-4D10-9A7D-1A8C2E92293A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CF52C79-63ED-4D10-9A7D-1A8C2E92293A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{682324CB-394C-4148-9B70-1DF34A3463F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{682324CB-394C-4148-9B70-1DF34A3463F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{682324CB-394C-4148-9B70-1DF34A3463F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{682324CB-394C-4148-9B70-1DF34A3463F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

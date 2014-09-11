@@ -1,0 +1,127 @@
+﻿<sdk:ChildWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:gui="clr-namespace:Earthwatchers.UI.GUI.Controls"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:loaders="clr-namespace:Earthwatchers.UI.GUI.Loaders"
+    xmlns:ext="clr-namespace:Earthwatchers.UI.Extensions"
+    mc:Ignorable="d" x:Class="Earthwatchers.UI.GUI.Controls.ContestWinner" 
+    Width="510"
+    Height="310"
+    Padding="0"
+    HasCloseButton="False"
+    Style="{StaticResource GPChildWindow}"
+    Title="Concurso">
+    <sdk:ChildWindow.Resources>
+        <Storyboard x:Name="ShareStoryBoard">
+            <DoubleAnimation To="0" Duration="0:0:1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="WinnerGrid" />
+            <DoubleAnimation To="0" Duration="0:0:1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="AnounceWinnerGrid" />
+            <DoubleAnimation To="1" BeginTime="0:0:0.5" Duration="0:0:1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShareGrid" />
+        </Storyboard>
+    </sdk:ChildWindow.Resources>
+    <Grid x:Name="MainGrid">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Color="White" Offset="0.9"></GradientStop>
+                <GradientStop Color="#FFe0e0e0" Offset="1"></GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Height="50" VerticalAlignment="Top" CornerRadius="8,8,0,0" BorderThickness="1" BorderBrush="#FF95a92c">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="0.8">
+                    <GradientStop Color="#FF849b0c" Offset="0" />
+                    <GradientStop Color="#FF9fba0e" Offset="0.5" />
+                    <GradientStop Color="#FF849b0c" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="28"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="Title" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Grid.Column="0" HorizontalAlignment="Center" FontSize="18" Foreground="White" FontFamily="Arial" FontWeight="Bold" Margin="0" />
+                <Button x:Name="CloseButton" Click="BtnCloseClick" Grid.Column="3" HorizontalAlignment="Center" IsTabStop="False" Style="{StaticResource OpacityButton}" Width="24" Margin="5,7,0,0" VerticalAlignment="Top">
+                    <Path Data="M0,0 L1,1 M0,1 L1,0" Stretch="Fill" Stroke="#404040" StrokeThickness="2" Width="10" Height="10" Effect="{StaticResource ControlTextEffect}" />
+                </Button>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" x:Name="AnounceWinnerGrid" VerticalAlignment="Top" Visibility="Collapsed" Opacity="1">
+            <Grid Margin="10">
+                <TextBlock  Foreground="#FF333333" FontFamily="Arial" FontSize="14" TextWrapping="Wrap" Width="300" HorizontalAlignment="Left">
+                    <Run Text="{Binding Path=Contest1, Source={StaticResource Labels}}" FontWeight="Bold" />
+                    <LineBreak /><LineBreak /><Run x:Name="WinnerName" Foreground="#FF9db80e" FontWeight="Bold" /><Run Text="{Binding Path=Contest2, Source={StaticResource Labels}}" />
+                    <LineBreak /><LineBreak /><Run Text="{Binding Path=Contest3, Source={StaticResource Labels}}" />
+                </TextBlock>
+                <Image Source="../../Resources/Images/trophy_gold.png" Stretch="None" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,30,0,0" />
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" x:Name="WinnerGrid" VerticalAlignment="Top" Visibility="Collapsed" Opacity="1">
+            <Grid Margin="10">
+                <TextBlock  Foreground="#FF333333" FontFamily="Arial" FontSize="14" TextWrapping="Wrap" Width="300" HorizontalAlignment="Left">
+                    <Run Text="¡Felicitaciones!" FontWeight="Bold" />
+                    <LineBreak /><LineBreak /><Run Text="{Binding Path=Contest4, Source={StaticResource Labels}}" />
+                    <LineBreak /><LineBreak /><Run Text="{Binding Path=Contest5, Source={StaticResource Labels}}" />
+                </TextBlock>
+                <Image Source="../../Resources/Images/trophy_gold.png" Stretch="None" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,30,0,0" />
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" x:Name="ShareGrid" VerticalAlignment="Top" Visibility="Collapsed" Opacity="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="shareTitle" Text="{Binding Path=Contest6, Source={StaticResource Labels}}" TextWrapping="Wrap" FontSize="17" TextAlignment="Center" Margin="0,0,0,5" Foreground="Black" FontFamily="Arial" HorizontalAlignment="Center" />
+            <Border CornerRadius="2" Grid.Row="1" BorderThickness="5" BorderBrush="#FF9db80e" Margin="10,10,10,0">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="{Binding Path=Share6, Source={StaticResource Labels}}" FontSize="13" Foreground="#FF9db80e" FontFamily="Arial" />
+                    <TextBlock x:Name="shareText" Text="{Binding Path=Share3, Source={StaticResource Labels}}" Grid.Row="1" Foreground="Black" FontFamily="Arial" FontSize="13" Margin="5" TextWrapping="Wrap" />
+                </Grid>
+            </Border>
+            <Path Data="M 0,0 10,15 20,0 Z" Grid.Row="2" Fill="#FF9db80e" StrokeThickness="0" Margin="0,0,0,5" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
+            <HyperlinkButton x:Name="FacebookButton" Margin="-100,0,0,0" Grid.Row="3" HorizontalAlignment="Center" TargetName="_blank">
+                <HyperlinkButton.ContentTemplate>
+                    <DataTemplate>
+                        <Image Source="../../Resources/Images/facebook2.png" Stretch="None" />
+                    </DataTemplate>
+                </HyperlinkButton.ContentTemplate>
+            </HyperlinkButton>
+            <HyperlinkButton x:Name="TwitterButton" Margin="100,0,0,0" Grid.Row="3" HorizontalAlignment="Center" TargetName="_blank">
+                <HyperlinkButton.ContentTemplate>
+                    <DataTemplate>
+                        <Image Source="../../Resources/Images/twitter2.png" Stretch="None" />
+                    </DataTemplate>
+                </HyperlinkButton.ContentTemplate>
+            </HyperlinkButton>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0,5,0,10" x:Name="FooterGrid" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Close2Button" Grid.Column="1" Cursor="Hand" HorizontalAlignment="Right" Style="{StaticResource GreenButton}" Grid.Row="2" Width="160" Height="35" Foreground="White" FontSize="15" FontWeight="Bold" Content="{Binding Path=TutorialGame1, Source={StaticResource Labels}}" Margin="0,0,10,0" Click="Close2Button_Click" />
+        </Grid>
+    </Grid>
+</sdk:ChildWindow>

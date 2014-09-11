@@ -1,0 +1,1042 @@
+﻿<sdk:ChildWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:gui="clr-namespace:Earthwatchers.UI.GUI.Controls"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d"
+    x:Class="Earthwatchers.UI.GUI.Controls.WelcomeWindow" 
+    Width="780"
+    Height="500"
+    Padding="0"
+    HasCloseButton="True"
+    Style="{StaticResource GPChildWindow}"
+    Title="Bienvenido Guardián">
+    <sdk:ChildWindow.Resources>
+        <Storyboard x:Name="WelcomeStoryBoard">
+            <DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetName="WelcomeText" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:2" Duration="0:0:0.5" To="1" Storyboard.TargetName="ButtonStart" Storyboard.TargetProperty="Opacity" />
+        </Storyboard>
+        <Storyboard x:Name="StartStoryBoard">
+            <DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetName="WelcomeText" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetName="ButtonStart" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetName="title1" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation BeginTime="0:0:2" Duration="0:0:0.5" To="1" Storyboard.TargetName="title1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:2" Duration="0:0:0.5" To="1" Storyboard.TargetName="title1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:2" Duration="0:0:0.5" To="-212" Storyboard.TargetName="title1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:3" Duration="0:0:0.5" To="1" Storyboard.TargetName="border1" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation BeginTime="0:0:3" Duration="0:0:0.5" To="1" Storyboard.TargetName="sliderOpacity" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:3" Duration="0:0:0.5" To="1" Storyboard.TargetName="sliderText1" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:3" Duration="0:0:0.5" To="1" Storyboard.TargetName="sliderText2" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:4" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:2.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:4.5" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:4" Storyboard.TargetName="line1" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:2.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:4.5" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:4.5" Storyboard.TargetName="text1" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:2.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:4.5" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:5" Storyboard.TargetName="ellipse2" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:2.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:4.5" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:5" Storyboard.TargetName="line2" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:2.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:4.5" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:5.5" Storyboard.TargetName="text2" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:2.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:4.5" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            
+            <DoubleAnimation Duration="0:0:0.5" To="1" BeginTime="0:0:6" Storyboard.TargetName="ellipse3" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="1" BeginTime="0:0:6" Storyboard.TargetName="line3" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="1" BeginTime="0:0:6.5" Storyboard.TargetName="text3" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation BeginTime="0:0:3" Duration="0:0:0.5" To="1" Storyboard.TargetName="image1" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation BeginTime="0:0:6.5" Duration="0:0:2" To="1" Storyboard.TargetName="image2" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation BeginTime="0:0:6.5" Duration="0:0:2" To="100" Storyboard.TargetName="sliderOpacity" Storyboard.TargetProperty="Value" />
+
+            <DoubleAnimation BeginTime="0:0:8.5" Duration="0:0:1" To="3.5" Storyboard.TargetName="ellipse3" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:8.5" Duration="0:0:1" To="3.5" Storyboard.TargetName="ellipse3" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:9.5" Storyboard.TargetName="alert" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:1" Value="0.5" />
+                <LinearDoubleKeyFrame KeyTime="0:0:1.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:2" Value="0.5" />
+                <LinearDoubleKeyFrame KeyTime="0:0:2.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:3" Value="0.5" />
+                <LinearDoubleKeyFrame KeyTime="0:0:3.5" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimation To="1" BeginTime="0:0:11" Storyboard.TargetName="Next1" Storyboard.TargetProperty="Opacity" />
+           
+        </Storyboard>
+        <Storyboard x:Name="Welcome2StoryBoard">
+            <DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetName="Welcome1" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetName="title1" Storyboard.TargetProperty="Opacity" />
+            
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Next1" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:13" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:13.5" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetName="Welcome2" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetName="title2" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation BeginTime="0:0:2" Duration="0:0:0.5" To="1" Storyboard.TargetName="title2" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:2" Duration="0:0:0.5" To="1" Storyboard.TargetName="title2" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:2" Duration="0:0:0.5" To="-212" Storyboard.TargetName="title2" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:3" Duration="0:0:0.5" To="1" Storyboard.TargetName="border2" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation To="1" BeginTime="0:0:4" Duration="0:0:0.5" Storyboard.TargetName="hexagon1" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation To="1" BeginTime="0:0:4.5" Duration="0:0:0.5" Storyboard.TargetName="hexagon3" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation To="1" BeginTime="0:0:5" Duration="0:0:0.5" Storyboard.TargetName="hexagon2" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation To="1" BeginTime="0:0:5.5" Duration="0:0:0.5" Storyboard.TargetName="line21" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation To="1" BeginTime="0:0:6" Duration="0:0:0.5" Storyboard.TargetName="icon21" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation To="1" BeginTime="0:0:6.5" Duration="0:0:0.5" Storyboard.TargetName="popup1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="1" BeginTime="0:0:6.5" Duration="0:0:0.5" Storyboard.TargetName="popup1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation To="1" BeginTime="0:0:7" Duration="0:0:0.5" Storyboard.TargetName="hexagon4" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation To="1" BeginTime="0:0:7.5" Duration="0:0:0.5" Storyboard.TargetName="line22" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation To="1" BeginTime="0:0:8" Duration="0:0:0.5" Storyboard.TargetName="icon22" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation To="1" BeginTime="0:0:8.5" Duration="0:0:0.5" Storyboard.TargetName="popup2" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="1" BeginTime="0:0:8.5" Duration="0:0:0.5" Storyboard.TargetName="popup2" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation To="1" BeginTime="0:0:9" Duration="0:0:0.5" Storyboard.TargetName="hexagon0" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation To="1" BeginTime="0:0:9.5" Duration="0:0:0.5" Storyboard.TargetName="line23" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation To="1" BeginTime="0:0:10" Duration="0:0:0.5" Storyboard.TargetName="text23" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation To="1" BeginTime="0:0:10.5" Duration="0:0:0.5" Storyboard.TargetName="popup0" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="1" BeginTime="0:0:10.5" Duration="0:0:0.5" Storyboard.TargetName="popup0" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+
+        <Storyboard x:Name="Welcome3StoryBoard">
+            <DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetName="Welcome2" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetName="title2" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetName="title3" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetName="Welcome3" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Next1" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:33" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:33.5" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimation BeginTime="0:0:2" Duration="0:0:0.5" To="1" Storyboard.TargetName="title3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:2" Duration="0:0:0.5" To="1" Storyboard.TargetName="title3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:2" Duration="0:0:0.5" To="-212" Storyboard.TargetName="title3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:2.5" Storyboard.TargetName="point31" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:1.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:2" Value="0.2" />
+                <LinearDoubleKeyFrame KeyTime="0:0:5.5" Value="0.2" />
+                <LinearDoubleKeyFrame KeyTime="0:0:6" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:25.5" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:26" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimation BeginTime="0:0:24" Duration="0:0:0.5" To="-320" Storyboard.TargetName="point31" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:24" Duration="0:0:0.5" To="-150" Storyboard.TargetName="point31" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:2.5" Storyboard.TargetName="point31" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="10">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:6" Value="10" />
+                <EasingDoubleKeyFrame KeyTime="0:0:6.5" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:2.5" Storyboard.TargetName="point31" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="10">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:6" Value="10" />
+                <EasingDoubleKeyFrame KeyTime="0:0:6.5" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:4.5" Storyboard.TargetName="icon1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <EasingDoubleKeyFrame Value="2" KeyTime="0:0:0.5">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame Value="2" KeyTime="0:0:3.5" />
+                <EasingDoubleKeyFrame Value="1" KeyTime="0:0:4" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:4.5" Storyboard.TargetName="icon1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <EasingDoubleKeyFrame Value="2" KeyTime="0:0:0.5">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame Value="2" KeyTime="0:0:3.5" />
+                <EasingDoubleKeyFrame Value="1" KeyTime="0:0:4" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimation BeginTime="0:0:5.5" To="-100" Duration="0:0:0.5" Storyboard.TargetName="icon1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:6" To="1" Storyboard.TargetName="text31" Storyboard.TargetProperty="Opacity" />
+
+
+            <DoubleAnimation BeginTime="0:0:8.5" To="-170" Duration="0:0:0.5" Storyboard.TargetName="step1Grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:8.5" To="-100" Duration="0:0:0.5" Storyboard.TargetName="step1Grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:15" To="1" Duration="0:0:0.5" Storyboard.TargetName="text31" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:15" To="1" Duration="0:0:0.5" Storyboard.TargetName="text31" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:7.5" Storyboard.TargetName="step1Grid" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:20.5" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:21" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <!-- Termina Step 1 -->
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:8.5" Storyboard.TargetName="point32" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:1.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:2" Value="0.2" />
+                <LinearDoubleKeyFrame KeyTime="0:0:5.5" Value="0.2" />
+                <LinearDoubleKeyFrame KeyTime="0:0:6" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:20.5" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:21" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:8.5" Storyboard.TargetName="point32" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="10">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:6.5" Value="10" />
+                <EasingDoubleKeyFrame KeyTime="0:0:7" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:8.5" Storyboard.TargetName="point32" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="10">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:6.5" Value="10" />
+                <EasingDoubleKeyFrame KeyTime="0:0:7" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimation BeginTime="0:0:10.5" Duration="0:0:1" To="1" Storyboard.TargetName="layer1" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:11" Duration="0:0:1" To="1" Storyboard.TargetName="layer2" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:11.5" Duration="0:0:1" To="1" Storyboard.TargetName="layer3" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:10" Storyboard.TargetName="textl1" Storyboard.TargetProperty="Opacity">
+                <DiscreteDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <DiscreteDoubleKeyFrame KeyTime="0:0:5" Value="1" />
+                <DiscreteDoubleKeyFrame KeyTime="0:0:5.5" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:10.5" Storyboard.TargetName="textl2" Storyboard.TargetProperty="Opacity">
+                <DiscreteDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <DiscreteDoubleKeyFrame KeyTime="0:0:5" Value="1" />
+                <DiscreteDoubleKeyFrame KeyTime="0:0:5.5" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:11" Storyboard.TargetName="textl3" Storyboard.TargetProperty="Opacity">
+                <DiscreteDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <DiscreteDoubleKeyFrame KeyTime="0:0:5" Value="1" />
+                <DiscreteDoubleKeyFrame KeyTime="0:0:5.5" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimation BeginTime="0:0:14.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="layer1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:14.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="layer1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:14.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="layer2" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:14.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="layer2" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:14.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="layer3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:14.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="layer3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:12" Duration="0:0:0.5" To="1" Storyboard.TargetName="text32" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation BeginTime="0:0:28" To="1" Duration="0:0:0.5" Storyboard.TargetName="text32" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:28" To="1" Duration="0:0:0.5" Storyboard.TargetName="text32" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:14.5" Duration="0:0:0.5" To="-150" Storyboard.TargetName="point32" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:14.5" Duration="0:0:0.5" To="70" Storyboard.TargetName="point32" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:14.5" Duration="0:0:0.5" To="-100" Storyboard.TargetName="step2Grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:14.5" Duration="0:0:0.5" To="175" Storyboard.TargetName="step2Grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:14" Storyboard.TargetName="step2Grid" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:15" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:15.5" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <!-- Termina Step 2 -->
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:15" Storyboard.TargetName="point33" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:1.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:2" Value="0.2" />
+                <LinearDoubleKeyFrame KeyTime="0:0:5" Value="0.2" />
+                <LinearDoubleKeyFrame KeyTime="0:0:5.5" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:15" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:15.5" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:15" Storyboard.TargetName="point33" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="10">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:6" Value="10" />
+                <EasingDoubleKeyFrame KeyTime="0:0:6.5" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:15" Storyboard.TargetName="point33" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="10">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:6" Value="10" />
+                <EasingDoubleKeyFrame KeyTime="0:0:6.5" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimation BeginTime="0:0:16" Duration="0:0:0.5" To="1" Storyboard.TargetName="border3" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:16.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="text33" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:17.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="sliderOpacity31" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:17.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="slider31" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:17.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="slider32" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation BeginTime="0:0:18" Duration="0:0:0.5" To="20" Storyboard.TargetName="sliderOpacity31" Storyboard.TargetProperty="Value" />
+            <DoubleAnimation BeginTime="0:0:18" Duration="0:0:0.5" To="0.2" Storyboard.TargetName="image31" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:18" Duration="0:0:0.5" To="0.8" Storyboard.TargetName="image32" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation BeginTime="0:0:21" Duration="0:0:0.5" To="-20" Storyboard.TargetName="point33" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:21" Duration="0:0:0.5" To="-320" Storyboard.TargetName="point33" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:21" Duration="0:0:0.5" To="70" Storyboard.TargetName="step3Grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:21" Duration="0:0:0.5" To="-140" Storyboard.TargetName="step3Grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:21" Duration="0:0:0.5" To="1" Storyboard.TargetName="step3Grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:21" Duration="0:0:0.5" To="1" Storyboard.TargetName="step3Grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:20" Storyboard.TargetName="step3Grid" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:10" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:10.5" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <!-- Termina Step 3 -->
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:21" Storyboard.TargetName="point34" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:1.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:2" Value="0.2" />
+                <LinearDoubleKeyFrame KeyTime="0:0:6.5" Value="0.2" />
+                <LinearDoubleKeyFrame KeyTime="0:0:7" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:10" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:10.5" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:21" Storyboard.TargetName="point34" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="10">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:7.5" Value="10" />
+                <EasingDoubleKeyFrame KeyTime="0:0:8" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:21" Storyboard.TargetName="point34" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="10">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:7.5" Value="10" />
+                <EasingDoubleKeyFrame KeyTime="0:0:8" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimation BeginTime="0:0:22.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="image41" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:23" Duration="0:0:0.5" To="1" Storyboard.TargetName="text34" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation BeginTime="0:0:24" Duration="0:0:0.5" To="1" Storyboard.TargetName="icon41" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:24.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="text41" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation BeginTime="0:0:25" Duration="0:0:0.5" To="1" Storyboard.TargetName="icon42" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:25.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="text42" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation BeginTime="0:0:28.5" Duration="0:0:0.5" To="-20" Storyboard.TargetName="point34" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:28.5" Duration="0:0:0.5" To="70" Storyboard.TargetName="point34" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:28.5" Duration="0:0:0.5" To="60" Storyboard.TargetName="step4Grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:28.5" Duration="0:0:0.5" To="225" Storyboard.TargetName="step4Grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:28.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="step4Grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:28.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="step4Grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:27.5" Storyboard.TargetName="step4Grid" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:3.5" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:4" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:4.5" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Name="Welcome4StoryBoard">
+            <DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetName="Welcome3" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetName="title3" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Next1" Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:14" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:14.5" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetName="Welcome4" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetName="title4" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation BeginTime="0:0:2" Duration="0:0:0.5" To="1" Storyboard.TargetName="title4" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:2" Duration="0:0:0.5" To="1" Storyboard.TargetName="title4" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:2" Duration="0:0:0.5" To="-212" Storyboard.TargetName="title4" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:3" Duration="0:0:0.5" To="1" Storyboard.TargetName="subtitle4" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:7" Duration="0:0:0.5" To="1" Storyboard.TargetName="subtitle4" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:7" Duration="0:0:0.5" To="1" Storyboard.TargetName="subtitle4" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseInOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            
+            <DoubleAnimation BeginTime="0:0:8" Duration="0:0:0.5" To="1" Storyboard.TargetName="Image41" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:8.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="epigrage41" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:9.5" Duration="0:0:0.5" To="0.7" Storyboard.TargetName="Arrow41" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:10" Duration="0:0:0.5" To="1" Storyboard.TargetName="Image42" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:10.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="epigrage42" Storyboard.TargetProperty="Opacity" />
+
+            <DoubleAnimation BeginTime="0:0:12" Duration="0:0:0.5" To="1" Storyboard.TargetName="Image43" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:12.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="epigrage43" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:13.5" Duration="0:0:0.5" To="0.7" Storyboard.TargetName="Arrow42" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:14" Duration="0:0:0.5" To="1" Storyboard.TargetName="Image44" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation BeginTime="0:0:14.5" Duration="0:0:0.5" To="1" Storyboard.TargetName="epigrage44" Storyboard.TargetProperty="Opacity" />
+        </Storyboard>
+    </sdk:ChildWindow.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border x:Name="Chrome" CornerRadius="8,8,0,0" BorderThickness="1" BorderBrush="#FF95a92c">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="0.8">
+                    <GradientStop Color="#FF849b0c" Offset="0" />
+                    <GradientStop Color="#FF9fba0e" Offset="0.5" />
+                    <GradientStop Color="#FF849b0c" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid Height="Auto" Width="Auto">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="logo" Grid.Row="0" Margin="10,0,0,0" Stretch="None" VerticalAlignment="Center" HorizontalAlignment="Left" />
+               
+                <Button x:Name="CloseButton" Click="BtnCloseClick" Grid.Column="2" HorizontalAlignment="Center" Background="Black" Cursor="Hand"
+                        IsTabStop="False"  Width="24" Margin="0,3,3,0"  VerticalAlignment="Top">
+                        <Path Data="M0,0 L1,1 M0,1 L1,0" Stretch="Fill" Stroke="#a3a3a3" StrokeThickness="3" Width="14"
+                            Height="14" Effect="{StaticResource ControlShadowEffect}" />
+                </Button>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" x:Name="Welcome1" Opacity="1" Visibility="Visible">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#FFA0BB0E" Offset="0.8"></GradientStop>
+                    <GradientStop Color="#FF6D9700" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Border x:Name="border1" CornerRadius="5" Opacity="0" IsHitTestVisible="False" BorderThickness="5" BorderBrush="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-20,0,0">
+                    <Grid>
+                        <Image x:Name="image1" Opacity="1" Source="../../Resources/Images/welcome1.jpg" Stretch="None" />
+                        <Image x:Name="image2" Opacity="0" Source="../../Resources/Images/welcome2.jpg" Stretch="None" />
+                    </Grid>
+                </Border>
+
+                <TextBlock x:Name="sliderText1" TextWrapping="Wrap" Text="{Binding Path=Tutorial17, Source={StaticResource Labels}}" Opacity="0" FontSize="16" Margin="0,0,150,4" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                <TextBlock x:Name="sliderText2" TextWrapping="Wrap" Text="2008" Opacity="0" FontSize="16" Margin="150,0,0,4" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+
+                <Slider Opacity="0" x:Name="sliderOpacity" IsHitTestVisible="False" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="-15,0,0,1" Width="360" BorderThickness="0" Value="0" Minimum="0" Maximum="100"/>
+
+                <TextBlock Opacity="0" x:Name="text1" Text="{Binding Path=Tutorial4, Source={StaticResource Labels}}" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Margin="60,70,0,0" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                <Ellipse Opacity="0" x:Name="ellipse1" Width="70" Height="70" Stroke="#FFff6c00" StrokeThickness="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,55,0,0" />
+                <Line Opacity="0" x:Name="line1" Width="90" Stroke="#FFff6c00" StrokeThickness="4" X1="0" X2="90" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,90,0,0" />
+
+
+                <Ellipse Opacity="0" x:Name="ellipse2" Width="70" Height="70" Stroke="#FFff6c00" StrokeThickness="3" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,40,170,0" />
+                <Line Opacity="0" x:Name="line2" Width="90" Stroke="#FFff6c00" StrokeThickness="4" X1="0" X2="90" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,75,80,0" />
+                <TextBlock Opacity="0" x:Name="text2" Text="{Binding Path=Tutorial5, Source={StaticResource Labels}}" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,55,20,0" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+
+                <Ellipse Opacity="0" x:Name="ellipse3" Width="70" Height="70" Stroke="#FFb80e0e" StrokeThickness="3" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,220,240,0">
+                    <Ellipse.RenderTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="1" CenterY="35" CenterX="70" />
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Line Opacity="0" x:Name="line3" Width="150" Stroke="#FFb80e0e" StrokeThickness="4" X1="0" X2="150" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,255,90,0" />
+                <TextBlock Opacity="0" x:Name="text3" Text="{Binding Path=Tutorial3, Source={StaticResource Labels}}" Foreground="#FFb80e0e" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,235,30,0" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+
+                <StackPanel x:Name="alert" Opacity="0" Orientation="Vertical" Margin="60,90,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image  Source="../../Resources/Images/parcelaalert.png" Stretch="None"  />
+                    <TextBlock Text="{Binding Path=Tutorial6, Source={StaticResource Labels}}" Foreground="#FFb80e0e" TextAlignment="Center" Margin="0,10,0,0" FontSize="15" FontWeight="Bold" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                </StackPanel>
+
+                <TextBlock x:Name="WelcomeText" Opacity="0" FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="50" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro">
+                <Run FontSize="30" FontWeight="Bold" Text="{Binding Path=Notifications1, Source={StaticResource Labels}}" />
+                    <LineBreak /><LineBreak />
+                    <Run Text="{Binding Path=Tutorial1, Source={StaticResource Labels}}" />
+                </TextBlock>
+                <Button x:Name="ButtonStart" Style="{StaticResource GreenButton}" Width="180" Opacity="0" HorizontalAlignment="Left" Cursor="Hand" Height="35" Foreground="White" FontSize="15" FontWeight="Bold" Content="{Binding Path=Notifications2, Source={StaticResource Labels}}" Margin="60,90,0,0" Click="ButtonStart_Click">
+                </Button>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" x:Name="Welcome2" Opacity="0" Visibility="Collapsed">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#FFA0BB0E" Offset="0.8"></GradientStop>
+                    <GradientStop Color="#FF6D9700" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Border x:Name="border2" CornerRadius="5" Opacity="0" BorderThickness="5" BorderBrush="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-20,0,0">
+                    <Grid>
+                        <Image Source="../../Resources/Images/welcome1.jpg" Stretch="None" />
+                    </Grid>
+                </Border>
+                <Grid>
+                    <Grid.RenderTransform>
+                        <ScaleTransform ScaleX="0.9" ScaleY="0.9" />
+                    </Grid.RenderTransform>
+                    <Polygon Opacity="0" x:Name="hexagon1" Points="0,60 33,120 103,120 136,60 103,0 33,0" Stroke="#FF000000" StrokeThickness="3" Fill="#aaCCCCCC" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="256,-255,0,0" />
+                    <Polygon Opacity="0" x:Name="hexagon2" Points="0,60 33,120 103,120 136,60 103,0 33,0" Stroke="#FF000000" StrokeThickness="3" Fill="#aa92ab0d" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-156,-255,0,0" />
+                    <Polygon Opacity="0" x:Name="hexagon3" Points="0,60 33,120 103,120 136,60 103,0 33,0" Stroke="#FF000000" StrokeThickness="3" Fill="#aaCCCCCC" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50,115,0,0" />
+                    <Polygon Opacity="0" x:Name="hexagon4" Points="0,60 33,120 103,120 136,60 103,0 33,0" Stroke="#FF000000" StrokeThickness="3" Fill="#aab80e0e" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="256,-12,0,0" />
+                    <Polygon Opacity="0" x:Name="hexagon0" Points="0,60 33,120 103,120 136,60 103,0 33,0" Stroke="#FFff6c00" StrokeThickness="3" Fill="#aaCCCCCC" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50,-130,0,0" />
+                </Grid>
+                <Line Opacity="0" x:Name="line21" Width="160" Stroke="#FFff6c00" StrokeThickness="4" X1="0" X2="160" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,65,0,0" />
+                <StackPanel x:Name="icon21" Orientation="Vertical" Opacity="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,45,0,0">
+                    <Image Source="../../Resources/Images/parcelaokw.png" Stretch="None" HorizontalAlignment="Center"  />
+                    <TextBlock Text="{Binding Path=Tutorial7, Source={StaticResource Labels}}" TextWrapping="Wrap" TextAlignment="Center" Width="60" FontSize="15" Margin="0,5,0,0" FontWeight="Bold" HorizontalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                </StackPanel>
+
+                <Line Opacity="0" x:Name="line22" Width="160" Stroke="#FFff6c00" StrokeThickness="4" X1="0" X2="160" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,-10,120,0" />
+                <StackPanel x:Name="icon22" Orientation="Vertical" Opacity="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,40,0">
+                    <Image Source="../../Resources/Images/parcelaalert.png" Width="42" HorizontalAlignment="Center"  />
+                    <TextBlock Text="{Binding Path=Tutorial8, Source={StaticResource Labels}}" TextWrapping="Wrap" Foreground="#FFb80e0e" TextAlignment="Center" Width="80" Margin="0,5,0,0" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                </StackPanel>
+
+                <Line Opacity="0" x:Name="line23" Width="140" Stroke="#FFff6c00" StrokeThickness="4" X1="0" X2="140" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-180,-80,0,0" />
+                <TextBlock x:Name="text23" Opacity="0" Text="{Binding Path=Tutorial9, Source={StaticResource Labels}}" TextAlignment="Center" Margin="-260,-105,0,0" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+
+                <Grid x:Name="popup1" Width="102" Height="58" Margin="-260,-250,0,0">
+                    <Grid.RenderTransform>
+                        <ScaleTransform ScaleX="0" ScaleY="0" CenterX="51" CenterY="29" />
+                    </Grid.RenderTransform>
+                    <Image Source="../../Resources/Images/welcomepopup.png" Stretch="None" HorizontalAlignment="Center"  />
+                    <TextBlock FontSize="11" Margin="45,10,0,0" LineHeight="14" LineStackingStrategy="BlockLineHeight">
+                        <Run Text="{Binding Path=WW1, Source={StaticResource Labels}}" FontWeight="Bold" />
+                        <LineBreak />
+                        <Run Text="{Binding Path=WW2, Source={StaticResource Labels}}" FontWeight="Bold"></Run>
+                    </TextBlock>
+                </Grid>
+
+                <Grid x:Name="popup2" Width="102" Height="58" Margin="230,-140,0,0">
+                    <Grid.RenderTransform>
+                        <ScaleTransform ScaleX="0" ScaleY="0" CenterX="51" CenterY="29" />
+                    </Grid.RenderTransform>
+                    <Image Source="../../Resources/Images/welcomepopup.png" Stretch="None" HorizontalAlignment="Center"  />
+                    <TextBlock FontSize="11" Margin="45,10,0,0" LineHeight="14" LineStackingStrategy="BlockLineHeight">
+                        <Run Text="{Binding Path=WW3, Source={StaticResource Labels}}" FontWeight="Bold" />
+                        <LineBreak />
+                        <Run Text="{Binding Path=WW4, Source={StaticResource Labels}}" FontWeight="Bold"></Run>
+                    </TextBlock>
+                </Grid>
+
+                <Grid x:Name="popup0" Width="102" Height="58" Margin="0,-295,0,0">
+                    <Grid.RenderTransform>
+                        <ScaleTransform ScaleX="0" ScaleY="0" CenterX="51" CenterY="29" />
+                    </Grid.RenderTransform>
+                    <Image Source="../../Resources/Images/welcomepopup.png" Stretch="None" HorizontalAlignment="Center"  />
+                    <TextBlock FontSize="14" Margin="45,15,0,0" Text="{Binding Path=Tutorial10, Source={StaticResource Labels}}" FontWeight="Bold" />
+                </Grid>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" x:Name="Welcome3" Opacity="0" Visibility="Collapsed">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#FFA0BB0E" Offset="0.8"></GradientStop>
+                    <GradientStop Color="#FF6D9700" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <TextBlock x:Name="point31" Text="1" Opacity="0" FontSize="30" FontWeight="Bold" Foreground="#FF8ba20c" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro">
+                    <TextBlock.RenderTransform>
+                        <CompositeTransform ScaleX="20" ScaleY="20" CenterX="8" CenterY="19" TranslateX="0" TranslateY="0" />
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+
+                <Grid x:Name="step1Grid">
+                    <Grid.RenderTransform>
+                        <CompositeTransform TranslateX="0" TranslateY="0" />
+                    </Grid.RenderTransform>
+                    <Image x:Name="icon1" Source="../../Resources/Images/w3_step1.png" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image.RenderTransform>
+                            <CompositeTransform ScaleX="0" ScaleY="0" CenterX="33" CenterY="29" TranslateX="0" TranslateY="0" />
+                        </Image.RenderTransform>
+                    </Image>
+
+
+                    <TextBlock x:Name="text31" Text="{Binding Path=Tutorial14, Source={StaticResource Labels}}" TextWrapping="Wrap" Opacity="0" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro">
+                        <TextBlock.RenderTransform>
+                            <CompositeTransform TranslateX="10" TranslateY="0" ScaleX="1.5" ScaleY="1.5" CenterX="-60" CenterY="30" />
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                </Grid>
+                <TextBlock x:Name="point32" Text="2" Opacity="0" FontSize="30" FontWeight="Bold" Foreground="#FF8ba20c" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro">
+                    <TextBlock.RenderTransform>
+                        <CompositeTransform ScaleX="20" ScaleY="20" CenterX="8" CenterY="19" TranslateX="0" TranslateY="0" />
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <Grid x:Name="step2Grid">
+                    <Grid.RenderTransform>
+                        <CompositeTransform TranslateX="0" TranslateY="0" />
+                    </Grid.RenderTransform>
+                    <TextBlock x:Name="textl1" Text="2008" TextWrapping="Wrap" Opacity="0" FontSize="16" Margin="120,95,0,0" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                    <TextBlock x:Name="textl2" Text="{Binding Path=Tutorial17, Source={StaticResource Labels}}" TextWrapping="Wrap" Opacity="0" FontSize="16" Margin="120,30,0,0" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                    <TextBlock x:Name="textl3" Text="{Binding Path=Tutorial28, Source={StaticResource Labels}}" TextWrapping="Wrap" Opacity="0" FontSize="16" Margin="120,-35,0,0" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+
+                    <Image x:Name="layer1" Opacity="0" Source="../../Resources/Images/w3_step21.png" Margin="-70, 50,0,0" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image.RenderTransform>
+                            <ScaleTransform ScaleX="2" ScaleY="2" CenterX="90" CenterY="0" />
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image x:Name="layer2" Opacity="0" Source="../../Resources/Images/w3_step22.png" Margin="-70, 0,0,0" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image.RenderTransform>
+                            <ScaleTransform ScaleX="2" ScaleY="2" CenterX="90" CenterY="0" />
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image x:Name="layer3" Opacity="0" Source="../../Resources/Images/w3_step23.png" Margin="-70,-50,0,0" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image.RenderTransform>
+                            <ScaleTransform ScaleX="2" ScaleY="2" CenterX="90" CenterY="0" />
+                        </Image.RenderTransform>
+                    </Image>
+
+                    <TextBlock x:Name="text32" Text="{Binding Path=Tutorial18, Source={StaticResource Labels}}" TextWrapping="Wrap" Opacity="0" FontSize="20" Margin="240,0,0,0" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro">
+                        <TextBlock.RenderTransform>
+                            <CompositeTransform TranslateX="0" TranslateY="0" ScaleX="1.5" ScaleY="1.5" CenterX="20" CenterY="0" />
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                </Grid>
+
+                <TextBlock x:Name="point33" Text="3" Opacity="0" FontSize="30" FontWeight="Bold" Foreground="#FF8ba20c" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro">
+                    <TextBlock.RenderTransform>
+                        <CompositeTransform ScaleX="20" ScaleY="20" CenterX="8" CenterY="19" TranslateX="0" TranslateY="0" />
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <Grid x:Name="step3Grid">
+                    <Grid.RenderTransform>
+                        <CompositeTransform TranslateX="0" TranslateY="0" ScaleX="1.5" ScaleY="1.5" CenterX="350" CenterY="200" />
+                    </Grid.RenderTransform>
+                    <Border x:Name="border3" CornerRadius="5" Opacity="0" BorderThickness="5" BorderBrush="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-120,0,0,0">
+                        <Border.RenderTransform>
+                            <ScaleTransform ScaleX="0.4" ScaleY="0.4" CenterX="236" CenterY="187" />
+                        </Border.RenderTransform>
+                        <Grid>
+                            <Image x:Name="image31" Opacity="1" Source="../../Resources/Images/welcome1.jpg" Stretch="None" />
+                            <Image x:Name="image32" Opacity="0" Source="../../Resources/Images/welcome2.jpg" Stretch="None" />
+                        </Grid>
+                    </Border>
+
+                    <Slider Opacity="0" x:Name="sliderOpacity31" VerticalAlignment="Center" HorizontalAlignment="Center" Width="115" Margin="-105,177,0,0" BorderThickness="0" Value="80" Minimum="0" Maximum="100"/>
+
+                    <TextBlock x:Name="slider32" TextWrapping="Wrap" Text="2008" Opacity="0" FontSize="14" Margin="-275,167,0,0" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                    <TextBlock x:Name="slider31" TextWrapping="Wrap" Text="3-jun" Opacity="0" FontSize="14" Margin="35,167,0,0" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+
+                    <TextBlock x:Name="text33" Text="{Binding Path=Tutorial22, Source={StaticResource Labels}}" TextWrapping="Wrap" Opacity="0" FontSize="20" Margin="220,0,0,0" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro">
+
+                    </TextBlock>
+                </Grid>
+
+                <TextBlock x:Name="point34" Text="4" Opacity="0" FontSize="30" FontWeight="Bold" Foreground="#FF8ba20c" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro">
+                    <TextBlock.RenderTransform>
+                        <CompositeTransform ScaleX="20" ScaleY="20" CenterX="8" CenterY="19" TranslateX="0" TranslateY="0" />
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <Grid x:Name="step4Grid">
+                    <Grid.RenderTransform>
+                        <CompositeTransform TranslateX="0" TranslateY="0" ScaleX="1.5" ScaleY="1.5" CenterX="350" CenterY="300" />
+                    </Grid.RenderTransform>
+                    <Image x:Name="image41" Opacity="0" Margin="-90,0,0,0" Source="../../Resources/Images/w3_step41.png" Stretch="None" />
+                    <TextBlock x:Name="text34" Text="{Binding Path=Tutorial29, Source={StaticResource Labels}}" TextWrapping="Wrap" Opacity="0" FontSize="20" Margin="205,-70,0,0" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro">
+
+                    </TextBlock>
+                    <Image x:Name="icon41" Opacity="0" Margin="-240,170,0,0" Source="../../Resources/Images/parcelaokw.png" Width="24" />
+                    <TextBlock x:Name="text41" Text="{Binding Path=Report2, Source={StaticResource Labels}}" Opacity="0" FontSize="16" Margin="290,170,0,0" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+
+                    <Image x:Name="icon42" Opacity="0" Margin="-240,230,0,0" Source="../../Resources/Images/parcelaalert.png" Width="24" />
+                    <TextBlock x:Name="text42" Text="{Binding Path=Report3, Source={StaticResource Labels}}" Opacity="0" Foreground="#FFb80e0e" FontSize="16" Margin="290,230,0,0" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                </Grid>
+            </Grid>
+        </Border>
+        
+        <Border Grid.Row="1" x:Name="Welcome4" Opacity="0" Visibility="Collapsed">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#FFA0BB0E" Offset="0.8"></GradientStop>
+                    <GradientStop Color="#FF6D9700" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="subtitle4" RenderTransformOrigin="0.5, 0.5" Grid.ColumnSpan="3" Width="240" Grid.RowSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=Tutorial50, Source={StaticResource Labels}}" Opacity="0" FontSize="15" TextWrapping="Wrap" Margin="5" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro">
+                    <TextBlock.RenderTransform>
+                        <CompositeTransform ScaleX="2" ScaleY="2" TranslateY="0" />
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+
+                <TextBlock x:Name="epigrage41" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" Text="{Binding Path=Tutorial51, Source={StaticResource Labels}}" Opacity="0" FontSize="14" TextWrapping="Wrap" Margin="0,3,0,0" VerticalAlignment="Top" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                <TextBlock x:Name="epigrage43" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" Text="{Binding Path=Tutorial52, Source={StaticResource Labels}}" Opacity="0" FontSize="14" TextWrapping="Wrap" Margin="0,3,0,0" VerticalAlignment="Top" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                <TextBlock x:Name="epigrage42" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Text="{Binding Path=Tutorial53, Source={StaticResource Labels}}" Opacity="0" FontSize="14" TextWrapping="Wrap" Margin="0,3,0,0" VerticalAlignment="Top" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                <TextBlock x:Name="epigrage44" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" Text="{Binding Path=Tutorial54, Source={StaticResource Labels}}" Opacity="0" FontSize="14" TextWrapping="Wrap" Margin="0,3,0,0" VerticalAlignment="Top" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+
+                <Image x:Name="Image41" Opacity="0" Grid.Row="0" Grid.Column="0" Source="../../Resources/Images/completo_aerea.jpg" Stretch="None" />
+                <Image x:Name="Image42" Opacity="0" Grid.Row="0" Grid.Column="2" Source="../../Resources/Images/completo_satelital.jpg" Stretch="None" />
+                <Image x:Name="Image43" Opacity="0" Grid.Row="2" Grid.Column="0" Source="../../Resources/Images/desmonte_aerea.jpg" Stretch="None" />
+                <Image x:Name="Image44" Opacity="0" Grid.Row="2" Grid.Column="2" Source="../../Resources/Images/desmonte_satelital.jpg" Stretch="None" />
+                <Path x:Name="Arrow41" Grid.Column="1" Fill="White" Opacity="0" Margin="80,10,80,100" Stretch="Fill" Data="F1 M 85.7631,138.267L 68.4351,120.939C 67.8271,120.331 66.9125,120.148 66.1178,120.478C 65.3231,120.807 64.8058,121.584 64.8058,122.443L 64.8058,131.691L 39.9031,131.691L 39.9031,147.85L 64.8058,147.85L 64.8058,157.099C 64.8058,157.96 65.3231,158.736 66.1178,159.064C 66.3805,159.172 66.6565,159.224 66.9298,159.224C 67.4845,159.224 68.0285,159.01 68.4351,158.602L 85.7631,141.274C 86.1591,140.878 86.3871,140.331 86.3871,139.77C 86.3871,139.211 86.1591,138.662 85.7631,138.267 Z" />
+                <Path x:Name="Arrow42" Grid.Column="1" Grid.Row="2" Fill="White" Opacity="0" Margin="80,100,80,10" Stretch="Fill" Data="F1 M 85.7631,138.267L 68.4351,120.939C 67.8271,120.331 66.9125,120.148 66.1178,120.478C 65.3231,120.807 64.8058,121.584 64.8058,122.443L 64.8058,131.691L 39.9031,131.691L 39.9031,147.85L 64.8058,147.85L 64.8058,157.099C 64.8058,157.96 65.3231,158.736 66.1178,159.064C 66.3805,159.172 66.6565,159.224 66.9298,159.224C 67.4845,159.224 68.0285,159.01 68.4351,158.602L 85.7631,141.274C 86.1591,140.878 86.3871,140.331 86.3871,139.77C 86.3871,139.211 86.1591,138.662 85.7631,138.267 Z" />
+            </Grid>
+            
+        </Border>
+
+        <TextBlock x:Name="title1" RenderTransformOrigin="0.5, 0.5" Text="{Binding Path=Tutorial11, Source={StaticResource Labels}}" Opacity="0" Grid.RowSpan="2" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro">
+            <TextBlock.RenderTransform>
+                <CompositeTransform ScaleX="2" ScaleY="2" TranslateY="0" />
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
+        <TextBlock x:Name="title2" RenderTransformOrigin="0.5, 0.5" Text="{Binding Path=Tutorial12, Source={StaticResource Labels}}" Opacity="0" TextAlignment="Center" Grid.RowSpan="2" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro">
+            <TextBlock.RenderTransform>
+                <CompositeTransform ScaleX="2" ScaleY="2" TranslateY="0" />
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
+        <TextBlock x:Name="title3" RenderTransformOrigin="0.5, 0.5" Text="{Binding Path=Tutorial13, Source={StaticResource Labels}}" Opacity="0" Grid.RowSpan="2" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro">
+            <TextBlock.RenderTransform>
+                <CompositeTransform ScaleX="2" ScaleY="2" TranslateY="0" />
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
+        <TextBlock x:Name="title4" RenderTransformOrigin="0.5, 0.5" TextWrapping="Wrap" Text="{Binding Path=Tutorial49, Source={StaticResource Labels}}" Opacity="0" Grid.RowSpan="2" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro">
+            <TextBlock.RenderTransform>
+                <CompositeTransform ScaleX="2" ScaleY="2" TranslateY="0" />
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
+        <Button Grid.Row="0" x:Name="Next1" IsHitTestVisible="False" Style="{StaticResource GreenButton}" Width="150" HorizontalAlignment="Right" Margin="0,10,10,0" Opacity="0" Cursor="Hand" Height="35" Foreground="White" FontSize="15" FontWeight="Bold" Content="{Binding Path=TutorialGame1, Source={StaticResource Labels}}" Click="Next1_Click" />
+        
+    </Grid>
+
+
+</sdk:ChildWindow>

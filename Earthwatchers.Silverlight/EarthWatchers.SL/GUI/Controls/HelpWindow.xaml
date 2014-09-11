@@ -1,0 +1,81 @@
+﻿<sdk:ChildWindow
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:gui="clr-namespace:EarthWatchers.SL.GUI.Controls"
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+            xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+           xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="EarthWatchers.SL.GUI.Controls.HelpWindow" 
+           Width="594" Height="644" 
+           Style="{StaticResource GPChildWindow}"
+           Title="Help">
+    <Grid x:Name="LayoutRoot" Margin="2" Height="588" Width="568">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" MinHeight="28" />
+        </Grid.RowDefinitions>
+        <sdk:TabControl Margin="10,10,-11,14" Grid.RowSpan="2">
+            <sdk:TabItem Header="About" MouseLeftButtonUp="About_Clicked">
+                <Grid>
+                    <StackPanel Margin="2,7,5,425">
+                        <TextBlock Height="83" x:Name="textBlock1" Text="Earthwatchers allows members to see forests from space with satellite images providing transparency to protect the forest and combat illegal logging. Earthwatchers was developed in the framework of DeforestAction, with the specific goals of showing in real time the forest status, alert ground volunteers to suspicious changes and provide a platform to learn and discuss the forest dynamics. " Width="537" VerticalAlignment="Stretch" Margin="0" IsHitTestVisible="False" TextWrapping="Wrap" />
+                    </StackPanel>
+                    <StackPanel Margin="2,163,20,54">
+                        <TextBlock Height="23" x:Name="textBlock6" Text="About DeforestACTION " Width="537" VerticalAlignment="Stretch" Margin="0" IsHitTestVisible="False" TextWrapping="Wrap" FontWeight="Bold" FontStyle="Italic" />
+                        <Image x:Name="deforestaction_logo" Stretch="Fill" Width="77" Source="../../Resources/Images/EA-logo_transparent.png" RenderTransformOrigin="0.418,0.474" Margin="1,0,0,0" HorizontalAlignment="Left" />
+                        <TextBlock Height="63" x:Name="textBlock7" Text="DeforestACTION is a cooperative effort between Microsoft Partners in Learning, TakingItGlobal, Virgo Productions and Geodan. Its mission statement is: 'Empowering young people to take real action, to stop deforestation, by embracing 21st century learning, using the best technology.' " Width="537" VerticalAlignment="Stretch" Margin="0" IsHitTestVisible="False" TextWrapping="Wrap" />
+                        <HyperlinkButton Content="www.deforestAction.org"  TargetName="_blank" Height="23" x:Name="hyperlinkButton_deforestaction" Width="206" />
+                        <TextBlock Height="23" x:Name="textBlock8" Text="About Geodan " Width="537" VerticalAlignment="Stretch" Margin="0" IsHitTestVisible="False" TextWrapping="Wrap" FontWeight="Bold" FontStyle="Italic" />
+                        <Image x:Name="geodan_logo" Source="../../Resources/Images/geodan.png" Stretch="Fill" Margin="2,0,478,0" />
+                        <TextBlock Height="53" x:Name="textBlock9" Text="The EarthWatchers system is being developed by Geodan. Geodan specializes in geospatial solutions which can be used to ensure the adequate management and availability of geo-information. " Width="537" VerticalAlignment="Stretch" Margin="0" IsHitTestVisible="False" TextWrapping="Wrap" />
+                        <HyperlinkButton Content="www.geodan.com"  TargetName="_blank" Height="23" x:Name="hyperlinkButton_Geodan" Width="141" Margin="197,0" />
+                    </StackPanel>
+                    <StackPanel Margin="3,104,294,358">
+                        <TextBlock Height="24" x:Name="textBlock2" Text="To share training and educational resources" Width="248" VerticalAlignment="Stretch" Margin="0" IsHitTestVisible="False" TextWrapping="Wrap" />
+                        <TextBlock Height="24" IsHitTestVisible="False" x:Name="textBlock3" Text="To watch the tutorial video of EarthWatchers" TextWrapping="Wrap" Width="248" />
+                    </StackPanel>
+
+                    <HyperlinkButton Content="click here" TargetName="_blank" Height="18" x:Name="hyperlinkButton_video" Width="70" Margin="266,127,221,378" />
+                    <StackPanel x:Name="stackPanel8" Margin="2,374,488,122"/>
+
+                    <StackPanel Height="22" x:Name="stackPanel1" Width="66" Margin="266,104,225,397">
+                        <HyperlinkButton Content="click here" TargetName="_blank" Height="18" x:Name="hyperlinkButton_ShareTraining" Width="70" />
+                    </StackPanel>
+                    <Grid x:Name="logoGrid" Height="49" Margin="20,0,20,5" VerticalAlignment="Bottom">
+                        <Rectangle Fill="#7F000000" Stroke="Black" RadiusY="5" RadiusX="5" Margin="-8,-10,-2,10" Height="49" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Opacity="0.5"/>
+                        <StackPanel Margin="29.298,-12.984,-8.104,12.984" Orientation="Horizontal" HorizontalAlignment="Center" Height="49" VerticalAlignment="Bottom" Width="495.806" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                            <StackPanel.RenderTransform>
+                                <CompositeTransform SkewY="-0.538" TranslateY="-0.737"/>
+                            </StackPanel.RenderTransform>
+                            <Image Margin="0,10" Source="/EarthWatchers.SL;component/Resources/Images/TIG-English-Logo-inverted_transparent.png" HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="Fill" Canvas.ZIndex="100" />
+                            <Image Margin="15,3.984,0,-1.986" Source="/EarthWatchers.SL;component/Resources/Images/geodan.png" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                                <Image.RenderTransform>
+                                    <CompositeTransform Rotation="0.421"/>
+                                </Image.RenderTransform>
+                            </Image>
+                            <Image Margin="15,8,0,1" Source="/EarthWatchers.SL;component/Resources/Images/piln_logo_transparent_inverted.png" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+            </sdk:TabItem>
+            <sdk:TabItem Header="Getting Started" MouseLeftButtonUp="get_started_clicked">
+                <Grid>
+                    <StackPanel>
+                        <Image Height="423" x:Name="image1" Stretch="Fill" Width="547" Source="../../Resources/Images/GettingStarted1.JPG" Visibility="Visible" Margin="5,0" />
+                        <Image Height="480" x:Name="image2" Stretch="Fill" Width="547" Source="../../Resources/Images/GettingStarted2.JPG" Visibility="Collapsed" />
+                        <Image Height="480" x:Name="image3" Stretch="Fill" Width="547" Source="../../Resources/Images/GettingStarted3.JPG" Visibility="Collapsed" />
+                        <Image Height="480" x:Name="image4" Stretch="Fill" Width="547" Source="../../Resources/Images/GettingStarted4.JPG" Visibility="Collapsed" />
+                        <Image Height="480" x:Name="image5" Stretch="Fill" Width="547" Source="../../Resources/Images/GettingStarted5.JPG" Visibility="Collapsed" />
+                    </StackPanel>
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="Data partners" MouseLeftButtonUp="DataPartners_click">
+                <gui:DataPartners Loaded="DataPartners_Loaded_1" VerticalAlignment="Bottom" Height="531" Margin="0,-3,8,-5" />
+            </sdk:TabItem>
+        </sdk:TabControl>
+        <Button x:Name="btnClose" Content="Close" Click="BtnCloseClick" Width="75" HorizontalAlignment="Right" Grid.Row="1" />
+        <Button Content="Previous" Grid.Row="1" Height="28" HorizontalAlignment="Left" Margin="143,1,0,-1" x:Name="Previous_button" VerticalAlignment="Top" Width="83" Visibility="Collapsed" Click="OnPrevious_Click" IsEnabled="False"/>
+        <Button Content="Next" Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="261,0,0,-2" x:Name="Next_button" VerticalAlignment="Top" Width="81" Visibility="Collapsed" Click="OnNext_Click"/>
+
+    </Grid>
+</sdk:ChildWindow>

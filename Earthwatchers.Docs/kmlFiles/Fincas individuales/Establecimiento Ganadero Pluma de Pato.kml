@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Establecimiento Ganadero Pluma de Pato.kml</name>
+	<Style id="inline29">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline120">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline11</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline29</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline11">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>Establecimiento Ganadero Pluma de Pato</name>
+		<open>1</open>
+		<description>Establecimiento Ganadero Pluma de Pato (Agustín Eduardo Vidizzoni y Agustín Vidizzoni S.A.)</description>
+		<Placemark>
+			<name>Establecimiento Ganadero Pluma de Pato</name>
+			<styleUrl>#inline120</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-63.11847788827159,-23.3547394902923,0 -63.14208615176561,-23.33736986849607,0 -63.13210502551873,-23.46432073693187,0 -63.11156141776076,-23.46791594838158,0 -63.11847788827159,-23.3547394902923,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

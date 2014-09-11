@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Nuevo Horizonte.kml</name>
+	<Style id="inline9">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline15">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline8">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline9</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline15</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>Nuevo Horizonte</name>
+		<open>1</open>
+		<description>Nuevo Horizonte (Andrés von Buch, Arnaldo Hasenclever, Alessandro Vanoli, Sandro Alberto Vanoli, Estancia Tres Lagunas S.A.)</description>
+		<Placemark>
+			<name>Nuevo Horizonte</name>
+			<styleUrl>#inline8</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-63.27832262177895,-22.40979516453194,0 -63.12036639010957,-22.40642217690324,0 -63.1217624647339,-22.49488745261037,0 -63.28157931288794,-22.49118580728548,0 -63.27832262177895,-22.40979516453194,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

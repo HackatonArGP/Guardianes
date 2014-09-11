@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="BingMapsTest.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:m="clr-namespace:Microsoft.Maps.MapControl;assembly=Microsoft.Maps.MapControl"
+    mc:Ignorable="d"
+    d:DesignHeight="500" d:DesignWidth="1000">
+    <UserControl.Resources>
+        <DataTemplate x:Key="PinTemplate">
+            <Image Source="G.png" Stretch="None" />
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="White">
+        <m:Map x:Name="mapControl" CredentialsProvider="Ap1_kNCwKP-8xD5Gaw-prs-IV42_4eX70NK6ve6bjK0Ufl8luKrZsz-g_iyjJddB" Center="-25.292, -65.353" ZoomLevel="15" Mode="Aerial" Culture="es-AR" />
+    </Grid>
+
+
+</UserControl>

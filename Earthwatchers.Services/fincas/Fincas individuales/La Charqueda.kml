@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>La Charqueda.kml</name>
+	<Style id="inline35">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline10">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline34</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline35</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline34">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>La Charqueada</name>
+		<open>1</open>
+		<description>La Charqueada Fracción 23 (Pablo Arturo Pasman y Las Trojas S.A.)</description>
+		<Placemark>
+			<name>La Charqueda</name>
+			<styleUrl>#inline10</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-63.8991013998893,-24.51934155481251,0 -63.88568569459196,-24.5278229037114,0 -63.84160136360327,-24.52534995869133,0 -63.8336545348439,-24.47901425417684,0 -63.8261539319553,-24.47528715119674,0 -63.82410837235872,-24.46907430044029,0 -63.83865694780954,-24.46928169640619,0 -63.88410412322898,-24.50755977768949,0 -63.89205787817432,-24.51231358120256,0 -63.8991013998893,-24.51934155481251,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

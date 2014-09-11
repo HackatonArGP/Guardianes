@@ -1,0 +1,1415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Cargando" xml:space="preserve">
+    <value>Loading…</value>
+  </data>
+  <data name="ChangePlot" xml:space="preserve">
+    <value>If you'd like to check a new plot, you can click on this button. Your previous plot will go into revision. You can only change plots once every 10 minutes.</value>
+  </data>
+  <data name="CollectionArctic" xml:space="preserve">
+    <value>Cosas que nunca deben entrar al Ártico</value>
+  </data>
+  <data name="CollectionEnergySupplies" xml:space="preserve">
+    <value>Costo de las fuentes de energía</value>
+  </data>
+  <data name="CollectionEnvironmentHazards" xml:space="preserve">
+    <value>Terribles peligros para el medio ambiente</value>
+  </data>
+  <data name="CollectionForest" xml:space="preserve">
+    <value>Cosas que no pertenecen al bosque</value>
+  </data>
+  <data name="CollectionItemBags" xml:space="preserve">
+    <value>Bolsas</value>
+  </data>
+  <data name="CollectionItemBarrel" xml:space="preserve">
+    <value>Barril</value>
+  </data>
+  <data name="CollectionItemBottle" xml:space="preserve">
+    <value>Botella de plástico</value>
+  </data>
+  <data name="CollectionItemBulldozer" xml:space="preserve">
+    <value>Topadora</value>
+  </data>
+  <data name="CollectionItemCarbonPlant" xml:space="preserve">
+    <value>Planta de carbon</value>
+  </data>
+  <data name="CollectionItemChainSaw" xml:space="preserve">
+    <value>Motosierra</value>
+  </data>
+  <data name="CollectionItemChemicals" xml:space="preserve">
+    <value>Quimicos</value>
+  </data>
+  <data name="CollectionItemForestFire" xml:space="preserve">
+    <value>Incendio forestal</value>
+  </data>
+  <data name="CollectionItemGolf" xml:space="preserve">
+    <value>Complejo de golf (area grande talada con piletas, pasto, etc)</value>
+  </data>
+  <data name="CollectionItemIceBreaker" xml:space="preserve">
+    <value>Rompehielos petrolero</value>
+  </data>
+  <data name="CollectionItemLeakingTransformers" xml:space="preserve">
+    <value>Transformadores perdiendo liquido</value>
+  </data>
+  <data name="CollectionItemMatches" xml:space="preserve">
+    <value>Combustible y fosforos</value>
+  </data>
+  <data name="CollectionItemMedicalGarbage" xml:space="preserve">
+    <value>Residuo medico</value>
+  </data>
+  <data name="CollectionItemNuclearGarbage" xml:space="preserve">
+    <value>Residuo nuclear</value>
+  </data>
+  <data name="CollectionItemNuclearPlant" xml:space="preserve">
+    <value>Planta nuclear</value>
+  </data>
+  <data name="CollectionItemOilWell" xml:space="preserve">
+    <value>Pozo petrolero</value>
+  </data>
+  <data name="CollectionItemPetrolMark" xml:space="preserve">
+    <value>Mancha de petroleo</value>
+  </data>
+  <data name="CollectionItemPetrolTower" xml:space="preserve">
+    <value>Torre petrolera en el hielo</value>
+  </data>
+  <data name="CollectionItemPlantation" xml:space="preserve">
+    <value>Plantación</value>
+  </data>
+  <data name="CollectionItemSixPack" xml:space="preserve">
+    <value>Anillos de plástico de six pack</value>
+  </data>
+  <data name="CollectionItemSunkenShip" xml:space="preserve">
+    <value>Barco hundido</value>
+  </data>
+  <data name="CollectionItemTinCan" xml:space="preserve">
+    <value>Latas</value>
+  </data>
+  <data name="CollectionItemUraniumMine" xml:space="preserve">
+    <value>Mina de uranio</value>
+  </data>
+  <data name="CollectionItemWeapon" xml:space="preserve">
+    <value>Armamento</value>
+  </data>
+  <data name="CollectionItemWeaponsGarbage" xml:space="preserve">
+    <value>Residuo armamentistico</value>
+  </data>
+  <data name="CollectionOcean" xml:space="preserve">
+    <value>Cosas que no deben ser parte del Océano</value>
+  </data>
+  <data name="Collections1" xml:space="preserve">
+    <value>Este ítem forma parte de la colección</value>
+  </data>
+  <data name="Collections2" xml:space="preserve">
+    <value>Cosas que no pertenecen al bosque</value>
+  </data>
+  <data name="Collections3" xml:space="preserve">
+    <value>¡COMPLETASTE LA COLECCIÓN!</value>
+  </data>
+  <data name="Collections4" xml:space="preserve">
+    <value>Ganaste 1000 puntos!</value>
+  </data>
+  <data name="Collections5" xml:space="preserve">
+    <value>Seguí reportando para encontrar nuevos objetos, completar las colecciones y ganar más puntos.</value>
+  </data>
+  <data name="Collections7" xml:space="preserve">
+    <value>Has encontrado:</value>
+  </data>
+  <data name="Comments1" xml:space="preserve">
+    <value>COMMENTS ON THIS PLOT</value>
+  </data>
+  <data name="Comments2" xml:space="preserve">
+    <value>SEND</value>
+  </data>
+  <data name="Comments3" xml:space="preserve">
+    <value>Delete Comment</value>
+  </data>
+  <data name="Comments4" xml:space="preserve">
+    <value>You are not logged in</value>
+  </data>
+  <data name="DataPartners1" xml:space="preserve">
+    <value>Near-realtime data has been kindly provided by:</value>
+  </data>
+  <data name="DataPartners2" xml:space="preserve">
+    <value>Contextual layers have been kindly provided by:</value>
+  </data>
+  <data name="EducationalLayerControl1" xml:space="preserve">
+    <value>Deforestationn</value>
+  </data>
+  <data name="FindTheJaguar1" xml:space="preserve">
+    <value>There's a lost jaguar somewhere in the land!</value>
+  </data>
+  <data name="FindTheJaguar2" xml:space="preserve">
+    <value>We know a little jaguar got lost somewhere.</value>
+  </data>
+  <data name="FindTheJaguar3" xml:space="preserve">
+    <value>Be the first to come to his aid and you'll win 5000 points!</value>
+  </data>
+  <data name="FindTheJaguar4" xml:space="preserve">
+    <value>How to find him?</value>
+  </data>
+  <data name="FindTheJaguar5" xml:space="preserve">
+    <value>Rescue the Jaguar</value>
+  </data>
+  <data name="FindTheJaguar6" xml:space="preserve">
+    <value>Instructions</value>
+  </data>
+  <data name="FindTheJaguar7" xml:space="preserve">
+    <value>Somewhere in the map there's a little jaguar that got lost. To find him, the first thing to do is Zoom in until the jaguar icon (left) turns into binoculars. Then, explore the whole map at that level by dragging. He can be hidden anywhere in the protected area. Find him before other Guardians to rescue him and get the prize!</value>
+  </data>
+  <data name="Flag1" xml:space="preserve">
+    <value>Log in to place a flag</value>
+  </data>
+  <data name="FlagInfoWindow" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="ForestLawCongrats" xml:space="preserve">
+    <value>Congratulations! You've unlocked the forest protection map accoding to the forest law.</value>
+  </data>
+  <data name="ForestLawCongrats1" xml:space="preserve">
+    <value>With this feature you'll be able to see the protected areas according to color. Everything under red doesn't allow any type of deforestation. Forest under yellow permit sustainable usage with no deforestation, and green areas allow greater usage if the right permits are emmited and a public hearing is performed.</value>
+  </data>
+  <data name="ForestLawCongrats2" xml:space="preserve">
+    <value>Click here to activate or deactivate this layer.</value>
+  </data>
+  <data name="green" xml:space="preserve">
+    <value> green</value>
+  </data>
+  <data name="Help1" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Help10" xml:space="preserve">
+    <value>Scoring</value>
+  </data>
+  <data name="Help11" xml:space="preserve">
+    <value>Which actions award points?</value>
+  </data>
+  <data name="Help12" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Help13" xml:space="preserve">
+    <value>Every time you log in with a distance of 2hs, you'll get 100 points.</value>
+  </data>
+  <data name="Help14" xml:space="preserve">
+    <value>Finish the tutorial</value>
+  </data>
+  <data name="Help15" xml:space="preserve">
+    <value>The first time you enter Guardians and finish the tutorial you'll get 2000 points!</value>
+  </data>
+  <data name="Help16" xml:space="preserve">
+    <value>Verifications</value>
+  </data>
+  <data name="Help17" xml:space="preserve">
+    <value>For every plot verification you'll get 250 points.</value>
+  </data>
+  <data name="Help18" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="Help19" xml:space="preserve">
+    <value>Reporting your plot's status awards 750 points.</value>
+  </data>
+  <data name="Help2" xml:space="preserve">
+    <value>Frequently Answered Questions</value>
+  </data>
+  <data name="Help20" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="Help21" xml:space="preserve">
+    <value>When you share your reports or plot verification you'll earn 500 points (up to 10 times a day).</value>
+  </data>
+  <data name="Help22" xml:space="preserve">
+    <value>Demanding</value>
+  </data>
+  <data name="Help23" xml:space="preserve">
+    <value>Creating a demand for the authorities awards 1000 points.</value>
+  </data>
+  <data name="Help24" xml:space="preserve">
+    <value>Games</value>
+  </data>
+  <data name="Help25" xml:space="preserve">
+    <value>For each tree obtained in the games you'll earn 500 points.</value>
+  </data>
+  <data name="Help3" xml:space="preserve">
+    <value>Pre Tutorial</value>
+  </data>
+  <data name="Help4" xml:space="preserve">
+    <value>What, Where and How do I find deforestation</value>
+  </data>
+  <data name="Help5" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="Help6" xml:space="preserve">
+    <value>How to use Guardians</value>
+  </data>
+  <data name="Help7" xml:space="preserve">
+    <value>Game</value>
+  </data>
+  <data name="Help8" xml:space="preserve">
+    <value>GUARDIANS - HELP</value>
+  </data>
+  <data name="Help9" xml:space="preserve">
+    <value>Incomplete</value>
+  </data>
+  <data name="HelphWindow" xml:space="preserve">
+    <value>Help Menu</value>
+  </data>
+  <data name="HexInfo1" xml:space="preserve">
+    <value>REPORT</value>
+  </data>
+  <data name="HexInfo2" xml:space="preserve">
+    <value>CHECK</value>
+  </data>
+  <data name="HexInfo3" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="HexInfo4" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="HexInfo5" xml:space="preserve">
+    <value>DENOUNCE</value>
+  </data>
+  <data name="HexInfo6" xml:space="preserve">
+    <value>Click to view more activity on this Plot</value>
+  </data>
+  <data name="HexInfo7" xml:space="preserve">
+    <value>Users with activity on this Plot</value>
+  </data>
+  <data name="HexInfo8" xml:space="preserve">
+    <value>Guardians who have reviewed</value>
+  </data>
+  <data name="JaguarCongrats2" xml:space="preserve">
+    <value>YOU WIN</value>
+  </data>
+  <data name="JaguarCongrats3" xml:space="preserve">
+    <value>5000 POINTS!</value>
+  </data>
+  <data name="JaguarCongrats4" xml:space="preserve">
+    <value>¡You have found the Jaguar!</value>
+  </data>
+  <data name="JaguarFound1" xml:space="preserve">
+    <value>The Jaguar has been found by</value>
+  </data>
+  <data name="JaguarFound2" xml:space="preserve">
+    <value>Remain alert in case more jaguars appear in need of rescue!</value>
+  </data>
+  <data name="Layers1" xml:space="preserve">
+    <value>DATES</value>
+  </data>
+  <data name="Layers10" xml:space="preserve">
+    <value>Remove image</value>
+  </data>
+  <data name="Layers11" xml:space="preserve">
+    <value>Select an image from the list to add it to the timeline</value>
+  </data>
+  <data name="Layers12" xml:space="preserve">
+    <value>Drag the white circle to different dates to change the satellite image shown.</value>
+  </data>
+  <data name="Layers13" xml:space="preserve">
+    <value>Hexagons</value>
+  </data>
+  <data name="Layers14" xml:space="preserve">
+    <value>Forest Law</value>
+  </data>
+  <data name="layers15" xml:space="preserve">
+    <value>Click here to activate or deactivate hexagon filling.</value>
+  </data>
+  <data name="layers16" xml:space="preserve">
+    <value>Click here to activate or deactivate the Forest Law map.</value>
+  </data>
+  <data name="Layers2" xml:space="preserve">
+    <value>Add Date</value>
+  </data>
+  <data name="Layers3" xml:space="preserve">
+    <value>Plots</value>
+  </data>
+  <data name="Layers4" xml:space="preserve">
+    <value>Satellite Images</value>
+  </data>
+  <data name="Layers5" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Layers6" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Layers7" xml:space="preserve">
+    <value>The satellite images don't permit this zoom level. Increase the zoom level and try again.</value>
+  </data>
+  <data name="Layers8" xml:space="preserve">
+    <value>Couldn't find images for this region. Move to another region and try again.</value>
+  </data>
+  <data name="Layers9" xml:space="preserve">
+    <value>In the tutorial, you need to choose an image to continue.</value>
+  </data>
+  <data name="LegendLabel1" xml:space="preserve">
+    <value>NOT CHECKED</value>
+  </data>
+  <data name="LegendLabel4" xml:space="preserve">
+    <value>READY TO DENOUNCE</value>
+  </data>
+  <data name="LegendLabel5" xml:space="preserve">
+    <value>CHECKED BY YOU</value>
+  </data>
+  <data name="LogoPath" xml:space="preserve">
+    <value>logogp_eng.png</value>
+  </data>
+  <data name="LogoPathMini" xml:space="preserve">
+    <value>logogp_mini_eng.png</value>
+  </data>
+  <data name="Main1" xml:space="preserve">
+    <value>Message from silverlight: Username:</value>
+  </data>
+  <data name="Main2" xml:space="preserve">
+    <value>
+(This image contains clouds on some areas)</value>
+  </data>
+  <data name="Main3" xml:space="preserve">
+    <value>The jaguar will remain on the map until {0}</value>
+  </data>
+  <data name="NavBar1" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="NavBar10" xml:space="preserve">
+    <value>Stop monitoring plot</value>
+  </data>
+  <data name="NavBar11" xml:space="preserve">
+    <value>See ranking</value>
+  </data>
+  <data name="NavBar12" xml:space="preserve">
+    <value>Show my plot</value>
+  </data>
+  <data name="NavBar13" xml:space="preserve">
+    <value>Click here to share this map</value>
+  </data>
+  <data name="NavBar14" xml:space="preserve">
+    <value>Click here to change your assigned land</value>
+  </data>
+  <data name="NavBar2" xml:space="preserve">
+    <value>My Plot</value>
+  </data>
+  <data name="NavBar3" xml:space="preserve">
+    <value>ZOOM IN</value>
+  </data>
+  <data name="NavBar4" xml:space="preserve">
+    <value>ZOOM OUT</value>
+  </data>
+  <data name="NavBar5" xml:space="preserve">
+    <value>FULL SCREEN</value>
+  </data>
+  <data name="NavBar6" xml:space="preserve">
+    <value>HELP</value>
+  </data>
+  <data name="NavBar7" xml:space="preserve">
+    <value>SHARE</value>
+  </data>
+  <data name="NavBar8" xml:space="preserve">
+    <value>NEW PLOT</value>
+  </data>
+  <data name="NavBar9" xml:space="preserve">
+    <value>pts</value>
+  </data>
+  <data name="Notifications1" xml:space="preserve">
+    <value>Welcome Guardian</value>
+  </data>
+  <data name="Notifications10" xml:space="preserve">
+    <value>CLOSE</value>
+  </data>
+  <data name="Notifications11" xml:space="preserve">
+    <value>Are you sure you want to continue?</value>
+  </data>
+  <data name="Notifications12" xml:space="preserve">
+    <value>You have successfully changed your plot. Are you ready to continue?</value>
+  </data>
+  <data name="Notifications13" xml:space="preserve">
+    <value>You have lost your Plot!</value>
+  </data>
+  <data name="Notifications14" xml:space="preserve">
+    <value>But don't worry, press the [CONTINUE] button to get a new plot and don't forget to check its status as soon as possible</value>
+  </data>
+  <data name="Notifications15" xml:space="preserve">
+    <value>Your plot has been verified 30 times and you've earned 2000 points! Now, it'll go to revision by Greenpeace.Click [Continue] to get a new plot.</value>
+  </data>
+  <data name="Notifications16" xml:space="preserve">
+    <value>Your plot has been verified 30 times and you've earned 2000 points! Now, it'll go to revision by Greenpeace.Click [Continue] to get a new plot.</value>
+  </data>
+  <data name="Notifications2" xml:space="preserve">
+    <value>START</value>
+  </data>
+  <data name="Notifications3" xml:space="preserve">
+    <value>Congratulations!</value>
+  </data>
+  <data name="Notifications4" xml:space="preserve">
+    <value>YES</value>
+  </data>
+  <data name="Notifications5" xml:space="preserve">
+    <value>A moderator has checked your alert and confirmed your report.
+
+From now on, you can create a public complaint and send it to the authorities, by clicking on the [Denounce] button
+
+You have earned 500 points!</value>
+  </data>
+  <data name="Notifications6" xml:space="preserve">
+    <value>Welcome to your new plot!</value>
+  </data>
+  <data name="Notifications7" xml:space="preserve">
+    <value>If your plot has clouds over it, you can request a new plot by clicking on the button [Change Plot]</value>
+  </data>
+  <data name="Notifications8" xml:space="preserve">
+    <value>PLOT CHANGE</value>
+  </data>
+  <data name="Notifications9" xml:space="preserve">
+    <value>You can only change your plot every 10 minutes, but...
+
+... you can check other plots: Look for green or yellow plots with border and check them.
+
+... you can denonunce verified plots: Look for red plots with border and click [Denounce].
+
+...you can share in Facebook and Twitter your reports.
+
+¡Remember, all this actions gives you points!</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value> or</value>
+  </data>
+  <data name="Polls1" xml:space="preserve">
+    <value>Do you see deforestation?</value>
+  </data>
+  <data name="Polls2" xml:space="preserve">
+    <value>Before</value>
+  </data>
+  <data name="Polls3" xml:space="preserve">
+    <value>After</value>
+  </data>
+  <data name="Polls4" xml:space="preserve">
+    <value>I DON'T KNOW</value>
+  </data>
+  <data name="Polls5" xml:space="preserve">
+    <value>Look at the following images</value>
+  </data>
+  <data name="Polls6" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="Polls7" xml:space="preserve">
+    <value>Compare the image on the right with the one from 2008. This helps us validate the reports with more accuracy. When you validate 5 reports, you'll get a score bonus!</value>
+  </data>
+  <data name="PublishMap1" xml:space="preserve">
+    <value>Have you seen something interesting? Share it with the world?</value>
+  </data>
+  <data name="PublishMap2" xml:space="preserve">
+    <value>Shortening URL, please wait…</value>
+  </data>
+  <data name="PublishMap3" xml:space="preserve">
+    <value>URL not yet created, please wait…</value>
+  </data>
+  <data name="Ranking1" xml:space="preserve">
+    <value>RANKING</value>
+  </data>
+  <data name="red" xml:space="preserve">
+    <value> red</value>
+  </data>
+  <data name="Report1" xml:space="preserve">
+    <value>REPORT PLOT STATUS</value>
+  </data>
+  <data name="Report10" xml:space="preserve">
+    <value>something suspicious</value>
+  </data>
+  <data name="Report11" xml:space="preserve">
+    <value>VALIDATE</value>
+  </data>
+  <data name="Report12" xml:space="preserve">
+    <value>verifications</value>
+  </data>
+  <data name="Report2" xml:space="preserve">
+    <value>I don't see any problem</value>
+  </data>
+  <data name="Report3" xml:space="preserve">
+    <value>I see deforestation!</value>
+  </data>
+  <data name="Report4" xml:space="preserve">
+    <value>Create a public complaint</value>
+  </data>
+  <data name="Report5" xml:space="preserve">
+    <value>VALIDATE ALERTED LAND</value>
+  </data>
+  <data name="Report6" xml:space="preserve">
+    <value>Plot is OK!</value>
+  </data>
+  <data name="Report7" xml:space="preserve">
+    <value>I see something suspicious</value>
+  </data>
+  <data name="Report8" xml:space="preserve">
+    <value>OKs</value>
+  </data>
+  <data name="Report9" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ReportWindow" xml:space="preserve">
+    <value>VALIDAR PARCELA EN ALERTA</value>
+  </data>
+  <data name="Share1" xml:space="preserve">
+    <value>I checked my plot in Guardians and it's safe. Help me save the forests of Salta!</value>
+  </data>
+  <data name="Share2" xml:space="preserve">
+    <value>My plot is in trouble! Help me verify this to keep Salta's forests safe by joining Guardians. #SoyGuardianDelBosque</value>
+  </data>
+  <data name="Share6" xml:space="preserve">
+    <value>SHARE:</value>
+  </data>
+  <data name="Stats1" xml:space="preserve">
+    <value>Active Guardians:</value>
+  </data>
+  <data name="Stats2" xml:space="preserve">
+    <value>Total Guardians:</value>
+  </data>
+  <data name="Stats3" xml:space="preserve">
+    <value>Online Guardians:</value>
+  </data>
+  <data name="StatsActivePlayers" xml:space="preserve">
+    <value>Active Guardians</value>
+  </data>
+  <data name="StatsAlertedArea" xml:space="preserve">
+    <value>Alerted Area</value>
+  </data>
+  <data name="StatsAlertedAreaConfirmed" xml:space="preserve">
+    <value>Alerted Area Confirmed</value>
+  </data>
+  <data name="StatsDenouncesCreated" xml:space="preserve">
+    <value>Denounces Created</value>
+  </data>
+  <data name="StatsGreenPlots" xml:space="preserve">
+    <value>OK Plots</value>
+  </data>
+  <data name="StatsOkAreaConfirmed" xml:space="preserve">
+    <value>Out of danger zone</value>
+  </data>
+  <data name="StatsRedPlots" xml:space="preserve">
+    <value>Alerted Plots</value>
+  </data>
+  <data name="StatsTotalPlayers" xml:space="preserve">
+    <value>Guardians</value>
+  </data>
+  <data name="StatsUsersOnline" xml:space="preserve">
+    <value>On-Line Guardians</value>
+  </data>
+  <data name="StatsVerifiedPlots" xml:space="preserve">
+    <value>Verified Plots</value>
+  </data>
+  <data name="TextBlock" xml:space="preserve">
+    <value>TextBlock</value>
+  </data>
+  <data name="Timeline1" xml:space="preserve">
+    <value>you are watching an image from</value>
+  </data>
+  <data name="Tutorial1" xml:space="preserve">
+    <value>In this platform, along with other guardians, you'll be in charge of helping enforce the Argentinian National Forest Law in the province of Salta, by monitoring and reporting via updated satellite images any deforestation activity carried out in the period of 2008 to present time.</value>
+  </data>
+  <data name="Tutorial10" xml:space="preserve">
+    <value>YOU</value>
+  </data>
+  <data name="Tutorial11" xml:space="preserve">
+    <value>What I am looking for?</value>
+  </data>
+  <data name="Tutorial12" xml:space="preserve">
+    <value>Where do I look?</value>
+  </data>
+  <data name="Tutorial13" xml:space="preserve">
+    <value>How do I find it?</value>
+  </data>
+  <data name="Tutorial14" xml:space="preserve">
+    <value>Zoom in
+over your plot</value>
+  </data>
+  <data name="Tutorial15" xml:space="preserve">
+    <value>Add dates
+to compare</value>
+  </data>
+  <data name="Tutorial16" xml:space="preserve">
+    <value>22-may</value>
+  </data>
+  <data name="Tutorial17" xml:space="preserve">
+    <value>03-jun</value>
+  </data>
+  <data name="Tutorial18" xml:space="preserve">
+    <value>You will have
+satellite images</value>
+  </data>
+  <data name="Tutorial19" xml:space="preserve">
+    <value>My plot is ok</value>
+  </data>
+  <data name="Tutorial2" xml:space="preserve">
+    <value>Do you want to know more?</value>
+  </data>
+  <data name="Tutorial20" xml:space="preserve">
+    <value>I see something suspicious!</value>
+  </data>
+  <data name="Tutorial21" xml:space="preserve">
+    <value>To monitor, we will need to compare a recent image to an older one.
+
+
+Lets see what activity we can find on your plot! CLick here to add a recent image.</value>
+  </data>
+  <data name="Tutorial22" xml:space="preserve">
+    <value>Move the 
+slider to
+see the
+diference</value>
+  </data>
+  <data name="Tutorial23" xml:space="preserve">
+    <value>When you check your Plot, it is necessary to report what you have seen in order to alert other Guardians.
+
+Click on your Plot and then click on [Report]</value>
+  </data>
+  <data name="Tutorial24" xml:space="preserve">
+    <value>You earn points for your actions! You have just received points for checking your plot.
+Many actions will earn you points,</value>
+  </data>
+  <data name="Tutorial25" xml:space="preserve">
+    <value>Congratulations! You have completed the Tutorial.
+You are now ready to protect our forests.
+
+Feel free to visit the Help section if you have any doubt.</value>
+  </data>
+  <data name="Tutorial26" xml:space="preserve">
+    <value>Alerted plots are shown in red
+
+Check alerted plots to confirm or reject the report.
+
+Click on the alerted plot and press the CHECK button</value>
+  </data>
+  <data name="Tutorial27" xml:space="preserve">
+    <value>You will be assigned a new plot every 5 days, except if your plot is in alert status. That way, you will be able to monitor other parts of the forest.
+
+You can also manually change your plot by pressing the [Change Plot] button</value>
+  </data>
+  <data name="Tutorial28" xml:space="preserve">
+    <value>26-jun</value>
+  </data>
+  <data name="Tutorial29" xml:space="preserve">
+    <value>Report what
+you saw</value>
+  </data>
+  <data name="Tutorial3" xml:space="preserve">
+    <value>DEFORESTATION</value>
+  </data>
+  <data name="Tutorial30" xml:space="preserve">
+    <value>Every Guardian has a piece of land under his protection. Click on "My Plot" to see yours.</value>
+  </data>
+  <data name="Tutorial31" xml:space="preserve">
+    <value>to take a look at your land.</value>
+  </data>
+  <data name="Tutorial32" xml:space="preserve">
+    <value>We Guardians watchout the forest protection laws compliance.
+
+Dragging the slider you will be able to compare an image of 2008 with current images, to help you search for illegal deforestation.</value>
+  </data>
+  <data name="Tutorial33" xml:space="preserve">
+    <value>Great! You have learned how to find changes over time.
+
+You can also add more dates from the list on the left.</value>
+  </data>
+  <data name="Tutorial34" xml:space="preserve">
+    <value>Become the #1 Guardian!</value>
+  </data>
+  <data name="Tutorial35" xml:space="preserve">
+    <value>This is the map of the area in risk.
+You can move around using your mouse, panning and zooming.</value>
+  </data>
+  <data name="Tutorial36" xml:space="preserve">
+    <value>CONTINUE</value>
+  </data>
+  <data name="Tutorial37" xml:space="preserve">
+    <value>Set your plot to ALERT status if you see something suspicious.
+If not, press the button</value>
+  </data>
+  <data name="Tutorial38" xml:space="preserve">
+    <value>My plot is ok</value>
+  </data>
+  <data name="Tutorial39" xml:space="preserve">
+    <value>Plots with Alert status are shown in RED; plots that are ok in GREY</value>
+  </data>
+  <data name="Tutorial4" xml:space="preserve">
+    <value>CLOUDS?</value>
+  </data>
+  <data name="Tutorial40" xml:space="preserve">
+    <value>The other Guardians will be able to check their plots and also Your Plot to help you confirm your observations.</value>
+  </data>
+  <data name="Tutorial41" xml:space="preserve">
+    <value>When 40 people have checked your plot, you'll get a new one to lookout for, while the previous one awaits confirmation.
+
+If the observations are confirmed , you'll be able to create a complaint that clearly states the law is not being uphold in that area.
+
+The complaint is your tool!</value>
+  </data>
+  <data name="Tutorial42" xml:space="preserve">
+    <value>After checking you will be able to report</value>
+  </data>
+  <data name="Tutorial43" xml:space="preserve">
+    <value> if you see deforestation</value>
+  </data>
+  <data name="Tutorial44" xml:space="preserve">
+    <value> or </value>
+  </data>
+  <data name="Tutorial45" xml:space="preserve">
+    <value> if you don't see any problem.</value>
+  </data>
+  <data name="Tutorial46" xml:space="preserve">
+    <value>If you see other Guardian Plot in</value>
+  </data>
+  <data name="Tutorial47" xml:space="preserve">
+    <value> click over it and then in the [Check] button</value>
+  </data>
+  <data name="Tutorial48" xml:space="preserve">
+    <value>Same as before, here you'll be able to report your observations, helping your Guardian friend to validate his.
+
+The more verifications a plot has, the more the chances to find problems.</value>
+  </data>
+  <data name="Tutorial49" xml:space="preserve">
+    <value>How does deforestation look like?</value>
+  </data>
+  <data name="Tutorial5" xml:space="preserve">
+    <value>GREEN ZONES?</value>
+  </data>
+  <data name="Tutorial50" xml:space="preserve">
+    <value>Observe the following images. To the left, aerial pictures captured by Greenpeace. To the right, satellite images.</value>
+  </data>
+  <data name="Tutorial51" xml:space="preserve">
+    <value>Aerial - Healthy Forest</value>
+  </data>
+  <data name="Tutorial52" xml:space="preserve">
+    <value>Aerial - Deforestation</value>
+  </data>
+  <data name="Tutorial53" xml:space="preserve">
+    <value>Satellite - Healthy Forest</value>
+  </data>
+  <data name="Tutorial54" xml:space="preserve">
+    <value>Satellite - Deforestation</value>
+  </data>
+  <data name="Tutorial6" xml:space="preserve">
+    <value>ALERT</value>
+  </data>
+  <data name="Tutorial7" xml:space="preserve">
+    <value>PLOT OK!</value>
+  </data>
+  <data name="Tutorial8" xml:space="preserve">
+    <value>PLOT IN DANGER!</value>
+  </data>
+  <data name="Tutorial9" xml:space="preserve">
+    <value>YOUR PLOT</value>
+  </data>
+  <data name="TutorialAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="TutorialComplete" xml:space="preserve">
+    <value>COMPLETE</value>
+  </data>
+  <data name="TutorialGame1" xml:space="preserve">
+    <value>CONTINUE »</value>
+  </data>
+  <data name="TutorialGame10" xml:space="preserve">
+    <value>Bear in mind!</value>
+  </data>
+  <data name="TutorialGame11" xml:space="preserve">
+    <value>The images from the Landsat 7 satellite that we are using have an optical error. In the image you can observe the error lines.
+
+Even with the mentioned error, we can search for deforestation.</value>
+  </data>
+  <data name="TutorialGame12" xml:space="preserve">
+    <value>Let's play!</value>
+  </data>
+  <data name="TutorialGame13" xml:space="preserve">
+    <value>Ahora que sabes de qué se tratan las imágenes de color real, vamos a ponernos en práctica.
+
+A continuación, buscá en las imagenes las zonas que presenten cambios. Cuantos más aciertos tengas, ¡más puntos vas a ganar!</value>
+  </data>
+  <data name="TutorialGame14" xml:space="preserve">
+    <value>Find the changes!</value>
+  </data>
+  <data name="TutorialGame15" xml:space="preserve">
+    <value>Look closely at both images. Can you see changes? Click on the image that shows deforestation.</value>
+  </data>
+  <data name="TutorialGame16" xml:space="preserve">
+    <value>Results</value>
+  </data>
+  <data name="TutorialGame2" xml:space="preserve">
+    <value>True Color Images</value>
+  </data>
+  <data name="TutorialGame3" xml:space="preserve">
+    <value>PLAY</value>
+  </data>
+  <data name="TutorialGame4" xml:space="preserve">
+    <value>FINISH</value>
+  </data>
+  <data name="TutorialGame5" xml:space="preserve">
+    <value>Great! You found deforestation. To become an expert, play again to find all the cases and earn additional points!</value>
+  </data>
+  <data name="TutorialGame6" xml:space="preserve">
+    <value>Excellent! Now you are an expert in True Color Images!</value>
+  </data>
+  <data name="TutorialGame7" xml:space="preserve">
+    <value>You did not get any trees... but don't worry, you can keep on trying anytime you want!</value>
+  </data>
+  <data name="TutorialGame8" xml:space="preserve">
+    <value>Welcome!</value>
+  </data>
+  <data name="TutorialGame9" xml:space="preserve">
+    <value>Guardianes utiliza imágenes satelitales de diversos proveedores, tomadas periódicamente. En este caso nos enfocaremos en las imagenes de color real del satélite Landsat 7.
+
+Una imagen de color real muestra una representación de la tierra con los colores naturales de cada objeto, como una fotografía normal.
+
+¡Aprendamos a buscar deforestación usando estas imágenes!</value>
+  </data>
+  <data name="TutorialGameWin1" xml:space="preserve">
+    <value>Good! You've managed to find deforestation. To be an expert, play again until you go through all the cases!</value>
+  </data>
+  <data name="TutorialGameWin2" xml:space="preserve">
+    <value>Don't forget to share with your friends so they too can become Guardians of the forest.</value>
+  </data>
+  <data name="TutorialHelph" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="TutorialImgSatelital" xml:space="preserve">
+    <value>Satellite Images</value>
+  </data>
+  <data name="TutorialLevel1" xml:space="preserve">
+    <value>Level 1</value>
+  </data>
+  <data name="TutorialLevel2" xml:space="preserve">
+    <value>Level 2</value>
+  </data>
+  <data name="TutorialLevel3" xml:space="preserve">
+    <value>Level 3</value>
+  </data>
+  <data name="TutorialMenuWin1" xml:space="preserve">
+    <value>What are we looking for?</value>
+  </data>
+  <data name="TutorialMenuWin2" xml:space="preserve">
+    <value>We want the National Law 26331, also known as 'Forest Law' to be enforced. The law establishes different protection areas by dividing them in colors. Areas in red have total protection, areas in yellow can have sustainable usage and green areas have looser restriction if studies of impact and public hearings have been done. Plots assigned to Guardians fall under the red and yellow categories only.</value>
+  </data>
+  <data name="TutorialMenuWin3" xml:space="preserve">
+    <value>What happens to my reports?</value>
+  </data>
+  <data name="TutorialMenuWin4" xml:space="preserve">
+    <value>Periodically, Greenpeace checks the reports to confirm them. In case of deforestation, the plot is marked in yellow and a complaint can be filed.</value>
+  </data>
+  <data name="TutorialMenuWin5" xml:space="preserve">
+    <value>Where do I send my denounces?</value>
+  </data>
+  <data name="TutorialMenuWin6" xml:space="preserve">
+    <value>Cuando presionás el botón Enviar en tu denuncia, esta se envía al Gobernador de la Provincia de Salta, y al Secretario de Ambiente de la Nación.</value>
+  </data>
+  <data name="TutorialMenuWin7" xml:space="preserve">
+    <value>¿Puedo enviar una denuncia de forma anónima?</value>
+  </data>
+  <data name="TutorialMenuWin8" xml:space="preserve">
+    <value>Si. Debajo de tu nombre en la denuncia hay un botón para hacer que tu denuncia sea anónima.</value>
+  </data>
+  <data name="TutorialMenuWin9" xml:space="preserve">
+    <value>F.A.Q.</value>
+  </data>
+  <data name="AcercaDeCuerpo" xml:space="preserve">
+    <value>Guardians is a project from the Greenpeace Argentina Innovation Lab.
+
+The technology in Guardians is developed and inspired in EarthWatchers (www.deforestaction.com/earthwatchers), a Geodan (www.geodan.com) project for DeforestAction.</value>
+  </data>
+  <data name="AcercaDeTitulo" xml:space="preserve">
+    <value>About us</value>
+  </data>
+  <data name="TutorialMenuWin10" xml:space="preserve">
+    <value>My personal information appears in the denounce! I didn't submit them!</value>
+  </data>
+  <data name="TutorialMenuWin11" xml:space="preserve">
+    <value>For security and privacy reasons, Guardians do not store personal information of its users. Nevertheless, when you create a denounce we take your data from the petition you signed to save Salta's Forests. If you dont want to submit your personal information in the denounce, select it to be anonymous.</value>
+  </data>
+  <data name="TutorialMenuWin12" xml:space="preserve">
+    <value>¿Why in some cases the colors of the Satellite Images are wrong?</value>
+  </data>
+  <data name="TutorialMenuWin13" xml:space="preserve">
+    <value>The satellites we use in Guardians can capture more elements than the human eye. That is why in some cases you can see clouds and other stuff. These can give an irreal aspect to certain areas. In addition, the photographs are taken in different time.</value>
+  </data>
+  <data name="TutorialMenuWin14" xml:space="preserve">
+    <value>Where can I see the original images?</value>
+  </data>
+  <data name="TutorialMenuWin15" xml:space="preserve">
+    <value>The website from the United States Geological Studies (USGS) contains an archive with all the images captured by the Landsat satellite, the satellite we use in Guardians. For more information visit www.usgs.gov</value>
+  </data>
+  <data name="TutorialMenuWin16" xml:space="preserve">
+    <value>I don't understand if what I am seeing in my plot is deforestation</value>
+  </data>
+  <data name="TutorialMenuWin17" xml:space="preserve">
+    <value>In these cases we recommend you two possible courses of action. You can visit the Help Menu and play the MiniGame I. Playing the MiniGame will help you to better understand what is deforestation and what is not. Or, you can press the Change Plot button to move you to other area.</value>
+  </data>
+  <data name="TutorialMenuWin18" xml:space="preserve">
+    <value>A Jaguar have just appeared, what is this?</value>
+  </data>
+  <data name="TutorialMenuWin19" xml:space="preserve">
+    <value>When you see a message telling you that a Jaguar is present in the map, this means that a competition among all Guardians to Find the Jaguar has started. In some area of the map, at a certain zoom level (when you achieve the appropiate zoom level you will see a binocular icon instead of the jaguar icon), you will be able to find a tiny Jaguar. If you see it, click fast over it to rescue it! The first Guardian who finds it will be awarded a great bunch of points.</value>
+  </data>
+  <data name="TutorialMenuWin20" xml:space="preserve">
+    <value>When does the Denounce button become enabled?</value>
+  </data>
+  <data name="TutorialMenuWin21" xml:space="preserve">
+    <value>When your plot has 30 or more verifications, the Greenpeace user will become its owner till one of our experts verify your report. We will send you an email with the result of our verification. If you don't receive this email, check if your email address is correct. If your plot now appears with a yellow border you will now be able to create a denounce.</value>
+  </data>
+  <data name="TutorialMenuWin22" xml:space="preserve">
+    <value>There is deforestation in the 2008 image. Do I have to report this as well?</value>
+  </data>
+  <data name="TutorialMenuWin23" xml:space="preserve">
+    <value>No, you do not have to report this.</value>
+  </data>
+  <data name="TutorialMiniGame" xml:space="preserve">
+    <value>Mini Game</value>
+  </data>
+  <data name="TutorialMiniGame1" xml:space="preserve">
+    <value>Mini Game I</value>
+  </data>
+  <data name="TutorialMiniGame2" xml:space="preserve">
+    <value>Welcome! In this game you'll be able to train your eye for deforestation hunting, in order to visualize correctly a healthy plot of land from one that's been suffering the effect of the bulldozers.
+
+The more trained you are, the more accurate your reports will be. The forest needs you!</value>
+  </data>
+  <data name="TutorialMiniGame3" xml:space="preserve">
+    <value>Are you ready?</value>
+  </data>
+  <data name="TutorialMiniGame4" xml:space="preserve">
+    <value>Select the image that shows deforestation</value>
+  </data>
+  <data name="TutorialMiniGame5" xml:space="preserve">
+    <value>Right now, there are no images to play. Try again later. Thanks!</value>
+  </data>
+  <data name="TutorialMiniGame6" xml:space="preserve">
+    <value>Time Bonus</value>
+  </data>
+  <data name="TutorialMiniGame7" xml:space="preserve">
+    <value>Good! You've managed to find deforestation. To be an expert, play again until you go through all the cases!</value>
+  </data>
+  <data name="TutorialMiniGame8" xml:space="preserve">
+    <value>I obtained</value>
+  </data>
+  <data name="TutorialMiniGame9" xml:space="preserve">
+    <value>points in the find-the-deforestation game in Guardians! You can be a Guardian too, register at guardianes.greenpeace.org.ar</value>
+  </data>
+  <data name="TutorialPlay" xml:space="preserve">
+    <value>PLAY</value>
+  </data>
+  <data name="TutorialPoints" xml:space="preserve">
+    <value>Points</value>
+  </data>
+  <data name="UserPanel1" xml:space="preserve">
+    <value>User Control Panel</value>
+  </data>
+  <data name="UserPanel10" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="UserPanel11" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="UserPanel12" xml:space="preserve">
+    <value>language</value>
+  </data>
+  <data name="UserPanel13" xml:space="preserve">
+    <value>country</value>
+  </data>
+  <data name="UserPanel14" xml:space="preserve">
+    <value>region</value>
+  </data>
+  <data name="UserPanel15" xml:space="preserve">
+    <value>send me mails with notifications</value>
+  </data>
+  <data name="UserPanel16" xml:space="preserve">
+    <value>name</value>
+  </data>
+  <data name="UserPanel17" xml:space="preserve">
+    <value>Collections</value>
+  </data>
+  <data name="UserPanel18" xml:space="preserve">
+    <value>COLLECTIONS</value>
+  </data>
+  <data name="UserPanel2" xml:space="preserve">
+    <value>Change your password</value>
+  </data>
+  <data name="UserPanel20" xml:space="preserve">
+    <value>CONGRATULATIONS! YOU HAVE RESCUED THE JAGUAR {0} TIMES</value>
+  </data>
+  <data name="UserPanel21" xml:space="preserve">
+    <value>You still haven't rescued any Jaguars.</value>
+  </data>
+  <data name="UserPanel22" xml:space="preserve">
+    <value>Current password is incorrect.</value>
+  </data>
+  <data name="UserPanel23" xml:space="preserve">
+    <value>New password must be different than the current one.</value>
+  </data>
+  <data name="UserPanel24" xml:space="preserve">
+    <value>The password must contain at least 5 characters, and can only be composed of letters and numbers.</value>
+  </data>
+  <data name="UserPanel25" xml:space="preserve">
+    <value>Repeated password does not match.</value>
+  </data>
+  <data name="UserPanel26" xml:space="preserve">
+    <value>An error has occurred. Please try again later.</value>
+  </data>
+  <data name="UserPanel27" xml:space="preserve">
+    <value>The name must contain only letters and numbers, and can be 20 characters long.</value>
+  </data>
+  <data name="UserPanel28" xml:space="preserve">
+    <value>Data saved correctly. Changes will be shown next time you log into Guardians.</value>
+  </data>
+  <data name="UserPanel3" xml:space="preserve">
+    <value>Select your name, language, country and notification options</value>
+  </data>
+  <data name="UserPanel30" xml:space="preserve">
+    <value>Password changed correctly.</value>
+  </data>
+  <data name="UserPanel31" xml:space="preserve">
+    <value>An error has occurred. Please try again later.</value>
+  </data>
+  <data name="UserPanel4" xml:space="preserve">
+    <value>CHANGE YOUR REGIONAL CONFIGURATION</value>
+  </data>
+  <data name="UserPanel5" xml:space="preserve">
+    <value>CHANGE YOUR PASSWORD</value>
+  </data>
+  <data name="UserPanel6" xml:space="preserve">
+    <value>current password</value>
+  </data>
+  <data name="UserPanel7" xml:space="preserve">
+    <value>new password</value>
+  </data>
+  <data name="UserPanel8" xml:space="preserve">
+    <value>repeat new password</value>
+  </data>
+  <data name="UserPanel9" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="WW1" xml:space="preserve">
+    <value>Daniel</value>
+  </data>
+  <data name="WW2" xml:space="preserve">
+    <value>Córdoba</value>
+  </data>
+  <data name="WW3" xml:space="preserve">
+    <value>Patricia</value>
+  </data>
+  <data name="WW4" xml:space="preserve">
+    <value>Chaco</value>
+  </data>
+  <data name="MailBienvenidaAsunto" xml:space="preserve">
+    <value>Welcome to Guardians</value>
+  </data>
+  <data name="MailBienvenidaTitulo" xml:space="preserve">
+    <value>Ya estás protegiendo los bósques de Salta!</value>
+  </data>
+  <data name="MailBienvenidaCuerpo" xml:space="preserve">
+    <value>Para Comenzar a jugar apretá el botón de abajo!
+&lt;br&gt;&lt;/br&gt;
+
+&lt;b&gt;Tips para Jugar&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt; Podés obtener una nueva parcela apretando [Cambiar Parcela]&lt;/li&gt;
+&lt;li&gt; Comentá en las parcelas de los demás para ayudarlos con sus reportes&lt;/li&gt;
+&lt;li&gt; Completá todos los tutoriales y jugá los minijuegos&lt;/li&gt;
+&lt;li&gt; Entrá varias veces al dia para obtener mas puntos&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="MailBienvenidaBoton" xml:space="preserve">
+    <value>Protect the Forest</value>
+  </data>
+  <data name="MailBienvenidaBotonTooltip" xml:space="preserve">
+    <value>Click here to start protecting the forest</value>
+  </data>
+  <data name="Polls10" xml:space="preserve">
+    <value> DO NOT report it.</value>
+  </data>
+  <data name="Polls11" xml:space="preserve">
+    <value> Those are previous to the Forest Law enactment, and, therefore, it is not accurate to report them in Guardians.</value>
+  </data>
+  <data name="Polls8" xml:space="preserve">
+    <value>IMPORTANT:</value>
+  </data>
+  <data name="Polls9" xml:space="preserve">
+    <value>If you see deforestation in the 2008 image,</value>
+  </data>
+  <data name="CONGRATS" xml:space="preserve">
+    <value>CONGRATULATIONS!</value>
+  </data>
+  <data name="Contest1" xml:space="preserve">
+    <value>The weekly contest has ended!</value>
+  </data>
+  <data name="Contest2" xml:space="preserve">
+    <value> is the contest winner, and he have just won 10.000 points and a special trophee.</value>
+  </data>
+  <data name="Contest3" xml:space="preserve">
+    <value>Keep participating, there is a new contest going on!</value>
+  </data>
+  <data name="Contest4" xml:space="preserve">
+    <value>You are the winner of the weekly contest! You have just been awarded with 10.000 points and a trophee that will appear in your profile.</value>
+  </data>
+  <data name="Contest5" xml:space="preserve">
+    <value>Thanks for participating!</value>
+  </data>
+  <data name="Contest6" xml:space="preserve">
+    <value>Share this achievement with your friends in the social networks</value>
+  </data>
+  <data name="Contest7" xml:space="preserve">
+    <value>¡Gané el Torneo Semanal en Guardianes!</value>
+  </data>
+  <data name="Contest8" xml:space="preserve">
+    <value>A new tournament has already started!</value>
+  </data>
+  <data name="ImageWarning1" xml:space="preserve">
+    <value>IMPORTANT!</value>
+  </data>
+  <data name="ImageWarning2" xml:space="preserve">
+    <value>Now</value>
+  </data>
+  <data name="ImageWarning3" xml:space="preserve">
+    <value>Guardians protect the Forest Law compliance, therefore, if you see deforestation in the 2008 image,</value>
+  </data>
+  <data name="ImageWarning4" xml:space="preserve">
+    <value> it is NOT necessary to report it.</value>
+  </data>
+  <data name="ImageWarning5" xml:space="preserve">
+    <value>If you are assigned a plot which was already deforested in 2008, you can change it by clicking over the [Change Plot] button.</value>
+  </data>
+  <data name="ImageWarning6" xml:space="preserve">
+    <value>(Deforestation prior to the Forest Law enactment)</value>
+  </data>
+  <data name="Ranking2" xml:space="preserve">
+    <value>Global Ranking</value>
+  </data>
+  <data name="Ranking3" xml:space="preserve">
+    <value>The monthly ranking ends on</value>
+  </data>
+  <data name="Share3" xml:space="preserve">
+    <value>I have won the weekly contest in Guardians! My actions are helping protect the forests. Participate! #SoyGuardianDelBosque</value>
+  </data>
+  <data name="Share4" xml:space="preserve">
+    <value>A weekly contest has just started! Participate now to protect the forests. #SoyGuardianDelBosque</value>
+  </data>
+  <data name="Share5" xml:space="preserve">
+    <value>Share with your friends in the social networks!</value>
+  </data>
+  <data name="Stats" xml:space="preserve">
+    <value>STATISTICS</value>
+  </data>
+  <data name="gray" xml:space="preserve">
+    <value>gray</value>
+  </data>
+  <data name="UserPanel32" xml:space="preserve">
+    <value>mail</value>
+  </data>
+  <data name="UserPanel33" xml:space="preserve">
+    <value>Existing mail, try another</value>
+  </data>
+  <data name="HexLegend1" xml:space="preserve">
+    <value>NO CHANGES</value>
+  </data>
+  <data name="HexLegend2" xml:space="preserve">
+    <value>¡ALERT REPORTED!</value>
+  </data>
+  <data name="HexLegend3" xml:space="preserve">
+    <value>DEFORESTATION</value>
+  </data>
+  <data name="HexLegend4" xml:space="preserve">
+    <value>REVIEWS ALL LANDS WITH FLANGE</value>
+  </data>
+  <data name="DemandWindow1" xml:space="preserve">
+    <value>DENOUNCE</value>
+  </data>
+  <data name="DemandWindow2" xml:space="preserve">
+    <value>SHARE DENOUNCE</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>yellow</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="DemandWindow3" xml:space="preserve">
+    <value>You reported this plot, you can now make it known.</value>
+  </data>
+  <data name="DemandWindow4" xml:space="preserve">
+    <value>Share on social networks to let everyone know!</value>
+  </data>
+  <data name="DemandWindow5" xml:space="preserve">
+    <value>This plot has deforestation confirmed.</value>
+  </data>
+  <data name="DemandWindow6" xml:space="preserve">
+    <value>Send your denounce to the authorities for this to end!</value>
+  </data>
+  <data name="DailySummaryContest" xml:space="preserve">
+    <value>The competition ends on</value>
+  </data>
+  <data name="DailySummaryDenounce1" xml:space="preserve">
+    <value>You have denounce</value>
+  </data>
+  <data name="DailySummaryDenounce3" xml:space="preserve">
+    <value> plots from</value>
+  </data>
+  <data name="DailySummaryDenounce5" xml:space="preserve">
+    <value>Search for red plots with border and click DENOUNCE</value>
+  </data>
+  <data name="DailySummaryHiUser" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="DailySummaryMorePoints" xml:space="preserve">
+    <value>To get more points, you can:</value>
+  </data>
+  <data name="DailySummaryRemember" xml:space="preserve">
+    <value>Remember to check all bordered plots. Those are the one you have actions to do.</value>
+  </data>
+  <data name="DailySummaryReport1" xml:space="preserve">
+    <value>You have reported</value>
+  </data>
+  <data name="DailySummaryReport3" xml:space="preserve">
+    <value>plots. Every 10 minutes you can Change Plot and you will get a new one.</value>
+  </data>
+  <data name="DailySummaryShare1" xml:space="preserve">
+    <value>in social networks. You have shared</value>
+  </data>
+  <data name="DailySummaryShare3" xml:space="preserve">
+    <value>times your reports and verifications. The more we share the more the tool gets known.</value>
+  </data>
+  <data name="DailySummaryTitle" xml:space="preserve">
+    <value>Daily Summary</value>
+  </data>
+  <data name="DailySummaryVerify1" xml:space="preserve">
+    <value>You have checked</value>
+  </data>
+  <data name="DailySummaryVerify3" xml:space="preserve">
+    <value> foreign plots from a total of</value>
+  </data>
+  <data name="DailySummaryVerify5" xml:space="preserve">
+    <value>Search for green or yellow plots with borders and click CHECK</value>
+  </data>
+  <data name="DailySummaryYourPoints" xml:space="preserve">
+    <value>Your current score is </value>
+  </data>
+  <data name="DailySummaryDenounce" xml:space="preserve">
+    <value>Denounce. </value>
+  </data>
+  <data name="DailySummaryReport" xml:space="preserve">
+    <value>Report. </value>
+  </data>
+  <data name="DailySummaryShare" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="DailySummaryVerify" xml:space="preserve">
+    <value>Verify. </value>
+  </data>
+</root>

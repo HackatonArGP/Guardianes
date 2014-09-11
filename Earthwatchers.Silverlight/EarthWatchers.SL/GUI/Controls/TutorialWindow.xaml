@@ -1,0 +1,75 @@
+﻿<sdk:ChildWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:gui="clr-namespace:EarthWatchers.SL.GUI.Controls"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="EarthWatchers.SL.GUI.Controls.TutorialWindow" 
+    Width="480"  
+    Padding="0"
+    HasCloseButton="False"
+    Style="{StaticResource GPChildWindow}"
+    Title="Bienvenido Guardián del Bosque">
+    <sdk:ChildWindow.Resources>
+        <Storyboard x:Name="Tutorial2ChangeText" Completed="Tutorial2ChangeText_Completed">
+            <DoubleAnimation To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Body2" />
+            <DoubleAnimation To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Body" />
+        </Storyboard>
+    </sdk:ChildWindow.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="88"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border x:Name="Chrome" CornerRadius="8,8,0,0" BorderThickness="1" BorderBrush="#FF95a92c">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="0.8">
+                    <GradientStop Color="#FF849b0c" Offset="0" />
+                    <GradientStop Color="#FF9fba0e" Offset="0.5" />
+                    <GradientStop Color="#FF849b0c" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid Height="Auto" Width="Auto">
+                <Image Grid.Row="0" Source="../../Resources/Images/logogp.png" Margin="0,10,0,0" Stretch="None" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Grid>
+        </Border>
+        <Border Grid.Row="1">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="White" Offset="0.9"></GradientStop>
+                    <GradientStop Color="#FFe0e0e0" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid x:Name="LayoutRoot" HorizontalAlignment="Center" Width="440">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="Title" FontSize="17" FontWeight="Bold" FontFamily="Arial" Foreground="#FF333333" Text="¡Bienvenido, Guardián del Bosque!" Margin="0,10" />
+                <TextBlock x:Name="Body" Visibility="Visible" Opacity="1" Grid.Row="1" FontSize="13" FontFamily="Arial" Foreground="#FF333333" TextWrapping="Wrap" Margin="0,10">
+                Te invitamos a ser miembro activo en la protección de nuestros bosques.
+                Esta va ser tu plataforma, donde vas a poder monitorear mediante imágenes satelitales que se cumpla la Ley Nacional de Bosques en la provincia de Salta.
+                <LineBreak /><LineBreak />
+                ¿Vamos a conocer de qué se trata?
+                </TextBlock>
+
+                <TextBlock x:Name="Body2" Visibility="Collapsed" Opacity="0" Grid.Row="1" FontSize="13" FontFamily="Arial" Foreground="#FF333333" TextWrapping="Wrap" Margin="0,10">
+                Para confirmar una parcela en alerta de otro guardián, primero tenemos que encargarnos de comprobar la actividad de la misma. 
+                <LineBreak />Para dicha tarea vamos a seguir el mismo proceso que en nuestra parcela: 
+                <LineBreak /><LineBreak />   1) Agregar nueva capa y 
+                <LineBreak /><LineBreak />   2) comparar con la anterior.
+
+
+                </TextBlock>
+                <Button x:Name="ButtonClose" Style="{StaticResource GreenButton}" Grid.Row="2" Width="180" Cursor="Hand" Height="35" Foreground="White" FontSize="15" FontWeight="Bold" Content="COMENZAR" Margin="0,10" Click="BtnCloseClick">
+
+                </Button>
+            </Grid>
+        </Border>
+
+    </Grid>
+
+
+</sdk:ChildWindow>

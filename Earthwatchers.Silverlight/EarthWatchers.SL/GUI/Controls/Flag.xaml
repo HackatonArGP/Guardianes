@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="EarthWatchers.SL.GUI.Controls.Flag"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"       
+    Background="Transparent" MouseLeftButtonDown="Handle_MouseDown">
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Image x:Name="imgFlagOut" Source="../../Resources/Images/flag_out.png" />
+        <Image x:Name="imgFlagNoShadow" Source="../../Resources/Images/flag_no_shadow.png"   />
+        <Canvas>
+            <StackPanel x:Name="flagPanel" Orientation="Vertical" Visibility="Collapsed" MouseMove="Handle_MouseMove" MouseLeftButtonUp="Handle_MouseUp">
+                <Image x:Name="imgFlagShadow" Source="../../Resources/Images/flag_shadow.png" />
+                <StackPanel x:Name="editPanel" Orientation="Horizontal" Visibility="Collapsed" Margin="-13,7,0,0">
+                    <TextBox x:Name="txtComment" Width="100" Height="24" />
+                    <Image x:Name="btnOk" MouseLeftButtonDown="BtnOkMouseLeftButtonDown" Height="22" Source="/EarthWatchers.SL;component/Resources/Images/ok.png" Stretch="Fill" Width="22" />
+                    <Image x:Name="btnDelete" MouseLeftButtonDown="BtnDeleteMouseLeftButtonDown" Height="27" Source="/EarthWatchers.SL;component/Resources/Images/delete.png" Stretch="Fill" Width="27" />
+                </StackPanel>
+            </StackPanel>
+        </Canvas>
+    </Grid>
+</UserControl>

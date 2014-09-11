@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <title>Guardianes Admin - News</title> 
+        <script src="jquery-1.6.2.min.js" type="text/javascript"></script>
+        <script src="jquery.base64.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            function getAuthString() {
+                return "Basic " + $.base64Encode(document.getElementById("tbUsername").value + ":" + document.getElementById("tbPassword").value);
+            }
+            
+            $(function () {
+                $(".addNews").click(function () {
+                    var xmin = $("input#xmin").val();
+                    var xmax = $("input#xmax").val();
+                    var ymin = $("input#ymin").val();
+                    var ymax = $("input#ymax").val();
+
+                    var wkt = "POLYGON((" + xmin + " " + ymin + ", " + xmax + " " + ymin + ", " + xmax + " " + ymax + ", " + xmin + " " + ymax + ", " + xmin + " " + ymin + "))";
+
+                    $.ajax({
+                        type: "POST",
+                        url: "../api/news",
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("Authorization", getAuthString());
+                        },
+                        data: "{\"EarthwatcherId\":\"" + $("#EarthwatcherId").val() + "\",\"NewsItem\":\"" + $("#NewsItem").val() + "\",\"Wkt\":\"" + wkt + "\" }",
+                        contentType: "application/json ; charset=utf-8",
+                        dataType: "json",
+                        success: function () {
+                            alert("Congratulations, news is added");
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert("error, user does already exist? " + name);
+                        }
+                    });
+                    return false;
+                });
+            });
+
+            $(function () {
+                $(".deleteNews").click(function () {
+                    var id = $("input#newsid").val();
+                    if (id == "") {
+                        alert("error: give newsid");
+                        return false;
+                    }
+                    $.ajax({
+                        type: "DELETE",
+                        url: "../api/news/" + id,
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("Authorization", getAuthString());
+                        },
+                        success: function () {
+                            alert("Congratulations, news is deleted.");
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert("error, news does not exist? " + id);
+                        }
+                    });
+                    return false;
+                });
+            });
+        </script>
+    </head> 
+    <body>
+        <h3>News</h3>
+        <h4>Show news</h4>
+        <a href="../api/news">show all news</a><br/>
+        <br/>
+        <br>
+        username: <input type="text" id="tbUsername"/><br />
+        password: <input type="password" id="tbPassword"/><br />
+        <br />
+        <h4>Add News (authenticated)</h4>
+          <form name="addNews">
+          <table border="0">
+          <tr>
+          <td><label for="Name">Earthwatcher ID: </label></td>
+          <td><input type="text" name="EarthwatcherId" id="EarthwatcherId"/></td>
+          </tr>
+
+          <tr>
+          <td><label for="Name">News: </label></td>
+          <td><textarea name="NewsItem" id="NewsItem" rows="4" cols="40"></textarea></td>
+          </tr>
+
+          <tr>
+          <td><label for="Name">Xmin (111): </label></td>
+          <td><input type="text" name="xmin" id="xmin"/></td>
+          </tr>
+
+          <tr>
+          <td><label for="Name">Xmax (112): </label></td>
+          <td><input type="text" name="xmax" id="xmax"/></td>
+          </tr>
+
+          <tr>
+          <td><label for="Name">Ymin (-1): </label></td>
+          <td><input type="text" name="ymin" id="ymin"/></td>
+          </tr>
+
+          <tr>
+          <td><label for="Name">Ymax (1): </label></td>
+          <td><input type="text" name="ymax" id="ymax"/></td>
+          </tr>
+           </table>
+ 
+           <input type="submit" value="vuur!" class="addNews"/>
+           </form>
+        <br/>
+        <h4>Delete News (authenticated)</h4>
+        <form name="deleteNews">
+          <label for="ID">News ID: </label>
+          <input type="text" name="newsid" id="newsid"/>
+           <input type="submit" value="vuur!" class="deleteNews"/>
+        </form>
+        <br/>
+        <a href="index.html">back</a>
+    </body> 
+</html>

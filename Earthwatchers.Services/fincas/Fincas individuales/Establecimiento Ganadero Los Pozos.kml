@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Establecimiento Ganadero Los Pozos.kml</name>
+	<Style id="inline16">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline3">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline16</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline7</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline7">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>Establecimiento Ganadero Los Pozos</name>
+		<open>1</open>
+		<description>Establecimiento Ganadero Los Pozos (Pedro Luis Cignetti, Jorge Ricardo Cignetti, Héctor Luca Boccolini, Guillermo Aldo Sona y Adriana Magdalena Sona)</description>
+		<Placemark>
+			<name>Establecimiento Ganadero Los Pozos</name>
+			<styleUrl>#inline3</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-62.93763150152102,-24.35935112997458,0 -62.79977269136008,-24.36032196968501,0 -62.7998740134364,-24.40312092915372,0 -62.93726727653275,-24.40265678554999,0 -62.93763150152102,-24.35935112997458,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

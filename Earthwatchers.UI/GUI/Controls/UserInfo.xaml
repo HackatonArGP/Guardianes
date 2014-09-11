@@ -1,0 +1,44 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+	xmlns:controls="clr-namespace:Earthwatchers.UI.GUI.Controls" mc:Ignorable="d" 
+    d:DesignWidth="166"
+	x:Class="Earthwatchers.UI.GUI.Controls.UserInfo" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+        <Grid x:Name="GridLogedIn" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="35" />
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Image Source="../../Resources/Images/user.png" Stretch="None" />
+            <TextBlock x:Name="label" Grid.Column="1" Grid.ColumnSpan="2" FontSize="15" FontWeight="Bold" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+            <Border Grid.Row="1" Grid.ColumnSpan="3" BorderBrush="#FF9eba10" BorderThickness="0,0,1,1" Margin="0,10,0,10" CornerRadius="4" Height="35">
+                <Border.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.15" />
+                </Border.Background>
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" Color="Black" Direction="-90" ShadowDepth="1" />
+                </Border.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65*" />
+                        <ColumnDefinition Width="35*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="points" Text="128 puntos" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="17" FontWeight="Bold" />
+                    <Image Source="../../Resources/Images/badge.png" Grid.Column="1" Stretch="None" />
+                </Grid>
+            </Border>
+            <HyperlinkButton Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" x:Name="txtLogout" Click="TxtLogoutClick" VerticalContentAlignment="Center" Content="Salir" VerticalAlignment="Center" FontSize="13" Foreground="#FF4e5b05" ToolTipService.ToolTip="Dejar de monitorear mi tierra" />
+            <Rectangle Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="1" Fill="#FF4e5b05"  />
+            <HyperlinkButton Grid.Row="2" Grid.Column="2" x:Name="btnMyLand" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" Click="BtnMyLandClick" Content="Mi Tierra" TargetName="_blank" VerticalContentAlignment="Center" FontSize="13" Foreground="#FF4e5b05" HorizontalAlignment="Center" ToolTipService.ToolTip="Mostrar mi hexágono"/>
+        </Grid>
+</UserControl>

@@ -1,0 +1,72 @@
+!! Fix login + schema - gebruikt nu Beheerder pass: KA42kaMa
+
+USE [DeforestActionDonations]
+GO
+
+/****** Object:  Table [dbo].[htr_adopters]    Script Date: 12/14/2011 15:49:25 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[htr_adopters](
+	[gid] [int] IDENTITY(1,1) NOT NULL,
+	[id] [int] NULL,
+	[cellnum] [int] NULL,
+	[transaction_nr] [int] NULL,
+	[name] [varchar](max) NULL,
+	[username] [varchar](max) NULL,
+	[amount] [int] NULL,
+	[area] [int] NULL,
+	[geom] [geometry] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[gid] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON)
+)
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+USE [DeforestActionDonations]
+GO
+
+/****** Object:  Table [dbo].[tembak_hutan]    Script Date: 12/14/2011 15:50:17 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[tembak_hutan](
+	[gid] [int] IDENTITY(1,1) NOT NULL,
+	[ID] [bigint] NULL,
+	[geom] [geometry] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[gid] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON)
+)
+
+GO
+
+ALTER TABLE [dbo].[tembak_hutan]  WITH CHECK ADD  CONSTRAINT [enforce_srid_geometry_tembak_hutan] CHECK  (([geom].[STSrid]=(3857)))
+GO
+
+ALTER TABLE [dbo].[tembak_hutan] CHECK CONSTRAINT [enforce_srid_geometry_tembak_hutan]
+GO
+
+
+StartingsqKMeter new
+12390034 -32564
+12390034 -32565
+12390035 -32565
+12390035 -32564
+12390034 -32564

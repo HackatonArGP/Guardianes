@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Earthwatchers.UI.GUI.Controls.NewsControl"
+   	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Stretch" BorderBrush="#FF454545" BorderThickness="1">
+
+    <Grid x:Name="LayoutRoot" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0,12">
+        <Rectangle Margin="0" Stroke="White" Fill="#26FFFFFF"/>
+        <TextBlock x:Name="txtDate" Text="TEST blabla" Foreground="White" Margin="0,-13,0,0" FontWeight="Bold" />
+        <Grid Margin="5"> 
+            
+            <StackPanel x:Name="textWrap" Width="240" Background="Gray"></StackPanel>
+            <Button x:Name="btnZoomIn" Click="BtnZoomToClick" Margin="0" Style="{StaticResource ImageButton}" ToolTipService.ToolTip="zoom" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="22" Height="22">
+                <Image Height="22" Source="../../Resources/Images/marker.png" Stretch="Fill" Width="14"/>
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

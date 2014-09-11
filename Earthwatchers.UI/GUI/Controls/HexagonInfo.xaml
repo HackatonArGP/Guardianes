@@ -1,0 +1,173 @@
+﻿<UserControl x:Class="Earthwatchers.UI.GUI.Controls.HexagonInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:loaders="clr-namespace:Earthwatchers.UI.GUI.Loaders"
+        xmlns:controls="clr-namespace:Earthwatchers.UI.GUI.Controls" mc:Ignorable="d" Visibility="Collapsed" Width="226"
+        VerticalAlignment="Top" HorizontalAlignment="Left">
+    <UserControl.Resources>
+        <Storyboard x:Name="HighlightStoryBoard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" FillBehavior="HoldEnd"
+                    RepeatBehavior="Forever" Storyboard.TargetName="rectHighlight">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <CompositeTransform />
+        </Grid.RenderTransform>
+
+        <Grid Margin="0" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Border CornerRadius="5,5,0,0" BorderThickness="1" BorderBrush="#FF858585" Margin="8,0,0,0"
+                    Canvas.ZIndex="3">
+                <Border CornerRadius="5,5,0,0" BorderThickness="1" BorderBrush="#FF9bae30">
+                    <Border CornerRadius="5,5,0,0" Background="{StaticResource GreenBg}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="../../Resources/Images/user.png" Margin="12" Stretch="None" />
+                            <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="0,10,0,10"
+                                    VerticalAlignment="Center">
+                                <TextBlock x:Name="txtName" TextWrapping="Wrap" Visibility="Collapsed" Width="100"
+                                        VerticalAlignment="Center" FontWeight="Bold" FontSize="11" LineHeight="12"
+                                        LineStackingStrategy="BlockLineHeight" Foreground="White" />
+                                <Image Source="../../Resources/Images/badge.png" x:Name="badgeIcon" Margin="4,2,0,0"
+                                        Stretch="None" />
+                                <Image Source="../../Resources/Images/jaguarbadge.png" x:Name="JaguarBadge"
+                                        Margin="4,2,0,0" Stretch="None" Visibility="Collapsed" />
+
+                            </StackPanel>
+                            <Button Grid.Column="2" x:Name="btnClose" Margin="0,-2,0,0"
+                                    Style="{StaticResource ImageButton}"
+                                    ToolTipService.ToolTip="{Binding Path=HexInfo4, Source={StaticResource Labels}}"
+                                    HorizontalAlignment="Right" VerticalAlignment="Top">
+                                <Image x:Name="img" MouseLeftButtonDown="BtnCloseMouseLeftButtonDown"
+                                        Source="/Earthwatchers.UI;component/Resources/Images/deletew.png" Stretch="None" />
+                            </Button>
+                        </Grid>
+                    </Border>
+                </Border>
+            </Border>
+            <Path Data="M 0,10 10,20 10,0 Z" Stroke="#FF849b0c" Fill="#FF849b0c" StrokeThickness="1"
+                    VerticalAlignment="Center" Canvas.ZIndex="4" />
+
+
+            <Border x:Name="ActionButton" CornerRadius="0,0,5,5" BorderBrush="#FFcdcdcd" BorderThickness="1"
+                    Grid.Row="1" Margin="8,-2,0,0" Canvas.ZIndex="2">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                        <GradientStop Color="#FFe1ece3" Offset="0" />
+                        <GradientStop Color="#FFFFFFFF" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="32*" />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition Height="0*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Row="0">
+                        <TextBlock x:Name="txtBasecamp" Margin="15,5,5,0" Visibility="Collapsed"
+                                VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold" FontSize="11" Foreground="#FF697d00" />
+                        <TextBlock x:Name="txtBasecampName" TextWrapping="Wrap" Margin="15,5,5,0" Visibility="Collapsed" VerticalAlignment="Center" FontWeight="Bold"
+                                FontSize="11" Foreground="#FF697d00" />
+                    </StackPanel>
+
+                    <Border Grid.Row="1" Margin="12" BorderThickness="1" BorderBrush="#FFcdcdcd" CornerRadius="2"
+                            Cursor="Hand" x:Name="btnDemand" MouseLeftButtonDown="Report_MouseLeftButtonDown">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <GradientStop Color="#FFe9edea" Offset="0" />
+                                <GradientStop Color="#FFFFFFFF" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="42" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Image x:Name="reportIcon"
+                                    Source="/Earthwatchers.UI;component/Resources/Images/reportar.png" Stretch="None" />
+                            <TextBlock x:Name="reportText" Grid.Column="1"
+                                    Text="{Binding Path=HexInfo1, Source={StaticResource Labels}}"
+                                    Foreground="#FF697d00" FontWeight="Bold" VerticalAlignment="Center" FontSize="12" />
+                        </Grid>
+                    </Border>
+                    <Rectangle x:Name="rectHighlight" IsHitTestVisible="False" Opacity="0" Fill="Transparent"
+                            Stroke="#FFb6d220" StrokeThickness="3" Canvas.ZIndex="2" Margin="12,10,12,10" Grid.Row="1" />
+                    <TextBlock x:Name="LastUsersWithActivityTextTitle" Visibility="Collapsed" Grid.Row="2"
+                            TextAlignment="Left" Margin="26,0,25,0" FontSize="10" FontWeight="Bold"
+                            Text="{Binding Path=HexInfo8, Source={StaticResource Labels}}" Foreground="#FF414141"
+                            TextWrapping="Wrap" Grid.RowSpan="2" />
+                    <TextBlock x:Name="LastUsersWithActivityText" Grid.Row="4" Margin="26,0,25,0" Visibility="Collapsed"
+                            TextWrapping="Wrap" Foreground="#FF414141" FontSize="11" />
+                </Grid>
+            </Border>
+
+
+            <Border x:Name="commentsBorder" CornerRadius="0,0,5,5" BorderBrush="#FFcdcdcd" BorderThickness="1"
+                    Grid.Row="4" Margin="8,-5,0,0" Canvas.ZIndex="1">
+                <Border.Background>
+
+                    <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                        <GradientStop Color="#FFe8ece9" Offset="0" />
+                        <GradientStop Color="#FFFFFFFF" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid Margin="0,17,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <ItemsControl x:Name="commentList" BorderThickness="0" Background="Transparent"
+                            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                            ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" Margin="10,0,10,0">
+                                    <TextBlock Text="{Binding FullName}" FontWeight="Bold" Foreground="#FF414141"
+                                            FontSize="11" />
+                                    <TextBlock Text="{Binding UserComment}" Foreground="#FF414141" FontSize="11"
+                                            TextWrapping="Wrap" />
+                                    <TextBlock Text="{Binding Published}" Foreground="#FF7c8e24" FontSize="11" />
+                                    <Border BorderThickness="1" BorderBrush="#FFcdcdcd" Height="1" Margin="0,10,0,2" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <Button Grid.Row="1" x:Name="btnComments" Click="TxtCommentsClick"
+                            Style="{StaticResource ImageButton}"
+                            ToolTipService.ToolTip="{Binding Path=HexInfo3, Source={StaticResource Labels}}"
+                            HorizontalAlignment="Left" Margin="0,0,0,5">
+                        <Grid>
+                            <Image Source="/Earthwatchers.UI;component/Resources/Images/comments.png" Stretch="None" />
+                            <Ellipse Margin="16,-15,0,0" Width="15" Height="15" Fill="{StaticResource GreenBg}"
+                                    StrokeThickness="0">
+                            </Ellipse>
+                            <TextBlock x:Name="NumberOfCommentsText" Foreground="White" FontSize="11"
+                                    Margin="20,-10,0,0" />
+                        </Grid>
+                    </Button>
+                </Grid>
+            </Border>
+
+
+
+        </Grid>
+    </Grid>
+</UserControl>

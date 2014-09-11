@@ -1,0 +1,71 @@
+﻿<controls:ChildWindow x:Class="Earthwatchers.UI.GUI.Controls.DailySummary"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" Width="600" Height="500"
+        Style="{StaticResource GPDefaultChildWindow}" >
+
+    <Grid x:Name="MainGrid" Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" MaxHeight="600" ScrollViewer.VerticalScrollBarVisibility="Visible" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" MaxWidth="160"/>
+        </Grid.ColumnDefinitions>
+        <!--TODO: PABLO Pasar a resource-->
+        <TextBlock x:Name="Title" Text="Resumen Diario" Grid.Row="0" Grid.ColumnSpan="2" Foreground="#FF9db80e" FontWeight="SemiBold" FontSize="20" Margin="3,0,0,0" />
+
+        <ScrollViewer MaxHeight="500" Grid.Row="1" Grid.RowSpan="2" BorderBrush="Transparent" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="10,0,10,10">
+                <TextBlock x:Name="HiUser"  TextWrapping="Wrap" Foreground="Black" FontSize="15" Text="Hola" />
+                
+                <TextBlock Margin="0,15,0,0" TextWrapping="Wrap" Foreground="Black" FontSize="13">
+                <Run x:Name="YourPoints" Text="Tu puntaje actual es "/><Run x:Name="Points" FontWeight="Bold" Text=""/></TextBlock>
+                <TextBlock Margin="0,5,0,0" x:Name="MorePoints" TextWrapping="Wrap" FontWeight="Bold" Foreground="Black" FontSize="13" Text="Para obtener mas puntos podés:"></TextBlock>
+                
+
+                <!--DENUNCIAR-->
+                <StackPanel Orientation="Horizontal" Margin="20,5,0,0">
+                <Ellipse Fill="Black"  Height="5" Width="5" Margin="0,-20,0,0" />
+                <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Foreground="Black" FontSize="13" Width="505" >
+                    <Run x:Name="Denounce" FontWeight="Bold" Foreground="Red" Text="Denunciar. "/>
+                <Run x:Name="Denounce1" Text="Denunciaste " /> <Run x:Name="Denounce2" Foreground="Red" FontWeight="Bold" Text="172" /><Run x:Name="Denounce3" Text=" parcelas de un total de "/> 
+                <Run x:Name="Denounce4" Text="" /> <Run x:Name="Denounce5" Text=". Buscá las parcelas en rojo con reborde y hace click en DENUNCIAR"/></TextBlock>
+                </StackPanel>
+                
+                <!--VERIFICAR-->
+                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                    <Ellipse Fill="Black"  Height="5" Width="5" Margin="0,-20,0,0" />
+                    <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Foreground="Black" FontSize="13" Width="505" >
+                    <Run x:Name="Verify" FontWeight="Bold" Foreground="Green" Text="Verificar. "/>
+                <Run x:Name="Verify1" Text="Revisaste " /> <Run x:Name="Verify2" Foreground="Green" FontWeight="Bold" Text="15" /><Run x:Name="Verify3" Text=" parcelas ajenas de un total de "/> 
+                <Run x:Name="Verify4" Text="300" /> <Run x:Name="Verify5" Text=". Buscá las parcelas en verde o amarillo con reborde y hace click en REVISAR"/></TextBlock>
+                </StackPanel>
+                
+                <!--REPORTAR-->
+                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                    <Ellipse Fill="Black"  Height="5" Width="5" Margin="0,-20,0,0" />
+                    <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Foreground="Black" FontSize="13" Width="505" >
+                    <Run x:Name="Report" FontWeight="Bold" Text="Reportar. " Foreground="#FD9B06"/>
+                <Run x:Name="Report1" Text="Ya reportaste " /> <Run x:Name="Report2" Foreground="#FD9B06" FontWeight="Bold" Text="7" />
+                <Run x:Name="Report3" Text=" parcelas. Cada 10 minutos podés Cambiar Parcela y obtendrás una nueva."/></TextBlock>
+                </StackPanel>
+                
+                <!--COMPARTIR-->
+                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                    <Ellipse Fill="Black"  Height="5" Width="5" Margin="0,-20,0,0" />
+                    <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Foreground="Black" FontSize="13" Width="505" >
+                    <Run x:Name="Share" FontWeight="Bold" Text="Compartir " Foreground="#1BB6B6"/>
+                <Run x:Name="Share1" Text="en redes sociales. Compartiste " /> <Run x:Name="Share2" Foreground="#1BB6B6" FontWeight="Bold" Text="5" />
+                <Run x:Name="Share3" Text=" veces tus reportes y verificaciones. Compartiendo más logramos dar a conocer la herramienta."/></TextBlock>
+                </StackPanel>
+                
+                <TextBlock x:Name="Remember" Margin="45,10,0,0" TextWrapping="Wrap" Foreground="Black" FontSize="13" Text="Recordá revisar todas las parcelas que tengan reborde, en esas es que tenés acciones para hacer." />
+
+                <TextBlock x:Name="Contest" Margin="0,10,0,0" TextAlignment="Center" TextWrapping="Wrap" Foreground="Black" FontSize="13" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</controls:ChildWindow>

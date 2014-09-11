@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Cuchuy (Gastón Larrán).kml</name>
+	<StyleMap id="inline2120">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline9210</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline1412</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline9210">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline1412">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>Cuchuy</name>
+		<open>1</open>
+		<description>Cuchuy (Gastón Larrán)</description>
+		<Placemark>
+			<name>Cuchuy (Gastón Larrán)</name>
+			<styleUrl>#inline2120</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-63.56672501459207,-23.01566740474352,0 -63.52770622907721,-23.01953587413691,0 -63.523336360674,-22.98943016114211,0 -63.55934944325567,-22.9884056648613,0 -63.55946441672788,-22.98840652775857,0 -63.56256830459522,-22.98842987463729,0 -63.56672501459207,-23.01566740474352,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

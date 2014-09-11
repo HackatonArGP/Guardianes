@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Guardianes - Greenpeace</title>
+    <script src="admin/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="admin/jquery.redirect.min.js" type="text/javascript"></script>
+    <script src="admin/jquery.placeholder.min.js" type="text/javascript"></script>
+    <script src="admin/jquery.base64.js" type="text/javascript"></script>
+
+    <script src="admin/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getAuthString() {
+            return "Basic " + $.base64Encode(document.getElementById("tbUsername").value + ":" + document.getElementById("tbPassword").value);
+        }
+
+        function getEncodedMail(val) {
+            return $.base64Encode(val);
+        }
+
+        var emailRegex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        var isValidUser = false;
+
+        function validateUser() {
+            var username = $("#tbUsername").val();
+            if (username == undefined || username.length < 4 || !emailRegex.test(username)) {
+                $("#rError").html('Tenés que escribir una dirección de mail válida');
+            }
+            else {
+                //1. Chequeo si existe en Earthwatchers
+                $("#loadinggif").show();
+
+                $.ajax({
+                    type: "GET",
+                    url: "api/earthwatchers/exists=" + getEncodedMail(username),
+                    success: function (exists) {
+                        if (exists) {
+                            $("#tbPassword").show();
+                            $("#tbPassword").focus();
+                            $("#loadinggif").hide();
+                            $("#rError").hide();
+
+                            $("#loginbutton").val("COMENZAR");
+                        }
+                        else {
+                            $("#loadinggif").hide();
+
+                            //Abro el Fancybox
+                            $.fancybox.open([
+                            {
+                                href: '#registrationDiv',
+                                minHeight: 200,
+                                scrolling: 'no'
+                            }]);
+
+                            //Chequeo si ya firmó la petición
+                            var parametros = {
+                                "mail": username,
+                                "id_ciberaccion": 5145
+                            };
+
+                            $("#loadinggif2").show();
+                            $("#signDiv").hide();
+                            $("#rForm").hide();
+
+                            $.ajax({
+                                type: "POST",
+                                url: "userclient.php",
+                                data: parametros,
+                                success: function (data) {
+                                    $("#loadinggif2").hide();
+                                    var obj = JSON.parse(data);
+                                    if (obj != undefined && obj.length > 0) {
+                                        //Si ya firmó la petición
+                                        $.fancybox.update();
+                                        $("#rForm").show();
+                                        $("#rUsername").val(username);
+                                        $("#rCountry").val(obj);
+                                        $("#rPassword").focus();
+                                        $("#rError2").html("");
+                                    }
+                                    else {
+                                        //Si no firmó la petición 
+                                        $.fancybox.update();
+                                        $("#signDiv").show();
+                                    }
+                                },
+                                error: function (xhr, textStatus, errorThrown) {
+                                    $("#loadinggif2").hide();
+                                    $("#rError2").html(errorThrown);
+                                }
+                            });
+                        }
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        $("#loadinggif2").hide();
+                        $("#rError2").html(errorThrown);
+                    }
+                });
+            }
+
+        }
+
+        function login() {
+            //Si el password está visible entonces termino el login
+            if ($("#tbPassword").is(":visible")) {
+                var username = $("#tbUsername").val();
+                var password = $("#tbPassword").val();
+                $("#loadinggifP").show();
+
+                $.ajax({
+                    type: "GET",
+                    url: "api/authenticate/login",
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", getAuthString());
+                    },
+                    success: function (data) {
+                        if (data) {
+                            $().redirect('home.aspx', { 'username': username, 'password': password });
+                        }
+                        else {
+                            $("#loadinggifP").hide();
+                            $("#rError").show();
+                            $("#rError").html('El usuario o la contraseña son incorrectos');
+                        }
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        $("#loadinggifP").hide();
+                        $("#rError").show();
+                        $("#rError").html('El usuario o la contraseña son incorrectos');
+                    }
+                });
+            }
+            else {
+                validateUser();
+            }
+        }
+
+        function register() {
+            var isValid = true;
+            var passwordRegex = /^.*(?=.{6,})(?=.*[a-zA-Z])(?=.*\d).*$/;
+            //if (!passwordRegex.test($("#rPassword").val()))
+
+            if ($("#rPassword").val().length < 5) {
+                $("<span></span>").html("La contraseña debe tener al menos 5 caracteres.").appendTo("#rError2");
+                isValid = false;
+            }
+
+            if ($("#rPassword").val() != $("#rPasswordRepeat").val()) {
+                $("<span></span>").html("La segunda contraseña no coincide con la primera.").appendTo("#rError2");
+                isValid = false;
+            }
+
+            if (isValid) {
+                $.ajax({
+                    url: "/api/earthwatchers",
+                    type: "POST",
+                    data: "{\"Name\":\"" + $("#rUsername").val() +
+                        "\",\"Role\":\"" + 0 +
+                        "\",\"Password\":\"" + $("#rPassword").val() +
+                        "\",\"Country\":\"" + $("#rCountry").val() +
+                        "\", \"Basecamp\":\"" + "Argentina" + "\" }",
+                    contentType: "application/json ; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $().redirect('home.aspx', { 'username': $("#rUsername").val(), 'password': $("#rPassword").val() });
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        $("<span></span>").html(errorThrown + " - " + textStatus).appendTo("#rError2");
+                    }
+                });
+            }
+        }
+
+        (function ($) {
+            $.QueryString = (function (a) {
+                if (a == "") return {};
+                var b = {};
+                for (var i = 0; i < a.length; ++i) {
+                    var p = a[i].split('=');
+                    if (p.length != 2) continue;
+                    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+                }
+                return b;
+            })(window.location.search.substr(1).split('&'))
+        })(jQuery);
+
+        $(function () {
+            $('input, textarea').placeholder();
+
+            $("#signButton").click(function () {
+                $().redirect("http://ciberacciones.greenpeace.org.ar/cyberacciones/index_real.php?cyberaccion=5145&mail=" + $("#tbUsername").val(), { 'email': $("#tbUsername").val(), 'source': 'guardianes' });
+            });
+
+            $("#registerButton").click(function () {
+                register();
+            });
+
+            $("#rPasswordRepeat").keypress(function (event) {
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if (keycode == '13') {
+                    register();
+                }
+            });
+
+            $("#tbPassword").keypress(function (event) {
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if (keycode == '13') {
+                    login();
+                }
+            });
+
+            $("#loginbutton").click(function () {
+                login();
+            });
+
+            $("#videoButton").click(function () {
+                $.fancybox.open([
+                            {
+                                href: '#videoDiv',
+                                scrolling: 'no'
+                            }]);
+            });
+
+            $("#tbUsername").keypress(function (event) {
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if (keycode == '13') {
+                    validateUser();
+                }
+            });
+
+            $("#tbUsername").focusout(function () {
+                validateUser();
+            });
+
+            //Obtengo de donde viene y el mail
+            var referrer = document.referrer;
+            if (referrer != undefined && referrer.indexOf('ciberacciones.greenpeace.org.ar') > -1) {
+                var r = referrer.indexOf("&referer=&mail=") + 15;
+                var mail = referrer.substring(r, referrer.length);
+                if (mail != undefined && mail != '') {
+                    $("#tbUsername").val(mail);
+                    validateUser();
+                }
+            }
+        });
+    </script>
+    <link href="css/ew.css" rel="stylesheet" />
+
+    <link href="css/jquery.fancybox.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="floater">
+        <div class="contents">
+            <div>
+                <img src="Images/logo.png" />
+            </div>
+            <div style="margin-top: 15px">
+                <img src="Images/guardianes.png" />
+            </div>
+            <div class="container">
+                <div id="logindiv">
+                    <div style="float: left">
+                        <div class="content">
+                            <div>
+                                <a href="#" title="Click aquí para ver el video" id="videoButton">
+                                    <img src="Images/video.jpg" style="padding: 15px" alt="Ver video" title="Ver video" border="0" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float: right">
+                        <form name="loginform" id="loginform" class="login-form">
+                            <div class="content">
+                                <div class="headertxt">
+                                    Ingresá tu dirección de mail para<br />
+                                    comenzar a cuidar el bosque!
+                                </div>
+
+                                <input name="tbUsername" id="tbUsername" type="text" class="input" placeholder="dirección de mail" title="Escriba su dirección de mail">
+
+                                <img id="loadinggif" src="css/fancybox_loading.gif" style="display: none; float: right; margin-top: 20px" />
+
+                                <input name="tbPassword" type="password" id="tbPassword" class="input" placeholder="contraseña" style="display: none">
+
+                                <img id="loadinggifP" src="css/fancybox_loading.gif" style="display: none; float: right; margin-top: 20px" />
+
+                                <input type="button" value="SIGUIENTE >>" id="loginbutton" class="button" />
+
+                                <div id="rError" class="error">
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="registrationDiv" style="display: none; width: 500px;">
+        <img id="loadinggif2" src="css/fancybox_loading.gif" style="margin: auto" />
+
+        <div id="signDiv" style="display: none" class="login-form">
+            <div class="content">
+                <h3>Para ser un Guardián te invitamos a firmar la petición para salvar a los bosques de Salta</h3>
+                <input type="button" value="FIRMAR" id="signButton" class="button" />
+            </div>
+        </div>
+
+        <form name="rForm" id="rForm" class="login-form" style="display: none">
+            <div class="content">
+                <h3>Indicá tu contraseña para finalizar!</h3>
+
+                <input name="rUsername" id="rUsername" type="text" class="input" disabled="disabled">
+
+                <input name="rPassword" type="password" id="rPassword" class="input" placeholder="contraseña">
+                <input name="rPasswordRepeat" id="rPasswordRepeat" title="Repetí tu contraseña" type="password" class="input" placeholder="repetir contraseña">
+
+                <input name="rCountry" id="rCountry" type="hidden" class="input">
+                <input type="button" value="COMENZAR" id="registerButton" class="button" />
+            </div>
+        </form>
+
+        <div id="rError2" class="error"></div>
+    </div>
+    <div id="videoDiv" style="display: none; width: 730px;">
+        <iframe src="http://player.vimeo.com/video/71918065" width="720" height="406" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+</body>
+</html>

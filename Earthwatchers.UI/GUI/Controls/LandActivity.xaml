@@ -1,0 +1,36 @@
+﻿<controls:ChildWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" 
+    x:Class="Earthwatchers.UI.GUI.Controls.LandActivity"
+    xmlns:loaders="clr-namespace:Earthwatchers.UI.GUI.Loaders"
+    xmlns:ext="clr-namespace:Earthwatchers.UI.Extensions"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    Width="300" 
+    Style="{StaticResource GPDefaultChildWindow}"
+    Title="{Binding Path=HexInfo7, Source={StaticResource Labels}}">
+    <controls:ChildWindow.Resources>
+        <ext:CommentDeleteVisibilityConverter x:Key="currentRankingVisibilityConverter" />
+    </controls:ChildWindow.Resources>
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <loaders:_3D x:Name="loadinAnim" Visibility="Visible" />
+        <ItemsControl x:Name="activityList" BorderThickness="0" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="2,0,10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="../../Resources/Images/user-active.png" Visibility="{Binding Path=EarthwatcherId, Converter={StaticResource currentRankingVisibilityConverter} }" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="None" />
+                        <TextBlock Grid.Column="1" Text="{Binding Id}" FontWeight="Bold" Foreground="#FF414141" FontSize="16" FontStyle="Italic" VerticalAlignment="Center" />
+                        <TextBlock Grid.Column="2" Text="{Binding Action}" Foreground="#FF414141" FontSize="13" VerticalAlignment="Center" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</controls:ChildWindow>

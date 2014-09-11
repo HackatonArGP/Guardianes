@@ -1,0 +1,1 @@
+sqlcmd.exe -S "." -d Earthwatchers2 -Q "EXEC Lands_Stats_Update"

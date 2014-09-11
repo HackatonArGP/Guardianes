@@ -1,0 +1,81 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+	mc:Ignorable="d"
+    Width="105"
+	x:Class="Earthwatchers.UI.GUI.Controls.LayerControlOnOff" Height="Auto" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+    <UserControl.Resources>
+        <Storyboard x:Name="OffAnimation">
+            <DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetName="SItext" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetName="NOtext" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="-27" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="SliderCircle">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <ColorAnimation Duration="0:0:0.5" To="#FF1f1f1f" Storyboard.TargetName="OnOffButton" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)">
+                
+            </ColorAnimation>
+        </Storyboard>
+        <Storyboard x:Name="OnAnimation">
+            <DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetName="SItext" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetName="NOtext" Storyboard.TargetProperty="Opacity" />
+            <DoubleAnimation Duration="0:0:0.5" To="27" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="SliderCircle">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <ColorAnimation Duration="0:0:0.5" To="#FF9fba0e" Storyboard.TargetName="OnOffButton" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)">
+
+            </ColorAnimation>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" VerticalAlignment="Top">
+        <Border Width="105" BorderThickness="0,1,1,1" BorderBrush="#80b0cf0f" Height="66">
+            <Border.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5" />
+            </Border.Background>
+            <Grid Margin="8,8,8,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="Title" Margin="0,0,0,5" HorizontalAlignment="Center" TextAlignment="Center" Foreground="White" FontSize="13" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+
+                <Grid x:Name="SwitchGrid" Grid.Row="1" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Cursor="Hand">
+                    <Border x:Name="OnOffButton" Width="68" Background="#FF9fba0e" CornerRadius="12" BorderBrush="#FF484848" BorderThickness="2">
+                        <Rectangle Width="68" Margin="0,8,0,0">
+                            <Rectangle.Clip>
+                                <RectangleGeometry RadiusX="8" RadiusY="8" Rect="2,0,60,12" />
+                            </Rectangle.Clip>
+                            <Rectangle.Fill>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                    <GradientStop x:Name="gstop1" Color="#22FFFFFF" Offset="0" />
+                                    <GradientStop x:Name="gstop2" Color="#66FFFFFF" Offset="1" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                    </Border>
+                    <TextBlock x:Name="SItext" Text="{Binding Path=Notifications4, Source={StaticResource Labels}}" FontSize="16" FontFamily="Arial" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-10,0,0,0" Opacity="1" />
+                    <TextBlock x:Name="NOtext" Text="NO" FontSize="16" FontFamily="Arial" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,0,0" Opacity="0" />
+                    <Ellipse x:Name="SliderCircle" Height="23.5" Width="23.5">
+                        <Ellipse.RenderTransform>
+                            <TranslateTransform X="27" x:Name="SliderCircleTranslateTransform" />
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5" GradientOrigin="0.5,0.5">
+                                <GradientStop Color="#FFa1a1a1" Offset="0.1"></GradientStop>
+                                <GradientStop Color="#FFc8c8c8" Offset="0.9"></GradientStop>
+                                <GradientStop Color="#FFFFFF" Offset="1"></GradientStop>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

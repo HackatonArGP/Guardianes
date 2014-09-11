@@ -1,0 +1,19 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="Earthwatchers.UI.App"
+             xmlns:res="clr-namespace:Earthwatchers.UI.Resources"
+             xmlns:ext="clr-namespace:Earthwatchers.UI.Extensions">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Assets/CoreStyles.xaml"/>
+                <ResourceDictionary>
+                    <res:Labels x:Key="Labels" />
+                </ResourceDictionary>
+                <ResourceDictionary>
+                    <ext:LabelsConverter x:Key="LabelsConverter" />
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

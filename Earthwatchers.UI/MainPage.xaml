@@ -1,0 +1,879 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="clr-namespace:Earthwatchers.UI.GUI.Controls" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:mapsui="clr-namespace:Mapsui.Windows;assembly=Earthwatchers.MapControl" xmlns:loaders="clr-namespace:Earthwatchers.UI.GUI.Loaders" x:Class="Earthwatchers.UI.MainPage" d:DesignHeight="600" d:DesignWidth="800" mc:Ignorable="d">
+    <UserControl.Resources>
+        <Storyboard x:Name="ArgentineLawTutorial">
+            <DoubleAnimation To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="TutorialArgentineLaw">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="TutorialArgentineLaw">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+        <Storyboard x:Name="ToggleJaguarIcon">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="JaguarIcon" RepeatBehavior="Forever">
+                <LinearDoubleKeyFrame KeyTime="0:0:1.5" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:6.5" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:8" Value="-50" />
+                <LinearDoubleKeyFrame KeyTime="0:0:14" Value="-50" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="OpenRightMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="menuRight">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-299.5">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="CloseRightMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="menuRight">
+                <SplineDoubleKeyFrame KeyTime="0" Value="-299.5" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="PointsStoryBoard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="pointsStackPanel">
+                <SplineDoubleKeyFrame KeyTime="0" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="1.8" />
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="pointsStackPanel">
+                <SplineDoubleKeyFrame KeyTime="0" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="1.5" />
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="OpacitiesStoryBoard">
+            <DoubleAnimation To="1" Duration="0:0:1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="layerList"></DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay"></DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay1"></DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay2"></DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay3"></DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay4"></DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay5"></DoubleAnimation>
+
+            <DoubleAnimation To="0" Duration="0:0:1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay7"></DoubleAnimation>
+
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial8">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial8">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+        <Storyboard x:Name="Tutorial0StoryBoard">
+            <DoubleAnimation To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial0">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial0">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay" />
+        </Storyboard>
+        <Storyboard x:Name="Tutorial0LoadingStoryBoard">
+            <DoubleAnimation To="0" Duration="0:0:10" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay" />
+        </Storyboard>
+        <Storyboard x:Name="Tutorial1StoryBoard">
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial0">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial0">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:0.5" To="1" Duration="0:0:0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="layerList"></DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:0.5" To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial1">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:0.5" To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial1">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+        </Storyboard>
+        <Storyboard x:Name="Tutorial3StoryBoard">
+
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial1">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial1">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay"></DoubleAnimation>
+
+            <DoubleAnimation To="1" Duration="0:0:0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay3"></DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:0.5" To="0" Duration="0:0:0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay2"></DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:1" To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial3">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:1" To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial3">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+        <Storyboard x:Name="Tutorial5StoryBoard">
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial3">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial3">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="1" Duration="0:0:0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay2"></DoubleAnimation>
+
+            <DoubleAnimation BeginTime="0:0:0.5" To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial5">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:0.5" To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial5">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:0.5" To="1" Duration="0:0:0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Tutorial5Arrow" />
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:1" RepeatBehavior="Forever" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" Storyboard.TargetName="Tutorial5Arrow">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="20">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseIn" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="Tutorial6StoryBoard">
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial23">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial23">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial5">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial5">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Tutorial5Arrow"></DoubleAnimation>
+
+            <DoubleAnimation To="0" BeginTime="0:0:0.5" Duration="0:0:0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay2"></DoubleAnimation>
+
+            <DoubleAnimation To="1" BeginTime="0:0:0.5" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial6">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="1" BeginTime="0:0:0.5" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial6">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+        <Storyboard x:Name="Tutorial7StoryBoard">
+            <DoubleAnimation To="1" Duration="0:0:0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay2"></DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial6">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial6">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:0.5" To="0" Duration="0:0:0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay5"></DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:0.5" To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial7">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:0.5" To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial7">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+
+        <Storyboard x:Name="Tutorial8StoryBoard">
+            <DoubleAnimation To="1" Duration="0:0:0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay5"></DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial7">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="0" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial7">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:0.5" To="0" Duration="0:0:0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Overlay4"></DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:0.5" To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial8">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:0.5" To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial8">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" FillBehavior="HoldEnd" RepeatBehavior="Forever" Storyboard.TargetName="HelpNotifications">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="0.5" />
+                <LinearDoubleKeyFrame KeyTime="0:0:1" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+        <Storyboard x:Name="Tutorial23StoryBoard">
+            <DoubleAnimation To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" Storyboard.TargetName="Tutorial23">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="1" Duration="0:0:0.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" Storyboard.TargetName="Tutorial23">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation To="1" Duration="0:0:0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Tutorial5Arrow" />
+            <DoubleAnimationUsingKeyFrames BeginTime="0:0:0.5" RepeatBehavior="Forever" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" Storyboard.TargetName="Tutorial5Arrow">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="20">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseIn" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="MiParcelaStoryBoard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" FillBehavior="HoldEnd" RepeatBehavior="Forever" Storyboard.TargetName="btnMyLandHighlight">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="ChangeOpacityStoryBoard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="NotificationText">
+                <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="0.7" />
+                <LinearDoubleKeyFrame KeyTime="0:0:4" Value="0.7" />
+                <LinearDoubleKeyFrame KeyTime="0:0:4.5" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid x:Name="mainGrid" Background="Black">
+        <Grid>
+            <Grid x:Name="mapGrid" RenderTransformOrigin="0.5,0.5" Background="#FFEFEFEF">
+                <Grid.RenderTransform>
+                    <CompositeTransform />
+                </Grid.RenderTransform>
+
+                <Grid x:Name="mapWrapper">
+                    <Grid x:Name="Tutorial0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="200,220,0,0" Canvas.ZIndex="2">
+                        <Grid.RenderTransform>
+                            <ScaleTransform ScaleX="0" ScaleY="0" CenterX="100" CenterY="30" />
+                        </Grid.RenderTransform>
+                        <Border CornerRadius="8" BorderThickness="1" BorderBrush="#FF7f7f7f" Width="245" Margin="10,0,0,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="#FFdddddd" Offset="1" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock TextWrapping="Wrap" Text="{Binding Path=Tutorial35, Source={StaticResource Labels}}" VerticalAlignment="Center" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" Margin="6">
+
+                                </TextBlock>
+                                <Button Style="{StaticResource GreenButton}" Width="150" Height="30" Cursor="Hand" Foreground="White" FontSize="15" FontWeight="Bold" Content="{Binding Path=TutorialGame1, Source={StaticResource Labels}}" HorizontalAlignment="Right" Margin="0,5,10,5" Click="Step0Click" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+                    <Grid x:Name="Tutorial1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,85,240,0" Canvas.ZIndex="2">
+                        <Grid.RenderTransform>
+                            <ScaleTransform ScaleX="0" ScaleY="0" CenterX="100" CenterY="30" />
+                        </Grid.RenderTransform>
+                        <Border CornerRadius="8" BorderThickness="1" BorderBrush="#FF7f7f7f" Width="345" Margin="0,10,0,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="#FFdddddd" Offset="1" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock TextWrapping="Wrap" Text="{Binding Path=Tutorial32, Source={StaticResource Labels}}" VerticalAlignment="Center" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" Margin="6">
+
+                                </TextBlock>
+                                <Button Style="{StaticResource GreenButton}" Width="150" Height="30" Foreground="White"
+                                        FontSize="15" Cursor="Hand" FontWeight="Bold" Content="{Binding Path=TutorialGame1, Source={StaticResource Labels}}" HorizontalAlignment="Right" Margin="0,0,10,5" Click="Step1Click" />
+                            </StackPanel>
+                        </Border>
+                        <Path Data="M 0,10 10,0 20,10 Z" Stroke="#FF7f7f7f" StrokeThickness="1" Margin="300,0,0,0" VerticalAlignment="Top">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="#FFdddddd" Offset="1" />
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Grid>
+
+                    <Grid x:Name="Tutorial3" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="200,160,0,0" Canvas.ZIndex="2">
+                        <Grid.RenderTransform>
+                            <ScaleTransform ScaleX="0" ScaleY="0" CenterX="100" CenterY="30" />
+                        </Grid.RenderTransform>
+                        <Border CornerRadius="8" BorderThickness="1" BorderBrush="#FF7f7f7f" Width="215" Margin="10,0,0,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="#FFdddddd" Offset="1" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" Margin="6">
+                                    <Run Text="{Binding Path=Tutorial30, Source={StaticResource Labels}}" />
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Path Data="M 0,10 10,20 10,0 Z" Stroke="#FF7f7f7f" StrokeThickness="1" VerticalAlignment="Center">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="#FFdddddd" Offset="1" />
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Grid>
+
+                    <Grid x:Name="Tutorial5" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,-360,0,0" Canvas.ZIndex="2">
+                        <Grid.RenderTransform>
+                            <CompositeTransform x:Name="Tutorial5Transform" TranslateX="0" TranslateY="0" ScaleX="0" ScaleY="0" CenterX="100" CenterY="30" />
+                        </Grid.RenderTransform>
+                        <Border CornerRadius="8" BorderThickness="1" BorderBrush="#FF7f7f7f" Width="330" Margin="0,10,0,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="#FFdddddd" Offset="1" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <TextBlock TextWrapping="Wrap" Text="{Binding Path=Tutorial23, Source={StaticResource Labels}}" VerticalAlignment="Center" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" Margin="6">
+
+                            </TextBlock>
+                        </Border>
+                    </Grid>
+
+                    <TextBlock x:Name="Tutorial5Arrow" IsHitTestVisible="False" Text="↓" FontSize="60" Opacity="0" FontWeight="Bold" Margin="0,-165,0,0" VerticalAlignment="Center" Canvas.ZIndex="2" HorizontalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro">
+                        <TextBlock.RenderTransform>
+                            <TranslateTransform x:Name="Tutorial5ArrowTransform" Y="0" X="0" />
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+
+                    <Grid x:Name="Tutorial6" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="200,100,0,0" Canvas.ZIndex="2">
+                        <Grid.RenderTransform>
+                            <ScaleTransform ScaleX="0" ScaleY="0" CenterX="100" CenterY="30" />
+                        </Grid.RenderTransform>
+                        <Border CornerRadius="8" BorderThickness="1" BorderBrush="#FF7f7f7f" Width="255" Margin="10,0,0,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="#FFdddddd" Offset="1" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Cursor="Hand" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" Margin="6">
+                                   <Run Text="{Binding Path=Tutorial24, Source={StaticResource Labels}}" /> 
+                                    <LineBreak /><Run FontWeight="Bold" Text="{Binding Path=Tutorial34, Source={StaticResource Labels}}" />
+                                </TextBlock>
+                                <Button Style="{StaticResource GreenButton}" Width="150" Height="30" Foreground="White" FontSize="15" FontWeight="Bold" Content="{Binding Path=TutorialGame1, Source={StaticResource Labels}}" HorizontalAlignment="Right" Margin="0,5,10,5" Click="Step6Click" />
+                            </StackPanel>
+                        </Border>
+                        <Path Data="M 0,10 10,20 10,0 Z" Stroke="#FF7f7f7f" StrokeThickness="1" VerticalAlignment="Center">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="#FFdddddd" Offset="1" />
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Grid>
+
+                    <Grid x:Name="Tutorial7" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="200,350,0,0" Canvas.ZIndex="2">
+                        <Grid.RenderTransform>
+                            <ScaleTransform ScaleX="0" ScaleY="0" CenterX="100" CenterY="30" />
+                        </Grid.RenderTransform>
+                        <Border CornerRadius="8" BorderThickness="1" BorderBrush="#FF7f7f7f" Width="255" Margin="10,0,0,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="#FFdddddd" Offset="1" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" Margin="6" Text="{Binding Path=ChangePlot, Source={StaticResource Labels}}">
+
+                                </TextBlock>
+
+                                <Button Style="{StaticResource GreenButton}" Width="140" Cursor="Hand" Height="30" Foreground="White" FontSize="15" FontWeight="Bold" Content="{Binding Path=TutorialGame1, Source={StaticResource Labels}}" HorizontalAlignment="Right" Margin="0,5,10,5" Click="Step7Click" />
+                            </StackPanel>
+                        </Border>
+                        <Path Data="M 0,10 10,20 10,0 Z" Stroke="#FF7f7f7f" StrokeThickness="1" VerticalAlignment="Center">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="#FFdddddd" Offset="1" />
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Grid>
+
+                    <Grid x:Name="Tutorial8" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="200,290,0,0" Canvas.ZIndex="2">
+                        <Grid.RenderTransform>
+                            <ScaleTransform ScaleX="0" ScaleY="0" CenterX="100" CenterY="30" />
+                        </Grid.RenderTransform>
+                        <Border CornerRadius="8" BorderThickness="1" BorderBrush="#FF7f7f7f" Width="255" Margin="10,0,0,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="#FFdddddd" Offset="1" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock TextWrapping="Wrap" Text="{Binding Path=Tutorial25, Source={StaticResource Labels}}" VerticalAlignment="Center" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" Margin="6">
+
+                                </TextBlock>
+                                <Button Style="{StaticResource GreenButton}" Cursor="Hand" Width="140" Height="30" Foreground="White" FontSize="15" FontWeight="Bold" Content="{Binding Path=TutorialGame4, Source={StaticResource Labels}}" HorizontalAlignment="Right" Margin="0,5,10,5" Click="Step8Click" />
+                            </StackPanel>
+                        </Border>
+                        <Path Data="M 0,10 10,20 10,0 Z" Stroke="#FF7f7f7f" StrokeThickness="1" VerticalAlignment="Center">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="#FFdddddd" Offset="1" />
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Grid>
+
+                    <Grid x:Name="Tutorial23" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,-360,0,0" Canvas.ZIndex="2">
+                        <Grid.RenderTransform>
+                            <CompositeTransform x:Name="Tutorial23Transform" TranslateX="0" TranslateY="0" ScaleX="0" ScaleY="0" CenterX="100" CenterY="30" />
+                        </Grid.RenderTransform>
+                        <Border CornerRadius="8" BorderThickness="1" BorderBrush="#FF7f7f7f" Width="330" Margin="0,10,0,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="#FFdddddd" Offset="1" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" Margin="6">
+                               <Run Text="{Binding Path=Tutorial40, Source={StaticResource Labels}}" />
+                                <LineBreak /><LineBreak /><Run Text="{Binding Path=Tutorial46, Source={StaticResource Labels}}" />
+                                <Run Foreground="#FFdddd00" FontWeight="Bold"
+                                        Text="{Binding Path=Yellow, Source={StaticResource Labels}}" />
+                                <Run Text="{Binding Path=or, Source={StaticResource Labels}}" />
+                                <Run Foreground="#FFa2b52e" FontWeight="Bold" Text="{Binding Path=green, Source={StaticResource Labels}}" />
+                                <Run Text="{Binding Path=Tutorial47, Source={StaticResource Labels}}" />
+                            </TextBlock>
+                        </Border>
+                    </Grid>
+
+                    <Grid x:Name="TutorialArgentineLaw" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,85,10,0" Canvas.ZIndex="2">
+                        <Grid.RenderTransform>
+                            <ScaleTransform ScaleX="0" ScaleY="0" CenterX="100" CenterY="30" />
+                        </Grid.RenderTransform>
+                        <Border CornerRadius="8" BorderThickness="1" BorderBrush="#FF7f7f7f" Width="345" Margin="0,10,0,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="#FFdddddd" Offset="1" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" Margin="6" Text="{Binding Path=ForestLawCongrats, Source={StaticResource Labels}}">
+                                    <LineBreak /><LineBreak />
+                                    <Run Text="{Binding Path=ForestLawCongrats1, Source={StaticResource Labels}}" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" />
+                                    <LineBreak /><LineBreak />
+                                    <Run Text="{Binding Path=ForestLawCongrats2, Source={StaticResource Labels}}" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" />
+                                </TextBlock>
+                                <Button Style="{StaticResource GreenButton}" Cursor="Hand" Width="150" Height="30" Foreground="White" FontSize="15" FontWeight="Bold" Content="{Binding Path=TutorialGame1, Source={StaticResource Labels}}" HorizontalAlignment="Right" Margin="0,0,10,5" Click="TutorialArgentineLawClick" />
+                            </StackPanel>
+                        </Border>
+                        <Path Data="M 0,10 10,0 20,10 Z" Stroke="#FF7f7f7f" StrokeThickness="1" Margin="300,0,0,0" VerticalAlignment="Top">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="#FFdddddd" Offset="1" />
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Grid>
+
+                    <Grid x:Name="Overlay" Visibility="Collapsed" Background="#7F000000" HorizontalAlignment="Stretch" Margin="195,0,0,0" Opacity="1" VerticalAlignment="Stretch" Canvas.ZIndex="1" />
+                    <mapsui:MapControl x:Name="mapControl" MouseLeftButtonDown="MapControlMouseLeftButtonDown" MouseLeftButtonUp="MapControlMouseLeftButtonUp" MouseMove="MapControlMouseMove" MouseLeave="MapControlMouseLeave" />
+                    <CheckBox Name="checkBox_search" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="160,120" Checked="on_CheckBox_Checked" Unchecked="on_CheckBox_UnChecked" Visibility="Collapsed" />
+                    <TextBox Name="txt_search" Height="30" Width="120" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="200,120" TextChanged="onText_Changed" Visibility="Collapsed" />
+                    <ComboBox Name="combo_search" Height="20" Width="120" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="200,150" MaxDropDownHeight="150" SelectionChanged="on_Selection_changed" Visibility="Collapsed" />
+
+                    <Grid x:Name="landInfoWrapper" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+
+                    <controls:TimeLineControl x:Name="layerList" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="15" d:LayoutOverrides="Height" Opacity="0">
+                        <controls:TimeLineControl.Effect>
+                            <DropShadowEffect BlurRadius="5" ShadowDepth="5" />
+                        </controls:TimeLineControl.Effect>
+                    </controls:TimeLineControl>
+
+                    <Border x:Name="JaguarIcon" Visibility="Collapsed" HorizontalAlignment="Left" Cursor="Hand" VerticalAlignment="Top" MouseLeftButtonDown="JaguarIcon_MouseLeftButtonDown" Margin="195,185,0,0" Background="#FFdedede" CornerRadius="0,5,5,0">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Opacity="0.5" />
+                        </Border.Effect>
+                        <Border.RenderTransform>
+                            <TranslateTransform X="-50" />
+                        </Border.RenderTransform>
+                        <Grid>
+                            <Image x:Name="JaguarImg" Source="Resources/Images/jaguar-icon.png" Stretch="None" Margin="5" Visibility="Visible" />
+                            <Image x:Name="BinocularsImg" Source="Resources/Images/binoculars.png" Stretch="None" Margin="5" Visibility="Collapsed" />
+                        </Grid>
+                    </Border>
+
+                    <Border BorderBrush="#FF9cb713" BorderThickness="1" Width="196" HorizontalAlignment="Left" Background="{StaticResource GreenBg}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" x:Name="logo" Margin="15" Stretch="None" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                            <Grid x:Name="Overlay1" Visibility="Collapsed" Grid.RowSpan="2" Background="#7F000000" HorizontalAlignment="Stretch" Opacity="1" VerticalAlignment="Stretch" Canvas.ZIndex="1" />
+                            <Border Grid.Row="1" Height="3" BorderBrush="#FF9cb713" Background="#FF3c4705" BorderThickness="0,1,0,1" />
+
+                            <!--User-->
+                            <Grid Grid.Row="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid x:Name="UserControlPanelGrid" ToolTipService.ToolTip="Configuración de cuenta" Cursor="Hand" MouseLeftButtonDown="UserControlPanelGrid_MouseLeftButtonDown" >
+                                    <Path Data="M 0,0 16,24 45,24 45,0 Z" Width="45" Height="24" Margin="0,-2,0,0" Stroke="#FF3c4705" Fill="#FF6a7d0a" StrokeThickness="1" HorizontalAlignment="Right" VerticalAlignment="Top" Stretch="Uniform">
+                                    </Path>
+                                    <Image Source="Resources/Images/edituser2.png" Stretch="None" Margin="0,-2,8,0" HorizontalAlignment="Right" />
+                                </Grid>
+                                <Grid Grid.Row="1" Margin="4" Width="170">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="35" />
+                                        <ColumnDefinition Width="60" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image Source="../../Resources/Images/user.png" ToolTipService.ToolTip="Configuración de cuenta" Stretch="None" Cursor="Hand" MouseLeftButtonDown="UserControlPanelGrid_MouseLeftButtonDown" />
+                                    <TextBlock x:Name="UserFullName" Text="{Binding FullName}" Cursor="Hand" ToolTipService.ToolTip="{Binding FullName}" MouseLeftButtonDown="UserControlPanelGrid_MouseLeftButtonDown" Grid.Column="1" Grid.ColumnSpan="2" FontSize="15" FontWeight="Bold" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                                    <Border Grid.Row="1" Grid.ColumnSpan="3" Background="#FF798822" BorderBrush="#FF9eba10" BorderThickness="0,0,1,1" Margin="0,10,0,10" CornerRadius="4" Height="35">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="65*" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel x:Name="pointsStackPanel" Orientation="Horizontal">
+                                                <StackPanel.RenderTransform>
+                                                    <ScaleTransform ScaleX="1" ScaleY="1" CenterX="20" CenterY="16" />
+                                                </StackPanel.RenderTransform>
+                                                <TextBlock x:Name="TotalScore" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="17" FontWeight="Bold" />
+                                                <TextBlock Text="{Binding Path=NavBar9, Source={StaticResource Labels}}" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="12" FontWeight="Bold" />
+                                            </StackPanel>
+                                            <Image Source="../../Resources/Images/badge.png" x:Name="badgeIcon" Grid.Column="1" Margin="2" Stretch="None" />
+                                            <Image Source="../../Resources/Images/jaguarbadge.png" x:Name="jaguarbadge" Grid.Column="2" Visibility="Collapsed" Margin="2" Width="23" Height="18" />
+                                            <Image Source="../../Resources/Images/trophy.png" x:Name="ContestWinnerBadge" Grid.Column="3" Visibility="Collapsed" Margin="2" Stretch="None" VerticalAlignment="Center" ToolTipService.ToolTip="Has ganado un concurso" />
+                                        </Grid>
+                                    </Border>
+                                    <HyperlinkButton Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" x:Name="txtLogout" Click="TxtLogoutClick" VerticalContentAlignment="Center" Content="{Binding Path=NavBar1, Source={StaticResource Labels}}" VerticalAlignment="Center" FontSize="13" Foreground="#FF4e5b05" ToolTipService.ToolTip="{Binding Path=NavBar10, Source={StaticResource Labels}}" />
+                                    <Rectangle Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Width="1" Fill="#FF4e5b05" />
+                                    <HyperlinkButton Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" x:Name="rankingLink" Click="RankingClick" VerticalContentAlignment="Center" Content="Ranking" VerticalAlignment="Center" FontSize="13" Foreground="#FF4e5b05" ToolTipService.ToolTip="{Binding Path=NavBar11, Source={StaticResource Labels}}" />
+                                    <Rectangle Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="1" Fill="#FF4e5b05" />
+                                    <Rectangle x:Name="btnMyLandHighlight" Opacity="0" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="75" Height="25" Fill="Transparent" Stroke="#FFb6d220" StrokeThickness="3" />
+                                    <HyperlinkButton Grid.Row="2" Grid.Column="2" x:Name="btnMyLand" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" Click="BtnMyLandClick" Content="{Binding Path=NavBar2, Source={StaticResource Labels}}" TargetName="_blank" VerticalContentAlignment="Center" FontSize="13" Foreground="#FF4e5b05" HorizontalAlignment="Center" ToolTipService.ToolTip="{Binding Path=NavBar12, Source={StaticResource Labels}}" />
+                                </Grid>
+                            </Grid>
+
+                            <!--End User-->
+
+                            <Grid Grid.Row="2" Grid.RowSpan="2" x:Name="Overlay2" Visibility="Collapsed" Background="#7F000000" HorizontalAlignment="Stretch" Opacity="1" VerticalAlignment="Stretch" Canvas.ZIndex="1" />
+
+                            <Border Grid.Row="3" Height="3" BorderBrush="#FF9cb713" Background="#FF3c4705" BorderThickness="0,1,0,1" />
+
+                            <Border MouseLeftButtonDown="zoomInButton_click" Cursor="Hand" MouseEnter="button_Enter" MouseLeave="button_Leave" Grid.Row="4" BorderThickness="0,0,0,1" BorderBrush="#FF788d0a">
+                                <Border.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0" />
+                                </Border.Background>
+                                <Border BorderThickness="0,0,0,1" BorderBrush="#FF9cb713">
+                                    <Grid VerticalAlignment="Center">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40" />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Image HorizontalAlignment="Center" Source="Resources/Images/zoomin.png" Stretch="None" />
+                                        <TextBlock Grid.Column="1" Text="{Binding Path=NavBar3, Source={StaticResource Labels}}" VerticalAlignment="Center" FontSize="13" HorizontalAlignment="Left">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect BlurRadius="3" Opacity="0.5" ShadowDepth="2" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                    </Grid>
+                                </Border>
+                            </Border>
+
+                            <Border MouseLeftButtonDown="zoomOutButton_click" Cursor="Hand" MouseEnter="button_Enter" MouseLeave="button_Leave" Grid.Row="5" BorderThickness="0,0,0,1" BorderBrush="#FF788d0a">
+                                <Border.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0" />
+                                </Border.Background>
+                                <Border BorderThickness="0,0,0,1" BorderBrush="#FF9cb713">
+                                    <Grid VerticalAlignment="Center">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40" />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Image HorizontalAlignment="Center" Source="Resources/Images/zoomout.png" Stretch="None" />
+                                        <TextBlock Grid.Column="1" Text="{Binding Path=NavBar4, Source={StaticResource Labels}}" VerticalAlignment="Center" FontSize="13" HorizontalAlignment="Left">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect BlurRadius="3" Opacity="0.5" ShadowDepth="2" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                    </Grid>
+                                </Border>
+                            </Border>
+
+                            <Grid Grid.Row="4" Grid.RowSpan="3" x:Name="Overlay3" Visibility="Collapsed" Background="#7F000000" HorizontalAlignment="Stretch" Opacity="1" VerticalAlignment="Stretch" Canvas.ZIndex="1" />
+                            <Border MouseLeftButtonDown="fullScreenButton_click" Cursor="Hand" MouseEnter="button_Enter" MouseLeave="button_Leave" Grid.Row="6" BorderThickness="0,0,0,1" BorderBrush="#FF788d0a">
+                                <Border.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0" />
+                                </Border.Background>
+                                <Border BorderThickness="0,0,0,1" BorderBrush="#FF9cb713">
+                                    <Grid VerticalAlignment="Center">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40" />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Image HorizontalAlignment="Center" Source="Resources/Images/fullscreen.png" Stretch="None" />
+                                        <TextBlock Grid.Column="1" Text="{Binding Path=NavBar5, Source={StaticResource Labels}}" VerticalAlignment="Center" FontSize="13" HorizontalAlignment="Left">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect BlurRadius="3" Opacity="0.5" ShadowDepth="2" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                    </Grid>
+                                </Border>
+                            </Border>
+                            <Grid Grid.Row="7" x:Name="Overlay4" Background="#7F000000" Visibility="Collapsed" HorizontalAlignment="Stretch" Opacity="1" VerticalAlignment="Stretch" Canvas.ZIndex="1" />
+                            <Border MouseLeftButtonDown="helpButton_click" Cursor="Hand" MouseEnter="button_Enter" MouseLeave="button_Leave" Grid.Row="7" BorderThickness="0,0,0,1" BorderBrush="#FF788d0a">
+                                <Border.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0" />
+                                </Border.Background>
+                                <Border BorderThickness="0,0,0,1" BorderBrush="#FF9cb713">
+                                    <Grid VerticalAlignment="Center">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40" />
+                                            <ColumnDefinition />
+                                            <ColumnDefinition Width="28" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image HorizontalAlignment="Center" Source="Resources/Images/questionmark.png" Stretch="None" />
+                                        <TextBlock Grid.Column="1" Text="{Binding Path=NavBar6, Source={StaticResource Labels}}" VerticalAlignment="Center" FontSize="13" HorizontalAlignment="Left">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect BlurRadius="3" Opacity="0.5" ShadowDepth="2" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <Grid x:Name="HelpNotifications" Grid.Column="2" Visibility="Collapsed">
+                                            <Ellipse Stroke="White" StrokeThickness="1" Width="18" Height="18" Fill="#FFb31e25" Margin="5,-3,5,0" VerticalAlignment="Top" />
+                                            <TextBlock x:Name="HelpNotificationsText" Text="4" HorizontalAlignment="Center" FontSize="11" Margin="-1,-2,0,0" VerticalAlignment="Top" />
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                            </Border>
+                            <Grid Grid.Row="8" x:Name="Overlay5" Background="#7F000000" Visibility="Collapsed" HorizontalAlignment="Stretch" Opacity="1" VerticalAlignment="Stretch" Canvas.ZIndex="1" />
+
+                            <Border ToolTipService.ToolTip="{Binding Path=NavBar14, Source={StaticResource Labels}}" MouseLeftButtonDown="reshuffleButton_click" Cursor="Hand" MouseEnter="button_Enter" MouseLeave="button_Leave" Grid.Row="8" BorderThickness="0,0,0,1" BorderBrush="#FF788d0a">
+                                <Border.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0" />
+                                </Border.Background>
+                                <Border BorderThickness="0,0,0,1" BorderBrush="#FF9cb713">
+                                    <Grid VerticalAlignment="Center">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40" />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Image HorizontalAlignment="Center" Source="Resources/Images/reshuffle.png" Stretch="None" />
+                                        <TextBlock Grid.Column="1" Text="{Binding Path=NavBar8, Source={StaticResource Labels}}" VerticalAlignment="Center" FontSize="13" HorizontalAlignment="Left">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect BlurRadius="3" Opacity="0.5" ShadowDepth="2" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                    </Grid>
+                                </Border>
+                            </Border>
+
+                            <Grid Grid.Row="10" Grid.RowSpan="4" x:Name="Overlay7" Background="#7F000000" Visibility="Collapsed" HorizontalAlignment="Stretch" Opacity="1" VerticalAlignment="Stretch" Canvas.ZIndex="1" />
+
+                            <Border x:Name="HexagonsLegend" Visibility="Visible" Grid.Row="11" BorderBrush="#FF9eba10" Background="#FF798822" BorderThickness="0,0,1,1" Margin="10,10,10,15" CornerRadius="4" VerticalAlignment="Bottom">
+                                <Grid Margin="5,10,5,10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="25" />
+                                        <RowDefinition Height="25" />
+                                        <RowDefinition Height="25" />
+                                        <RowDefinition Height="25" />
+                                        <RowDefinition Height="60" />
+                                    </Grid.RowDefinitions>
+                                    
+                                    <Polygon Grid.Row="0" Points="0,9 5,18 15,18 20,9 15,0 5,0" Stroke="#FFffffff" Fill="#FFdddddd" Margin="2,1,0,0" StrokeThickness="3" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                    <!--<Polygon Grid.Row="1" Points="0,9 5,18 15,18 20,9 15,0 5,0" Stroke="#FFa2b52e" Margin="2,1,0,0" StrokeThickness="3" VerticalAlignment="Center" HorizontalAlignment="Center" />-->
+                                    <!--<Polygon Grid.Row="2" Points="0,9 5,18 15,18 20,9 15,0 5,0" Stroke="#FF000000" StrokeThickness="1" Fill="#FF6d7575" VerticalAlignment="Center" HorizontalAlignment="Center" />-->
+                                    <Polygon Grid.Row="1" Points="0,9 5,18 15,18 20,9 15,0 5,0" Fill="#FFa2b52e" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                    <Polygon Grid.Row="2" Points="0,9 5,18 15,18 20,9 15,0 5,0" Fill="#FFdddd00" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                    <Polygon Grid.Row="3" Points="0,9 5,18 15,18 20,9 15,0 5,0" Fill="#FFA70B0A" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+                                    <TextBlock Text="{Binding Path=Tutorial9, Source={StaticResource Labels}}" Grid.Column="1" VerticalAlignment="Center" FontSize="10">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect BlurRadius="5" ShadowDepth="0" />
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                    <TextBlock Text="{Binding Path=HexLegend1, Source={StaticResource Labels}}" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" FontSize="10">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect BlurRadius="5" ShadowDepth="0" />
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                    <TextBlock Text="{Binding Path=HexLegend2, Source={StaticResource Labels}}" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" FontSize="10">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect BlurRadius="5" ShadowDepth="0" />
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                    <TextBlock Text="{Binding Path=HexLegend3, Source={StaticResource Labels}}" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" FontSize="10">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect BlurRadius="5" ShadowDepth="0" />
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                    <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4">
+                                        <TextBlock Text="{Binding Path=HexLegend4, Source={StaticResource Labels}}" TextWrapping="Wrap"
+                                                VerticalAlignment="Top"
+                                                FontSize="10" Margin="5,2,5,0" TextAlignment="Center">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect BlurRadius="5" ShadowDepth="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Polygon Grid.Row="1" Points="0,9 5,18 15,18 20,9 15,0 5,0"
+                                                    Stroke="#FFC4D23E" StrokeThickness="3" Fill="#FFa2b52e"
+                                                    VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" />
+                                            <Polygon Grid.Row="2" Points="0,9 5,18 15,18 20,9 15,0 5,0"
+                                                    Stroke="#FFFFBB48" StrokeThickness="3" Fill="#FFFFFF00"
+                                                    VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15,5,0,0" />
+                                            <Polygon Grid.Row="3" Points="0,9 5,18 15,18 20,9 15,0 5,0"
+                                                    Stroke="#FFF30000" StrokeThickness="3" Fill="#FFA70B0A"
+                                                    VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15,5,0,0" />
+
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                            <!--Purpose of the legendGrid?-->
+                            <Grid x:Name="legendGrid" HorizontalAlignment="Left" Margin="0" Grid.Row="11" VerticalAlignment="Bottom">
+                                <Rectangle Fill="#B29B9B9B" Margin="0" Stroke="White" />
+                                <Image x:Name="legendImage" Margin="0" Stretch="None" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+
+            <Border x:Name="TutorialMyPlotButton" MouseLeftButtonDown="Step2Click" Visibility="Collapsed" Cursor="Hand" Width="80" Height="30" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,180,0,0" />
+
+            <controls:Stats x:Name="StatsControl" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10" />
+
+            <!--TODO: COMPLETE STATS-->
+            <!--< x:Name="CompleteStatsControl"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Right"
+                            Margin="0,0,10,10" />-->
+
+            <controls:ArgentineLawLayerLegend x:Name="ArgentineLawLayerLegend" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="220,0,0,10" Visibility="Collapsed" />
+            <TextBox x:Name="TestGeoHexTextBox" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="220,0,0,10" Visibility="Collapsed" KeyUp="TestGeoHexTextBox_KeyUp" />
+
+
+            <TextBlock x:Name="NotificationText" Visibility="Collapsed" IsHitTestVisible="False" TextWrapping="Wrap" Opacity="0" FontSize="50" Foreground="White" HorizontalAlignment="Center" Margin="210,0,10,0" TextAlignment="Center" VerticalAlignment="Center" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="0" />
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <Grid x:Name="loadinAnim" Visibility="Collapsed" Canvas.ZIndex="9">
+                <loaders:_3D Margin="0,0,0,0" />
+                <TextBlock x:Name="loadingAnimText" Text="{Binding Path=Cargando, Source={StaticResource Labels}}" TextWrapping="Wrap" MaxWidth="200" TextAlignment="Center" Margin="0,60,0,0" FontFamily="Arial" FontSize="13" Foreground="#FF333333" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Grid>
+        </Grid>
+
+        <MediaElement x:Name="pointsSound" Width="1" Height="1" VerticalAlignment="Top" HorizontalAlignment="Left" AutoPlay="False" MediaFailed="pointsSound_MediaFailed" Source="Resources/02.mp3" />
+    </Grid>
+</UserControl>

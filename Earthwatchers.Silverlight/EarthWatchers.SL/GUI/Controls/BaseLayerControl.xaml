@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="EarthWatchers.SL.GUI.Controls.BaseLayerControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    HorizontalAlignment="Left" VerticalAlignment="Top">
+    
+    <Grid x:Name="LayoutRoot">
+        <Border Width="92" BorderThickness="0,2,2,2" BorderBrush="#80b0cf0f" Height="62" CornerRadius="0,4,4,0">
+            <Border.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5" />
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Image x:Name="layerImage" Grid.RowSpan="2" Width="50" Height="50"/>
+                <Button Grid.Column="1" Margin="0" Style="{StaticResource ImageButton}" ToolTipService.ToolTip="Remove Layer" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image x:Name="btnSwitchLeft" MouseLeftButtonDown="BtnSwitchLeftMouseLeftButtonDown" Source="/EarthWatchers.SL;component/Resources/Images/up.png" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                </Button>
+
+                <Button Grid.Column="1" Grid.Row="1" Margin="0" Style="{StaticResource ImageButton}" ToolTipService.ToolTip="Remove Layer" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image x:Name="btnSwitchRight" MouseLeftButtonDown="BtnSwitchRightMouseLeftButtonDown" Source="/EarthWatchers.SL;component/Resources/Images/down.png" Stretch="None" VerticalAlignment="Center" />
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,281 @@
+﻿
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+    /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    /* FF3.6+ */
+    /* Chrome,Safari4+ */ 
+    background-position: 0% 0%;
+    background-image: -webkit-radial-gradient(50% 50%, circle, #ffffff, #d5d5d5);
+    /* Opera 12+ */
+    /* IE10+ */
+    background-color: #d5d5d5;
+    background-repeat: repeat;
+    background-attachment: scroll;
+}
+
+input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.floater {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    height: 1px;
+    overflow: visible;
+    display: block;
+}
+
+.contents {
+    position: absolute;
+    top: -223px;
+    left: 50%;
+    width: 970px;
+    height: 546px;
+    margin-left: -485px;
+    text-align: center;
+    background-image: url('../images/hexagons.png');
+    background-repeat: no-repeat;
+}
+
+.container {
+    margin: auto;
+    margin-top: 40px;
+    width: 700px;
+    height: 260px;
+    background: #F3F3F3;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+.slink {
+    text-align: left;
+    font-size: 12px;
+    clear: both;
+    padding-top: 8px;
+}
+    .slink a {
+        color: rgba(105,162,27,1);
+    }
+
+    .slink a:hover {
+        color: rgba(105,162,27,0.75);
+    }
+
+/*******************
+SELECTION STYLING
+*******************/
+
+::selection {
+    color: #fff;
+    background: #f676b2; /* Safari */
+}
+
+::-moz-selection {
+    color: #fff;
+    background: #f676b2; /* Firefox */
+}
+/*******************
+CONTENT
+*******************/
+.login-form {
+    width: 340px;
+    margin: 0 auto;
+    position: relative;
+}
+
+    .login-form .content {
+        padding: 10px;
+    }
+
+        /* Input field */
+        .login-form .content .input {
+            width: 245px;
+            float: left;
+            padding: 15px;
+            margin-top: 15px;
+            font-weight: 400;
+            font-size: 14px;
+            color: #9d9e9e;
+            text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+            background: #fff;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+            -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+            -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+        }
+
+            /* Second input field */
+
+
+            .login-form .content .input:hover {
+                background: #dceec5;
+                color: #414848;
+            }
+
+            .login-form .content .input:focus {
+                background: #dceec5;
+                color: #414848;
+                box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+                -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+                -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+            }
+
+.content input:focus + div {
+    left: 340px;
+}
+
+/* Animation */
+.input, .user-icon, .pass-icon, .button, .register {
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+}
+/* Login button */
+.login-form .button {
+    margin-top: 10px;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    text-shadow: 0px 1px 0 rgba(0,0,0,0.25);
+    width: 275px;
+    float: left;
+    background: rgba(105,162,27,1);
+    border: 2px solid #b9c66a;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+    -moz-box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+    -webkit-box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+}
+
+.checkbox {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+    .checkbox .label {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+.login-form .button:hover {
+    background: rgba(105,162,27,0.9);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.login-form .button:focus {
+    position: relative;
+    bottom: -1px;
+    background: rgba(105,162,27,0.75);
+    border: 1px solid rgba(256,256,256,0.75);
+    box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+    -moz-box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+    -webkit-box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+}
+
+.error {
+    padding: 0px 0px 0px 0px;
+    color: red;
+    font-size: 11px;
+    margin: 0 auto;
+    width: 315px;
+    height: 30px;
+    clear: both;
+    text-align: left;
+}
+
+.headertxt {
+    font-size: 11px;
+    color: #888888;
+    padding: 5px;
+    width: 270px;
+}
+
+.rbutton {
+    margin-top: 10px;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    text-shadow: 0px 1px 0 rgba(0,0,0,0.25);
+    width: 300px;
+    background: rgba(29,29,29,1);
+    border: 2px solid #777777;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+    -moz-box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+    -webkit-box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+}
+
+    .rbutton:hover {
+        background: rgba(29,29,29,0.9);
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+        -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+        -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .rbutton:focus {
+        position: relative;
+        bottom: -1px;
+        background: rgba(29,29,29,0.75);
+        border: 1px solid rgba(256,256,256,0.75);
+        box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+        -moz-box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+        -webkit-box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+    }
+
+.slHeader {
+    font-size: 30px;
+    color: #888888;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.slText {
+    font-size: 17px;
+    color: #888888;
+    padding: 20px;
+}
+
+a.button {
+    margin-top: 20px;
+    padding: 15px;
+    font-weight: 700;
+    font-size: 17px;
+    color: #fff;
+    text-shadow: 0px 1px 0 rgba(0,0,0,0.25);
+    width: 275px;
+    background: rgba(105,162,27,1);
+    border: 2px solid #b9c66a;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+    -moz-box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+    -webkit-box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+}
+
+    a.button:hover {
+        background: #dceec5;
+        color: #414848;
+    }

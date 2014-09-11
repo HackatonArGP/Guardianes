@@ -1,0 +1,1420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Cargando" xml:space="preserve">
+    <value>Cargando…</value>
+  </data>
+  <data name="ChangePlot" xml:space="preserve">
+    <value>Si querés revisar una nueva parcela, podés apretar este botón. Tu parcela anterior pasará a revisión. Solo podés cambiar de parcela cada 10 minutos.</value>
+  </data>
+  <data name="CollectionArctic" xml:space="preserve">
+    <value>Cosas que nunca deben entrar al Ártico</value>
+  </data>
+  <data name="CollectionEnergySupplies" xml:space="preserve">
+    <value>Costo de las fuentes de energía</value>
+  </data>
+  <data name="CollectionEnvironmentHazards" xml:space="preserve">
+    <value>Terribles peligros para el medio ambiente</value>
+  </data>
+  <data name="CollectionForest" xml:space="preserve">
+    <value>Cosas que no pertenecen al bosque</value>
+  </data>
+  <data name="CollectionItemBags" xml:space="preserve">
+    <value>Bolsas</value>
+  </data>
+  <data name="CollectionItemBarrel" xml:space="preserve">
+    <value>Barril</value>
+  </data>
+  <data name="CollectionItemBottle" xml:space="preserve">
+    <value>Botella de plástico</value>
+  </data>
+  <data name="CollectionItemBulldozer" xml:space="preserve">
+    <value>Topadora</value>
+  </data>
+  <data name="CollectionItemCarbonPlant" xml:space="preserve">
+    <value>Planta de carbon</value>
+  </data>
+  <data name="CollectionItemChainSaw" xml:space="preserve">
+    <value>Motosierra</value>
+  </data>
+  <data name="CollectionItemChemicals" xml:space="preserve">
+    <value>Quimicos</value>
+  </data>
+  <data name="CollectionItemForestFire" xml:space="preserve">
+    <value>Incendio forestal</value>
+  </data>
+  <data name="CollectionItemGolf" xml:space="preserve">
+    <value>Complejo de golf (area grande talada con piletas, pasto, etc)</value>
+  </data>
+  <data name="CollectionItemIceBreaker" xml:space="preserve">
+    <value>Rompehielos petrolero</value>
+  </data>
+  <data name="CollectionItemLeakingTransformers" xml:space="preserve">
+    <value>Transformadores perdiendo liquido</value>
+  </data>
+  <data name="CollectionItemMatches" xml:space="preserve">
+    <value>Combustible y fosforos</value>
+  </data>
+  <data name="CollectionItemMedicalGarbage" xml:space="preserve">
+    <value>Residuo medico</value>
+  </data>
+  <data name="CollectionItemNuclearGarbage" xml:space="preserve">
+    <value>Residuo nuclear</value>
+  </data>
+  <data name="CollectionItemNuclearPlant" xml:space="preserve">
+    <value>Planta nuclear</value>
+  </data>
+  <data name="CollectionItemOilWell" xml:space="preserve">
+    <value>Pozo petrolero</value>
+  </data>
+  <data name="CollectionItemPetrolMark" xml:space="preserve">
+    <value>Mancha de petroleo</value>
+  </data>
+  <data name="CollectionItemPetrolTower" xml:space="preserve">
+    <value>Torre petrolera en el hielo</value>
+  </data>
+  <data name="CollectionItemPlantation" xml:space="preserve">
+    <value>Plantación</value>
+  </data>
+  <data name="CollectionItemSixPack" xml:space="preserve">
+    <value>Anillos de plástico de six pack</value>
+  </data>
+  <data name="CollectionItemSunkenShip" xml:space="preserve">
+    <value>Barco hundido</value>
+  </data>
+  <data name="CollectionItemTinCan" xml:space="preserve">
+    <value>Latas</value>
+  </data>
+  <data name="CollectionItemUraniumMine" xml:space="preserve">
+    <value>Mina de uranio</value>
+  </data>
+  <data name="CollectionItemWeapon" xml:space="preserve">
+    <value>Armamento</value>
+  </data>
+  <data name="CollectionItemWeaponsGarbage" xml:space="preserve">
+    <value>Residuo armamentistico</value>
+  </data>
+  <data name="CollectionOcean" xml:space="preserve">
+    <value>Cosas que no deben ser parte del Océano</value>
+  </data>
+  <data name="Collections1" xml:space="preserve">
+    <value>Este ítem forma parte de la colección</value>
+  </data>
+  <data name="Collections2" xml:space="preserve">
+    <value>Cosas que no pertenecen al bosque</value>
+  </data>
+  <data name="Collections3" xml:space="preserve">
+    <value>¡COMPLETASTE LA COLECCIÓN!</value>
+  </data>
+  <data name="Collections4" xml:space="preserve">
+    <value>Ganaste 1000 puntos!</value>
+  </data>
+  <data name="Collections5" xml:space="preserve">
+    <value>Seguí reportando para encontrar nuevos objetos, completar las colecciones y ganar más puntos.</value>
+  </data>
+  <data name="Collections7" xml:space="preserve">
+    <value>Has encontrado:</value>
+  </data>
+  <data name="Comments1" xml:space="preserve">
+    <value>COMENTARIOS SOBRE ESTA PARCELA</value>
+  </data>
+  <data name="Comments2" xml:space="preserve">
+    <value>ENVIAR</value>
+  </data>
+  <data name="Comments3" xml:space="preserve">
+    <value>Borrar Comentario</value>
+  </data>
+  <data name="Comments4" xml:space="preserve">
+    <value>No estás logueado</value>
+  </data>
+  <data name="DataPartners1" xml:space="preserve">
+    <value>Near-realtime data has been kindly provided by:</value>
+  </data>
+  <data name="DataPartners2" xml:space="preserve">
+    <value>Contextual layers have been kindly provided by:</value>
+  </data>
+  <data name="EducationalLayerControl1" xml:space="preserve">
+    <value>Deforestación</value>
+  </data>
+  <data name="FindTheJaguar1" xml:space="preserve">
+    <value>Hay un jaguar perdido en alguna parte del territorio!</value>
+  </data>
+  <data name="FindTheJaguar2" xml:space="preserve">
+    <value>Sabemos que un pequeño jaguar se ha perdido en algun lugar.</value>
+  </data>
+  <data name="FindTheJaguar3" xml:space="preserve">
+    <value>Se el primero en encontrarlo para rescatarlo y ganar 5000 puntos!</value>
+  </data>
+  <data name="FindTheJaguar4" xml:space="preserve">
+    <value>¿Cómo buscarlo?</value>
+  </data>
+  <data name="FindTheJaguar5" xml:space="preserve">
+    <value>Rescatá al Jaguar</value>
+  </data>
+  <data name="FindTheJaguar6" xml:space="preserve">
+    <value>Instrucciones</value>
+  </data>
+  <data name="FindTheJaguar7" xml:space="preserve">
+    <value>En algún lado del mapa se perdió un pequeño jaguar. Para encontrarlo, primero tenés que hacer Zoom en el mapa hasta que el icono del Jaguar (izquierda) se transforme en binoculares. Luego, arrastrá el mapa y buscá en toda la zona! Puede estar en cualquier parte del área protegida. Rescatalo antes que tus compañeros guardianes para obtener el premio!</value>
+  </data>
+  <data name="Flag1" xml:space="preserve">
+    <value>Log in to place a flag</value>
+  </data>
+  <data name="FlagInfoWindow" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="ForestLawCongrats" xml:space="preserve">
+    <value>¡Felicitaciones! Ahora tenés a disposición el mapa de la ley de bósques.</value>
+  </data>
+  <data name="ForestLawCongrats1" xml:space="preserve">
+    <value>Con esta funcionalidad vas a poder observar el mapa de ordenamiento territorial de la provincia. En Rojo, las zonas que no permiten desmontes. En Amarillo, las zonas que no permiten desmonte pero si aprovechamiento sustentable y, en Verde, aquellas zonas donde se permite desmonte previo estudio de impacto ambiental y audiencia pública.</value>
+  </data>
+  <data name="ForestLawCongrats2" xml:space="preserve">
+    <value>Hacé click en el botón de arriba para activar o desactivar esta capa.</value>
+  </data>
+  <data name="green" xml:space="preserve">
+    <value> verde</value>
+  </data>
+  <data name="Help1" xml:space="preserve">
+    <value>Ayuda</value>
+  </data>
+  <data name="Help10" xml:space="preserve">
+    <value>Puntaje</value>
+  </data>
+  <data name="Help11" xml:space="preserve">
+    <value>¿Qué acciones me dan puntos?</value>
+  </data>
+  <data name="Help12" xml:space="preserve">
+    <value>Ingreso</value>
+  </data>
+  <data name="Help13" xml:space="preserve">
+    <value>Al ingresar a Guardianes, cada 2 horas, obtendrás 100 puntos.</value>
+  </data>
+  <data name="Help14" xml:space="preserve">
+    <value>Completar el Tutorial</value>
+  </data>
+  <data name="Help15" xml:space="preserve">
+    <value>La primera vez que ingreses a Guardianes y completes el tutorial, conseguirás 2000 puntos!</value>
+  </data>
+  <data name="Help16" xml:space="preserve">
+    <value>Verificaciones</value>
+  </data>
+  <data name="Help17" xml:space="preserve">
+    <value>Por cada verificación de parcela, conseguirás 250 puntos</value>
+  </data>
+  <data name="Help18" xml:space="preserve">
+    <value>Reportes</value>
+  </data>
+  <data name="Help19" xml:space="preserve">
+    <value>Cuando reportes el estado de tus parcelas, conseguirás 750 puntos</value>
+  </data>
+  <data name="Help2" xml:space="preserve">
+    <value>Preguntas Frecuentes</value>
+  </data>
+  <data name="Help20" xml:space="preserve">
+    <value>Compartir</value>
+  </data>
+  <data name="Help21" xml:space="preserve">
+    <value>Cuando compartis tu reporte o verificación de parcela, ganas 500 puntos (hasta 10 veces por día)</value>
+  </data>
+  <data name="Help22" xml:space="preserve">
+    <value>Denunciar a las autoridades</value>
+  </data>
+  <data name="Help23" xml:space="preserve">
+    <value>Cuando denuncias a las autoridades, ganas 1000 puntos</value>
+  </data>
+  <data name="Help24" xml:space="preserve">
+    <value>Juegos</value>
+  </data>
+  <data name="Help25" xml:space="preserve">
+    <value>Por cada opción correcta en los juegos, ganás 500 puntos mas un bonus que depende del tiempo en que se completa el juego</value>
+  </data>
+  <data name="Help3" xml:space="preserve">
+    <value>Pre Tutorial</value>
+  </data>
+  <data name="Help4" xml:space="preserve">
+    <value>Que, Donde y Como busco deforestación</value>
+  </data>
+  <data name="Help5" xml:space="preserve">
+    <value>Completado</value>
+  </data>
+  <data name="Help6" xml:space="preserve">
+    <value>Como usar Guardianes</value>
+  </data>
+  <data name="Help7" xml:space="preserve">
+    <value>Juego</value>
+  </data>
+  <data name="Help8" xml:space="preserve">
+    <value>GUARDIANES - AYUDA</value>
+  </data>
+  <data name="Help9" xml:space="preserve">
+    <value>Incompleto</value>
+  </data>
+  <data name="HelphWindow" xml:space="preserve">
+    <value>Menu de ayuda</value>
+  </data>
+  <data name="HexInfo1" xml:space="preserve">
+    <value>REPORTAR</value>
+  </data>
+  <data name="HexInfo2" xml:space="preserve">
+    <value>REVISAR</value>
+  </data>
+  <data name="HexInfo3" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="HexInfo4" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="HexInfo5" xml:space="preserve">
+    <value>DENUNCIAR</value>
+  </data>
+  <data name="HexInfo6" xml:space="preserve">
+    <value>Click acá para ver más actividad en esta parcela</value>
+  </data>
+  <data name="HexInfo7" xml:space="preserve">
+    <value>Usuarios con actividad en esta parcela</value>
+  </data>
+  <data name="HexInfo8" xml:space="preserve">
+    <value>Guardianes que han revisado</value>
+  </data>
+  <data name="JaguarCongrats2" xml:space="preserve">
+    <value>GANASTE</value>
+  </data>
+  <data name="JaguarCongrats3" xml:space="preserve">
+    <value>5000 PUNTOS!</value>
+  </data>
+  <data name="JaguarCongrats4" xml:space="preserve">
+    <value>¡Encontraste al Jaguar!</value>
+  </data>
+  <data name="JaguarFound1" xml:space="preserve">
+    <value>El Jaguar ha sido encontrado por</value>
+  </data>
+  <data name="JaguarFound2" xml:space="preserve">
+    <value>Permanecé atento por si aparecen más jaguares!</value>
+  </data>
+  <data name="Layers1" xml:space="preserve">
+    <value>FECHAS</value>
+  </data>
+  <data name="Layers10" xml:space="preserve">
+    <value>Eliminar imagen</value>
+  </data>
+  <data name="Layers11" xml:space="preserve">
+    <value>Seleccione una imagen de la lista para agregarla a la línea de tiempo</value>
+  </data>
+  <data name="Layers12" xml:space="preserve">
+    <value>Arrastrá el círculo blanco para ver las distintas imágenes en el mapa.</value>
+  </data>
+  <data name="Layers13" xml:space="preserve">
+    <value>Hexágonos</value>
+  </data>
+  <data name="Layers14" xml:space="preserve">
+    <value>Ley de Bosques</value>
+  </data>
+  <data name="layers15" xml:space="preserve">
+    <value>Hacé click acá para activar o desactivar los hexágonos</value>
+  </data>
+  <data name="layers16" xml:space="preserve">
+    <value>Hacé click acá para activar o desactivar las zonas de la Ley de Bosques</value>
+  </data>
+  <data name="Layers2" xml:space="preserve">
+    <value>Agregar Fecha</value>
+  </data>
+  <data name="Layers3" xml:space="preserve">
+    <value>Parcelas</value>
+  </data>
+  <data name="Layers4" xml:space="preserve">
+    <value>Imágenes Satelitales</value>
+  </data>
+  <data name="Layers5" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="Layers6" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="Layers7" xml:space="preserve">
+    <value>Las imágenes satelitales disponibles no contemplan este nivel de zoom. Aumentá el nivel de zoom y probá nuevamente</value>
+  </data>
+  <data name="Layers8" xml:space="preserve">
+    <value>No se encontraron capas en esta región. Dirigite a otra región y probá nuevamente</value>
+  </data>
+  <data name="Layers9" xml:space="preserve">
+    <value>En el tutorial tenés que seleccionar una imagen satelital para continuar</value>
+  </data>
+  <data name="LegendLabel1" xml:space="preserve">
+    <value>SIN REVISAR</value>
+  </data>
+  <data name="LegendLabel4" xml:space="preserve">
+    <value>CONFIRMADA</value>
+  </data>
+  <data name="LegendLabel5" xml:space="preserve">
+    <value>REVISADAS POR VOS</value>
+  </data>
+  <data name="LogoPath" xml:space="preserve">
+    <value>logogp.png</value>
+  </data>
+  <data name="LogoPathMini" xml:space="preserve">
+    <value>logogp_mini.png</value>
+  </data>
+  <data name="Main1" xml:space="preserve">
+    <value>Message from silverlight: Username:</value>
+  </data>
+  <data name="Main2" xml:space="preserve">
+    <value>
+(Esta imagen tiene nubes en algunas áreas)</value>
+  </data>
+  <data name="Main3" xml:space="preserve">
+    <value>El jaguar estará presente hasta las {0}</value>
+  </data>
+  <data name="NavBar1" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="NavBar10" xml:space="preserve">
+    <value>Dejar de monitorear mi parcela</value>
+  </data>
+  <data name="NavBar11" xml:space="preserve">
+    <value>Ver el ranking</value>
+  </data>
+  <data name="NavBar12" xml:space="preserve">
+    <value>Mostrar mi parcela</value>
+  </data>
+  <data name="NavBar13" xml:space="preserve">
+    <value>Hacé click acá para compartir este mapa con el mundo</value>
+  </data>
+  <data name="NavBar14" xml:space="preserve">
+    <value>Hacé click acá para cambiar tu parcela</value>
+  </data>
+  <data name="NavBar2" xml:space="preserve">
+    <value>Mi Parcela</value>
+  </data>
+  <data name="NavBar3" xml:space="preserve">
+    <value>AUMENTAR</value>
+  </data>
+  <data name="NavBar4" xml:space="preserve">
+    <value>REDUCIR</value>
+  </data>
+  <data name="NavBar5" xml:space="preserve">
+    <value>PANTALLA COMPLETA</value>
+  </data>
+  <data name="NavBar6" xml:space="preserve">
+    <value>AYUDA</value>
+  </data>
+  <data name="NavBar7" xml:space="preserve">
+    <value>COMPARTIR</value>
+  </data>
+  <data name="NavBar8" xml:space="preserve">
+    <value>NUEVA PARCELA</value>
+  </data>
+  <data name="NavBar9" xml:space="preserve">
+    <value>pts</value>
+  </data>
+  <data name="Notifications1" xml:space="preserve">
+    <value>Bienvenido Guardián</value>
+  </data>
+  <data name="Notifications10" xml:space="preserve">
+    <value>CERRAR</value>
+  </data>
+  <data name="Notifications11" xml:space="preserve">
+    <value>¿Querés cambiar tu parcela? Si habías hecho un reporte no te preocupes, ahora pasa a revisión!</value>
+  </data>
+  <data name="Notifications12" xml:space="preserve">
+    <value>Tu parcela ha sido cambiada exitosamente. ¡Continuá monitoreando!</value>
+  </data>
+  <data name="Notifications13" xml:space="preserve">
+    <value>Uy, perdiste tu parcela...</value>
+  </data>
+  <data name="Notifications14" xml:space="preserve">
+    <value>Por inactividad, asignamos tu parcela a otro guardián. Pero no te preocupues, apretá el botón [CONTINUAR] para obtener una nueva parcela y no te olvides de verificarla rápidamente.</value>
+  </data>
+  <data name="Notifications15" xml:space="preserve">
+    <value>Tu parcela ha sido verificada 30 veces. ¡Obtuviste 2000 puntos! A partir de ahora quedará pendiente de revisión por parte de Greenpeace. Apretá el botón [Continuar] para obtener una nueva parcela</value>
+  </data>
+  <data name="Notifications16" xml:space="preserve">
+    <value>Tu parcela ha sido verificada 30 veces. ¡Obtuviste 2000 puntos! A partir de ahora quedará pendiente de revisión por parte de Greenpeace. Apretá el botón [Continuar] para obtener una nueva parcela</value>
+  </data>
+  <data name="Notifications2" xml:space="preserve">
+    <value>COMENZAR</value>
+  </data>
+  <data name="Notifications3" xml:space="preserve">
+    <value>¡Felicitaciones!</value>
+  </data>
+  <data name="Notifications4" xml:space="preserve">
+    <value>SI</value>
+  </data>
+  <data name="Notifications5" xml:space="preserve">
+    <value>Un moderador revisó tu alerta y confirmó tu reporte.
+
+A partir de ahora, podés tomar cartas en el asunto y denunciar lo que viste a las autoridades, desde el boton [Denunciar] en el hexágono.
+
+¡Ganaste 500 puntos!</value>
+  </data>
+  <data name="Notifications6" xml:space="preserve">
+    <value>¡Bienvenido a tu nueva parcela!</value>
+  </data>
+  <data name="Notifications7" xml:space="preserve">
+    <value>Si tu parcela tiene nubes, podés pedir una nueva apretando el botón [Cambiar Parcela]</value>
+  </data>
+  <data name="Notifications8" xml:space="preserve">
+    <value>CAMBIO DE PARCELA</value>
+  </data>
+  <data name="Notifications9" xml:space="preserve">
+    <value>Solo podes cambiar de parcela una vez cada 10 minutos, pero...
+
+... podes revisar parcelas ajenas: Busca las parcelas verdes o amarillas con reborde y revisalas.
+
+... podes denunciar parcelas verificadas: Busca las parcelas rojas con reborde y hace click en [Denunciar].
+
+... podes compartir en Facebook o Twitter tus reportes.
+
+¡Recorda que todas estas acciones dan puntos!</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value> o</value>
+  </data>
+  <data name="Polls1" xml:space="preserve">
+    <value>¿Ves deforestación?</value>
+  </data>
+  <data name="Polls2" xml:space="preserve">
+    <value>Antes</value>
+  </data>
+  <data name="Polls3" xml:space="preserve">
+    <value>Después</value>
+  </data>
+  <data name="Polls4" xml:space="preserve">
+    <value>NO SE</value>
+  </data>
+  <data name="Polls5" xml:space="preserve">
+    <value>Observá las siguientes imágenes</value>
+  </data>
+  <data name="Polls6" xml:space="preserve">
+    <value>Hoy</value>
+  </data>
+  <data name="Polls7" xml:space="preserve">
+    <value>Compará la imagen de la derecha con la de 2008. Esto nos ayuda a validar los reportes con mayor facilidad. Al validar 5 reportes, obtendrás un bonus de puntaje!</value>
+  </data>
+  <data name="PublishMap1" xml:space="preserve">
+    <value>Ves algo interesante? Compartilo con el mundo!</value>
+  </data>
+  <data name="PublishMap2" xml:space="preserve">
+    <value>Obteniendo una Url mas corta... Por favor espere</value>
+  </data>
+  <data name="PublishMap3" xml:space="preserve">
+    <value>Url no creada aún, por favor espere un momento </value>
+  </data>
+  <data name="Ranking1" xml:space="preserve">
+    <value>RANKING DE GUARDIANES</value>
+  </data>
+  <data name="red" xml:space="preserve">
+    <value> rojo</value>
+  </data>
+  <data name="Report1" xml:space="preserve">
+    <value>REPORTAR PARCELA</value>
+  </data>
+  <data name="Report10" xml:space="preserve">
+    <value>vi algo sospechoso</value>
+  </data>
+  <data name="Report11" xml:space="preserve">
+    <value>VALIDAR</value>
+  </data>
+  <data name="Report12" xml:space="preserve">
+    <value>verificaciones</value>
+  </data>
+  <data name="Report2" xml:space="preserve">
+    <value>NO veo problemas</value>
+  </data>
+  <data name="Report3" xml:space="preserve">
+    <value>¡Veo desmontes!</value>
+  </data>
+  <data name="Report4" xml:space="preserve">
+    <value>¡Denunciar a las autoridades!</value>
+  </data>
+  <data name="Report5" xml:space="preserve">
+    <value>VALIDAR PARCELA EN ALERTA</value>
+  </data>
+  <data name="Report6" xml:space="preserve">
+    <value>Parcela OK!</value>
+  </data>
+  <data name="Report7" xml:space="preserve">
+    <value>¡Vi algo sospechoso!</value>
+  </data>
+  <data name="Report8" xml:space="preserve">
+    <value>OKs</value>
+  </data>
+  <data name="Report9" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ReportWindow" xml:space="preserve">
+    <value>VALIDAR PARCELA EN ALERTA</value>
+  </data>
+  <data name="Share1" xml:space="preserve">
+    <value>Mediante imágenes satelitales estoy cuidando los bosques nativos de Salta. ¿Me ayudás?</value>
+  </data>
+  <data name="Share2" xml:space="preserve">
+    <value>Revisé una parcela en Guardianes y veo desmontes. ¿Me ayudás a verificarlo?</value>
+  </data>
+  <data name="Share6" xml:space="preserve">
+    <value>COMPARTIR:</value>
+  </data>
+  <data name="Stats1" xml:space="preserve">
+    <value>Jugadores Activos:</value>
+  </data>
+  <data name="Stats2" xml:space="preserve">
+    <value>Total de Jugadores:</value>
+  </data>
+  <data name="Stats3" xml:space="preserve">
+    <value>Jugadores en linea:</value>
+  </data>
+  <data name="StatsActivePlayers" xml:space="preserve">
+    <value>Guardianes Activos</value>
+  </data>
+  <data name="StatsAlertedArea" xml:space="preserve">
+    <value>Area en Alerta</value>
+  </data>
+  <data name="StatsAlertedAreaConfirmed" xml:space="preserve">
+    <value>Area desmontada</value>
+  </data>
+  <data name="StatsDenouncesCreated" xml:space="preserve">
+    <value>Desmontes denunciados</value>
+  </data>
+  <data name="StatsGreenPlots" xml:space="preserve">
+    <value>Parcelas sin desmontes</value>
+  </data>
+  <data name="StatsOkAreaConfirmed" xml:space="preserve">
+    <value>Area Fuera de Peligro</value>
+  </data>
+  <data name="StatsRedPlots" xml:space="preserve">
+    <value>Parcelas en Alerta</value>
+  </data>
+  <data name="StatsTotalPlayers" xml:space="preserve">
+    <value>Guardianes</value>
+  </data>
+  <data name="StatsUsersOnline" xml:space="preserve">
+    <value>Guardianes Conectados</value>
+  </data>
+  <data name="StatsVerifiedPlots" xml:space="preserve">
+    <value>Parcelas con desmontes</value>
+  </data>
+  <data name="TextBlock" xml:space="preserve">
+    <value>TextBlock</value>
+  </data>
+  <data name="Timeline1" xml:space="preserve">
+    <value>estas viendo la imagen del</value>
+  </data>
+  <data name="Tutorial1" xml:space="preserve">
+    <value>En esta plataforma, junto a otros guardianes, vas a estar encargándote de ayudar a hacer que se cumpla la Ley Nacional de Bosques en la provincia de Salta, monitoreando y reportando por medio de imagenes satelitales actualizadas cualquier desmonte que se haya realizado desde el año 2008 hasta la actualidad.</value>
+  </data>
+  <data name="Tutorial10" xml:space="preserve">
+    <value>¡VOS!</value>
+  </data>
+  <data name="Tutorial11" xml:space="preserve">
+    <value>¿Qué busco?</value>
+  </data>
+  <data name="Tutorial12" xml:space="preserve">
+    <value>¿Dónde lo busco?</value>
+  </data>
+  <data name="Tutorial13" xml:space="preserve">
+    <value>¿Cómo lo busco?</value>
+  </data>
+  <data name="Tutorial14" xml:space="preserve">
+    <value>Hacé zoom
+sobre tu parcela</value>
+  </data>
+  <data name="Tutorial15" xml:space="preserve">
+    <value>Agregá capas
+para comparar</value>
+  </data>
+  <data name="Tutorial16" xml:space="preserve">
+    <value>22 de mayo</value>
+  </data>
+  <data name="Tutorial17" xml:space="preserve">
+    <value>3 de junio</value>
+  </data>
+  <data name="Tutorial18" xml:space="preserve">
+    <value>Contarás con
+imágenes satelitales</value>
+  </data>
+  <data name="Tutorial19" xml:space="preserve">
+    <value>¡mi parcela está bien!</value>
+  </data>
+  <data name="Tutorial2" xml:space="preserve">
+    <value>¿Vamos a conocer de qué se trata?</value>
+  </data>
+  <data name="Tutorial20" xml:space="preserve">
+    <value>¡vi algo sospechoso!</value>
+  </data>
+  <data name="Tutorial21" xml:space="preserve">
+    <value>Para monitorear, necesitamos
+comparar una imagen reciente con una más antigua.
+
+¿Vamos a ver que actividad hubo en tu parcela? Hacé click acá para agregar una imagen reciente.</value>
+  </data>
+  <data name="Tutorial22" xml:space="preserve">
+    <value>Movete en la
+línea de tiempo
+para ver las
+diferencias</value>
+  </data>
+  <data name="Tutorial23" xml:space="preserve">
+    <value>Cuando revises tu parcela, es necesario que reportes lo que hayas visto para así alertar a otros Guardianes. 
+
+Hacé click en ella y luego en [Reportar]</value>
+  </data>
+  <data name="Tutorial24" xml:space="preserve">
+    <value>¡Tus acciones te dan puntaje! Por haber revisado tu parcela, obtuviste puntos.
+Muchas acciones te van a otorgar puntos,</value>
+  </data>
+  <data name="Tutorial25" xml:space="preserve">
+    <value>¡Felicitaciones! Terminaste el tutorial.
+Ya estas listo para proteger a nuestros bosques.
+
+Si tenés dudas, no dejes de visitar la ayuda.</value>
+  </data>
+  <data name="Tutorial26" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tutorial27" xml:space="preserve">
+    <value>Tu parcela será reasignada cada  5 dias, salvo que esté en Alerta. De esta forma, vas a poder cuidar otras partes del bosque.
+
+Si queres cambiar de parcela manualmente, podés hacerlo apretando el botón [Cambiar Parcela]</value>
+  </data>
+  <data name="Tutorial28" xml:space="preserve">
+    <value>26 de junio</value>
+  </data>
+  <data name="Tutorial29" xml:space="preserve">
+    <value>Reportá
+lo que viste</value>
+  </data>
+  <data name="Tutorial3" xml:space="preserve">
+    <value>DEFORESTACIÓN</value>
+  </data>
+  <data name="Tutorial30" xml:space="preserve">
+    <value>Cada Guardián tiene bajo su protección una porción de tierra. Apretá en “Mi Parcela” para verla.</value>
+  </data>
+  <data name="Tutorial31" xml:space="preserve">
+    <value>para observar tu porción de tierra asignada para cuidar.</value>
+  </data>
+  <data name="Tutorial32" xml:space="preserve">
+    <value>Los Guardianes cuidamos que se respete la ley de bosques.
+
+Deslizando el indicador vas a poder comparar una imagen de 2008 contra imágenes actuales, en busca de desmontes ilegales.</value>
+  </data>
+  <data name="Tutorial33" xml:space="preserve">
+    <value>¡Genial! Ya aprendiste como buscar cambios a lo largo del tiempo.
+
+También podés agregar otras fechas desde la lista de la izquierda.</value>
+  </data>
+  <data name="Tutorial34" xml:space="preserve">
+    <value>¡Convertite en el guardián  Nº1!</value>
+  </data>
+  <data name="Tutorial35" xml:space="preserve">
+    <value>Este es el mapa de la zona de riesgo.
+Podés moverte en él haciendo click y moviendo el mouse.</value>
+  </data>
+  <data name="Tutorial36" xml:space="preserve">
+    <value>CONTINUAR</value>
+  </data>
+  <data name="Tutorial37" xml:space="preserve">
+    <value> Poné tu parcela en ¡Alerta! si viste algo sospechoso.
+Si no, apretá el botón</value>
+  </data>
+  <data name="Tutorial38" xml:space="preserve">
+    <value>Mi parcela está bien</value>
+  </data>
+  <data name="Tutorial39" xml:space="preserve">
+    <value>Las parcelas en Alerta se ven en AMARILLO. Las revisadas, en VERDE.</value>
+  </data>
+  <data name="Tutorial4" xml:space="preserve">
+    <value>¿NUBES?</value>
+  </data>
+  <data name="Tutorial40" xml:space="preserve">
+    <value>Los demás Guardianes también van a revisar sus parcelas, así como también la tuya para ayudarte a confirmar tus observaciones.</value>
+  </data>
+  <data name="Tutorial41" xml:space="preserve">
+    <value>Cuando 30 personas hayan revisado tu parcela, vas a recibir una nueva para cuidar, mientras la anterior espera ser validada por nuestros expertos.
+
+Si las observaciones son confirmadas, vas a poder emitir una denuncia, mostrando claramente que no se ha respetado la ley de bosques en esta zona.
+
+¡La denuncia es tu herramienta!</value>
+  </data>
+  <data name="Tutorial42" xml:space="preserve">
+    <value>Luego de revisar vas a poder informar</value>
+  </data>
+  <data name="Tutorial43" xml:space="preserve">
+    <value> si ves desmontes</value>
+  </data>
+  <data name="Tutorial44" xml:space="preserve">
+    <value> tanto como</value>
+  </data>
+  <data name="Tutorial45" xml:space="preserve">
+    <value> si viste que no los hubo.</value>
+  </data>
+  <data name="Tutorial46" xml:space="preserve">
+    <value>Si ves una parcela de otro Guardián en</value>
+  </data>
+  <data name="Tutorial47" xml:space="preserve">
+    <value> hacé click en ella y luego en el botón [Revisar]</value>
+  </data>
+  <data name="Tutorial48" xml:space="preserve">
+    <value>Al igual que antes, acá podes reportar si viste o no desmontes, ayudando a tu amigo Guardián a validar sus observaciones.
+
+Cuantas mas revisiones tenga una parcela, más chances tendremos de encontrar problemas.</value>
+  </data>
+  <data name="Tutorial49" xml:space="preserve">
+    <value>¿Cómo se ve un desmonte?</value>
+  </data>
+  <data name="Tutorial5" xml:space="preserve">
+    <value>¿ZONAS VERDES?</value>
+  </data>
+  <data name="Tutorial50" xml:space="preserve">
+    <value>Observá las siguientes imágenes. A la izquierda, vas a ver las fotos aéreas que tomó Greenpeace. A la derecha, las imágenes satelitales.</value>
+  </data>
+  <data name="Tutorial51" xml:space="preserve">
+    <value>Aérea - Bosque sano</value>
+  </data>
+  <data name="Tutorial52" xml:space="preserve">
+    <value>Aérea - Desmonte</value>
+  </data>
+  <data name="Tutorial53" xml:space="preserve">
+    <value>Satelital - Bosque sano</value>
+  </data>
+  <data name="Tutorial54" xml:space="preserve">
+    <value>Satelital - Desmonte</value>
+  </data>
+  <data name="Tutorial6" xml:space="preserve">
+    <value>ALERTA</value>
+  </data>
+  <data name="Tutorial7" xml:space="preserve">
+    <value>PARCELA ¡OK!</value>
+  </data>
+  <data name="Tutorial8" xml:space="preserve">
+    <value>¡PARCELA EN ALERTA!</value>
+  </data>
+  <data name="Tutorial9" xml:space="preserve">
+    <value>TU PARCELA</value>
+  </data>
+  <data name="TutorialAbout" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
+  <data name="TutorialComplete" xml:space="preserve">
+    <value>COMPLETO</value>
+  </data>
+  <data name="TutorialGame1" xml:space="preserve">
+    <value>CONTINUAR »</value>
+  </data>
+  <data name="TutorialGame10" xml:space="preserve">
+    <value>¡A tener en cuenta!</value>
+  </data>
+  <data name="TutorialGame11" xml:space="preserve">
+    <value>Las imágenes del satélite Landsat 7 que utilizaremos tienen un error óptico. En la imagen se pueden observar las líneas que componen la falla.
+
+Aún con dicha falla, podremos buscar deforestación.</value>
+  </data>
+  <data name="TutorialGame12" xml:space="preserve">
+    <value>¡A jugar!</value>
+  </data>
+  <data name="TutorialGame13" xml:space="preserve">
+    <value>Ahora que sabes de qué se tratan las imágenes de color real, vamos a ponernos en práctica.
+
+A continuación, buscá en las imagenes las zonas que presenten cambios. Cuantos más aciertos tengas, ¡más puntos vas a ganar!</value>
+  </data>
+  <data name="TutorialGame14" xml:space="preserve">
+    <value>¡Encontrá los cambios!</value>
+  </data>
+  <data name="TutorialGame15" xml:space="preserve">
+    <value>Mirá detenidamente las dos imágenes. ¿Podes ver los cambios?
+Hacé click en la imagen que presente deforestación.</value>
+  </data>
+  <data name="TutorialGame16" xml:space="preserve">
+    <value>Resultados</value>
+  </data>
+  <data name="TutorialGame2" xml:space="preserve">
+    <value>Imágenes de Color Real</value>
+  </data>
+  <data name="TutorialGame3" xml:space="preserve">
+    <value>JUGAR</value>
+  </data>
+  <data name="TutorialGame4" xml:space="preserve">
+    <value>FINALIZAR</value>
+  </data>
+  <data name="TutorialGame5" xml:space="preserve">
+    <value>¡Bien! Lograste encontrar deforestación. Para ser un experto, ¡volvé a jugar hasta encontrar todos los casos y vas a ganar mas puntos!</value>
+  </data>
+  <data name="TutorialGame6" xml:space="preserve">
+    <value>¡Excelente! Ya sos un experto en Imágenes de Color Real!</value>
+  </data>
+  <data name="TutorialGame7" xml:space="preserve">
+    <value>No lograste obtener árboles... pero no te preocupes, podés volver a intentar! La práctica hace al maestro.</value>
+  </data>
+  <data name="TutorialGame8" xml:space="preserve">
+    <value>¡Bienvenido!</value>
+  </data>
+  <data name="TutorialGame9" xml:space="preserve">
+    <value>Guardianes utiliza imágenes satelitales de diversos proveedores, tomadas periódicamente. En este caso nos enfocaremos en las imagenes de color real del satélite Landsat 7.
+
+Una imagen de color real muestra una representación de la tierra con los colores naturales de cada objeto, como una fotografía normal.
+
+¡Aprendamos a buscar deforestación usando estas imágenes!</value>
+  </data>
+  <data name="TutorialGameWin1" xml:space="preserve">
+    <value>¡Bien! Lograste encontrar deforestación. Para ser un experto, volvé a jugar hasta encontrar todos los casos y vas a ganar mas puntos.</value>
+  </data>
+  <data name="TutorialGameWin2" xml:space="preserve">
+    <value>No olvides compartir con tus amigos para que ellos también sean Guardianes del Bosque</value>
+  </data>
+  <data name="TutorialHelph" xml:space="preserve">
+    <value>Ayuda</value>
+  </data>
+  <data name="TutorialImgSatelital" xml:space="preserve">
+    <value>Imágenes satelitales</value>
+  </data>
+  <data name="TutorialLevel1" xml:space="preserve">
+    <value>Nivel 1</value>
+  </data>
+  <data name="TutorialLevel2" xml:space="preserve">
+    <value>Nivel 2</value>
+  </data>
+  <data name="TutorialLevel3" xml:space="preserve">
+    <value>Nivel 3</value>
+  </data>
+  <data name="TutorialMenuWin1" xml:space="preserve">
+    <value>¿Qué es lo que buscamos?</value>
+  </data>
+  <data name="TutorialMenuWin2" xml:space="preserve">
+    <value>Buscamos que se respete la Ley Nacional 26331, también conocida como 'Ley de Bosques'. La ley divide las zonas boscosas en rojo, amarillo y verde, según su nivel de protección, otorgando a las zonas rojas característica de reserva, no permite desmonte ni aprovechamiento, a las amarillas permiso de aprovechamiento sustentable pero sin desmonte, y a las verdes permiso de desmonte previo estudio de impacto ambiental y audiencia pública. Las parcelas asignadas para los Guardianes están dentro de los límites de las zonas amarillas y rojas de la provincia.</value>
+  </data>
+  <data name="TutorialMenuWin3" xml:space="preserve">
+    <value>¿Qué pasa con mis reportes?</value>
+  </data>
+  <data name="TutorialMenuWin4" xml:space="preserve">
+    <value>Periódicamente, Greenpeace revisa las zonas reportadas para validarlas. En caso de que efectivamente se encuentren muestras de degradación como informaron nuestros guardianes, la parcela se habilita para que los usuarios puedan denunciar la violación de la ley de bosques.</value>
+  </data>
+  <data name="TutorialMenuWin5" xml:space="preserve">
+    <value>¿A dónde envío mis denuncias?</value>
+  </data>
+  <data name="TutorialMenuWin6" xml:space="preserve">
+    <value>Cuando presionás el botón Enviar en tu denuncia, esta se envía al Gobernador de la Provincia de Salta, y al Secretario de Ambiente de la Nación.</value>
+  </data>
+  <data name="TutorialMenuWin7" xml:space="preserve">
+    <value>¿Puedo enviar una denuncia de forma anónima?</value>
+  </data>
+  <data name="TutorialMenuWin8" xml:space="preserve">
+    <value>Si. Debajo de tu nombre en la denuncia hay un botón para hacer que tu denuncia sea anónima.</value>
+  </data>
+  <data name="TutorialMenuWin9" xml:space="preserve">
+    <value>F.A.Q.</value>
+  </data>
+  <data name="AcercaDeCuerpo" xml:space="preserve">
+    <value>Guardianes es un proyecto del laboratorio de Innovación de Greenpeace en Argentina.
+
+La tecnología de Guardianes está inspirada y desarrollada tomando como base EarthWatchers (www.deforestaction.com/earthwatchers), un proyecto de Geodan (www.geodan.com) para DeforestAction.</value>
+  </data>
+  <data name="AcercaDeTitulo" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
+  <data name="TutorialMenuWin10" xml:space="preserve">
+    <value>¡En la denuncia aparecen mis datos! ¡Yo no los puse!</value>
+  </data>
+  <data name="TutorialMenuWin11" xml:space="preserve">
+    <value>Por cuestiones de seguridad y privacidad, Guardianes no almacena datos personales de ningún usuario. Sin embargo, al crear una denuncia, tomamos tus datos de la petición para salvar los bosques de Salta para que aparezcan automáticamente. Si optás por crear una denuncia anónima, tus datos no se mostrarán.</value>
+  </data>
+  <data name="TutorialMenuWin12" xml:space="preserve">
+    <value>¿Por qué los colores de las fotos, en algunos casos, no se ven normales?</value>
+  </data>
+  <data name="TutorialMenuWin13" xml:space="preserve">
+    <value>Los satélites que toman las imágenes que utilizamos en Guardianes pueden captar más elementos de los que distingue el ojo humano. Por eso, en algunos casos, rastros de información de elementos tales como nubosidad, temperatura, etc. pueden hacerse visibles enlas imágeness dando un aspecto irreal a ciertas zonas. También, las fotos son tomadas en diferentes horarios.</value>
+  </data>
+  <data name="TutorialMenuWin14" xml:space="preserve">
+    <value>¿Dónde puedo ver las imagenes originales?</value>
+  </data>
+  <data name="TutorialMenuWin15" xml:space="preserve">
+    <value>El sitio de Estudios Geológicos de Estados Unidos (USGS) contiene un archivo de las imágenes captadas por el satélite Landsat, que es el que utilizamos. Para mas información, podés entrar en www.usgs.gov (en inglés)</value>
+  </data>
+  <data name="TutorialMenuWin16" xml:space="preserve">
+    <value>No entiendo si lo que veo en mi parcela es un desmonte</value>
+  </data>
+  <data name="TutorialMenuWin17" xml:space="preserve">
+    <value>En estos casos, hay dos opciones recomendables. Podés entrar a Ayuda / Minijuego I y jugar al minijuego que te ayuda a entender mejor como se ve un desmonte, o podés apretar el botón Cambiar Parcela para moverte a otra zona si es que tu parcela te presenta dudas.</value>
+  </data>
+  <data name="TutorialMenuWin18" xml:space="preserve">
+    <value>Apareció un jaguar, no entiendo...</value>
+  </data>
+  <data name="TutorialMenuWin19" xml:space="preserve">
+    <value>Cuando veas el mensaje de que ha aparecido un pequeño jaguar en el mapa, significa que comenzó una competencia entre todos los guardianes para encontrarlo. En alguna parte del mapa, si te acercás lo suficiente (prestá atención al ícono en pantalla, se transformará en binoculares cuando estés a un nivel correcto), vas a poder encontrar la figura de un jaguar pequeño. Si lo ves, hacé click rápido sobre él para rescatarlo! El primero que lo rescate ganará una suma de puntos importante.</value>
+  </data>
+  <data name="TutorialMenuWin20" xml:space="preserve">
+    <value>¿Cuando se habilita el botón de denuncias?</value>
+  </data>
+  <data name="TutorialMenuWin21" xml:space="preserve">
+    <value>Cuando tu parcela tenga 30 verificaciones, pasará al usuario de Greenpeace hasta que sea verificado por nuestros expertos. 
+Una vez finalizado este proceso, te avisaremos por correo electrónico los resultados. Si no recibiste un correo, comprobá que tu dirección sea correcta, y observá el color de tu parcela. 
+Si aparece en rojo, podés denunciar.</value>
+  </data>
+  <data name="TutorialMenuWin22" xml:space="preserve">
+    <value>Hay desmontes en la imagen del 2008... ¿a estos los reporto también?</value>
+  </data>
+  <data name="TutorialMenuWin23" xml:space="preserve">
+    <value>Todos los desmontes que veas tienen que ser reportados. La razón es que Guardianes no asigna parcelas por fuera de zonas protegidas por la ley de bosques.</value>
+  </data>
+  <data name="TutorialMiniGame" xml:space="preserve">
+    <value>Mini Juego</value>
+  </data>
+  <data name="TutorialMiniGame1" xml:space="preserve">
+    <value>Mini Juego I</value>
+  </data>
+  <data name="TutorialMiniGame2" xml:space="preserve">
+    <value>¡Bienvenido! Con este juego vas a poder entrenar tu ojo a la hora de buscar desmontes, para distinguir correctamente un terreno sano de uno que ha sufrido el paso de las topadoras.
+
+Cuanto mas entrenado estés, mas precisos van a ser tus reportes. ¡El bosque te necesita!</value>
+  </data>
+  <data name="TutorialMiniGame3" xml:space="preserve">
+    <value>¿estás listo?</value>
+  </data>
+  <data name="TutorialMiniGame4" xml:space="preserve">
+    <value>Elegí la imagen con desmontes</value>
+  </data>
+  <data name="TutorialMiniGame5" xml:space="preserve">
+    <value>Por el momento, no hay imágenes para jugar. Probá nuevamente más tarde. Gracias!</value>
+  </data>
+  <data name="TutorialMiniGame6" xml:space="preserve">
+    <value>Tiempo Bonus</value>
+  </data>
+  <data name="TutorialMiniGame7" xml:space="preserve">
+    <value>¡Bien! Lograste encontrar deforestación. Para ser un experto, volvé a jugar. Cuanto más rápido completes el juego, más puntos ganarás.</value>
+  </data>
+  <data name="TutorialMiniGame8" xml:space="preserve">
+    <value>Obtuve</value>
+  </data>
+  <data name="TutorialMiniGame9" xml:space="preserve">
+    <value>puntos en el minijuego para aprender a buscar desmontes en Guardianes! Vos también podes convertirte en Guardián de los bosques, sumate en guardianes.greenpeace.org.ar</value>
+  </data>
+  <data name="TutorialPlay" xml:space="preserve">
+    <value>JUGAR</value>
+  </data>
+  <data name="TutorialPoints" xml:space="preserve">
+    <value>Puntajes</value>
+  </data>
+  <data name="UserPanel1" xml:space="preserve">
+    <value>Panel de Control de Usuario</value>
+  </data>
+  <data name="UserPanel10" xml:space="preserve">
+    <value>Inglés</value>
+  </data>
+  <data name="UserPanel11" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="UserPanel12" xml:space="preserve">
+    <value>idioma</value>
+  </data>
+  <data name="UserPanel13" xml:space="preserve">
+    <value>país</value>
+  </data>
+  <data name="UserPanel14" xml:space="preserve">
+    <value>región</value>
+  </data>
+  <data name="UserPanel15" xml:space="preserve">
+    <value>enviarme mails con notificaciones</value>
+  </data>
+  <data name="UserPanel16" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="UserPanel17" xml:space="preserve">
+    <value>Colecciones</value>
+  </data>
+  <data name="UserPanel18" xml:space="preserve">
+    <value>COLECCIONES</value>
+  </data>
+  <data name="UserPanel2" xml:space="preserve">
+    <value>Cambiá tu contraseña</value>
+  </data>
+  <data name="UserPanel20" xml:space="preserve">
+    <value>FELICITACIONES! HAS ENCONTRADO AL JAGUAR {0} VECES</value>
+  </data>
+  <data name="UserPanel21" xml:space="preserve">
+    <value>Todavía no has encontrado ningún jaguar</value>
+  </data>
+  <data name="UserPanel22" xml:space="preserve">
+    <value>La contraseña actual ingresada es incorrecta</value>
+  </data>
+  <data name="UserPanel23" xml:space="preserve">
+    <value>La contraseña nueva debe ser distinta a la actual</value>
+  </data>
+  <data name="UserPanel24" xml:space="preserve">
+    <value>La contraseña debe tener al menos 5 caracteres y sólo admite letras y números</value>
+  </data>
+  <data name="UserPanel25" xml:space="preserve">
+    <value>La contraseña repetida debe coincidir con la contraseña nueva</value>
+  </data>
+  <data name="UserPanel26" xml:space="preserve">
+    <value>Ocurrió un error. Vuelva a intentar más tarde</value>
+  </data>
+  <data name="UserPanel27" xml:space="preserve">
+    <value>El nombre debe contener sólo letras o números y hasta 20 caracteres</value>
+  </data>
+  <data name="UserPanel28" xml:space="preserve">
+    <value>Los datos han sido guardados con éxito. Este cambio se verá reflejado la próxima vez que ingrese a Guardianes</value>
+  </data>
+  <data name="UserPanel3" xml:space="preserve">
+    <value>Selección de nombre, idioma, país y opciones de notificación</value>
+  </data>
+  <data name="UserPanel30" xml:space="preserve">
+    <value>Tu contraseña ha sido cambiada con éxito</value>
+  </data>
+  <data name="UserPanel31" xml:space="preserve">
+    <value>Ocurrió un error. Vuelva a intentar más tarde</value>
+  </data>
+  <data name="UserPanel4" xml:space="preserve">
+    <value>CAMBIÁ TU CONFIGURACIÓN REGIONAL</value>
+  </data>
+  <data name="UserPanel5" xml:space="preserve">
+    <value>CAMBIÁ TU CONTRASEÑA</value>
+  </data>
+  <data name="UserPanel6" xml:space="preserve">
+    <value>contraseña actual</value>
+  </data>
+  <data name="UserPanel7" xml:space="preserve">
+    <value>contraseña nueva</value>
+  </data>
+  <data name="UserPanel8" xml:space="preserve">
+    <value>confirmar nueva contraseña</value>
+  </data>
+  <data name="UserPanel9" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="WW1" xml:space="preserve">
+    <value>Daniel</value>
+  </data>
+  <data name="WW2" xml:space="preserve">
+    <value>Córdoba</value>
+  </data>
+  <data name="WW3" xml:space="preserve">
+    <value>Patricia</value>
+  </data>
+  <data name="WW4" xml:space="preserve">
+    <value>Chaco</value>
+  </data>
+  <data name="MailBienvenidaAsunto" xml:space="preserve">
+    <value>Te damos la bienvenida a Guardianes</value>
+  </data>
+  <data name="MailBienvenidaTitulo" xml:space="preserve">
+    <value>Ya estás protegiendo los bósques de Salta!</value>
+  </data>
+  <data name="MailBienvenidaCuerpo" xml:space="preserve">
+    <value>Para Comenzar a jugar apretá el botón de abajo!
+&lt;br&gt;&lt;/br&gt;
+
+&lt;b&gt;Tips para Jugar&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt; Podés obtener una nueva parcela apretando [Cambiar Parcela]&lt;/li&gt;
+&lt;li&gt; Comentá en las parcelas de los demás para ayudarlos con sus reportes&lt;/li&gt;
+&lt;li&gt; Completá todos los tutoriales y jugá los minijuegos&lt;/li&gt;
+&lt;li&gt; Entrá varias veces al dia para obtener mas puntos&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="MailBienvenidaBoton" xml:space="preserve">
+    <value>Cuidar el Bósque</value>
+  </data>
+  <data name="MailBienvenidaBotonTooltip" xml:space="preserve">
+    <value>Click acá para comenzar a cuidar el bósque</value>
+  </data>
+  <data name="Polls10" xml:space="preserve">
+    <value> NO los reportes.</value>
+  </data>
+  <data name="Polls11" xml:space="preserve">
+    <value> Esos son previos a la Ley de Bosques y, por lo tanto, no corresponde denunciarlos dentro de Guardianes.</value>
+  </data>
+  <data name="Polls8" xml:space="preserve">
+    <value>IMPORTANTE:</value>
+  </data>
+  <data name="Polls9" xml:space="preserve">
+    <value> Si ves desmontes en la imagen de 2008,</value>
+  </data>
+  <data name="CONGRATS" xml:space="preserve">
+    <value>¡FELICITACIONES!</value>
+  </data>
+  <data name="Contest1" xml:space="preserve">
+    <value>¡Ha finalizado el concurso semanal!</value>
+  </data>
+  <data name="Contest2" xml:space="preserve">
+    <value>ha resultado ser el Guardián ganador, y se lleva 10.000 puntos y un trofeo especial.</value>
+  </data>
+  <data name="Contest3" xml:space="preserve">
+    <value>Seguí participando ¡ya hay un nuevo concurso en progreso!</value>
+  </data>
+  <data name="Contest4" xml:space="preserve">
+    <value>¡Sos el ganador del concurso semanal! Se te otorgaron 10.000 puntos y un trofeo que aparecerá en tu perfil.</value>
+  </data>
+  <data name="Contest5" xml:space="preserve">
+    <value>¡Gracias por participar!</value>
+  </data>
+  <data name="Contest6" xml:space="preserve">
+    <value>Compartí este logro con tus amigos en las redes sociales.</value>
+  </data>
+  <data name="Contest7" xml:space="preserve">
+    <value>¡Gané el Torneo Semanal en Guardianes!</value>
+  </data>
+  <data name="Contest8" xml:space="preserve">
+    <value>¡Comienza un nuevo torneo semanal en Guardianes!</value>
+  </data>
+  <data name="ImageWarning1" xml:space="preserve">
+    <value>¡IMPORTANTE!</value>
+  </data>
+  <data name="ImageWarning2" xml:space="preserve">
+    <value>Actualidad</value>
+  </data>
+  <data name="ImageWarning3" xml:space="preserve">
+    <value>Los guardianes protegemos el cumplimiento de la ley de bosques. Por eso, si ves desmontes en la imagen de 2008,</value>
+  </data>
+  <data name="ImageWarning4" xml:space="preserve">
+    <value>no es necesario reportarlos.</value>
+  </data>
+  <data name="ImageWarning5" xml:space="preserve">
+    <value>Si te toca una parcela en un área ya desmontada en 2008, podés apretar el botón [Cambiar Parcela].</value>
+  </data>
+  <data name="ImageWarning6" xml:space="preserve">
+    <value>(Desmontes previos a la ley de bosques)</value>
+  </data>
+  <data name="Ranking2" xml:space="preserve">
+    <value>Ranking Global</value>
+  </data>
+  <data name="Ranking3" xml:space="preserve">
+    <value>El ranking mensual finaliza el día</value>
+  </data>
+  <data name="Share3" xml:space="preserve">
+    <value>¡Gané el torneo semanal! Mis acciones ayudan a cuidar los bosques de Salta ¡Participá! #SoyGuardianDelBosque</value>
+  </data>
+  <data name="Share4" xml:space="preserve">
+    <value>¡Comienza un nuevo torneo semanal! Participá para mantener los bosques de Salta a salvo. #SoyGuardianDelBosque</value>
+  </data>
+  <data name="Share5" xml:space="preserve">
+    <value>Compartí con tus amigos en las redes sociales</value>
+  </data>
+  <data name="Stats" xml:space="preserve">
+    <value>ESTADISTICAS</value>
+  </data>
+  <data name="Layers17" xml:space="preserve">
+    <value>Fincas</value>
+  </data>
+  <data name="Layers18" xml:space="preserve">
+    <value>Hacé click acá para activar o desactivar las zonas de Fincas</value>
+  </data>
+  <data name="gray" xml:space="preserve">
+    <value>gris</value>
+  </data>
+  <data name="UserPanel32" xml:space="preserve">
+    <value>mail</value>
+  </data>
+  <data name="UserPanel33" xml:space="preserve">
+    <value>El mail ingresado ya existe, intente con otro.</value>
+  </data>
+  <data name="HexLegend1" xml:space="preserve">
+    <value>SIN CAMBIOS</value>
+  </data>
+  <data name="HexLegend2" xml:space="preserve">
+    <value>¡ALERTA REPORTADA!</value>
+  </data>
+  <data name="HexLegend3" xml:space="preserve">
+    <value>DESMONTE</value>
+  </data>
+  <data name="HexLegend4" xml:space="preserve">
+    <value>REVISÁ TODAS LAS PARCELAS CON REBORDE</value>
+  </data>
+  <data name="DemandWindow1" xml:space="preserve">
+    <value>DENUNCIAR</value>
+  </data>
+  <data name="DemandWindow2" xml:space="preserve">
+    <value>COMPARTIR DENUNCIA</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>amarillo</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versión:</value>
+  </data>
+  <data name="DemandWindow3" xml:space="preserve">
+    <value>Ya denunciaste esta parcela, ahora podés darla a conocer.</value>
+  </data>
+  <data name="DemandWindow4" xml:space="preserve">
+    <value>Compartí en las redes sociales para que todos lo sepan!</value>
+  </data>
+  <data name="DemandWindow5" xml:space="preserve">
+    <value>Esta parcela tiene un desmonte confirmado.</value>
+  </data>
+  <data name="DemandWindow6" xml:space="preserve">
+    <value>Enviá tu denuncia a las autoridades para que esto se termine!</value>
+  </data>
+  <data name="DailySummaryContest" xml:space="preserve">
+    <value>La competencia actual finaliza el</value>
+  </data>
+  <data name="DailySummaryDenounce1" xml:space="preserve">
+    <value>Denunciaste</value>
+  </data>
+  <data name="DailySummaryDenounce3" xml:space="preserve">
+    <value> parcelas de un total de</value>
+  </data>
+  <data name="DailySummaryDenounce5" xml:space="preserve">
+    <value>Buscá las parcelas en rojo con reborde y hace click en DENUNCIAR</value>
+  </data>
+  <data name="DailySummaryHiUser" xml:space="preserve">
+    <value>Hola</value>
+  </data>
+  <data name="DailySummaryMorePoints" xml:space="preserve">
+    <value>Para obtener mas puntos, podés:</value>
+  </data>
+  <data name="DailySummaryRemember" xml:space="preserve">
+    <value>Recordá revisar todas las parcelas que tengan reborde, en esas es que tenés acciones para hacer.</value>
+  </data>
+  <data name="DailySummaryReport1" xml:space="preserve">
+    <value>Ya reportaste</value>
+  </data>
+  <data name="DailySummaryReport3" xml:space="preserve">
+    <value>parcelas. Cada 10 minutos podés Cambiar Parcela y obtendrás una nueva.</value>
+  </data>
+  <data name="DailySummaryShare1" xml:space="preserve">
+    <value>en redes sociales. Compartiste</value>
+  </data>
+  <data name="DailySummaryShare3" xml:space="preserve">
+    <value>veces tus reportes y verificaciones. Cuanto mas compartas, mayor llegada vamos a tener a los responsables.</value>
+  </data>
+  <data name="DailySummaryTitle" xml:space="preserve">
+    <value>Resumen Diario</value>
+  </data>
+  <data name="DailySummaryVerify1" xml:space="preserve">
+    <value>Revisaste</value>
+  </data>
+  <data name="DailySummaryVerify3" xml:space="preserve">
+    <value> parcelas ajenas de un total de</value>
+  </data>
+  <data name="DailySummaryVerify5" xml:space="preserve">
+    <value>Buscá las parcelas en verde o amarillo con reborde y hace click en REVISAR</value>
+  </data>
+  <data name="DailySummaryYourPoints" xml:space="preserve">
+    <value>Tu puntaje actual es </value>
+  </data>
+  <data name="DailySummaryDenounce" xml:space="preserve">
+    <value>Denunciar. </value>
+  </data>
+  <data name="DailySummaryReport" xml:space="preserve">
+    <value>Reportar. </value>
+  </data>
+  <data name="DailySummaryShare" xml:space="preserve">
+    <value>Compartir</value>
+  </data>
+  <data name="DailySummaryVerify" xml:space="preserve">
+    <value>Verificar. </value>
+  </data>
+</root>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>La Peregrina.kml</name>
+	<Style id="inline101">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline50">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline123</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline101</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline123">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>La Peregrina</name>
+		<open>1</open>
+		<description>La Peregrina (Bruno Mauricio Varela Marín)</description>
+		<Placemark>
+			<name>La Peregrina</name>
+			<styleUrl>#inline50</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-62.86809277267312,-24.43381740504984,0 -62.83422733525118,-24.43398380333399,0 -62.83378710794413,-24.46597913436395,0 -62.86893755253407,-24.46578806911217,0 -62.86956485761431,-24.48835738988744,0 -62.72896280337417,-24.48944190200434,0 -62.73125341043495,-24.40363614562743,0 -62.86857587123418,-24.40355760362008,0 -62.86809277267312,-24.43381740504984,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

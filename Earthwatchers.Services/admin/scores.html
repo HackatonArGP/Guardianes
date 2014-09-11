@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <title>Guardianes Admin - Scores</title> 
+        <script src="jquery-1.6.2.min.js" type="text/javascript"></script>
+        <script src="jquery.base64.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            function getAuthString() {
+                return "Basic " + $.base64Encode(document.getElementById("tbUsername").value + ":" + document.getElementById("tbPassword").value);
+            }
+
+            $(function () {
+                $(".addScore").click(function () {
+                    var earthwatcherid = $("input#earthwatcheridadd").val();
+                    var points = $("input#points").val();
+                    var action = $("input#action").val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "../api/scores",
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("Authorization", getAuthString());
+                        },
+                        data: "{\"EarthwatcherId\":\"" + earthwatcherid + "\",\"Points\":\"" + points + "\",\"Action\":\"" + action + "\" }",
+                        contentType: "application/json ; charset=utf-8",
+                        dataType: "json",
+                        success: function () {
+                            alert("Congratulations, score is added");
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert("ai error!");
+                        }
+                    });
+                    return false;
+                });
+            });
+
+
+            $(function () {
+                $(".getScores").click(function () {
+                    $.ajax({
+                        type: "GET",
+                        url: "../api/scores?user=" + $("#EarthwatcherId").val(),
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("Authorization", getAuthString());
+                        },
+                        success: function (data) {
+                            $('#result').html("result: '" + data + "'");
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert("error, user does already exist? " + name);
+                        }
+                    });
+                    return false;
+                });
+            });
+
+        </script>
+    </head> 
+    <body>
+
+        <h3>Scores</h3>
+        <br />
+        username: <input type="text" id="tbUsername"/><br />
+        password: <input type="password" id="tbPassword"/><br />
+        <br />
+        <h4>Add satellite image (authenticated)</h4>
+        <form name="addScore">
+          <table border="0">
+          <tr>
+              <td><label for="EarthwatcherId">Earthwatcher ID: </label></td>
+              <td><input type="text" name="EarthwatcherIdAdd" id="earthwatcheridadd" required/></td>
+          </tr>
+          <tr>
+              <td><label for="Points">Points: </label></td>
+              <td><input type="text" name="points" id="points" required/></td>
+          </tr> 
+          <tr>
+              <td><label for="Name">Action: </label></td>
+              <td><input type="text" name="action" id="action" required/></td>
+          </tr>
+          </table>
+           <input type="submit" value="vuur!" class="addScore"/>
+        </form>
+        <br />
+
+        <h4>Get scores for earthwatcher (authenticated)</h4>
+          <form name="getScores">
+          <table border="0">
+          <tr>
+          <td><label for="Name">Earthwatcher ID: </label></td>
+          <td><input type="text" name="EarthwatcherId" id="EarthwatcherId"/></td>
+           </tr>
+              <tr><td><input type="submit" value="vuur!" class="getScores"/></td></tr>
+           </table>
+           </form>
+        <br/>
+        Result:
+        <div id="result"></div>
+        <a href="index.html">back</a>
+    </body> 
+</html>

@@ -1,0 +1,42 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:System="clr-namespace:System;assembly=mscorlib"
+	xmlns:controls="clr-namespace:EarthWatchers.SL.GUI.Controls" 
+    xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+    xmlns:mswindows="clr-namespace:Microsoft.Windows;assembly=System.Windows.Controls.Toolkit"
+	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+	mc:Ignorable="d" 
+	x:Class="EarthWatchers.SL.GUI.Controls.LayerList">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Path Data="M 130,0 145,31 130,62 0,62 0,0 Z" Stroke="#FFb0cf0f" StrokeThickness="1">
+            <Path.Fill>
+                <SolidColorBrush Color="Black" Opacity="0.5" />
+            </Path.Fill>
+        </Path>
+        
+        <Grid Margin="20,10,20,10" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="CAPAS" VerticalAlignment="Top" Foreground="#FF9cb60e" FontSize="15" FontFamily="/EarthWatchers.SL;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Cursor="Hand" MouseLeftButtonDown="addLayerButton">
+                <Image Source="../../Resources/Images/add.png" Stretch="None" />
+                <TextBlock Margin="5,0,5,0" VerticalAlignment="Center" FontSize="13" Text="Agregar Capa" FontFamily="/EarthWatchers.SL;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+            </StackPanel>
+        </Grid>
+
+        <StackPanel x:Name="layerWrapper" Orientation="Horizontal" Grid.Column="1" Margin="-15,0,0,0"  />
+
+        <controls:BaseLayerControl Grid.Column="2" x:Name="baselayerControl" HorizontalAlignment="Center"  />
+    </Grid>
+</UserControl>

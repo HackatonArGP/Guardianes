@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>San Bernardo o Santa Ana.kml</name>
+	<Style id="inline13">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline2">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline13</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>San Bernardo o Santa Ana</name>
+		<open>1</open>
+		<description>San Bernardo o Santa Ana (Ignacio Carlos Pisani y Claudio Javier Scarabotti)</description>
+		<Placemark>
+			<name>San Bernardo o Santa Ana</name>
+			<styleUrl>#inline</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-63.79791172452506,-24.38687857175045,0 -63.79332895776287,-24.38495524189671,0 -63.7916796908891,-24.38133221961442,0 -63.78959593864406,-24.38056157695233,0 -63.78452391803927,-24.38070373407308,0 -63.7841960076798,-24.37558932564257,0 -63.78282486308779,-24.37368162002391,0 -63.77807326167928,-24.37380509723063,0 -63.77207593899326,-24.37230334438578,0 -63.76408797432715,-24.32778926252637,0 -63.76953103341565,-24.32691823140426,0 -63.76370785038306,-24.29775142890281,0 -63.78221020567099,-24.30085760277823,0 -63.79791172452506,-24.38687857175045,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

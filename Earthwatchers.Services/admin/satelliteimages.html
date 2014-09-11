@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <title>Guardianes Admin - SatelliteImages</title>
+        <script src="jquery-1.6.2.min.js" type="text/javascript"></script>
+        <script src="jquery.base64.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            function getAuthString() {
+                return "Basic " + $.base64Encode(document.getElementById("tbUsername").value + ":" + document.getElementById("tbPassword").value);
+            }
+            
+            var formatUTCDate = function (d) {
+                var str = Date.UTC(d.getFullYear(), d.getMonth(), d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds(), 0);
+                return str;
+            };
+
+            $(function () {
+
+                $("input#AcquisitionDate").val(formatUTCDate(new Date('2013-05-07')))
+                $(".addSatelliteImage").click(function () {
+                    var xmin = $("input#xmin").val();
+                    var xmax = $("input#xmax").val();
+                    var ymin = $("input#ymin").val();
+                    var ymax = $("input#ymax").val();
+
+                    var wkt = "POLYGON((" + xmin + " " + ymin + ", " + xmax + " " + ymin + ", " + xmax + " " + ymax + ", " + xmin + " " + ymax + ", " + xmin + " " + ymin + "))";
+                    var satelliteimage = new Object();
+                    satelliteimage.Name = $("input#Name").val();
+                    satelliteimage.Wkt = wkt;
+                    satelliteimage.Provider = $("input#Provider").val();
+                    satelliteimage.ImageType = $("input#ImageType").val();
+                    satelliteimage.UrlTileCache = $("input#UrlTilecache").val();
+                    satelliteimage.UrlMetadata = $("input#UrlMetadata").val();
+                    satelliteimage.MinLevel = $("input#MinLevel").val();
+                    satelliteimage.MaxLevel = $("input#MaxLevel").val();
+
+                    satelliteimage.IsCloudy = $('#IsCloudyCheckBox').is(':checked');
+
+                    var acquisitionDate = new Date($("input#AcquisitionDate").val());
+                    var published = new Date($("input#Published").val());
+                    if (!isNaN(acquisitionDate)) satelliteimage.AcquisitionDate = "\/Date(" + formatUTCDate(acquisitionDate) + ")\/";
+                    if (!isNaN(published)) satelliteimage.Published = "\/Date(" + formatUTCDate(published) + ")\/";
+
+                    var name = $("input#Name").val();
+                    if (name == "") {
+                        alert("error: give satellite image name");
+                        return false;
+                    }
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/api/satelliteimages",
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("Authorization", getAuthString());
+                        },
+                        data: JSON.stringify(satelliteimage),
+                        contentType: "application/json ; charset=utf-8",
+                        dataType: "json",
+                        success: function () {
+                            alert("Congratulations, satelliteimage is added.");
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert("error, something is wrong adding satelliteimage " + name);
+                        }
+                    });
+                    return false;
+                });
+            });
+
+
+            $(function () {
+                $(".deleteSatelliteImage").click(function () {
+                    var id = $("input#satelliteimageid").val();
+                    if (id == "") {
+                        alert("error: give satellite image id");
+                        return false;
+                    }
+                    $.ajax({
+                        type: "POST",
+                        url: "/api/satelliteimages/del",
+                        data: JSON.stringify(id),
+                        contentType: "application/json ; charset=utf-8",
+                        dataType: "json",
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("Authorization", getAuthString());
+                        },
+                        success: function () {
+                            alert("Congratulations, satellite image is deleted.");
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert("error, satellite image does not exist? " + id);
+                        }
+                    });
+                    return false;
+                });
+            });
+
+        </script> 
+
+        <style type="text/css">
+            input[type=text], input[type=number], input[type=password], input[type=date]
+            {
+                width: 200px;
+            }
+        </style>
+    </head> 
+    <body>
+        <h3>Satellite images</h3>
+        <h4>Show all satelliteimages</h4>
+        <a href="/api/satelliteimages">show list of all satellite images</a><br/>
+        <br/>
+        <br>
+        username: <input type="text" id="tbUsername"/><br />
+        password: <input type="password" id="tbPassword"/><br />
+        <br />
+        <h4>Add satellite image (authenticated)</h4>
+        <form name="addSatelliteImage">
+          <table border="0">
+          <tr>
+              <td><label for="Name">Satellite Image Name (example: 'Intermap SAR 11 july 2011'): </label></td>
+              <td><input type="text" name="Name" id="Name" required /></td>
+          </tr>
+          <tr>
+              <td><label for="Name">Xmin (example borneo: 111): </label></td>
+              <td><input type="number" name="xmin" id="xmin" required /></td>
+          </tr> 
+          <tr>
+              <td><label for="Name">Xmax (example borneo: 112): </label></td>
+              <td><input type="number" name="xmax" id="xmax" required /></td>
+          </tr>
+          <tr>
+              <td><label for="Name">Ymin (example borneo: -0.02): </label></td>
+              <td><input type="number" name="ymin" id="ymin" required /></td>
+          </tr>
+          <tr>
+              <td><label for="Name">Ymax (example borneo: 0.02): </label></td>
+              <td><input type="number" name="ymax" id="ymax" required /></td>
+          </tr>
+          <tr>
+              <td><label for="Name">Minimum Zoomlevel (example: 1): </label></td>
+              <td><input type="number" name="MinLevel" id="MinLevel" value="6" required /></td>
+          </tr>
+          <tr>
+              <td><label for="Name">Maximum Zoomlevel (example: 12): </label></td>
+              <td><input type="text" name="MaxLevel" id="MaxLevel" value="13" required /></td>
+          </tr>
+          <tr>
+              <td><label for="Name">Provider (example: 'Intermap') </label></td>
+              <td><input type="text" name="Provider" id="Provider" value="USGS" required /></td>
+          </tr>
+          <tr>
+              <td><label for="Name">ImageType (EVI = 0, Infrared = 1, TrueColor = 2, Aerial = 3, SAR = 4)</label></td>
+              <td>
+                 <input type="number" name="ImageType" id="ImageType" value="2" required />
+              </td>
+          </tr>
+          <tr>
+              <td><label for="Name">Url Tile Cache (example: 'http://geodan.blob.core.windows.net/satellite/20070621_intermap_sar') </label></td>
+              <td width="80"><input type="text" name="UrlTilecache" id="UrlTilecache" required /></td>
+          </tr>
+          <tr>
+              <td><label for="Name">Url Metadata (example: 'http://www.usgs.gov/') </label></td>
+              <td><input type="text" name="UrlMetadata" id="UrlMetadata" value="http://www.usgs.gov/"></td>
+          </tr>
+          <tr>
+            <td><label for="Name">Acquisition UTC Date (example: 2012-01-30): </label></td>
+            <td><input type="date" name="AcquisitionDate" id="AcquisitionDate" /></td>
+          </tr>
+          <tr>
+            <td><label for="Name">Published UTC Date (example: 2012-01-30): </label></td>
+            <td><input type="date" name="Published" id="Published" value="" /></td>
+          </tr>
+          <tr>
+            <td><label for="IsCloudyCheckBox">Tiene Nubes?: </label></td>
+            <td><input type="checkbox" name="IsCloudyCheckBox" id="IsCloudyCheckBox" /></td>
+          </tr>
+
+          </table>
+           <input type="submit" value="vuur!" class="addSatelliteImage"/>
+        </form>
+        <br />
+
+        <h4>Delete Satellite image (authenticated)</h4>
+        <form name="deleteSatelliteImage">
+          <label for="ID">Satellite image ID: </label>
+          <input type="text" name="satelliteimageid" id="satelliteimageid"/>
+           <input type="submit" value="vuur!" class="deleteSatelliteImage"/>
+        </form>
+        <br/>
+
+        <a href="index.html">back</a>
+ 
+    </body> 
+</html>

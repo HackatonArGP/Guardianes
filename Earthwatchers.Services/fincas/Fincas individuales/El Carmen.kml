@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>El Carmen.kml</name>
+	<Style id="inline381100">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline10110">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline421">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline381100</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline10110</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>El Carmen</name>
+		<description>El Carmen (Familia Navilli, Santa Cecilia del Oeste S.A., Molino Cañuelas S.A., Compañía Argentina de Granos S.A., Vitamina, Uma)</description>
+		<Placemark>
+			<name>El Carmen</name>
+			<styleUrl>#inline421</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-63.78256780818079,-23.09337254124321,0 -63.77613457182406,-23.09617393621999,0 -63.77537977489988,-23.10608550172136,0 -63.75305216105086,-23.11815932769937,0 -63.75738693576228,-23.12595265985975,0 -63.80243891418935,-23.10299066757037,0 -63.80550114361044,-23.12117373096075,0 -63.78751826143955,-23.12644850097161,0 -63.78853608818788,-23.13246281854323,0 -63.72484919721866,-23.14931738777627,0 -63.7129587385086,-23.0710423928258,0 -63.7921661243824,-23.04532470766842,0 -63.79859931418814,-23.08077879882479,0 -63.78832936497581,-23.07956140089585,0 -63.78256780818079,-23.09337254124321,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

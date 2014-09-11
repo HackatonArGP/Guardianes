@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Las 86 leguas.kml</name>
+	<StyleMap id="inline65">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline108</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline119</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline108">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline119">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>Las 86 leguas</name>
+		<open>1</open>
+		<description>Las 86 leguas (Bepesa S.A., Juan Martín Guaymas, Carlos Alfredo Calleri y Juan José Calleri)</description>
+		<Placemark>
+			<name>Las 86 leguas</name>
+			<styleUrl>#inline65</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-64.1740071835647,-24.06133040502084,0 -64.13111669172332,-24.06936544848631,0 -64.11528827206064,-23.99617191892567,0 -64.15850319953786,-23.98860386631623,0 -64.1740071835647,-24.06133040502084,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

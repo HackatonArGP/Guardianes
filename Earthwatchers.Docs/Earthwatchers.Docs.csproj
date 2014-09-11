@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D3E7C3E-0397-450B-AAF3-164EBF5B6F0A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Earthwatchers.Docs</RootNamespace>
+    <AssemblyName>Earthwatchers.Docs</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Deploys\2014-03-19\Basecamp_Delete.sql" />
+    <Content Include="Deploys\2014-03-19\Basecamp_Edit.sql" />
+    <Content Include="Deploys\2014-03-19\Basecamp_GetById.sql" />
+    <Content Include="Deploys\2014-03-19\Basecamp_Insert.sql" />
+    <Content Include="Deploys\2014-03-19\Comments-AddColumn-IsDeleted.sql" />
+    <Content Include="Deploys\2014-03-19\Comments_DeleteComment.sql" />
+    <Content Include="Deploys\2014-03-19\Comments_GetCommentsByLand.sql" />
+    <Content Include="Deploys\2014-03-19\Comments_GetCommentsByUserId.sql" />
+    <Content Include="Deploys\2014-03-19\Contest_GetWinner.sql" />
+    <Content Include="Deploys\2014-03-19\Land-AddColumn-ConfirmedBy.sql" />
+    <Content Include="Deploys\2014-03-19\Lands_Get.sql" />
+    <Content Include="Deploys\2014-03-19\Lands_UpdateDemand.sql" />
+    <Content Include="Deploys\2014-03-19\Land_AddVerification.sql" />
+    <Content Include="Deploys\2014-03-19\Land_GetLastUsersWithActivityScore.sql" />
+    <Content Include="Deploys\2014-03-19\Land_GetVerifiedLandsGeoHexCodes_3.sql" />
+    <Content Include="Deploys\2014-03-19\ReCalculate_LandDistanceFromBasecampId.sql" />
+    <Content Include="Deploys\2014-03-19\Scores-AddColumns-Land-Params.sql" />
+    <Content Include="Deploys\2014-03-19\Scores-Updates.sql" />
+    <Content Include="Deploys\2014-03-19\Score_GetLeaderBoard.sql" />
+    <Content Include="Deploys\2014-03-19\Score_GetScoresByUserId.sql" />
+    <Content Include="Deploys\2014-03-19\Score_PostScore.sql" />
+    <Content Include="Deploys\2014-03-19\Verifications-AddColumn-IsDeleted.sql" />
+    <Content Include="Deploys\Scripts para proximo deploy mayo\Insert fincaslayer as layer.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="kmlFiles\Achieved\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="kmlFiles\Fincas individuales\Agrobari 1.kml" />
+    <None Include="kmlFiles\Fincas individuales\Agrobari 2.kml" />
+    <None Include="kmlFiles\Fincas individuales\Cuchuy %28Gastón Larrán%29.kml" />
+    <None Include="kmlFiles\Fincas individuales\Cuchuy.kml" />
+    <None Include="kmlFiles\Fincas individuales\El Carmen.kml" />
+    <None Include="kmlFiles\Fincas individuales\El Cebilar.kml" />
+    <None Include="kmlFiles\Fincas individuales\El Yuto.kml" />
+    <None Include="kmlFiles\Fincas individuales\Establecimiento Chaguaral.kml" />
+    <None Include="kmlFiles\Fincas individuales\Establecimiento Ganadero Los Pozos.kml" />
+    <None Include="kmlFiles\Fincas individuales\Establecimiento Ganadero Pluma de Pato.kml" />
+    <None Include="kmlFiles\Fincas individuales\Establecimiento San Francisco.kml" />
+    <None Include="kmlFiles\Fincas individuales\La Charqueda.kml" />
+    <None Include="kmlFiles\Fincas individuales\La Esmeralda.kml" />
+    <None Include="kmlFiles\Fincas individuales\La Luz del Chaco.kml" />
+    <None Include="kmlFiles\Fincas individuales\La Maravilla A4.kml" />
+    <None Include="kmlFiles\Fincas individuales\La Peregrina.kml" />
+    <None Include="kmlFiles\Fincas individuales\Las 86 leguas.kml" />
+    <None Include="kmlFiles\Fincas individuales\Morocoyal.kml" />
+    <None Include="kmlFiles\Fincas individuales\Nuevo Horizonte.kml" />
+    <None Include="kmlFiles\Fincas individuales\San Bernardo o Santa Ana.kml" />
+    <None Include="kmlFiles\Fincas individuales\Santo Domingo.kml" />
+    <None Include="kmlFiles\FincasLayer.kml" />
+    <None Include="kmlFiles\OTBN.kml" />
+    <None Include="kmlFiles\TablaFincas.xlsx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

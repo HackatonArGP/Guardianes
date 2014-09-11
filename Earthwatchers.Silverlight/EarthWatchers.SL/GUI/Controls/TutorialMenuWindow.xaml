@@ -1,0 +1,70 @@
+﻿<sdk:ChildWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:gui="clr-namespace:EarthWatchers.SL.GUI.Controls"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="EarthWatchers.SL.GUI.Controls.TutorialMenuWindow" 
+    Width="400"  
+    Padding="0"
+    HasCloseButton="True"
+    Style="{StaticResource GPDefaultChildWindow}"
+    Title="GUARDIANES DEL BOSQUE - TUTORIAL">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border x:Name="HelpButton" CornerRadius="10" BorderThickness="4" BorderBrush="#FF9fba0e" Margin="20,20,20,0" Cursor="Hand" Background="White" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Center" Text="Ayuda" Foreground="#FF333333" FontFamily="/EarthWatchers.SL;component/Resources/MyriadPro-Bold.otf#Myriad Pro" FontSize="14" />
+                <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="Preguntas Frecuentes" Foreground="#FF333333" FontFamily="/EarthWatchers.SL;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="12" />
+            </Grid>
+        </Border>
+        <Border x:Name="Button1" Grid.Row="1" CornerRadius="10" BorderThickness="4" BorderBrush="#FF9fba0e" Margin="20,20,20,0" Cursor="Hand" MouseLeftButtonDown="Border_MouseLeftButtonDown" Background="#FFf1fbbb">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Center" Text="Parte 1" Foreground="#FF333333" FontFamily="/EarthWatchers.SL;component/Resources/MyriadPro-Bold.otf#Myriad Pro" FontSize="14" />
+                <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="Como usar Guardianes del Bosque" Foreground="#FF333333" FontFamily="/EarthWatchers.SL;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="12" />
+                <TextBlock Grid.Row="2" HorizontalAlignment="Center" Text="Completado - 500 puntos" Foreground="#FF333333" FontFamily="/EarthWatchers.SL;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="12" />
+            </Grid>
+        </Border>
+        <Border x:Name="Button2" Grid.Row="2" CornerRadius="10" BorderThickness="4" BorderBrush="#FF9fba0e" Background="White" Margin="20,20,20,0" Cursor="Hand" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Center" Text="Parte 2" Foreground="#FF333333" FontFamily="/EarthWatchers.SL;component/Resources/MyriadPro-Bold.otf#Myriad Pro" FontSize="14" />
+                <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="Como revisar reportes de otros guardianes" Foreground="#FF333333" FontFamily="/EarthWatchers.SL;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="12" />
+                <TextBlock x:Name="Status2" Grid.Row="2" HorizontalAlignment="Center" Text="Completado - 500 puntos" Foreground="#FF333333" FontFamily="/EarthWatchers.SL;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="12" />
+            </Grid>
+        </Border>
+        <Border x:Name="Button3" Grid.Row="3" CornerRadius="10" BorderThickness="4" BorderBrush="#FF9fba0e" Background="White" Margin="20" Cursor="Hand" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Center" Text="Parte 3" Foreground="#FF333333" FontFamily="/EarthWatchers.SL;component/Resources/MyriadPro-Bold.otf#Myriad Pro" FontSize="14" />
+                <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="Imágenes de Color Real (Landsat 7)" Foreground="#FF333333" FontFamily="/EarthWatchers.SL;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="12" />
+                <TextBlock x:Name="Status3" Grid.Row="2" HorizontalAlignment="Center" Text="1500 puntos" Foreground="#FF333333" FontFamily="/EarthWatchers.SL;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="12" />
+            </Grid>
+        </Border>
+
+    </Grid>
+
+
+</sdk:ChildWindow>

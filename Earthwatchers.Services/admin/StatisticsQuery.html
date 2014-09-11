@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Guardianes Estadisticas</title>
+
+    <style>
+         body {font-family: Helvetica, Arial, "Lucida Grande", sans-serif;}
+        .tdnumber {text-align: right;}
+        .tdcheck {text-align: center;}
+        .url {width: 300px;}
+        .label {float: left; width: 96px; margin-left: 0px;}
+        .mar3 {margin:3px;}
+        .mar2 {margin:2px;}
+        .ml10{margin-left: 10px;}
+        .inline{display:inline-block;}
+        .top{vertical-align:top;}
+        li {list-style:none; margin:3px;}
+        button:hover { background-color:#b7b7b7;}
+    </style>
+    <link href="../css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="jquery.base64.js" type="text/javascript"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <script src="jquery-ui-1.9.2.js"></script>
+    
+    <!--<script src="ui-bootstrap-0.10.0.min.js"></script>-->
+</head>
+<body>
+      <h3>Administrator - Statistics</h3>
+    <br />
+    <br />
+    <div class="col-lg-offset-1">
+        username:
+        <input type="text" id="tbUsername" value="" />
+        <br />
+        password: 
+        <input class="mar3" type="password" id="tbPassword" value="" />
+    <br />
+    <br />
+
+    </div>
+    
+    <div class="col-lg-1 col-lg-offset-1">
+       Fecha de Inicio: <input id="startDate" type="text"  /> <br />
+        <br />
+       Fecha de Fin: <input id="endDate" type="text" />
+    </div>    
+
+    <div class="col-12 col-lg-offset-3">
+    <ul class="inline">
+        <li><button id="stats_UnicLogin" class="btn btn-block" onclick="LoadStats('UnicLogin')">Logins unicos por dia</button></li>
+        <li><button id="stats_NewUsers" class="btn btn-block" onclick="LoadStats('NewUsers')">Nuevos Usuarios</button></li>
+        <li><button id="stats_Shared" class="btn btn-block" onclick="LoadStats('Shared')">Shared</button></li>
+        <li><button id="stats_TutorialCompletedOld" class="btn btn-block" onclick="LoadStats('TutorialCompletedOld')">Tutorial Completed de registros viejos</button></li>
+        <li><button id="stats_NewUserCheckOther" class="btn btn-block" onclick="LoadStats('NewUserCheckOther')">Nuevos Usuarios Check parcela Ajena</button></li>
+    </ul>
+    <ul class="inline">
+        <li><button id="stats_TotalLogin" class="btn btn-block"  onclick="LoadStats('TotalLogin')">Logins totales en el dia</button></li>
+        <li><button id="stats_NewRegister" class="btn btn-block"  onclick="LoadStats('NewRegister')">Nuevos Registros</button></li>
+        <li><button id="stats_Denounce" class="btn btn-block"  onclick="LoadStats('Denounce')">Denuncias</button></li>
+        <li><button id="stats_Silverlight" class="btn btn-block"  onclick="LoadStats('Silverlight')">Silverlight</button></li>
+        <li><button id="stats_NewUserCheckOwn" class="btn btn-block"  onclick="LoadStats('NewUserCheckOwn')">Nuevos Usuarios Check parcela Propia</button></li>
+    </ul>
+    <ul class="inline top">
+        <li><button id="stas_ExcelComplete" class="btn"><b>Excel Completo</b></button></li>
+    </ul>
+    </div>   
+    
+    <table class="col-lg-12 table table-bordered" style="width:800px;">
+        <thead class="table">
+            <tr>
+                <td style="width:300px;">Fecha</td>
+                <td>Dato</td>
+            </tr>
+        </thead>
+        <tbody id="ResultsTable" class="">
+        </tbody>
+    </table>
+    <a href="index.html" class="col-lg-12">back</a>
+    
+            <script>
+                $(function ()
+                {
+                    $("#startDate").datepicker();
+                });
+  </script>
+
+     <script>
+         $(function ()
+         {
+             $("#endDate").datepicker();
+         });
+  </script>
+
+    <script type="text/javascript">
+
+        function getAuthString()
+        {
+            return "Basic " + $.base64Encode(document.getElementById("tbUsername").value + ":" + document.getElementById("tbPassword").value);
+        }
+
+        function LoadStats(statName)
+        {
+            //stat = {
+            //       Stat: statName,
+            //       StartDate: $("#startDate").val(),
+            //       EndDate: $("#endDate").val()
+            //};
+
+            $('#ResultsTable').html('');
+
+            $.ajax({
+                type: "POST",
+                url: "../api/statisticsquery/getstats",
+                beforeSend: function (xhr)
+                {
+                    xhr.setRequestHeader("Authorization", getAuthString());
+                },
+                data:
+                   {
+                       Stat: statName,
+                       StartDate: ($("#startDate").val()).toString(),
+                       EndDate: ($("#endDate").val()).toString()
+                   },
+                //contentType: "application/json",
+                dataType: "json",
+                success: function (data)
+                {
+                    alert("FUNCIONO");
+                },
+                error: function (xhr, textStatus, errorThrown)
+                {
+                    alert("error, something went wrong");
+                }
+            });
+
+
+            //$.ajax({
+            //    type: 'POST',
+            //    url: "../api/statisticsquery/getstats",
+            //    beforeSend: function (xhr)
+            //    {
+            //        xhr.setRequestHeader("Authorization", getAuthString());
+            //    },
+            //    data: { stats: JSON.stringify(stats) },
+            //    //contentType: "application/json ; charset=utf-8",
+            //    dataType: "json",
+            //    success: function ()//result)
+            //    {
+            //        //$(result).each(function ()
+            //        //{
+            //        //    var a = 1;
+                     
+            //        //});
+            //    },
+            //    error: function (xhr, textStatus, errorThrown)
+            //    {
+            //        alert(errorThrown);
+            //    }
+            //});
+        }
+
+    </script>
+
+</body>
+</html>

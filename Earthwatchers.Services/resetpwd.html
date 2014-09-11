@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Guardianes - Greenpeace</title>
+    <script src="admin/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="admin/jquery.redirect.min.js" type="text/javascript"></script>
+    <script src="admin/jquery.placeholder.min.js" type="text/javascript"></script>
+    <script src="admin/jquery.base64.js" type="text/javascript"></script>
+
+    <script src="admin/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        (function ($) {
+            $.QueryString = (function (a) {
+                if (a == "") return {};
+                var b = {};
+                for (var i = 0; i < a.length; ++i) {
+                    var p = a[i].split('=');
+                    if (p.length != 2) continue;
+                    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+                }
+                return b;
+            })(window.location.search.substr(1).split('&'))
+        })(jQuery);
+
+        $(function () {
+            var guid = $.QueryString["guid"];
+            var ed = $.QueryString["ed"];
+            if (guid == undefined || guid == null || ed == undefined || ed == null) {
+                window.location.href = "index.html";
+            }
+
+            $("#resetbutton").click(function () {
+                var isValid = true;
+                var passwordRegex = /^.*(?=.{6,})(?=.*[a-zA-Z])(?=.*\d).*$/;
+                
+                $("#rError").html('');
+
+                if ($("#tbNewPassword").val().length < 5) {
+                    $("<span></span>").html("La contraseña debe tener al menos 5 caracteres.").appendTo("#rError");
+                    isValid = false;
+                }
+
+                if ($("#tbNewPassword").val() != $("#tbNewPasswordRepeat").val()) {
+                    $("<span></span>").html("La segunda contraseña no coincide con la primera.").appendTo("#rError");
+                    isValid = false;
+                }
+
+                //Traigo del querystring el Guid
+                var guid = $.QueryString["guid"];
+                var ed = $.QueryString["ed"];
+                if (guid == undefined || guid == null || ed == undefined || ed == null) {
+                    $("<span></span>").html("Ocurrió un error. Vuelva a intentarlo más tarde").appendTo("#rError");
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    $("#loadinggifP").show();
+                    $.ajax({
+                        url: "/api/earthwatchers/resetPassword",
+                        type: "POST",
+                        data: "{\"Guid\":\"" + guid +
+                        "\",\"Region\":\"" + ed +
+                        "\",\"Password\":\"" + $("#tbNewPassword").val() + "\" }",
+                        contentType: "application/json ; charset=utf-8",
+                        success: function () {
+                            $("#loadinggifP").hide();
+                            $.fancybox.open([
+                                {
+                                    href: '#resetPassowrdDiv',
+                                    scrolling: 'no'
+                                }]);
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            $("#loadinggifP").hide();
+                            $("<span></span>").html(errorThrown + " - " + textStatus).appendTo("#rError");
+                        }
+                    });
+                }
+            });
+
+        });
+    </script>
+    <link href="css/ew.css" rel="stylesheet" />
+
+    <link href="css/jquery.fancybox.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="floater">
+        <div class="contents">
+            <div>
+                <img src="Images/logo.png" />
+            </div>
+            <div style="margin-top: 15px">
+                <img src="Images/guardianes.png" />
+            </div>
+            <div class="container" id="container" style="width: 340px">
+                <div>
+
+                    <form name="loginform" id="loginform" class="login-form">
+                        <div class="content">
+                            <div class="headertxt">
+                                Ingresá tu nueva contraseña
+                            </div>
+
+                            <input name="tbNewPassword" id="tbNewPassword" type="password" class="input" placeholder="nueva contraseña">
+
+                            <input name="tbNewPasswordRepeat" type="password" id="tbNewPasswordRepeat" class="input" placeholder="repetir contraseña">
+
+                            <img id="loadinggifP" src="css/fancybox_loading.gif" style="display: none; float: right; margin-top: 20px" />
+
+                            <input type="button" value="RESETEAR CONTRASEÑA >>" id="resetbutton" class="button" />
+
+                            <div id="rError" class="error">
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="resetPassowrdDiv" style="display: none; width: 500px;">
+        <img src="Images/check-icon.png" alt="Ok" />
+        Tu contraseña ha sido correctamente reseteada.
+        <br />
+        <br />
+        Volvé a la página inicial de Guardianes para comenzar a cuidar del bosque
+        <br />
+        <br />
+        <div class="slink">
+            <a href="index.html"><< Volver</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,206 @@
+﻿<sdk:ChildWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:gui="clr-namespace:Earthwatchers.UI.GUI.Controls"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Earthwatchers.UI.GUI.Controls.TutorialMenuWindow" 
+    Width="500" 
+    Height="520"
+    Padding="0"
+    HasCloseButton="True"
+    Style="{StaticResource GPDefaultChildWindow}"
+    Title="{Binding Path=Help8, Source={StaticResource Labels}}">
+    <Grid>
+        <Grid x:Name="MainGrid" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Border x:Name="HelpButton" CornerRadius="10" BorderThickness="4" BorderBrush="#FF9fba0e" Margin="40,15,40,0" Cursor="Hand" Background="White" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Help1, Source={StaticResource Labels}}" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" FontSize="16" />
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="{Binding Path=Help2, Source={StaticResource Labels}}" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" />
+                </Grid>
+            </Border>
+            <Border x:Name="ScoresButton" Grid.Row="1" CornerRadius="10" BorderThickness="4" BorderBrush="#FF9fba0e" Margin="40,20,40,0" Cursor="Hand" Background="White" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Help10, Source={StaticResource Labels}}" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" FontSize="16" />
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="{Binding Path=Help11, Source={StaticResource Labels}}" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" />
+                </Grid>
+            </Border>
+            <Border x:Name="Button1" Grid.Row="2" CornerRadius="10" BorderThickness="4" BorderBrush="#FF9fba0e" Margin="40,20,40,0" Cursor="Hand" MouseLeftButtonDown="Border_MouseLeftButtonDown" Background="#FFf1fbbb">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Text="Pre Tutorial" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" FontSize="16" />
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="{Binding Path=Help4, Source={StaticResource Labels}}" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" />
+                    <TextBlock Grid.Row="2" x:Name="Status1" HorizontalAlignment="Center" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" />
+                </Grid>
+            </Border>
+
+            <Border x:Name="Button2" Grid.Row="3" CornerRadius="10" BorderThickness="4" BorderBrush="#FF9fba0e" Margin="40,20,40,0" Cursor="Hand" MouseLeftButtonDown="Border_MouseLeftButtonDown" Background="#FFf1fbbb">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Text="Tutorial" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" FontSize="16" />
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="{Binding Path=Help6, Source={StaticResource Labels}}" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" />
+                    <TextBlock Grid.Row="2" x:Name="Status2" HorizontalAlignment="Center" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" />
+                </Grid>
+            </Border>
+
+            <Border x:Name="Button3" Grid.Row="4" Visibility="Visible" CornerRadius="10" BorderThickness="4" BorderBrush="#FF9fba0e" Background="White" Margin="40,20,40,20" Cursor="Hand" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Help7, Source={StaticResource Labels}}" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" FontSize="16" />
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="{Binding Path=TutorialMiniGame1, Source={StaticResource Labels}}" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" />
+                    <TextBlock x:Name="Status3" Grid.Row="2" HorizontalAlignment="Center" Foreground="#FF333333" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" FontSize="14" />
+                </Grid>
+            </Border>
+
+        </Grid>
+        <ScrollViewer x:Name="FAQGrid" Visibility="Collapsed">
+            <TextBlock FontSize="13"
+                       Foreground="Black"
+                       TextWrapping="Wrap"
+                       Margin="10">
+                <Run FontWeight="Bold"
+                     Text="{Binding Path=TutorialMenuWin1, Source={StaticResource Labels}}"></Run>
+            <LineBreak />
+                <Run FontWeight="Bold"
+                     Text="{Binding Path=TutorialMenuWin2, Source={StaticResource Labels}}"></Run>
+                <LineBreak />
+                <LineBreak />
+                <Run FontWeight="Bold"
+                     Text="{Binding Path=TutorialMenuWin3, Source={StaticResource Labels}}"></Run>
+                <LineBreak />
+                <Run FontWeight="Bold"
+                     Text="{Binding Path=TutorialMenuWin4, Source={StaticResource Labels}}"></Run>
+                <LineBreak />
+                <LineBreak />
+                <Run FontWeight="Bold"
+                     Text="{Binding Path=TutorialMenuWin5, Source={StaticResource Labels}}"></Run>
+                <LineBreak />
+                 <Run FontWeight="Bold"
+                      Text="{Binding Path=TutorialMenuWin6, Source={StaticResource Labels}}">
+                 </Run>
+                <LineBreak />
+                <LineBreak />
+                <Run FontWeight="Bold"
+                     Text="{Binding Path=TutorialMenuWin7, Source={StaticResource Labels}}"></Run>
+                <LineBreak />
+                 <Run FontWeight="Bold"
+                      Text="{Binding Path=TutorialMenuWin8, Source={StaticResource Labels}}"></Run>
+            </TextBlock>
+        </ScrollViewer>
+        <ScrollViewer x:Name="ScoringGrid" Visibility="Collapsed">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="150" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Border BorderThickness="0,0,0,1" BorderBrush="#FF333333" Grid.ColumnSpan="2" Height="1" VerticalAlignment="Bottom" />
+                <StackPanel Orientation="Vertical" Margin="10,5">
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="{Binding Path=Help12, Source={StaticResource Labels}}" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                    <TextBlock FontSize="14" Foreground="#FF333333" Text="{Binding Path=Help13, Source={StaticResource Labels}}" Margin="0,5" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10,5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="100" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="{Binding Path=NavBar9, Source={StaticResource Labels}}" Margin="5,0" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                </StackPanel>
+                
+                <Border Grid.Row="1" BorderThickness="0,0,0,1" BorderBrush="#FF333333" Grid.ColumnSpan="2" Height="1" VerticalAlignment="Bottom" />
+                <StackPanel Grid.Row="1" Orientation="Vertical" Margin="10,5">
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="{Binding Path=Help14, Source={StaticResource Labels}}" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                    <TextBlock FontSize="14" Foreground="#FF333333" Text="{Binding Path=Help15, Source={StaticResource Labels}}" Margin="0,5" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10,5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="2000" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="{Binding Path=NavBar9, Source={StaticResource Labels}}" Margin="5,0" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                </StackPanel>
+                
+                <Border Grid.Row="2" BorderThickness="0,0,0,1" BorderBrush="#FF333333" Grid.ColumnSpan="2" Height="1" VerticalAlignment="Bottom" />
+                <StackPanel Grid.Row="2" Orientation="Vertical" Margin="10,5">
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="{Binding Path=Help16, Source={StaticResource Labels}}" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                    <TextBlock FontSize="14" Foreground="#FF333333" Text="{Binding Path=Help17, Source={StaticResource Labels}}" Margin="0,5" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                </StackPanel>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="500" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="{Binding Path=NavBar9, Source={StaticResource Labels}}" Margin="5,0" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                </StackPanel>
+
+                <Border Grid.Row="3" BorderThickness="0,0,0,1" BorderBrush="#FF333333" Grid.ColumnSpan="2" Height="1" VerticalAlignment="Bottom" />
+                <StackPanel Grid.Row="3" Orientation="Vertical" Margin="10,5">
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="{Binding Path=Help18, Source={StaticResource Labels}}" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                    <TextBlock FontSize="14" Foreground="#FF333333" Text="{Binding Path=Help19, Source={StaticResource Labels}}" Margin="0,5" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                </StackPanel>
+                <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="10,5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="500" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="{Binding Path=NavBar9, Source={StaticResource Labels}}" Margin="5,0" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                </StackPanel>
+
+                <Border Grid.Row="4" BorderThickness="0,0,0,1" BorderBrush="#FF333333" Grid.ColumnSpan="2" Height="1" VerticalAlignment="Bottom" />
+                <StackPanel Grid.Row="4" Orientation="Vertical" Margin="10,5">
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="{Binding Path=Help20, Source={StaticResource Labels}}" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                    <TextBlock FontSize="14" Foreground="#FF333333" Text="{Binding Path=Help21, Source={StaticResource Labels}}" Margin="0,5" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                </StackPanel>
+                <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="10,5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="500" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="{Binding Path=NavBar9, Source={StaticResource Labels}}" Margin="5,0" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                </StackPanel>
+
+                <Border Grid.Row="5" BorderThickness="0,0,0,1" BorderBrush="#FF333333" Grid.ColumnSpan="2" Height="1" VerticalAlignment="Bottom" />
+                <StackPanel Grid.Row="5" Orientation="Vertical" Margin="10,5">
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="{Binding Path=Help22, Source={StaticResource Labels}}" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                    <TextBlock FontSize="14" Foreground="#FF333333" Text="{Binding Path=Help23, Source={StaticResource Labels}}" Margin="0,5" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                </StackPanel>
+                <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="10,5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="500" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="{Binding Path=NavBar9, Source={StaticResource Labels}}" Margin="5,0" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                </StackPanel>
+
+                <Border Grid.Row="6" BorderThickness="0,0,0,1" BorderBrush="#FF333333" Grid.ColumnSpan="2" Height="1" VerticalAlignment="Bottom" />
+                <StackPanel Grid.Row="6" Orientation="Vertical" Margin="10,5">
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="{Binding Path=Help24, Source={StaticResource Labels}}" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                    <TextBlock FontSize="14" Foreground="#FF333333" Text="{Binding Path=Help25, Source={StaticResource Labels}}" Margin="0,5" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Regular.otf#Myriad Pro" />
+                </StackPanel>
+                <StackPanel Grid.Row="6" Orientation="Horizontal" Margin="10,5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="500" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                    <TextBlock FontSize="16" Foreground="#FF333333" Text="{Binding Path=NavBar9, Source={StaticResource Labels}}" Margin="5,0" TextWrapping="Wrap" FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro-Bold.otf#Myriad Pro" />
+                </StackPanel>
+            </Grid>
+
+        </ScrollViewer>
+    </Grid>
+
+</sdk:ChildWindow>

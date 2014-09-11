@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Santo Domingo.kml</name>
+	<StyleMap id="inline57">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline650</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline4301</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline650">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline4301">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>Santo Domingo o Palo Santo</name>
+		<open>1</open>
+		<description>Santo Domingo o Palo Santo (Martín Laplacette, Santiago Eugenio Caride Fitte, Juan Manuel Arias, Emilio José Pellet Lastra, Pablo Raúl Munzi, Marcelo Augusto Salinas)</description>
+		<Placemark>
+			<name>Santo Domingo</name>
+			<styleUrl>#inline57</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-62.38131529430545,-23.67494660784493,0 -62.38137524366696,-23.66383318440941,0 -62.35149324180691,-23.66357416492512,0 -62.35240333473166,-23.63275964211098,0 -62.37322455261004,-23.63265279733044,0 -62.37345527144942,-23.61032887582632,0 -62.351903080028,-23.6105871954153,0 -62.35279320612647,-23.53944941747162,0 -62.45275172820897,-23.54119191440131,0 -62.45234382002058,-23.58781264651971,0 -62.42971744606417,-23.58711014625521,0 -62.42842821519379,-23.65094467589257,0 -62.45180259526578,-23.65149757319427,0 -62.45298208214032,-23.62685125514818,0 -62.49836940598615,-23.62716517135131,0 -62.49875930637229,-23.67549124550894,0 -62.38131529430545,-23.67494660784493,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

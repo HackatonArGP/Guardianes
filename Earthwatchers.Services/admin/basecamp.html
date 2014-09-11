@@ -1,0 +1,542 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Guardianes Admin</title>
+    <link href="uploadfile.css" rel="stylesheet" />
+    <script src="jquery-1.6.2.min.js"></script>
+    <script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="jquery.base64.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        function getAuthString() {
+            return "Basic " + $.base64Encode(document.getElementById("tbUsername").value + ":" + document.getElementById("tbPassword").value);
+        }
+
+        function LoadBasecamps() {
+            $('#basecampstable').html('');
+
+            $.ajax({
+                type: "GET",
+                data: "{\"Name\":\"" + document.getElementById("tbUsername").value + "\",\"Password\":\"" + document.getElementById("tbPassword").value + "\" }",
+                url: "../api/basecamp",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Authorization", getAuthString());
+                },
+                contentType: "application/json ; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $(result).each(function () {
+                        var html = '<td>' + $(this).attr('Id') + '</td>'
+                        + '<td>' + $(this).attr('Name') + '</td>'
+                        + '<td>' + $(this).attr('DetailName') + '</td>'
+                        + '<td class="tdnumber">' + $(this).attr('Latitude') + '</td>'
+                        + '<td class="tdnumber">' + $(this).attr('Longitude') + '</td>'
+                        + '<td class="tdnumber">' + $(this).attr('Probability') + '</td>'
+                        + '<td>' + $(this).attr('ShortText') + '</td>'
+                        + '<td><a href="#" onclick="deleteBasecamp(' + $(this).attr('Id') + ');" title="Borrar Basecamp">X</a></td>'
+                        + '<td><a href="#" onclick="editBasecamp(' + $(this).attr('Id') + ');" title="Editar Basecamp">&laquo;&laquo;&laquo;&laquo</a></td>';
+
+                        $('<tr></tr>').html(html).appendTo('#basecampstable');
+                    });
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+
+        }
+
+        function updateKml(id)
+        {
+            $('#overlayFincas').removeClass("collapsed");
+            $('#overlayFincas').addClass("visible");
+
+            $.ajax({
+                type: 'POST',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Authorization", getAuthString());
+                },
+                url: "../api/basecamp/readkml",
+                data: JSON.stringify(id),
+                dataType: "json",
+                contentType: 'application/json; charset=utf-8',
+                success: function (result)
+                {
+                    $('#overlayFincas').removeClass("visible");
+                    $('#overlayFincas').addClass("collapsed");
+
+                    if (result.length == 0) {
+                        alert('Operación Exitosa!');
+                        // Presionar el boton de done en el uploader y guardar cambios de edicion.
+                        $(".ajax-file-upload-green").click();
+                        $("#editBcEnded").click();
+                        LoadBasecamps();
+                    }
+                    else {
+                        var errorList = 'Errores: ';
+
+                        for (i = 0; i < result.length; i++) {
+                            errorList += result[i] + "\n";
+                        }
+                        alert(errorList);
+                    }
+                },
+                error: function (xhr, textStatus, errorThrown)
+                {
+                    $('#overlayFincas').removeClass("visible");
+                    $('#overlayFincas').addClass("collapsed");
+                    alert(errorThrown);
+                }
+            });
+        }
+
+        function deleteBasecamp(id) {
+            if (id == "") {
+                alert("error");
+                return false;
+            }
+
+            if (confirm('Está seguro que desea borrar este basecamp?'))
+            {
+                $('#overlayDelete').removeClass("collapsed");
+                $('#overlayDelete').addClass("visible");
+
+                $.ajax({
+                    type: 'POST',
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", getAuthString());
+                    },
+                    url: "../api/basecamp/del",
+                    data: JSON.stringify(id),
+                    //dataType: "json", NO RETORNA NADA, NO VA
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (result)
+                    {
+                        $('#overlayDelete').removeClass("visible");
+                        $('#overlayDelete').addClass("collapsed");
+                        alert('Operación Exitosa!');
+                        LoadBasecamps();
+                    },
+                    error: function (xhr, textStatus, errorThrown)
+                    {
+                        $('#overlayDelete').removeClass("visible");
+                        $('#overlayDelete').addClass("collapsed");
+                        alert(errorThrown);
+                    }
+                });
+            }
+        }
+
+        var idToEdit;
+        var prevLong;
+        var prevLat;
+        function editBasecamp(id)
+        {
+            //Vuelvo a mostrar el uploader
+            $('.ajax-upload-dragdrop').removeClass('collapsed');
+            $('.ajax-upload-dragdrop').addClass('visible');
+
+            if (id == "")
+            {
+                alert("error");
+                return false;
+            }
+            else
+                idToEdit = id;
+
+
+            $('#add').addClass("collapsed");
+            $('#editBox').removeClass("collapsed");
+            $('#editBox').addClass("visible");
+
+            //Cargo el basecampselect
+            $.ajax({
+                type: "GET",
+                url: "../api/basecamp/bases",
+                contentType: "application/json ; charset=utf-8",
+                dataType: "json",
+                success: function (items) {
+                    $.each(items, function (i, item) {
+                        $('#newBasecampselect').append($('<option>', {
+                            value: item.Id,
+                            text: item.Name
+                        }));
+                    });
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+
+            //Cargo los campos
+            $.ajax({
+                type: "POST",
+                url: "../api/basecamp/getbyid",
+                data: JSON.stringify(idToEdit),
+                dataType: "json",
+                contentType: "application/json ; charset=utf-8",
+                success: function (basecamp) {
+                    $(basecamp).each(function () {
+                        newNameInput.value = $(this).attr('Name');
+                        newLatitudeInput.value = $(this).attr('Latitude');
+                        newLongitudInput.value = $(this).attr('Longitude');
+                        newProbabilityInput.value = $(this).attr('Probability');
+                        newShortTextInput.value =$(this).attr('ShortText')
+                        prevLat = $(this).attr('Latitude');
+                        prevLong = $(this).attr('Longitude');
+                    })
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+        }
+
+        function recalculateBcDistance(id) {
+
+            if (newLatitudeInput.value != prevLat || newLongitudInput.value != prevLong) {
+                $.ajax({
+                    type: 'POST',
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", getAuthString());
+                    },
+                    url: "../api/basecamp/recalculate",
+                    data: JSON.stringify(id),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (result) {
+                        $('#overlay').removeClass("visible");
+                        $('#overlay').addClass("collapsed");
+                        alert("Congratulations, basecamp edited.");                      
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("An error occurred attempting to recalculate the distances to basecamp.");
+                    }
+                });
+            }
+            else {
+                $('#overlay').removeClass("visible");
+                $('#overlay').addClass("collapsed");
+            }
+
+        }
+
+        function getBasecamps() {
+            //Cargo el basecampselect
+            $.ajax({
+                type: "GET",
+                url: "../api/basecamp/bases",
+                contentType: "application/json ; charset=utf-8",
+                dataType: "json",
+                success: function (items) {
+                    $.each(items, function (i, item) {
+                        $('#basecampselect').append($('<option>', {
+                            value: item.Id,
+                            text: item.Name
+                        }));
+                    });
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+        }
+
+        $(function () {
+
+            getBasecamps();
+
+            //Agregar Basecamp
+            $("#addBasecamp").click(function () {
+                var lat = $('#latitudeInput').val();
+                var long = $('#longitudInput').val();
+                var name = $('#nameInput').val();
+                var probability = parseInt($('#probabilityInput').val());
+                var shortText = $('#shortTextInput').val();
+                var basecampid = $('#basecampselect').val();
+                if (lat < -90 || lat > 90) {
+                    alert('La latitud debe estar entre 90 y -90');
+                    return;
+                }
+                if (long < -180 || long > 180) {
+                    alert('La longitud debe estar entre 180 y -180');
+                    return;
+                }
+
+                if (isNaN(probability) || probability < 0 || probability > 100) {
+                    alert('La probabilidad debe estar entre 0 y 100');
+                    return;
+                }
+
+                if (!isNaN(lat) && !isNaN(long) && !isNaN(probability) && lat != '' && long != '' && probability != '' && name != '') {
+
+                    var basecamp = new Object();
+                    basecamp.Id = basecampid;
+                    basecamp.Latitude = lat;
+                    basecamp.Longitude = long;
+                    basecamp.Probability = probability;
+                    basecamp.DetailName = name;
+                    basecamp.ShortText = shortText;
+                    $('#overlay').removeClass("collapsed");
+                    $('#overlay').addClass("visible");
+
+                    $.ajax({
+                        type: "POST",
+                        url: "../api/basecamp",
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("Authorization", getAuthString());
+                        },
+                        data: JSON.stringify(basecamp),
+                        contentType: "application/json ; charset=utf-8",
+                        dataType: "json",
+                        success: function () {
+                            $('#overlay').removeClass("visible");
+                            $('#overlay').addClass("collapsed");
+
+                            //limpio los inputs
+                            nameInput.value = "";
+                            latitudeInput.value = "";
+                            longitudInput.value = "";
+                            probabilityInput.value = "";
+                            shortTextInput.value = "";
+
+                            alert("Congratulations, basecamp added.");
+                            LoadBasecamps();
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert("error, something went wrong adding basecamp");
+                        }
+                    });
+                }
+                else {
+                    alert('Debe completar todos los datos y los valores deben ser numéricos');
+                }
+            });
+
+            $("#editBcEnded").click(function () {
+                var id = $('#id').val();
+                var lat = $('#newLatitudeInput').val();
+                var long = $('#newLongitudInput').val();
+                var name = $('#newNameInput').val();
+                var probability = parseInt($('#newProbabilityInput').val());
+                var shortText = $('#newShortTextInput').val();
+                var basecampid = $('#newBasecampselect').val();
+                if (isNaN(probability) || probability < 0 || probability > 100) {
+                    alert('La probabilidad debe estar entre 0 y 100');
+                    return;
+                }
+                if (shortText == null || shortText == "" || shortText ==" ")
+                {
+                    alert('El campo Texto Corto, no puede quedar vacío');
+                    return;
+                }
+                if (!isNaN(lat) && !isNaN(long) && !isNaN(probability) && lat != '' && long != '' && probability != '' && name != '' && shortText != null && shortText != "" && shortText != " ")
+                {
+
+                    var basecamp = new Object();
+                    basecamp.Id = basecampid;
+                    basecamp.Latitude = lat;
+                    basecamp.Longitude = long;
+                    basecamp.Probability = probability;
+                    basecamp.DetailName = name;
+                    basecamp.IdDb = idToEdit;
+                    basecamp.ShortText = shortText;
+
+                    $.ajax({
+                        type: 'POST',
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("Authorization", getAuthString());
+                        },
+                        url: "../api/basecamp/edit",
+                        data: JSON.stringify(basecamp),
+                        contentType: "application/json ; charset=utf-8",
+                        dataType: "json",
+                        success: function () {
+                            $('#overlay').removeClass("collapsed");
+                            $('#overlay').addClass("visible");
+                            recalculateBcDistance(idToEdit);
+                            LoadBasecamps();
+                            $('#editBox').removeClass("visible");
+                            $('#editBox').addClass("collapsed");
+                            $('#add').removeClass("collapsed");
+
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert("error, something is wrong editing basecamp");
+                            $('#editBox').removeClass("visible");
+                            $('#editBox').addClass("collapsed");
+                            $('#add').removeClass("collapsed");
+                        }
+                    });
+                }
+                else
+                {
+                    alert('Error, Vuelva a intentarlo');
+                    return;
+                }
+            });
+
+
+
+
+
+            $("#LoadBasecampsButton").click(function () {
+                LoadBasecamps();
+            });
+        });
+
+    </script>
+    <style>
+        #overlay { width: 100%; height: 250%; background-color: black; opacity: 0.5; position: absolute; z-index: 99999; top: 0; right: 0; margin: 0px; }
+        #overlayFincas { width: 100%; height: 250%; background-color: black; opacity: 0.5; position: absolute; z-index: 99999; top: 0; right: 0; margin: 0px; }
+        #overlayDelete { width: 100%; height: 250%; background-color: black; opacity: 0.5; position: absolute; z-index: 99999; top: 0; right: 0; margin: 0px; }
+            #overlay h2 { color: whitesmoke; margin-left: 50%; }
+            #overlayDelete h2 { color: whitesmoke; margin-left: 50%; }
+            #overlayFincas h2 { color: whitesmoke; margin-left: 50%; }
+
+        body { font-family: Helvetica, Arial, "Lucida Grande", sans-serif; }
+
+        .tdnumber { text-align: right; }
+
+        .tdcheck { text-align: center; }
+
+        .url { width: 300px; }
+        .label { float: left; width: 120px; }
+        .visible { visibility: visible; display: block; }
+        .collapsed { visibility: collapse; display: none; }
+    </style>
+</head>
+<body>
+
+    <div id="overlay" class="collapsed">
+        <h2>
+            - GUARDANDO CAMBIOS,  <br />
+            - RECALCULANDO DISTANCIA DE BASECAMPS...<br />
+            <br />
+            Esta accion puede llevar algunos minutos.
+        </h2>
+    </div>
+
+    <div id="overlayFincas" class="collapsed">
+        <h2>
+            - LEYENDO EL KML, <br />
+            - GUARDANDO DATOS, <br />
+            - INTERSECTANDO HEXAGONOS CON LAS FINCAS...<br />
+            <br />
+            Estas acciones puede llevar algunos minutos.
+        </h2>
+    </div>
+
+    <div id="overlayDelete" class="collapsed">
+        <h2>
+            - ELIMINANDO ZONA DE LA BASE DE DATOS,
+            - INTERSECTANDO HEXAGONOS CON LAS FINCAS...<br />
+            <br />
+            Esta accion puede llevar algunos minutos.
+        </h2>
+    </div>
+
+    <h3>Administrator - Basecamp</h3>
+    <br />
+    <br />
+    username:
+    <input type="text" id="tbUsername" value="" /><br />
+    password:
+    <input type="password" id="tbPassword" value="" />
+    <br />
+    <br />
+    <input id="LoadBasecampsButton" type="button" value="Cargar Basecamps" />
+    <br />
+    <div id="add">
+        <h4>Agregar Basecamp</h4>
+        <div class="label">Basecamp</div>
+        <div><select id="basecampselect"></select></div>
+        <div class="label">Nombre</div>
+        <div><input id="nameInput" type="text" maxlength="200" /></div>
+        <div class="label">Latitud</div>
+        <div><input id="latitudeInput" type="number" /></div>
+        <div class="label">Longitud</div>
+        <div><input id="longitudInput" type="number" /></div>
+        <div class="label">Probabilidad</div>
+        <div><input id="probabilityInput" type="number" /></div>
+
+        <div class="label">Texto Corto</div>
+        <div><input id="shortTextInput" type="text" onkeyup="document.getElementById('cuenta').innerHTML = this.value.length" />&nbsp;<span id="cuenta" /></div>
+
+        <input id="addBasecamp" type="button" value="Agregar" />
+        <br />
+    </div>
+    <br />
+
+
+    <div id="editBox" class="collapsed">
+        <h4>Editar Basecamp</h4>
+        <div class="label">Basecamp</div>
+        <div><select id="newBasecampselect"></select></div>
+        <div class="label">Nombre</div>
+        <div><input id="newNameInput" type="text" maxlength="200" /></div>
+        <div class="label">Latitud</div>
+        <div><input id="newLatitudeInput" type="number" /></div>
+        <div class="label">Longitud</div>
+        <div><input id="newLongitudInput" type="number" /></div>
+        <div class="label">Probabilidad</div>
+        <div><input id="newProbabilityInput" type="number" /></div>
+
+        <div class="label">Texto Corto</div>
+        <div><input id="newShortTextInput" type="text" onkeyup="document.getElementById('cuenta2').innerHTML = this.value.length" />&nbsp;<span id="cuenta2" /></div>
+
+        <input id="editBcEnded" type="button" value="Guardar Cambios" />
+        <div id="fileuploader" class="visible">Cargar KML</div>
+        <script>
+            $(document).ready(function uploadkmlfile()
+            {
+                $("#fileuploader").uploadFile({
+                    type: 'POST',
+                    url: "uploadKml.php",
+                    fileName: "myfile",
+                    maxFileSize: 1000000,
+                    onSuccess: function (files, data, xhr) {
+                        alert('Archivo subido correctamente')
+                        $('.ajax-upload-dragdrop').addClass('collapsed');
+                        updateKml(idToEdit);
+                    },
+                    onError: function (files, status, errMsg, pd)
+                    {
+                        //files: list of files
+                        //data: response from server
+                        //xhr : jquer xhr object
+                    }
+                   
+                })
+            });
+        </script>
+    </div>
+
+    <h4>Listado de Basecamps</h4>
+    <table border="1" cellpadding="7" cellspacing="0">
+        <thead>
+            <tr style="background-color: #cecece">
+                <td>Id</td>
+                <td>Basecamp</td>
+                <td>Nombre</td>
+                <td>Latitud</td>
+                <td>Longitud</td>
+                <td>Probabilidad</td>
+                <td>Texto Corto</td>
+                <td></td>
+                <td>Editar</td>
+            </tr>
+        </thead>
+        <tbody id="basecampstable"></tbody>
+    </table>
+    <br />
+
+
+
+    <a href="index.html">back</a>
+
+    <script src="jquery.uploadfile.min.js" type="text/javascript"></script>
+
+</body>
+
+</html>

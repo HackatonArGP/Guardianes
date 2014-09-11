@@ -1,0 +1,1022 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>FincasLayer2.kml</name>
+	<Style id="inline1">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline57">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline650</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline4301</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline470">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline101">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline13</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline9">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline46">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline28</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline106</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff2113ff</color>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline8">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline9</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline15</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline16">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline4">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline421">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline381100</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline10110</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline119">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline11">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline450110">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline108">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline35">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline6">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline5</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline4301">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline113">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline470</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline422</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline381100">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline84">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="inline49">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline150</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline44</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline150">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline29">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline122">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline65">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline108</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline119</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline15">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline9210">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline10110">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline650">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline1412">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline123">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline2120">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline9210</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline1412</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline12">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline313">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline204</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline450110</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline5">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline50">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline123</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline101</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff2113ff</color>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline44">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline002">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline01">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline4</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="inline112">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline122</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline84</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline00">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline34">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline106">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline613">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline9300</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline512</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="inline3">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline16</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline7</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline422">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline28">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline7">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline13">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline9300">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline72">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline002</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline1110</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="inline10">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline34</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline35</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline204">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline512">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline0">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="inline2">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline14">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline12</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline00</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="inline1110">
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="inline120">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#inline11</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#inline29</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>FincasLayer</name>
+		<open>1</open>
+		<Folder>
+			<name>El Cebilar</name>
+			<open>1</open>
+			<description>El Cebilar (María Graciela Herrera)</description>
+			<Placemark>
+				<name>El Cebilar</name>
+				<styleUrl>#inline113</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.51116647263511,-22.71426966134365,0 -63.51171099393789,-22.80186159698813,0 -63.44730865143762,-22.80137995942269,0 -63.44623048170446,-22.71431831033991,0 -63.51116647263511,-22.71426966134365,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>El Yuto</name>
+			<open>1</open>
+			<description>El Yuto (Familia Macri, Yuto S.A.)</description>
+			<Placemark>
+				<name>El Yuto</name>
+				<styleUrl>#inline72</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.44118792781626,-23.21148976668319,0 -63.43402168284126,-23.21053343517168,0 -63.43425110898244,-23.20848604129589,0 -63.43425667879071,-23.20674524211677,0 -63.43258795724476,-23.20581912278969,0 -63.42857448088493,-23.20632018335321,0 -63.42734536997315,-23.20734077784461,0 -63.42545102008774,-23.20733555356259,0 -63.42300060546505,-23.20702157992039,0 -63.41976864545012,-23.20721735491154,0 -63.41831712576568,-23.20813481309297,0 -63.41742271446383,-23.20905381792969,0 -63.41675250395881,-23.20956388131495,0 -63.41597121602764,-23.20997123373486,0 -63.41507919667485,-23.21017348420978,0 -63.41396640423872,-23.20976075757942,0 -63.41307680377063,-23.20924627356802,0 -63.41263390133047,-23.20842589305433,0 -63.41163533367935,-23.20719437320238,0 -63.40874114237953,-23.20646937596804,0 -63.40773570211785,-23.20728559434636,0 -63.40594901922439,-23.20850909798183,0 -63.40488841858448,-23.19890923247476,0 -63.40395281743725,-23.20000776320139,0 -63.40239115140647,-23.20088316034702,0 -63.40080269545233,-23.20136470052274,0 -63.39839282101385,-23.20146571337782,0 -63.39657046640456,-23.20162242114779,0 -63.39457315420731,-23.20140048432098,0 -63.3932802958307,-23.20139666284706,0 -63.39192810848025,-23.20155469258411,0 -63.39045838837955,-23.20171235748776,0 -63.3890487662811,-23.20149208465175,0 -63.38787516529159,-23.20100243366014,0 -63.38699597159233,-23.20035161246461,0 -63.38570599286339,-23.19953749406496,0 -63.38488364824607,-23.19942697279313,0 -63.38394280524674,-23.19958616244481,0 -63.38335359439504,-23.20001649191202,0 -63.38075926723761,-23.2023852427824,0 -63.37863962162925,-23.20345905822112,0 -63.37728433339004,-23.20442717744972,0 -63.37557634635685,-23.20539421059387,0 -63.3749840552134,-23.20663475874004,0 -63.37370533532247,-23.20872413495251,0 -63.37143239461756,-23.21140854203781,0 -63.36914481511279,-23.19222162548621,0 -63.4030208769352,-23.1886455784479,0 -63.40087882158766,-23.17044000437478,0 -63.36660331576164,-23.17411625082402,0 -63.36434133035636,-23.15631926480219,0 -63.33156574734691,-23.15954848000542,0 -63.3202158845233,-23.06682581966041,0 -63.42085270411732,-23.05766952559522,0 -63.43368108164594,-23.15554246103943,0 -63.44118792781626,-23.21148976668319,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Establecimiento Chaguaral</name>
+			<open>1</open>
+			<description>Establecimiento Chaguaral (Santiago Luis Sánchez Elia, Clarsan Sociedad Anónima Comercial Inmobiliaria Financiera Agropecuaria y Bepesa Sociedad Anónima).
+ASIGNAR DENTRO DE ESTE POLÍGONO LAS ZONAS QUE NO ESTAN DESMONTADAS.</description>
+			<Placemark>
+				<name>Establecimiento Chaguaral</name>
+				<styleUrl>#inline313</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-64.15480427966436,-23.99064703237321,0 -64.14733299929819,-23.94670904823888,0 -64.01069801653949,-23.96936770560378,0 -63.99814865662928,-24.00410512168358,0 -63.99719470847407,-24.01678686917919,0 -64.0722961176219,-24.00564016200677,0 -64.08794156173255,-24.07856548493021,0 -64.10848291281771,-24.07577425487489,0 -64.09339611265992,-24.0009378047367,0 -64.15480427966436,-23.99064703237321,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Establecimiento Ganadero Los Pozos</name>
+			<open>1</open>
+			<description>Establecimiento Ganadero Los Pozos (Pedro Luis Cignetti, Jorge Ricardo Cignetti, Héctor Luca Boccolini, Guillermo Aldo Sona y Adriana Magdalena Sona)</description>
+			<Placemark>
+				<name>Establecimiento Ganadero Los Pozos</name>
+				<styleUrl>#inline3</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-62.93763150152102,-24.35935112997458,0 -62.79977269136008,-24.36032196968501,0 -62.7998740134364,-24.40312092915372,0 -62.93726727653275,-24.40265678554999,0 -62.93763150152102,-24.35935112997458,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Establecimiento Ganadero Pluma de Pato</name>
+			<description>Establecimiento Ganadero Pluma de Pato (Agustín Eduardo Vidizzoni y Agustín Vidizzoni S.A.)</description>
+			<Placemark>
+				<name>Establecimiento Ganadero Pluma de Pato</name>
+				<styleUrl>#inline120</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.11847788827159,-23.3547394902923,0 -63.14208615176561,-23.33736986849607,0 -63.13210502551873,-23.46432073693187,0 -63.11156141776076,-23.46791594838158,0 -63.11847788827159,-23.3547394902923,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Establecimiento San Francisco</name>
+			<open>1</open>
+			<description>Establecimiento San Francisco (Ignacio Manuel, María Carolina, José María y Sergio García del Río)</description>
+			<Placemark>
+				<name>Establecimiento San Francisco</name>
+				<styleUrl>#msn_ylw-pushpin</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.11282470161513,-22.4015390400199,0 -63.11909375944138,-22.32459552076116,0 -63.24115488925582,-22.32511862479776,0 -63.24132875678968,-22.4088137207912,0 -63.11282470161513,-22.4015390400199,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>La Charqueada</name>
+			<open>1</open>
+			<description>La Charqueada Fracción 23 (Pablo Arturo Pasman y Las Trojas S.A.)</description>
+			<Placemark>
+				<name>La Charqueda</name>
+				<styleUrl>#inline10</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.8991013998893,-24.51934155481251,0 -63.88568569459196,-24.5278229037114,0 -63.84160136360327,-24.52534995869133,0 -63.8336545348439,-24.47901425417684,0 -63.8261539319553,-24.47528715119674,0 -63.82410837235872,-24.46907430044029,0 -63.83865694780954,-24.46928169640619,0 -63.88410412322898,-24.50755977768949,0 -63.89205787817432,-24.51231358120256,0 -63.8991013998893,-24.51934155481251,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>La Esmeralda</name>
+			<open>1</open>
+			<description>La Esmeralda (Luis Pablo Ronconi y Pablo Ronconi)</description>
+			<Placemark>
+				<name>La Esmeralda</name>
+				<styleUrl>#inline46</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.74641073665108,-24.29416380934156,0 -63.73135837858618,-24.29225791979292,0 -63.73934616422657,-24.33631937733025,0 -63.75472862655897,-24.33536717762002,0 -63.74641073665108,-24.29416380934156,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Establecimiento Ganadero La Luz del Chaco</name>
+			<open>1</open>
+			<description>Establecimiento Ganadero La Luz del Chaco (Fernando Omar Muzi, Agustín Eduardo Vidizzoni y Agro-Noa S.R.L.)</description>
+			<Placemark>
+				<name>La Luz del Chaco</name>
+				<styleUrl>#inline01</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.18375586327361,-23.43948616696999,0 -63.13910392111337,-23.46151964307184,0 -63.13339222127269,-23.46460521333123,0 -63.14240409245549,-23.33646080372387,0 -63.16911150221274,-23.31678522578521,0 -63.18375586327361,-23.43948616696999,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>La Maravilla Lote A4</name>
+			<open>1</open>
+			<description>La Maravilla Lote A4 (Alejandro Roggio, Spinica S.A.)</description>
+			<Placemark>
+				<name>La Maravilla A4</name>
+				<styleUrl>#inline6</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.47961552944813,-22.10942282062331,0 -63.48017481676506,-22.15995406715315,0 -63.45708758449094,-22.15994788471615,0 -63.45706537305087,-22.15588017913036,0 -63.45577751438014,-22.15577401672207,0 -63.45610877271906,-22.14986438379907,0 -63.45561036307245,-22.14914633513893,0 -63.45521423239824,-22.14821130328489,0 -63.45475999216124,-22.14787254274091,0 -63.45407877095294,-22.14736498029019,0 -63.45361733106405,-22.14710149639917,0 -63.45319205423314,-22.14646419232575,0 -63.45325732049274,-22.14579217000953,0 -63.45286119319411,-22.14485683566125,0 -63.45149206160955,-22.14474301391157,0 -63.4501742499968,-22.14493412694782,0 -63.44969819369548,-22.14481927313242,0 -63.44775709495981,-22.14473292779787,0 -63.44778653375497,-22.14526203902305,0 -63.44720039905458,-22.14543902493211,0 -63.44674602864622,-22.1451002336021,0 -63.44613113379776,-22.14474788576284,0 -63.44569267568047,-22.14425972355756,0 -63.4452085039208,-22.14421952421116,0 -63.44444610388496,-22.14370470315825,0 -63.44433563101534,-22.14316897254863,0 -63.44381504800393,-22.14267423830126,0 -63.44308910629828,-22.1426137058839,0 -63.44259771720325,-22.14347559828549,0 -63.4422370535867,-22.14382196942345,0 -63.44208307882836,-22.14207836748465,0 -63.44143745564203,-22.14202448779889,0 -63.44082872188056,-22.14159743991248,0 -63.44014771411171,-22.14108918274968,0 -63.43969243731786,-22.14075012882947,0 -63.43956115708028,-22.13961069718636,0 -63.43915131790068,-22.13799692070685,0 -63.42847392563094,-22.13996409422959,0 -63.42546123694233,-22.13970747988965,0 -63.42519720905985,-22.12989431436875,0 -63.39645202406937,-22.13027905810014,0 -63.39639656578211,-22.11000732442693,0 -63.43857782350047,-22.10987713713779,0 -63.43861319272664,-22.09199457271803,0 -63.40003684901022,-22.09207376929643,0 -63.40015212795955,-22.1007423691935,0 -63.39625811041464,-22.10079023030131,0 -63.39628783533386,-22.08085810195415,0 -63.43904701906937,-22.08070999944246,0 -63.43889184547975,-22.10915203131294,0 -63.47961552944813,-22.10942282062331,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>La Peregrina</name>
+			<open>1</open>
+			<description>La Peregrina (Bruno Mauricio Varela Marín)</description>
+			<Placemark>
+				<name>La Peregrina</name>
+				<styleUrl>#inline50</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-62.86809277267312,-24.43381740504984,0 -62.83422733525118,-24.43398380333399,0 -62.83378710794413,-24.46597913436395,0 -62.86893755253407,-24.46578806911217,0 -62.86956485761431,-24.48835738988744,0 -62.72896280337417,-24.48944190200434,0 -62.73125341043495,-24.40363614562743,0 -62.86857587123418,-24.40355760362008,0 -62.86809277267312,-24.43381740504984,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Las 86 leguas</name>
+			<open>1</open>
+			<description>Las 86 leguas (Bepesa S.A., Juan Martín Guaymas, Carlos Alfredo Calleri y Juan José Calleri)</description>
+			<Placemark>
+				<name>Las 86 leguas</name>
+				<styleUrl>#inline65</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-64.1740071835647,-24.06133040502084,0 -64.13111669172332,-24.06936544848631,0 -64.11528827206064,-23.99617191892567,0 -64.15850319953786,-23.98860386631623,0 -64.1740071835647,-24.06133040502084,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Morocoyal</name>
+			<open>1</open>
+			<description>Morocoyal (Exportin S.A.)
+LA RECATEGORIZACION SON LAS ZONAS NO DESMONTADAS DENTRO DE ESTE POLÍGONO. ASIGNAR ESAS PARCELAS</description>
+			<Placemark>
+				<name>Morocoyal</name>
+				<styleUrl>#inline49</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.59996959092367,-22.21031205451772,0 -63.59995448955568,-22.21429844350888,0 -63.59523177295201,-22.22008296195692,0 -63.59755519058304,-22.22733740472128,0 -63.59832403405879,-22.23132583388762,0 -63.60066154100763,-22.23495657824801,0 -63.60338597262535,-22.24003805062002,0 -63.60729289564227,-22.24331122426552,0 -63.60649766916249,-22.24657033388098,0 -63.59982978053863,-22.24836195121707,0 -63.59551330539521,-22.25016047943772,0 -63.59314567956648,-22.25486381533686,0 -63.59430830507776,-22.25849112440703,0 -63.54377375135437,-22.25111724578525,0 -63.52655551988767,-22.29040996187936,0 -63.58157885505923,-22.29437684920407,0 -63.58183220478619,-22.29484922546163,0 -63.58156480118051,-22.29862033445995,0 -63.57901084850941,-22.30002590384515,0 -63.57544363037438,-22.29954182155535,0 -63.57263975174131,-22.29953191820811,0 -63.56831324973138,-22.29763068958224,0 -63.56449449583952,-22.29643851329048,0 -63.55940111554825,-22.29547755864471,0 -63.55531896735918,-22.29687732587552,0 -63.55276322980685,-22.29898964604531,0 -63.54970216094834,-22.29992152271132,0 -63.54714643571259,-22.3020337882134,0 -63.545611613783,-22.303678297923,0 -63.5440767781106,-22.30532281951532,0 -63.54327368487538,-22.30699578070651,0 -63.54292456423316,-22.30816348261663,0 -63.54200110623731,-22.30932918697543,0 -63.51934044499414,-22.2896986801854,0 -63.49420968245635,-22.3121340840478,0 -63.44270588795241,-22.26465807755339,0 -63.46821488291654,-22.23993806990295,0 -63.55283526258593,-22.23343322076633,0 -63.55836754478172,-22.21412356917756,0 -63.59996959092367,-22.21031205451772,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Nuevo Horizonte</name>
+			<open>1</open>
+			<description>Nuevo Horizonte (Andrés von Buch, Arnaldo Hasenclever, Alessandro Vanoli, Sandro Alberto Vanoli, Estancia Tres Lagunas S.A.)</description>
+			<Placemark>
+				<name>Nuevo Horizonte</name>
+				<styleUrl>#inline8</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.27832262177895,-22.40979516453194,0 -63.12036639010957,-22.40642217690324,0 -63.1217624647339,-22.49488745261037,0 -63.28157931288794,-22.49118580728548,0 -63.27832262177895,-22.40979516453194,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>San Bernardo o Santa Ana</name>
+			<open>1</open>
+			<description>San Bernardo o Santa Ana (Ignacio Carlos Pisani y Claudio Javier Scarabotti)</description>
+			<Placemark>
+				<name>San Bernardo o Santa Ana</name>
+				<styleUrl>#inline</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.79791172452506,-24.38687857175045,0 -63.79332895776287,-24.38495524189671,0 -63.7916796908891,-24.38133221961442,0 -63.78959593864406,-24.38056157695233,0 -63.78452391803927,-24.38070373407308,0 -63.7841960076798,-24.37558932564257,0 -63.78282486308779,-24.37368162002391,0 -63.77807326167928,-24.37380509723063,0 -63.77207593899326,-24.37230334438578,0 -63.76408797432715,-24.32778926252637,0 -63.76953103341565,-24.32691823140426,0 -63.76370785038306,-24.29775142890281,0 -63.78221020567099,-24.30085760277823,0 -63.79791172452506,-24.38687857175045,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Santo Domingo o Palo Santo</name>
+			<open>1</open>
+			<description>Santo Domingo o Palo Santo (Martín Laplacette, Santiago Eugenio Caride Fitte, Juan Manuel Arias, Emilio José Pellet Lastra, Pablo Raúl Munzi, Marcelo Augusto Salinas)</description>
+			<Placemark>
+				<name>Santo Domingo</name>
+				<styleUrl>#inline57</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-62.38131529430545,-23.67494660784493,0 -62.38137524366696,-23.66383318440941,0 -62.35149324180691,-23.66357416492512,0 -62.35240333473166,-23.63275964211098,0 -62.37322455261004,-23.63265279733044,0 -62.37345527144942,-23.61032887582632,0 -62.351903080028,-23.6105871954153,0 -62.35279320612647,-23.53944941747162,0 -62.45275172820897,-23.54119191440131,0 -62.45234382002058,-23.58781264651971,0 -62.42971744606417,-23.58711014625521,0 -62.42842821519379,-23.65094467589257,0 -62.45180259526578,-23.65149757319427,0 -62.45298208214032,-23.62685125514818,0 -62.49836940598615,-23.62716517135131,0 -62.49875930637229,-23.67549124550894,0 -62.38131529430545,-23.67494660784493,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Agrobari S.A.</name>
+			<open>1</open>
+			<description>Agrobari S.A. (João Pereira Coutinho)</description>
+			<Placemark>
+				<name>Agrobari 1</name>
+				<styleUrl>#inline613</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.56891207263964,-24.44864206394983,0 -63.52842673492329,-24.43020111828776,0 -63.51910610469576,-24.36357849443319,0 -63.52969101989725,-24.3672302607914,0 -63.61670334877546,-24.41546199627493,0 -63.62140366594603,-24.4422519172531,0 -63.63028428652677,-24.49874076278232,0 -63.62684047035506,-24.49680141928553,0 -63.62420993851312,-24.48738163706271,0 -63.60037450207718,-24.47622403027692,0 -63.60088752486505,-24.48274083478268,0 -63.59109075488029,-24.47813213874229,0 -63.59213924737929,-24.4824783753502,0 -63.57280957822692,-24.47470897259152,0 -63.56891207263964,-24.44864206394983,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Agrobari S.A.</name>
+			<open>1</open>
+			<description>Agrobari S.A. (João Pereira Coutinho)</description>
+			<Placemark>
+				<name>Agrobari 2</name>
+				<LookAt>
+					<longitude>-63.51239994648132</longitude>
+					<latitude>-24.39560800978815</latitude>
+					<altitude>0</altitude>
+					<heading>-0.3276878464375798</heading>
+					<tilt>0</tilt>
+					<range>16409.30052624369</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#inline112</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.36188739302236,-24.35523059557304,0 -63.35615722194626,-24.30675418381842,0 -63.4797878841242,-24.34913204741413,0 -63.49067830978554,-24.41244737030236,0 -63.36188739302236,-24.35523059557304,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Cuchuy</name>
+			<open>1</open>
+			<description>Cuchuy (Gastón Larrán)</description>
+			<Placemark>
+				<name>Cuchuy (Gastón Larrán)</name>
+				<styleUrl>#inline2120</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.56672501459207,-23.01566740474352,0 -63.52770622907721,-23.01953587413691,0 -63.523336360674,-22.98943016114211,0 -63.55934944325567,-22.9884056648613,0 -63.55946441672788,-22.98840652775857,0 -63.56256830459522,-22.98842987463729,0 -63.56672501459207,-23.01566740474352,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Cuchuy</name>
+			<open>1</open>
+			<description>Cuchuy (Alejandro Braun Peña, Pablo Clusellas, Finca Cuchuy S.A.)</description>
+			<Placemark>
+				<name>Cuchuy</name>
+				<styleUrl>#inline14</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.55943810588269,-22.99217861799126,0 -63.55619963399942,-22.93924901977557,0 -63.41674043662076,-22.94082352063904,0 -63.41787137668146,-22.99987240767673,0 -63.55943810588269,-22.99217861799126,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>El Carmen</name>
+			<description>El Carmen (Familia Navilli, Santa Cecilia del Oeste S.A., Molino Cañuelas S.A., Compañía Argentina de Granos S.A., Vitamina, Uma)</description>
+			<Placemark>
+				<name>El Carmen</name>
+				<styleUrl>#inline421</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-63.78256780818079,-23.09337254124321,0 -63.77613457182406,-23.09617393621999,0 -63.77537977489988,-23.10608550172136,0 -63.75305216105086,-23.11815932769937,0 -63.75738693576228,-23.12595265985975,0 -63.80243891418935,-23.10299066757037,0 -63.80550114361044,-23.12117373096075,0 -63.78751826143955,-23.12644850097161,0 -63.78853608818788,-23.13246281854323,0 -63.72484919721866,-23.14931738777627,0 -63.7129587385086,-23.0710423928258,0 -63.7921661243824,-23.04532470766842,0 -63.79859931418814,-23.08077879882479,0 -63.78832936497581,-23.07956140089585,0 -63.78256780818079,-23.09337254124321,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+	</Folder>
+</Document>
+</kml>
