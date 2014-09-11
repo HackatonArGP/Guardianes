@@ -59,6 +59,7 @@ namespace Earthwatchers.UI.GUI.Controls
         void SliderAnimation2_Completed(object sender, EventArgs e)
         {
             ChangeLayersOpacity();
+            hexagonOnOff.ShowHexagonBg();
         }
 
         void SliderAnimation1_Completed(object sender, EventArgs e)
@@ -173,8 +174,7 @@ namespace Earthwatchers.UI.GUI.Controls
             if (satelliteImages != null)
             {
                 includedSatelliteImages = satelliteImages.Where(x => x.Name == "2008").ToList(); //Muestro solo 5 mas la del 2008, el resto las mando al combo
-                includedSatelliteImages.AddRange(satelliteImages.Where(x => x.Name != "2008").OrderByDescending(x => x.Published).Take(5).ToList()); 
-                //includedSatelliteImages = satelliteImages.OrderByDescending(x => x.Published).Take(5).ToList(); //Muestro solo 5, el resto las mando al combo
+                includedSatelliteImages.AddRange(satelliteImages.Where(x => x.Name != "2008").OrderByDescending(x => x.Published).Take(3).ToList());
                 Current.Instance.LastImageDate = includedSatelliteImages.First().Published.Value.ToString("MMMM yyyy");
                 CreateTimeLine();
 
@@ -360,7 +360,14 @@ namespace Earthwatchers.UI.GUI.Controls
         {
             //Relleno los hexagonos
             ChangeLayersOpacity();
+            if (hexagonOnOff.IsOn())
+            {
             hexagonOnOff.ShowHexagonBg();
+        }
+            else
+            {
+                hexagonOnOff.HideHexagonBg();
+            }
         }
 
         private void ChangeLayersOpacity()

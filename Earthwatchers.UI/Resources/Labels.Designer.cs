@@ -2253,7 +2253,7 @@ namespace Earthwatchers.UI.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ¡Gané el torneo semanal! Mis acciones ayudan a cuidar los bosques de Salta ¡Participá! #SoyGuardianDelBosque.
+        ///   Looks up a localized string similar to ¡Gané el torneo semanal! Mis acciones ayudan a cuidar los bosques de Salta ¡Participá! #35milDenuncias.
         /// </summary>
         public static string Share3 {
             get {
@@ -2262,7 +2262,7 @@ namespace Earthwatchers.UI.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ¡Comienza un nuevo torneo semanal! Participá para mantener los bosques de Salta a salvo. #SoyGuardianDelBosque.
+        ///   Looks up a localized string similar to ¡Comienza un nuevo torneo semanal! Participá para mantener los bosques de Salta a salvo. #35milDenuncias.
         /// </summary>
         public static string Share4 {
             get {

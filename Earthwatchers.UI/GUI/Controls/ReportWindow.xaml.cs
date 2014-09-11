@@ -464,17 +464,17 @@ namespace Earthwatchers.UI.GUI.Controls
                 {
                     this.AlertButton.BorderThickness = new Thickness(0);
                     this.AlertButton.Background = new SolidColorBrush(Colors.Transparent);
-                    this.shareText.Text = string.Format("{0} {1}", Labels.Share1, "#SoyGuardianDelBosque");
+                    this.shareText.Text = string.Format("{0} {1}", Labels.Share1, "#35milDenuncias");
                 }
 
                 if (border.Name.Equals("AlertButton") && ischecked)
                 {
                     this.OkButton.BorderThickness = new Thickness(0);
                     this.OkButton.Background = new SolidColorBrush(Colors.Transparent);
-                    this.shareText.Text = string.Format("{0} {1}", Labels.Share2, "#SoyGuardianDelBosque");
+                    this.shareText.Text = string.Format("{0} {1}", Labels.Share2, "#35milDenuncias");
                     if (selectedLand.ShortText != null || !string.IsNullOrEmpty(selectedLand.ShortText))
                     {
-                        shareText.Text = String.Format("Encontré un desmonte en {0}. ¿Me ayudás a verificarlo? {1}", selectedLand.ShortText, "#SoyGuardianDelBosque");
+                        shareText.Text = String.Format("Encontré un desmonte en {0}. ¿Me ayudás a verificarlo? {1}", selectedLand.ShortText, "#35milDenuncias");
                     }
                 }
 
@@ -482,17 +482,17 @@ namespace Earthwatchers.UI.GUI.Controls
                 {
                     this.DeconfirmButton.BorderThickness = new Thickness(0);
                     this.DeconfirmButton.Background = new SolidColorBrush(Colors.Transparent);
-                    this.shareText.Text = string.Format("{0} {1}", Labels.Share1, "#SoyGuardianDelBosque");
+                    this.shareText.Text = string.Format("{0} {1}", Labels.Share1, "#35milDenuncias");
                 }
 
                 if (border.Name.Equals("DeconfirmButton") && ischecked)
                 {
                     this.ConfirmButton.BorderThickness = new Thickness(0);
                     this.ConfirmButton.Background = new SolidColorBrush(Colors.Transparent);
-                    this.shareText.Text = string.Format("{0} {1}", Labels.Share2, "#SoyGuardianDelBosque");
+                    this.shareText.Text = string.Format("{0} {1}", Labels.Share2, "#35milDenuncias");
                     if (selectedLand.ShortText != null || !string.IsNullOrEmpty(selectedLand.ShortText))
                     {
-                        shareText.Text = String.Format("Encontré un desmonte en {0}. ¿Me ayudás a verificarlo? {1}", selectedLand.ShortText, "#SoyGuardianDelBosque");
+                        shareText.Text = String.Format("Encontré un desmonte en {0}. ¿Me ayudás a verificarlo? {1}", selectedLand.ShortText, "#35milDenuncias");
                     }
                 }
             }

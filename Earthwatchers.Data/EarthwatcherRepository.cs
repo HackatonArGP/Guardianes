@@ -259,7 +259,7 @@ namespace Earthwatchers.Data
             return earthwatchers.ToList();
         }
 
-        public LandMini AssignLandToEarthwatcher(int earthwatcherId, string basecamp, string geohexKey)
+        public LandMini AssignLandToEarthwatcher(int earthwatcherId, string basecamp, string geohexKey) 
         {
             var land = GetFreeLand(basecamp, "'" + geohexKey + "'");
             if (land != null)

@@ -169,7 +169,7 @@
                             FontFamily="/Earthwatchers.UI;component/Resources/MyriadPro.otf#Myriad Pro" FontSize="12"
                              Margin="29,21,190,0">
                     <Run Text="{Binding Path=Version, Source={StaticResource Labels}}"></Run>
-                    <Run Text=" 2.0.2"></Run> <!--VERSION NUMBER-->
+                    <Run Text=" 2.0.2.2"></Run> <!--VERSION NUMBER-->
                     </TextBlock>
                    
                     <TextBlock x:Name="AboutButton" Height="21" Cursor="Hand"

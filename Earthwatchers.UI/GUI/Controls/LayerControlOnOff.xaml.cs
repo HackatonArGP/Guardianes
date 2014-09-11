@@ -118,6 +118,10 @@ namespace Earthwatchers.UI.GUI.Controls
         {
             ((HexagonLayer)layer).Opacity = 0.6;
         }
+        public bool IsOn()
+        {
+            return this.on;
+        }
 
     }
 }

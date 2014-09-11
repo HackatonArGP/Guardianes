@@ -263,8 +263,8 @@
                     return;
                 }
 
-                if (isNaN(probability) || probability < 0 || probability > 100) {
-                    alert('La probabilidad debe estar entre 0 y 100');
+                if (isNaN(probability) || probability < 0 || probability > 1000) {
+                    alert('La probabilidad debe estar entre 0 y 1000');
                     return;
                 }
 
@@ -321,8 +321,8 @@
                 var probability = parseInt($('#newProbabilityInput').val());
                 var shortText = $('#newShortTextInput').val();
                 var basecampid = $('#newBasecampselect').val();
-                if (isNaN(probability) || probability < 0 || probability > 100) {
-                    alert('La probabilidad debe estar entre 0 y 100');
+                if (isNaN(probability) || probability < 0 || probability > 1000) {
+                    alert('La probabilidad debe estar entre 0 y 1000');
                     return;
                 }
                 if (shortText == null || shortText == "" || shortText ==" ")

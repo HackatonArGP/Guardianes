@@ -236,6 +236,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="Images\facebook.png" />
     <Content Include="Images\facebookLogin.png" />
+    <Content Include="Images\favicon.ico" />
     <Content Include="Images\taringa.png" />
     <Content Include="Images\taringaLogin.png" />
     <Content Include="Images\twitter.png" />
